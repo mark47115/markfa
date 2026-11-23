@@ -30,7 +30,12 @@ jobs:
             commit=$(printf 'Publish portfolio and four web documents' | git commit-tree "$content")
             git push origin "$commit:refs/heads/gh-pages"
           fi
+      - name: Build inline production reader
+        run: |
+          python3 update_reader.py
+          node --check public/interactions.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
       - uses: actions/deploy-pages@v4
+
