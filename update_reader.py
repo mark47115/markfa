@@ -13,8 +13,8 @@ s = re.sub(r'<details class="ai-check">(?:(?!</details>).)*?/read/journal/.*?</d
 viewer = '''<section id="game-reader" hidden aria-label="게임 제작 문서 열람"><header><strong></strong><button class="switch-doc" type="button">다른 제작 문서</button><button class="close-doc" type="button">문서 목록으로</button></header><div class="frame-host"></div></section>'''
 s, count = re.subn(r'<section class="book-sheet".*?</section>', viewer, s, count=1, flags=re.S)
 assert count and 'book-group-planning' not in s
-s = s.replace('src="interactions.js"','src="interactions.js?v=fold3"')
-s = s.replace('</head>', '''<style>#portfolio .book-covers{display:block}#portfolio [hidden]{display:none!important}#game-reader{width:100%;scroll-margin-top:75px}#game-reader header{position:static;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#342934;color:#fff}#game-reader button{min-height:44px;color:inherit;background:transparent;border:1px solid currentColor;padding:0 12px;font:inherit;cursor:pointer}#game-reader iframe{display:block;width:100%;height:100%;border:0;background:#f8f5ef}#game-reader{position:absolute;inset:0;z-index:3;isolation:isolate;background:#f8f5ef;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr)}#game-reader .frame-host{min-height:0}#game-reader header{justify-content:flex-end;gap:8px}#game-reader header strong{margin-right:auto}@media(min-width:821px){#portfolio .book-cover{height:clamp(440px,36vw,560px);aspect-ratio:auto}}</style></head>''')
+s = s.replace('src="interactions.js"','src="interactions.js?v=fold4"')
+s = s.replace('</head>', '''<style>#portfolio .book-covers{display:block}#portfolio [hidden]{display:none!important}#game-reader{width:100%;scroll-margin-top:75px}#game-reader header{position:static;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#342934;color:#fff}#game-reader button{min-height:44px;color:inherit;background:transparent;border:1px solid currentColor;padding:0 12px;font:inherit;cursor:pointer}#game-reader iframe{display:block;width:100%;height:100%;border:0;background:#f8f5ef}#game-reader{position:absolute;inset:0;z-index:3;isolation:isolate;background:#f8f5ef;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr)}#game-reader .frame-host{min-height:0}#game-reader header{justify-content:flex-end;gap:8px}#game-reader header strong{margin-right:auto}@media(min-width:821px){#portfolio .book-cover{height:clamp(440px,36vw,560px);aspect-ratio:auto}}#game-reader{display:block}#game-reader .frame-host{height:100%}#game-reader header{position:absolute;inset:auto 10px 10px auto;z-index:2;width:auto;max-width:calc(100% - 20px);margin:0;padding:3px;gap:3px}#game-reader header strong{display:none}</style></head>''')
 p.write_text(s)
 p = root / 'interactions.js'
 s = p.read_text()
@@ -42,6 +42,7 @@ s = s[:start] + '''  const covers = document.querySelector('.book-covers');
     if(!switching) unfolding = slideFromCover({button:cover});
     else frame.animate([{transform:'translateX(35%)',opacity:0},{transform:'translateX(0)',opacity:1}],{duration:440,easing:slideEase});
     frame.focus({preventScroll:true});
+    window.scrollTo({top:exhibition.getBoundingClientRect().top+window.scrollY,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   }
   for (const cover of covers.querySelectorAll('.book-cover')) {
     cover.addEventListener('click', event => {
@@ -69,6 +70,7 @@ s = s[:start] + '''  const covers = document.querySelector('.book-covers');
   document.querySelectorAll('a[href="#tavern-heros-project"]').forEach(link => link.addEventListener('click', event => {event.preventDefault();openGame(featured)}));
   if(location.hash === '#tavern-heros-project') openGame(featured);
 ''' + s[end:]
+s = s.replace('const toolTime = 1500 / 4;', 'const toolTime = 750 / 4;').replace('const trunkTime = reducedMotion.matches ? 150 : 250;', 'const trunkTime = reducedMotion.matches ? 75 : 125;')
 p.write_text(s)
 for name in ['tavern','gate']:
     page = root/'read'/name/'index.html'
