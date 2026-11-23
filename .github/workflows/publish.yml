@@ -1,0 +1,36 @@
+name: Publish portfolio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare portfolio
+        run: |
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            mkdir public
+            git archive origin/gh-pages | tar -x -C public
+          else
+            python3 migrate_portfolio.py
+            git config user.name github-actions
+            git config user.email github-actions@users.noreply.github.com
+            git add -f public
+            tree=$(git write-tree)
+            content=$(git rev-parse "$tree:public")
+            commit=$(printf 'Publish portfolio and four web documents' | git commit-tree "$content")
+            git push origin "$commit:refs/heads/gh-pages"
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
