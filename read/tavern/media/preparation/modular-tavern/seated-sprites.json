@@ -1,0 +1,645 @@
+{
+  "frameWidth": 64,
+  "frameHeight": 64,
+  "frameCount": 4,
+  "groundRow": 59,
+  "furnitureSourceCrops": {
+    "table-1": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "table-2": [
+      512,
+      0,
+      512,
+      512
+    ],
+    "table-3": [
+      1024,
+      0,
+      512,
+      512
+    ],
+    "table-4": [
+      0,
+      512,
+      512,
+      512
+    ],
+    "table-5": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "chair-1": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "chair-2": [
+      512,
+      0,
+      512,
+      512
+    ],
+    "chair-3": [
+      1024,
+      0,
+      512,
+      512
+    ],
+    "chair-4": [
+      0,
+      512,
+      512,
+      512
+    ],
+    "chair-5": [
+      512,
+      512,
+      512,
+      512
+    ]
+  },
+  "units": [
+    {
+      "id": "seedling-keeper",
+      "name": "묘목 지기",
+      "standing": "media/unit-sprites/v1/png/seedling-keeper.png",
+      "pivot": 48,
+      "sourceRect": [
+        0,
+        0,
+        362,
+        543
+      ],
+      "palette": [
+        "3c2926",
+        "57463a",
+        "657155",
+        "9e754d",
+        "be7252",
+        "bebb53",
+        "cbbd6f",
+        "d1c865",
+        "f8d2b3",
+        "fadfc2"
+      ],
+      "standingPalette": [
+        "3c2926",
+        "57463a",
+        "657155",
+        "9e754d",
+        "be7252",
+        "bebb53",
+        "cbbd6f",
+        "d1c865",
+        "f8d2b3",
+        "fadfc2"
+      ]
+    },
+    {
+      "id": "sprout-archer",
+      "name": "새싹 사수",
+      "standing": "media/unit-sprites/v1/png/sprout-archer.png",
+      "pivot": 48,
+      "sourceRect": [
+        362,
+        0,
+        362,
+        543
+      ],
+      "palette": [
+        "3a2625",
+        "4b332e",
+        "6d5443",
+        "815648",
+        "b06b4d",
+        "b59d53",
+        "cb885e",
+        "cdc35d",
+        "fad2ac",
+        "fadcc0"
+      ],
+      "standingPalette": [
+        "3a2625",
+        "4b332e",
+        "6d5443",
+        "815648",
+        "b06b4d",
+        "b59d53",
+        "cb885e",
+        "cdc35d",
+        "fad2ac",
+        "fadcc0"
+      ]
+    },
+    {
+      "id": "seed-horn",
+      "name": "씨앗 나팔수",
+      "standing": "media/preparation/level-up/units/seed-horn.png",
+      "pivot": 48,
+      "sourceRect": [
+        724,
+        0,
+        362,
+        543
+      ],
+      "palette": [
+        "453735",
+        "56463f",
+        "645d4b",
+        "826552",
+        "94905f",
+        "ce9f64",
+        "d2b373",
+        "d9ba65",
+        "ecc182",
+        "f8dbbf"
+      ],
+      "standingPalette": [
+        "453735",
+        "56463f",
+        "645d4b",
+        "826552",
+        "94905f",
+        "ce9f64",
+        "d2b373",
+        "d9ba65",
+        "ecc182",
+        "f8dbbf"
+      ]
+    },
+    {
+      "id": "shield-deputy",
+      "name": "방패 부사수",
+      "standing": "media/unit-sprites/v1/png/shield-deputy.png",
+      "pivot": 48,
+      "sourceRect": [
+        1086,
+        0,
+        362,
+        543
+      ],
+      "palette": [
+        "40282d",
+        "6c4348",
+        "824d5b",
+        "885756",
+        "9d6776",
+        "ba7b7d",
+        "deb08c",
+        "f1c893",
+        "f7d5b7",
+        "f9dec2"
+      ],
+      "standingPalette": [
+        "40282d",
+        "6c4348",
+        "824d5b",
+        "885756",
+        "9d6776",
+        "ba7b7d",
+        "deb08c",
+        "f1c893",
+        "f7d5b7",
+        "f9dec2"
+      ]
+    },
+    {
+      "id": "gate-apprentice",
+      "name": "성문 견습",
+      "standing": "media/unit-sprites/v1/png/gate-apprentice.png",
+      "pivot": 48,
+      "sourceRect": [
+        0,
+        543,
+        362,
+        543
+      ],
+      "palette": [
+        "3c272a",
+        "472d33",
+        "6e4a48",
+        "94777e",
+        "98595e",
+        "c07978",
+        "d5ac8f",
+        "efc388",
+        "f7d2b5",
+        "fadec2"
+      ],
+      "standingPalette": [
+        "3c272a",
+        "472d33",
+        "6e4a48",
+        "94777e",
+        "98595e",
+        "c07978",
+        "d5ac8f",
+        "efc388",
+        "f7d2b5",
+        "fadec2"
+      ]
+    },
+    {
+      "id": "brook-hunter",
+      "name": "개울 사냥꾼",
+      "standing": "media/unit-sprites/v1/png/brook-hunter.png",
+      "pivot": 48,
+      "sourceRect": [
+        362,
+        543,
+        362,
+        543
+      ],
+      "palette": [
+        "2c1c1e",
+        "312729",
+        "507477",
+        "58423e",
+        "658d8e",
+        "8c4d40",
+        "b7815b",
+        "efa672",
+        "f8cfaa",
+        "fbe0bf"
+      ],
+      "standingPalette": [
+        "2c1c1e",
+        "312729",
+        "507477",
+        "58423e",
+        "658d8e",
+        "8c4d40",
+        "b7815b",
+        "efa672",
+        "f8cfaa",
+        "fbe0bf"
+      ]
+    },
+    {
+      "id": "fox-apprentice",
+      "name": "여우 견습",
+      "standing": "media/unit-sprites/v1/png/fox-apprentice.png",
+      "pivot": 48,
+      "sourceRect": [
+        724,
+        543,
+        362,
+        543
+      ],
+      "palette": [
+        "3e2828",
+        "5e3a33",
+        "855547",
+        "b45e41",
+        "c76b47",
+        "e6864e",
+        "e88b53",
+        "e9a872",
+        "edbf9a",
+        "fbdec1"
+      ],
+      "standingPalette": [
+        "3e2828",
+        "5e3a33",
+        "855547",
+        "b45e41",
+        "c76b47",
+        "e6864e",
+        "e88b53",
+        "e9a872",
+        "edbf9a",
+        "fbdec1"
+      ]
+    },
+    {
+      "id": "assembly-robot",
+      "name": "조립형 로봇",
+      "standing": "media/unit-sprites/v1/png/assembly-robot.png",
+      "pivot": 48,
+      "sourceRect": [
+        1086,
+        543,
+        362,
+        543
+      ],
+      "palette": [
+        "352427",
+        "3f2c2e",
+        "567a7c",
+        "714b3f",
+        "a4714b",
+        "aa8f91",
+        "e6a958",
+        "edd0ad",
+        "f0b359",
+        "f5c072"
+      ],
+      "standingPalette": [
+        "352427",
+        "3f2c2e",
+        "567a7c",
+        "714b3f",
+        "a4714b",
+        "aa8f91",
+        "e6a958",
+        "edd0ad",
+        "f0b359",
+        "f5c072"
+      ]
+    },
+    {
+      "id": "rivet-bot",
+      "name": "못박이",
+      "standing": "media/unit-sprites/v1/png/rivet-bot.png",
+      "pivot": 48,
+      "sourceRect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "palette": [
+        "362527",
+        "412f30",
+        "67473f",
+        "737478",
+        "b97d49",
+        "dc9b4e",
+        "eeb15a",
+        "f6c376",
+        "f7dcb7"
+      ],
+      "standingPalette": [
+        "362527",
+        "412f30",
+        "67473f",
+        "737478",
+        "b6978a",
+        "b97d49",
+        "dc9b4e",
+        "eeb15a",
+        "f6c376",
+        "f7dcb7"
+      ]
+    },
+    {
+      "id": "wolf-javelin",
+      "name": "늑대 투창수",
+      "standing": "media/preparation/level-up/units/wolf-javelin.png",
+      "pivot": 48,
+      "sourceRect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "palette": [
+        "443336",
+        "5b4643",
+        "7a6465",
+        "907a7f",
+        "966f5d",
+        "b6815f",
+        "cc9f7d",
+        "d7ae84",
+        "e4c3a9",
+        "f8dbbf"
+      ],
+      "standingPalette": [
+        "443336",
+        "5b4643",
+        "7a6465",
+        "907a7f",
+        "966f5d",
+        "b6815f",
+        "cc9f7d",
+        "d7ae84",
+        "e4c3a9",
+        "f8dbbf"
+      ]
+    },
+    {
+      "id": "lynx-scout",
+      "name": "살쾡이 정찰병",
+      "standing": "media/preparation/level-up/units/lynx-scout.png",
+      "pivot": 48,
+      "sourceRect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "palette": [
+        "463336",
+        "583f3e",
+        "664d4c",
+        "8c5f58",
+        "a46461",
+        "bb806a",
+        "dea473",
+        "ebbe91",
+        "f4d1b2",
+        "f9ddc2"
+      ],
+      "standingPalette": [
+        "463336",
+        "583f3e",
+        "664d4c",
+        "8c5f58",
+        "a46461",
+        "bb806a",
+        "dea473",
+        "ebbe91",
+        "f4d1b2",
+        "f9ddc2"
+      ]
+    },
+    {
+      "id": "falcon-lookout",
+      "name": "솔개 파수꾼",
+      "standing": "media/preparation/level-up/units/falcon-lookout.png",
+      "pivot": 48,
+      "sourceRect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "palette": [
+        "443236",
+        "513e3f",
+        "604b4f",
+        "6a7676",
+        "9d7e72",
+        "ceae98",
+        "ddac6f",
+        "efceab",
+        "f7dcc1",
+        "f9dfc6"
+      ],
+      "standingPalette": [
+        "443236",
+        "513e3f",
+        "604b4f",
+        "6a7676",
+        "9d7e72",
+        "ceae98",
+        "ddac6f",
+        "efceab",
+        "f7dcc1",
+        "f9dfc6"
+      ]
+    },
+    {
+      "id": "citadel-captain",
+      "name": "성루 방패대장",
+      "standing": "media/preparation/level-up/units/citadel-captain.png",
+      "pivot": 48,
+      "sourceRect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "palette": [
+        "463238",
+        "63454a",
+        "835662",
+        "8b5767",
+        "91636f",
+        "d4a782",
+        "debda6",
+        "e6c4a3",
+        "e6c7ad",
+        "f1d2b7"
+      ],
+      "standingPalette": [
+        "463238",
+        "63454a",
+        "835662",
+        "8b5767",
+        "91636f",
+        "d4a782",
+        "debda6",
+        "e6c4a3",
+        "e6c7ad",
+        "f1d2b7"
+      ]
+    },
+    {
+      "id": "citadel-archer",
+      "name": "성무 궁수",
+      "standing": "media/preparation/level-up/units/citadel-archer.png",
+      "pivot": 48,
+      "sourceRect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "palette": [
+        "443235",
+        "513c3f",
+        "7a5356",
+        "9d6960",
+        "d09c66",
+        "d6ad8d",
+        "f0ba6b",
+        "f7d1af",
+        "f8d9bc",
+        "f9dfc5"
+      ],
+      "standingPalette": [
+        "443235",
+        "513c3f",
+        "7a5356",
+        "9d6960",
+        "d09c66",
+        "d6ad8d",
+        "f0ba6b",
+        "f7d1af",
+        "f8d9bc",
+        "f9dfc5"
+      ]
+    },
+    {
+      "id": "lantern-priest",
+      "name": "등불 사제",
+      "standing": "media/preparation/level-up/units/lantern-priest.png",
+      "pivot": 48,
+      "sourceRect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "palette": [
+        "453235",
+        "674b49",
+        "8d5e62",
+        "ae8168",
+        "d0ab92",
+        "e6ad6d",
+        "f1c083",
+        "f8d5b7",
+        "f9ddbf",
+        "fae1c8"
+      ],
+      "standingPalette": [
+        "453235",
+        "674b49",
+        "8d5e62",
+        "ae8168",
+        "d0ab92",
+        "e6ad6d",
+        "f1c083",
+        "f8d5b7",
+        "f9ddbf",
+        "fae1c8"
+      ]
+    },
+    {
+      "id": "belltower-sentry",
+      "name": "종탑 파수병",
+      "standing": "media/preparation/level-up/units/belltower-sentry.png",
+      "pivot": 48,
+      "sourceRect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "palette": [
+        "443136",
+        "4f3b3d",
+        "81575c",
+        "926867",
+        "a4877a",
+        "cfae96",
+        "dda660",
+        "e4c5ab",
+        "e7c499",
+        "eed1b7"
+      ],
+      "standingPalette": [
+        "443136",
+        "4f3b3d",
+        "81575c",
+        "926867",
+        "a4877a",
+        "cfae96",
+        "dda660",
+        "e4c5ab",
+        "e7c499",
+        "eed1b7"
+      ]
+    }
+  ]
+}

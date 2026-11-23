@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 시작화면과 홈 음악</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <script defer src="_shared/report.js"></script>
+  <style>
+    html[data-mak-report] .music-group { background: transparent; }
+    .track-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .selected-tracks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .track { display: flex; min-width: 0; flex-direction: column; gap: 10px; padding: 18px; border: 1px solid var(--mak-border); }
+    html[data-mak-report] .track h3 { margin: 0; }
+    .track p { margin: 0; }
+    .track .duration { color: var(--mak-muted); font-size: .85rem; margin-top: auto; }
+    .track audio { width: 100%; min-width: 0; height: 42px; }
+    .track a { align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
+    .archive { margin-block: 32px 24px; }
+    .archive summary { cursor: pointer; padding: 10px 0; }
+    @media (max-width: 880px) { .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 580px) { .track-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main class="container">
+  <h1>시작화면과 홈 음악</h1>
+  <p>시작화면은 ‘첫 출정’ 3초 버전, 홈은 ‘변경의 벽난로’ 덜시머와 첼로 편곡을 선택했습니다.</p>
+
+  <section class="music-group" aria-label="선택한 시작화면 음악과 홈 BGM">
+    <div class="track-grid selected-tracks">
+      <article class="track card">
+        <h3 id="expedition-short">첫 출정 · 3초</h3>
+        <p>시작화면에 맞춰 피리의 상승 멜로디와 류트·손북의 마무리를 3초에 담았습니다.</p>
+        <p class="duration">3.00초 · 한 번 재생</p>
+        <audio controls preload="none" aria-labelledby="expedition-short" src="media/menu-music/title-expedition-3s.wav"></audio>
+        <a href="media/menu-music/title-expedition-3s.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="hearth-dulcimer">변경의 벽난로 · 덜시머와 첼로</h3>
+        <p>덜시머가 멜로디를 맡고 첼로가 낮게 받쳐 줍니다. 나무 피리는 원래 편곡보다 9dB 낮췄습니다.</p>
+        <p class="duration">40초 · 반복</p>
+        <audio controls loop preload="none" aria-labelledby="hearth-dulcimer" src="media/menu-music/home-hearth-dulcimer.wav"></audio>
+        <a href="media/menu-music/home-hearth-dulcimer.wav" download>WAV 다운로드</a>
+      </article>
+    </div>
+  </section>
+
+  <details class="archive">
+    <summary>이전 견본 듣기</summary>
+  <section class="music-group" aria-labelledby="title-music">
+    <h2 id="title-music">시작화면</h2>
+    <div class="track-grid">
+      <article class="track card">
+        <h3 id="gather">불빛 아래 집결</h3>
+        <p>호른과 낮은 현이 로언의 집결을 알립니다. 마지막 음에 금속 종이 짧게 울립니다.</p>
+        <p class="duration">6.23초</p>
+        <audio controls preload="none" aria-labelledby="gather" src="media/menu-music/title-gather.mp3"></audio>
+        <a href="media/menu-music/title-gather.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="rift">균열 너머</h3>
+        <p>낮은 합창 음색 위로 어긋나는 종소리가 들립니다. 균열이 열리는 순간에 어울립니다.</p>
+        <p class="duration">8.05초</p>
+        <audio controls preload="none" aria-labelledby="rift" src="media/menu-music/title-rift.mp3"></audio>
+        <a href="media/menu-music/title-rift.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="expedition">첫 출정</h3>
+        <p>류트와 손북 위에서 피리가 위로 뛰어오릅니다. 길을 나서는 모험의 기대감을 담았습니다.</p>
+        <p class="duration">6.72초</p>
+        <audio controls preload="none" aria-labelledby="expedition" src="media/menu-music/title-expedition.mp3"></audio>
+        <a href="media/menu-music/title-expedition.wav" download>WAV 다운로드</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="music-group" aria-labelledby="home-music">
+    <h2 id="home-music">홈 BGM</h2>
+    <div class="track-grid">
+      <article class="track card">
+        <h3 id="hearth-concertina">변경의 벽난로 · 콘서티나와 만돌린</h3>
+        <p>콘서티나가 한 옥타브 낮게 멜로디를 연주하고 만돌린이 박 사이를 채웁니다. 나무 피리는 12dB 낮췄습니다.</p>
+        <p class="duration">40초 · 반복</p>
+        <audio controls loop preload="none" aria-labelledby="hearth-concertina" src="media/menu-music/home-hearth-concertina.wav"></audio>
+        <a href="media/menu-music/home-hearth-concertina.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="hearth">변경의 벽난로</h3>
+        <p>6/8박 류트 반주와 나무 피리. 난롯불 곁에서 대장을 고르는 장면에 어울립니다.</p>
+        <p class="duration">40초 · 반복</p>
+        <audio controls loop preload="none" aria-labelledby="hearth" src="media/menu-music/home-hearth.wav"></audio>
+        <a href="media/menu-music/home-hearth.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="ledger">저녁 장부</h3>
+        <p>덜시머와 낮은 현이 차분하게 이어집니다. 상점이나 원정 준비 중에 깔기 좋은 곡입니다.</p>
+        <p class="duration">48초 · 반복</p>
+        <audio controls loop preload="none" aria-labelledby="ledger" src="media/menu-music/home-ledger.wav"></audio>
+        <a href="media/menu-music/home-ledger.wav" download>WAV 다운로드</a>
+      </article>
+      <article class="track card">
+        <h3 id="lantern">등불 아래 작은 춤</h3>
+        <p>피들과 손북이 3박자 춤을 이끌고 피리가 이어받습니다. 저녁 선술집 마당을 떠올리는 곡입니다.</p>
+        <p class="duration">40초 · 반복</p>
+        <audio controls loop preload="none" aria-labelledby="lantern" src="media/menu-music/home-lantern.wav"></audio>
+        <a href="media/menu-music/home-lantern.wav" download>WAV 다운로드</a>
+      </article>
+    </div>
+  </section>
+  </details>
+
+  <p class="meta">WAV 48 kHz · 16비트 · 스테레오&nbsp; <a href="docs/menu-music.md">제작 및 반복 검증 기록</a></p>
+</main>
+<script>
+  const players = [...document.querySelectorAll('audio')];
+  for (const player of players) {
+    player.addEventListener('play', () => {
+      for (const other of players) if (other !== player) other.pause();
+    });
+  }
+</script>
+</body>
+</html>

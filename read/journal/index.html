@@ -1,0 +1,1793 @@
+<!--
+  ============================================================
+  함께 쌓아가는 도감 시스템 · 시스템 기획서 v6.0
+  ============================================================
+  PPT 1~14쪽 레이아웃을 그대로 옮긴 판.
+
+  ── PPT 실측 좌표 (슬라이드 13.33 × 7.5 in) ─────────────────
+    목차 레일   x0.21 ~ 2.25            (폭 2.04)
+    본문 영역   x2.82 ~ 12.59           (폭 9.77)
+    제목        x2.82 y0.23 w9.38 h0.56
+    1열 소제목  x2.82 y1.03 w3.53
+    1열 본문    x2.82 y1.48 w4.98
+    2열 소제목  x8.12 y1.03 w3.53
+    2열 본문    x8.12 y1.48 w4.47
+    → 열 피치 5.30, 열 폭 ≈ 4.98, 간격 ≈ 0.32   (본문 영역의 51% : 49%)
+  슬라이드 3~14는 2쪽과 같은 도형 세트(t105 제목 / t134·t135 1열 /
+  t137·t138 2열)를 좌표 없이 재사용한다. 즉 본문 쪽은 전부 같은 한
+  레이아웃이다. 쪽마다 구성을 바꾸지 않는다.
+
+  ── 본문 쪽 구성 (고정) ─────────────────────────────────────
+    .page  = 2열 그리드
+      .col = [✓소제목] [본문] [이미지]
+    그림이 1장뿐인 쪽은 그 그림이 이미지 행을 가로질러
+
+  ── PPT에서 고친 것 ─────────────────────────────────────────
+    5~14쪽 본문이 4쪽 문구의 복사본이라 절별 실제 내용으로 교체
+    "3.1 레퍼런스 - 기각"      → 3.3   (5쪽과 번호 중복 · 소개를 3.1로 신설)
+    "8. 시스템 검증 지표"       → 8. 검증 지표  (목차와 불일치)
+    "2 시스템 소개 & 의도"      → 2. 개요       (2.3을 더해 장 이름을 포괄어로)
+    표지 '3단계 분할'           → 기록 3계층  (현행 문서에 단계 로드맵 없음)
+    표지 '결정 대기 6건' 자리    → 기대 효과   (미결 건수는 4.3에 적혀 있다)
+  ✓ 소제목과 본문은 PPT에 적힌 것만 쓴다. 항목을 늘리지 않았다.
+
+  ── 색 ──────────────────────────────────────────────────────
+  흰 지면 + 지정 팔레트 5색. 그림은 자체 프레임을 갖고 있어 지면이
+  배경을 따로 칠하지 않는다. 00A6FB는 흰 배경 위 명암비 2.8:1이라
+  글자에 쓰지 않고 레일 바 같은 그래픽 요소에만 쓴다.
+  "하얀 배경" 지정이라 다크 블록을 두지 않고 모든 색을 :root에 명시한다.
+
+  주의: 발행 시 <!doctype html><head><body> 스켈레톤으로 감싸지므로
+       html/head/body 태그를 직접 쓰지 않는다.
+============================================================ -->
+
+<title>함께 쌓아가는 도감 시스템</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap">
+
+<style>
+/* ============================================================
+   01. 토큰 — 지정 팔레트 5색 + 파생 중간색
+   ============================================================ */
+:root{
+  --c1:#00A6FB;   /* 가장 밝은 블루 — 그래픽 요소 전용 */
+  --c2:#0577BC;   /* 강조 블루 — 지면의 강조 글자. 흰 배경 위 4.80:1 (AA 통과)
+                     원래 팔레트값 #0582CA는 4.16:1로 본문 크기에서 미달이라
+                     같은 색상각을 유지한 채 명도만 낮췄다. */
+  --c3:#006494;   /* 깊은 블루 — 작은 라벨 */
+  --c4:#003554;   /* 네이비 — 제목 보조 */
+  --c5:#051923;   /* 가장 어두운 네이비 — 본문 글자 */
+
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --sunk:#f1f6fa;        /* 표 머리글 — c1을 흰색에 아주 옅게 섞은 값 */
+  --ink:var(--c5);
+  --ink-2:var(--c4);
+  --mute:#4d6a7d;        /* 파생 중간색. 흰 배경 위 약 6:1 */
+  --line:#ccdce6;
+  --line-soft:#e4eef4;
+  --accent:var(--c2);
+  --accent-deep:var(--c3);
+  --accent-soft:#e6f4fd;
+  /* 구획선 — 가운데가 진하고 양끝으로 흐려지는 가는 선 */
+  --rule:linear-gradient(90deg,
+          rgba(0,166,251,0) 0%,  rgba(0,166,251,.30) 18%,
+          rgba(0,166,251,.46) 50%,
+          rgba(0,166,251,.30) 82%, rgba(0,166,251,0) 100%);
+  /* 표지 요약 띠처럼 선이 길어지는 자리. 18%씩 옅어지면 양 끝 칸이
+     테두리가 없는 것처럼 보여, 끝에서만 짧게 사라지게 한다 */
+  --rule-edge:linear-gradient(90deg,
+          rgba(0,166,251,0) 0%,  rgba(0,166,251,.42) 4%,
+          rgba(0,166,251,.52) 50%,
+          rgba(0,166,251,.42) 96%, rgba(0,166,251,0) 100%);
+  /* 같은 선을 세로로 쓸 때. 끝이 옅어지는 정도를 가로선과 맞춘다 */
+  /* 예외처리 블록 전용 — 같은 모양의 선을 지정 적색으로 */
+  --rule-crit:linear-gradient(90deg,
+          rgba(149,41,44,0) 0%,  rgba(149,41,44,.32) 18%,
+          rgba(149,41,44,1) 50%,
+          rgba(149,41,44,.32) 82%, rgba(149,41,44,0) 100%);
+  --rule-v:linear-gradient(180deg,
+          rgba(0,166,251,0) 0%,  rgba(0,166,251,.34) 16%,
+          rgba(0,166,251,.52) 50%,
+          rgba(0,166,251,.34) 84%, rgba(0,166,251,0) 100%);
+
+  /* 의미색 — 팔레트에 없는 색이라 등급 칩에만 최소로 쓴다 */
+  --warn:#8a5a12;  --warn-soft:#fbf0dd;
+  --crit:#95292c;  --crit-soft:#fbe9e9;
+  --ok:var(--c3);  --ok-soft:#e3f1f8;
+
+  /* 문서 전체를 Noto Sans 하나로 쓴다. --mono는 번호 · 라벨처럼
+     자릿수를 맞춰야 하는 자리의 역할 이름으로만 남겨 두고,
+     글꼴 자체는 본문과 같다. 숫자 정렬은 tabular-nums가 맡는다. */
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:var(--body);
+}
+
+/* ============================================================
+   02. 기본 틀
+   ============================================================ */
+*{box-sizing:border-box}
+
+body{
+  /* 배경을 명시한다. 투명하면 뷰어 테마의 바닥이 비친다. */
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.72;
+  margin:0;
+  /* 좌우 여백은 여기서만. padding 단축형은 상하 지정 시 좌우를 0으로 덮는다. */
+  padding-inline:20px;
+  padding-block:0 80px;
+  -webkit-font-smoothing:antialiased;
+  /* 한국어 줄바꿈. 기본값은 음절 아무 데서나 끊어 "오가 / 는 구조"처럼
+     어절이 쪼개진다. keep-all 이 어절을 붙잡고, 칸보다 긴 토큰(URL·영문
+     식별자)만 overflow-wrap 으로 예외 처리한다. */
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+.shell{max-width:1240px;margin:0 auto}
+
+/* ============================================================
+   03. 표지 (PPT 1쪽)
+   ============================================================ */
+.cover{padding-block:46px 0}
+.cover-top{
+  display:flex;flex-wrap:wrap;gap:24px;
+  align-items:flex-end;justify-content:space-between;
+}
+/* min-width:0 — flex 자식의 기본 최소폭(auto)이 긴 글에 밀려
+   페이지에 가로 스크롤을 만드는 것을 막는다 */
+.cover-l{min-width:0;flex:1 1 400px}
+
+.docnum{
+  font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 10px;
+}
+h1{
+  font-weight:700;font-size:clamp(28px,4.6vw,40px);
+  line-height:1.22;letter-spacing:-.02em;
+  margin:0 0 12px;text-wrap:balance;
+}
+.sub{margin:0;color:var(--mute);font-size:14.5px;max-width:56ch}
+
+/* 라벨과 값을 2열 그리드로 맞춘다. 공백 문자로 정렬하면 '대상'(2자)과
+   '연락처'(3자)의 폭이 달라 값 열이 어긋난다 — 한글은 고정폭 폰트에서도
+   폰트 폴백 때문에 글자폭이 보장되지 않는다. */
+.stamp{
+  flex:0 0 auto;
+  border:1px solid var(--line);background:var(--surface);
+  padding:12px 16px;border-radius:3px;
+  font-family:var(--mono);
+  font-size:11.5px;line-height:1.85;color:var(--mute);
+  display:grid;grid-template-columns:auto auto;gap:1px 16px;
+}
+.stamp b{color:var(--ink);font-weight:500}
+.stamp a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.stamp a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* 4칸 요약 행 — gap:1px + 부모 배경 = 테두리를 중복 없이 1px로 그리는 기법 */
+/* 네 칸이 각각 닫힌 상자가 된다. 위아래 변은 띠 전체에 한 줄로 긋고
+   세로 변은 칸마다 왼쪽에 하나씩, 마지막 칸만 오른쪽을 더 긋는다.
+   이렇게 해야 이웃한 칸의 선이 두 겹으로 겹쳐 진해지지 않는다. */
+.summary{
+  position:relative;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  margin:26px 0 0;
+  padding-block:1px;          /* 위아래 선이 놓일 자리 */
+}
+.summary::before,.summary::after{
+  content:"";position:absolute;left:0;right:0;
+  height:1px;background:var(--rule-edge);
+}
+.summary::before{top:0}
+.summary::after{bottom:0}
+
+.summary>div{
+  position:relative;min-width:0;
+  background:var(--surface);padding:16px 18px;
+}
+.summary>div::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;
+  width:1px;background:var(--rule-v);
+}
+.summary>div:last-child::after{
+  content:"";position:absolute;right:0;top:0;bottom:0;
+  width:1px;background:var(--rule-v);
+}
+.summary .k{display:block;font-size:11px;font-weight:700;color:var(--accent-deep);margin-bottom:7px}
+/* 두세 줄짜리 짧은 글이라 pretty(마지막 줄만 손봄)보다 balance가 낫다.
+   "… 공유할 수 있는 / 도감"처럼 한 낱말만 남던 것이 반으로 나뉜다. */
+.summary .v{display:block;font-size:13px;line-height:1.62;text-wrap:balance}
+
+/* 두 줄 이상으로 접힐 때는 선을 칸마다 두르는 쪽이 안전하다.
+   세로 그라데이션을 줄마다 다시 계산할 수 없기 때문이다. */
+@media (max-width:860px){
+  .summary{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1px;background:var(--line);padding-block:0;
+    border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  }
+  .summary::before,.summary::after,
+  .summary>div::before,.summary>div:last-child::after{display:none}
+}
+@media (max-width:460px){.summary{grid-template-columns:1fr}}
+
+/* 표지와 본문을 가르는 선. 절 사이 선보다 굵어 문서가 여기서 시작된다 */
+.cover-rule{border:0;border-top:5px solid var(--c4);margin:30px 0 0}
+
+/* ============================================================
+   04. 바깥 그리드 (목차 레일 + 본문)
+   ------------------------------------------------------------
+   PPT 비율: 레일 2.04 / 본문 9.77 (간격 0.57) → 약 16.5% : 83.5%
+   ============================================================ */
+.grid{display:block}
+
+@media (min-width:1020px){
+  .grid{
+    display:grid;
+    /* minmax(0,1fr) — 두 번째 칸이 표·그림 때문에 1fr보다 넓어지는 것을 막는다 */
+    grid-template-columns:206px minmax(0,1fr);
+    gap:54px;align-items:start;
+  }
+  nav.toc{
+    position:sticky;
+    /* 모바일 앱의 노치·상태바에 가리지 않게 safe-area만큼 띄운다.
+       sticky 헤더에 top:0을 쓰면 안 되는 이유. */
+    top:calc(env(safe-area-inset-top,0px) + 24px);
+    padding-top:40px;
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
+  }
+}
+
+nav.toc{min-width:0;padding-block:28px 0}
+.toc-label{
+  font-size:12.5px;font-weight:700;color:var(--accent);
+  margin:0 0 14px;letter-spacing:-.01em;
+}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{
+  display:flex;gap:9px;text-decoration:none;
+  border-left:2px solid var(--line);
+  transition:color .12s,border-color .12s;
+}
+nav.toc a.lv1{font-size:13.5px;font-weight:700;color:var(--ink-2);padding:5px 0 5px 13px}
+nav.toc a.lv1 .n{color:var(--accent-deep);min-width:11px}
+nav.toc a.lv2{
+  font-size:12.5px;font-weight:400;color:var(--mute);
+  padding:3px 0 3px 26px;border-left-color:var(--line-soft);
+}
+nav.toc a.lv2 .n{min-width:22px}
+nav.toc a:hover{color:var(--accent)}
+/* .on = 스크롤 위치에 따라 JS가 붙이는 활성 상태. JS 없이도 링크는 동작한다.
+   레일 바에만 가장 밝은 c1을 쓴다 — 글자에 쓰면 흰 배경에서 읽히지 않는다. */
+nav.toc a.on{color:var(--accent);border-left-color:var(--c1);border-left-width:3px}
+nav.toc a.on .n{color:var(--accent)}
+main{min-width:0;padding-top:12px}
+
+/* ============================================================
+   05. 본문 쪽 — 전 쪽 동일 레이아웃
+   ------------------------------------------------------------
+   PPT 한 쪽 = 한 section.
+     제목
+     .page  2열 그리드
+       .col  [✓소제목] [본문] [이미지]
+   ============================================================ */
+/* 절과 절을 가르는 선 — 지정색 #003554 */
+section{padding-block:42px 12px;border-top:1px solid var(--c4)}
+section:first-of-type{border-top:0}
+
+h2.sec{
+  font-weight:700;font-size:25px;letter-spacing:-.02em;
+  margin:0 0 22px;color:var(--ink);text-wrap:balance;
+  scroll-margin-top:20px;
+}
+h2.sec .n{margin-right:9px}
+
+/* PPT 열 구조: 소제목 상자가 양쪽 다 w3.53으로 같고 열 시작점이
+   x2.82 / x8.12(피치 5.30)이므로 열은 등폭이다. 본문 상자 폭이
+   4.98 / 4.47로 달랐던 것은 자동 크기 텍스트 상자여서다.
+   등폭이 아니면 같은 비율의 이미지가 열마다 다른 높이로 렌더되어
+   두 그림의 윗선이 어긋난다.
+   간격은 본문 폭 9.77 중 0.83 → 약 8.5%. */
+.page{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  /* 행 간격이 0이면 위 박스의 본문 끝에 아래 박스의 윗선이 붙어
+     선-글 간격이 위아래로 비대칭이 된다. 열이 두 줄로 넘어가는
+     쪽(3.2)에서 특히 눈에 띈다. */
+  gap:34px 7%;
+  margin:0 0 26px;
+}
+/* 각 열은 위아래 가는 선으로 구획된다. 선이 그라데이션이라
+   border로는 못 그려 가상 요소로 깐다. */
+.col{
+  min-width:0;position:relative;
+  display:flex;flex-direction:column;
+  padding-block:20px;        /* 선과 글 사이 간격을 위아래 동일하게 */
+}
+.col::before{
+  content:"";position:absolute;top:0;left:0;right:0;
+  height:1px;background:var(--rule);
+}
+/* 두 열의 그림 윗선 맞추기.
+   열 높이는 그리드가 같게 만들고, 그림을 바닥으로 밀면
+   그림+캡션 높이가 같으므로 윗선도 같아진다.
+   본문 쪽에 flex-grow를 주는 방식은 문단 수가 다르면 어긋난다. */
+.col figure{margin-top:auto;padding-top:18px}
+
+/* 모든 열이 위아래 선으로 닫힌다. 한쪽만 선이 있으면 박스가
+   덜 끝난 것처럼 보이고, 두 줄로 넘어갈 때 간격이 들쭉날쭉해진다. */
+.col::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--rule);
+}
+
+/* 항목이 셋이라 2열로 놓으면 빈 칸이 남는 절(3.2)에 쓴다.
+   한 항목이 한 줄을 차지하고 글은 왼쪽 · 그림은 오른쪽에 둔다.
+   그림 폭은 456px로 고정해 다른 절의 그림과 크기를 맞춘다. */
+.page.stack{display:block;margin:0 0 26px}
+.page.stack>.col{
+  display:grid;grid-template-columns:minmax(0,1fr) 456px;
+  column-gap:48px;align-items:start;
+}
+.page.stack>.col>.txt{min-width:0}
+.page.stack>.col>figure{
+  margin:0;padding:0;position:relative;
+}
+/* 글과 그림 사이 세로 구분선 — 가로 구획선과 같은 그라데이션 */
+.page.stack>.col>figure::before{
+  content:"";position:absolute;left:-24px;top:0;bottom:0;
+  width:1px;background:var(--rule-v);
+}
+.page.stack>.col>.txt>.pt-body:last-child{margin-bottom:0}
+@media (max-width:1000px){
+  .page.stack>.col{grid-template-columns:1fr;row-gap:16px}
+  .page.stack>.col>figure::before{display:none}
+}
+
+h3.pt{
+  font-weight:700;font-size:18px;letter-spacing:-.015em;
+  margin:0 0 14px;color:var(--ink-2);
+  display:flex;gap:11px;align-items:baseline;
+}
+h3.pt::before{content:"✓";color:var(--accent);font-weight:500;flex:0 0 auto}
+/* 3.3은 가져오지 않기로 한 것들이라 체크 대신 붉은 ×로 바꾼다.
+   2.2 비목표 목록과 같은 기호를 써서 '하지 않는 것'을 한 형태로 읽게 한다. */
+#s3-3 h3.pt::before{content:"×";color:var(--crit);font-weight:600}
+
+/* 본문 글머리 — 지정색 #051923(--c5)의 작은 사각형.
+   글리프 대신 상자로 그려 크기와 위치를 정확히 잡는다.
+   글머리는 ✓ 아래 들여쓰고, 본문 글자는 제목 글자와 같은 x에 맞춘다. */
+.pt-body{
+  margin:0 0 4px;font-size:14.5px;line-height:1.75;max-width:none;text-wrap:pretty;
+  position:relative;padding-left:27px;
+}
+.pt-body::before{
+  content:"";position:absolute;left:9px;top:.66em;
+  width:5px;height:5px;background:var(--c5);
+}
+/* 레퍼런스에서 가져온 부분은 오른쪽을 가리키는 세모로 구분한다.
+   글리프 대신 테두리로 그려 크기와 끝 각을 고정한다. */
+.pt-body.take::before{
+  background:none;width:0;height:0;left:8px;top:.6em;
+  border-left:6px solid var(--accent);
+  border-top:4px solid transparent;border-bottom:4px solid transparent;
+}
+.pt-body + .pt-body{margin-top:0}
+/* 열 안 마지막 문단의 아래 여백을 지워 선-글 간격을 위아래 20px로 맞춘다 */
+.col>.pt-body:last-child{margin-bottom:0}
+
+/* 인용구 띠 — 본문 폭 전체. 위아래 가는 선 사이에 가운데 정렬 */
+.band{position:relative;margin:0 0 22px;padding-block:1px}
+.band::before,.band::after{
+  content:"";position:absolute;left:0;right:0;
+  height:1px;background:var(--rule);
+}
+.band::before{top:0}
+.band::after{bottom:0}
+.band .quote{
+  margin:0;padding:24px 12px;text-align:center;
+  font-size:clamp(19px,2.3vw,25px);font-weight:700;
+  letter-spacing:-.02em;color:var(--accent);
+  max-width:none;
+}
+
+p{margin:0 0 12px;max-width:66ch}
+/* 본문 안 강조 */
+em.hl{font-style:normal;font-weight:500;color:var(--accent)}
+strong{font-weight:600}
+ul{margin:0 0 14px;padding-left:19px;max-width:66ch}
+li{margin-bottom:5px}
+code{
+  font-family:var(--mono);font-size:12.5px;
+  background:var(--sunk);border:1px solid var(--line-soft);
+  padding:1px 5px;border-radius:3px;white-space:nowrap;
+}
+a{color:var(--accent)}
+
+@media (max-width:880px){
+  .page{grid-template-columns:1fr;gap:0}
+}
+
+/* ============================================================
+   06. 그림
+   ------------------------------------------------------------
+   제공된 PNG는 자체 양피지·금속 프레임과 하단 절 라벨을 갖고 있어
+   지면이 배경 패널을 따로 칠하지 않는다.
+   aspect-ratio 로 자리를 미리 잡아 로딩 중 레이아웃이 밀리지 않게 한다.
+   ============================================================ */
+figure{margin:0}
+.fig{
+  display:block;width:100%;height:auto;
+  aspect-ratio:1500/1016;
+  border-radius:4px;
+  background:var(--sunk);     /* 로딩 전 빈 자리 */
+}
+figcaption{margin:10px 0 0;font-size:11.5px;line-height:1.6;color:var(--mute);text-wrap:pretty}
+figcaption b{font-family:var(--mono);font-weight:700;color:var(--accent-deep);margin-right:7px}
+
+/* ============================================================
+   07. 표 — 기획서 규격. PPT에는 없고 문서에만 있는 부분이다.
+   ------------------------------------------------------------
+   .tablewrap 이 가로 스크롤을 담당하므로 페이지 본문은 가로로 밀리지 않는다.
+   ============================================================ */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px;margin:0 0 18px}
+table{
+  border-collapse:collapse;width:100%;
+  min-width:540px;        /* 이보다 좁아지면 칸이 뭉개지므로 스크롤로 전환 */
+  font-size:13px;background:var(--surface);
+}
+caption{
+  caption-side:top;text-align:left;
+  font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--accent-deep);
+  padding:9px 12px;background:var(--sunk);border-bottom:1px solid var(--line);
+}
+th,td{
+  padding:8px 12px;text-align:left;
+  vertical-align:top;     /* 칸마다 글 길이가 달라도 첫 줄 기준선이 맞는다 */
+  border-bottom:1px solid var(--line-soft);line-height:1.55;
+}
+thead th{
+  background:var(--sunk);font-weight:700;font-size:11.5px;
+  color:var(--ink-2);border-bottom:1px solid var(--line);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+/* 첫 칸은 그 행의 이름이므로 모든 표에서 굵게 해 값과 구분한다.
+   굵은 칸 안에서는 strong이 더 굵어질 수 없어 색으로 강조를 남긴다. */
+tbody td:first-child{font-weight:700;color:var(--ink)}
+tbody td:first-child strong{color:var(--accent-deep)}
+/* 처치 수처럼 숫자가 행의 이름인 칸도 같다 */
+tbody td.num:first-child{color:var(--accent-deep)}
+/* tabular-nums — 숫자 폭을 고정해 자릿수가 세로로 맞게 떨어진다 */
+td.num,th.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ============================================================
+   08. 칩 · 강조 블록 · 타일
+   ============================================================ */
+.chip{
+  display:inline-block;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.04em;padding:2px 7px;border-radius:2px;
+  white-space:nowrap;border:1px solid transparent;
+}
+.chip.ok  {background:var(--ok-soft);  color:var(--ok);  border-color:var(--ok)}
+.chip.crit{background:var(--crit-soft);color:var(--crit);border-color:var(--crit)}
+.chip.warn{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+
+/* 왼쪽 굵은 선 하나로만 구분한다. 카드 스타일을 본문 전체에 쓰면
+   위계가 평평해지므로 이 요소에만 제한적으로 쓴다. */
+.note{
+  background:var(--sunk);border:1px solid var(--line);
+  border-left:3px solid var(--accent);border-radius:0 3px 3px 0;
+  padding:13px 15px;margin:0 0 18px;font-size:13.5px;
+}
+.note p{margin:0 0 8px;font-size:13.5px;max-width:none}
+.note p:last-child{margin-bottom:0}
+.note .lbl{
+  display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-deep);margin-bottom:5px;
+}
+
+/* 승인이 필요한 한 건이라 본문과 색을 달리한다. 상자로 가두지 않고
+   위아래 붉은 선으로만 끊어, 결정이 필요한 자리임을 멀리서도 보이게 한다. */
+.redline{
+  position:relative;padding:18px 2px 20px;margin:0 0 18px;
+}
+/* 선이 그라데이션이라 border로는 못 그려 가상 요소로 깐다.
+   가운데가 지정 적색이고 양 끝으로 사라진다. */
+.redline::before,.redline::after{
+  content:"";position:absolute;left:0;right:0;
+  height:2px;background:var(--rule-crit);
+}
+.redline::before{top:0}
+.redline::after{bottom:0}
+.rl-head{
+  margin:0 0 13px;font-size:16px;font-weight:700;
+  color:var(--ink);max-width:none;
+}
+.rl-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.rl-chips span{font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:2px}
+.rl-ok{background:var(--accent-soft);color:var(--accent-deep);border:1px solid var(--accent)}
+.rl-no{background:var(--crit-soft);color:var(--crit);border:1px solid var(--crit)}
+.rl-list{list-style:none;padding:0;margin:0;font-size:13.5px;max-width:none}
+.rl-list li{position:relative;padding-left:21px;margin:0 0 8px;line-height:1.7}
+.rl-list li:last-child{margin-bottom:0}
+.rl-list li::before{content:"▸";position:absolute;left:2px;top:0;color:var(--crit);font-weight:700}
+.rl-list em{font-style:normal;color:var(--crit);font-weight:700}
+
+/* 불릿 대신 × 로 '하지 않는 것'임을 형태로 표시 */
+ul.nope{list-style:none;padding-left:0;font-size:13.5px;max-width:none}
+ul.nope li{padding-left:20px;position:relative}
+ul.nope li::before{
+  content:"×";position:absolute;left:3px;top:0;
+  color:var(--crit);font-family:var(--mono);font-weight:500;
+}
+
+.tiles{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:3px;overflow:hidden;margin:0 0 18px;
+}
+.tile{background:var(--surface);padding:12px 14px}
+.tile .k{display:block;font-size:11px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.tile .v{font-family:var(--mono);font-size:18px;font-variant-numeric:tabular-nums}
+.tile .u{font-size:11px;color:var(--mute);margin-left:3px}
+
+
+/* ============================================================
+   09. 프로토타입 블록
+   ------------------------------------------------------------
+   규칙을 글로 적는 대신 직접 눌러보게 하는 자리다. 문서 본문과
+   같은 팔레트를 쓰되, 읽는 곳이 아니라 만지는 곳임이 드러나도록
+   살짝 가라앉은 바닥(--sunk)과 실선 테두리로 구분한다.
+   JS가 꺼져 있어도 초기 상태 그대로 읽히게 마크업에 값을 써 둔다.
+   ============================================================ */
+.proto{
+  border:1px solid var(--line);border-radius:3px;
+  background:var(--surface);margin:0 0 18px;overflow:hidden;
+}
+.proto-head{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding:12px 16px;border-bottom:1px solid var(--line);
+  background:var(--sunk);
+}
+.proto-head .lbl{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-deep);font-weight:700;
+}
+.proto-head .desc{font-size:12.5px;color:var(--mute)}
+/* 두 칸 배치. 좁아지면 한 줄로 쌓는다 */
+.proto-body{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr)}
+.proto-body > *{min-width:0}
+.proto-l{border-right:1px solid var(--line);padding:14px 16px}
+.proto-r{padding:14px 16px}
+@media (max-width:760px){
+  .proto-body{grid-template-columns:1fr}
+  .proto-l{border-right:0;border-bottom:1px solid var(--line)}
+}
+.proto h4{
+  font-size:11px;font-weight:700;letter-spacing:.02em;
+  color:var(--ink-2);margin:0 0 9px;
+}
+
+/* ── 몬스터 목록 ───────────────────────────────── */
+.mlist{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.mlist button{
+  width:100%;text-align:left;cursor:pointer;font:inherit;
+  display:flex;align-items:center;gap:9px;
+  padding:9px 11px;border:1px solid var(--line);border-radius:3px;
+  background:var(--surface);color:var(--ink);
+}
+.mlist button:hover{border-color:var(--accent)}
+.mlist button[aria-pressed="true"]{
+  border-color:var(--accent);background:var(--accent-soft);
+}
+.mlist .nm{font-size:13px;font-weight:600;flex:1 1 auto}
+.mlist .ct{
+  font-size:11.5px;color:var(--mute);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+/* 단계 표시 점 4개 — 열린 단계만 채운다 */
+.dots{display:flex;gap:3px;flex:0 0 auto}
+.dots i{
+  width:6px;height:6px;border-radius:50%;
+  border:1px solid var(--line);background:transparent;
+}
+.dots i.on{background:var(--accent);border-color:var(--accent)}
+
+/* ── 해금 행 ───────────────────────────────────── */
+.rows{display:grid;gap:7px;margin:0 0 13px}
+.row{
+  display:grid;grid-template-columns:56px minmax(0,1fr);
+  gap:12px;align-items:baseline;
+  padding:9px 11px;border:1px solid var(--line-soft);border-radius:3px;
+  background:var(--sunk);
+}
+.row .need{
+  font-size:11px;color:var(--mute);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.row .val{font-size:13px;line-height:1.5}
+.row .val .k{display:block;font-size:11px;color:var(--mute);margin-bottom:2px}
+.row[data-open="1"]{background:var(--surface);border-color:var(--line)}
+.row[data-open="1"] .need{color:var(--accent-deep)}
+.row[data-open="0"] .val{color:var(--mute)}
+/* 막 열린 행을 한 번 깜빡여 어디가 바뀌었는지 보이게 한다 */
+@keyframes protoFlash{from{background:var(--accent-soft)}to{background:var(--surface)}}
+@media (prefers-reduced-motion:no-preference){
+  .row.just{animation:protoFlash .9s ease-out}
+}
+
+/* ── 진행 막대 ─────────────────────────────────── */
+.bar{height:6px;border-radius:3px;background:var(--sunk);
+     border:1px solid var(--line-soft);overflow:hidden;margin:0 0 7px}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+.barnote{font-size:11.5px;color:var(--mute);margin:0 0 12px}
+
+/* ── 조작부 ────────────────────────────────────── */
+.ctrl{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.ctrl button{
+  font:inherit;font-size:12.5px;cursor:pointer;
+  padding:7px 13px;border-radius:3px;
+  border:1px solid var(--accent-deep);
+  background:var(--accent-deep);color:#fff;
+}
+.ctrl button.ghost{background:var(--surface);color:var(--accent-deep)}
+.ctrl button:hover{filter:brightness(1.08)}
+.ctrl button:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.ctrl label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;color:var(--ink-2);cursor:pointer;
+}
+.ctrl .say{font-size:12px;color:var(--crit);min-height:1em}
+.proto :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ── 공유 프로토타입 — 기획자가 만든 실제 UI 화면을 쓴다 ── */
+/* 조작부는 화면 위에 가로 띠로 둔다. 옆에 두면 화면이 절반으로
+   줄어 UI 안의 글자를 읽을 수 없다. */
+.proto-strip{
+  display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;
+  justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--line);
+}
+/* 세 시점을 붙여 놓은 선택 띠. 서로 배타적이라 버튼을 띄우지 않는다 */
+.seg{display:flex}
+.seg button{
+  font:inherit;font-size:12.5px;cursor:pointer;
+  padding:7px 14px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink-2);margin-left:-1px;
+}
+.seg button:first-child{margin-left:0;border-radius:3px 0 0 3px}
+.seg button:last-child{border-radius:0 3px 3px 0}
+.seg button:hover{border-color:var(--accent);z-index:1;position:relative}
+.seg button[aria-pressed="true"]{
+  background:var(--accent-deep);border-color:var(--accent-deep);
+  color:#fff;z-index:1;position:relative;
+}
+
+/* 화면 틀. cqw를 쓰려고 컨테이너로 선언한다 — 덮어 그리는 잔여
+   시간 판이 이미지와 같은 비율로 커지고 작아져야 한다. */
+.uiwrap{
+  position:relative;container-type:inline-size;
+  aspect-ratio:1550/1015;background:var(--c5);
+}
+.uiwrap img{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:none;object-fit:cover;
+}
+.uiwrap img.on{display:block}
+
+/* 원본 이미지에 01:00:00이 박혀 있어 같은 자리를 판째 덮는다.
+   좌표·색은 원본에서 그대로 재어 왔다 (테두리 #a3783d, 숫자 #ffcb00). */
+.uitimer{
+  position:absolute;
+  left:79.097%;top:15.074%;width:14.387%;height:6.010%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#140e0a 0%,#000 45%,#0e0a08 100%);
+  border:.22cqw solid #a3783d;border-radius:.8cqw;
+  box-shadow:0 0 0 .1cqw #000;
+  color:#ffcb00;font-weight:700;font-size:2cqw;
+  letter-spacing:.02em;font-variant-numeric:tabular-nums;
+}
+.uitimer[hidden]{display:none}
+
+.uicap{
+  margin:0;padding:11px 16px;font-size:12.5px;line-height:1.6;
+  color:var(--ink-2);border-top:1px solid var(--line-soft);
+  max-width:none;   /* 본문 p의 72ch 제한을 풀어 띠 전체를 쓴다 */
+}
+.uicap b{color:var(--accent-deep)}
+.uicap.sub{color:var(--mute);font-size:11.5px;border-top:0;padding-top:0}
+
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (max-width:460px){.stamp{width:100%}}
+</style>
+
+
+<div class="shell">
+
+<!-- ============================================================
+     PPT 1쪽 · 표지
+     ============================================================ -->
+<header class="cover">
+  <div class="cover-top">
+    <div class="cover-l">
+      <p class="docnum">WoW : Forever 시스템 기획서</p>
+      <h1>함께 쌓아가는 도감 시스템</h1>
+      <p class="sub">직접 겪은 만큼 채워지고, 모닥불에서 남에게 건넬 수 있는 도감.</p>
+    </div>
+    <div class="stamp">
+      <span>대상</span><b>WoW: Forever</b>
+      <span>버전</span><b>6.0</b>
+      <span>저자</span><b>정명훈</b>
+      <span>연락처</span><a href="mailto:maek47115@naver.com">maek47115@naver.com</a>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div><span class="k">제안</span><span class="v">겪은 만큼 열리고, 모닥불에서 공유할 수 있는 도감</span></div>
+    <div><span class="k">적용 범위</span><span class="v">몬스터 기록 · 네임드 기록 · 던전 지도</span></div>
+    <div><span class="k">전투력 영향</span><span class="v">없음. 보상은 외형 · 칭호 · 명성 한정</span></div>
+    <div><span class="k">기대 효과</span><span class="v">외부 도움 없이 정보 해결 · 모닥불에 머물 이유 추가</span></div>
+  </div>
+  <hr class="cover-rule">
+</header>
+
+<div class="grid">
+
+<nav class="toc" aria-label="목차">
+  <p class="toc-label">목차</p>
+  <ol>
+    <li><a class="lv1" href="#s1"><span class="n">1</span>기획 배경</a></li>
+    <li><a class="lv1" href="#s2-1"><span class="n">2</span>개요</a></li>
+    <li><a class="lv2" href="#s2-1"><span class="n">2.1</span>시스템 소개</a></li>
+    <li><a class="lv2" href="#s2-2"><span class="n">2.2</span>기획 의도</a></li>
+    <li><a class="lv2" href="#s2-3"><span class="n">2.3</span>핵심 가치 보존</a></li>
+    <li><a class="lv1" href="#s3-1"><span class="n">3</span>레퍼런스</a></li>
+    <li><a class="lv2" href="#s3-1"><span class="n">3.1</span>레퍼런스 소개</a></li>
+    <li><a class="lv2" href="#s3-2"><span class="n">3.2</span>수용</a></li>
+    <li><a class="lv2" href="#s3-3"><span class="n">3.3</span>기각</a></li>
+    <li><a class="lv1" href="#s4-1"><span class="n">4</span>시스템 구조</a></li>
+    <li><a class="lv2" href="#s4-1"><span class="n">4.1</span>도감 해금</a></li>
+    <li><a class="lv2" href="#s4-2"><span class="n">4.2</span>도감 공유</a></li>
+    <li><a class="lv2" href="#s4-3"><span class="n">4.3</span>조건 및 예외처리</a></li>
+    <li><a class="lv1" href="#s5-1"><span class="n">5</span>기존 콘텐츠 연계</a></li>
+    <li><a class="lv2" href="#s5-1"><span class="n">5.1</span>모닥불</a></li>
+    <li><a class="lv2" href="#s5-2"><span class="n">5.2</span>레거시</a></li>
+    <li><a class="lv1" href="#s6"><span class="n">6</span>리스크 관리</a></li>
+    <li><a class="lv1" href="#s7"><span class="n">7</span>UI 설계</a></li>
+    <li><a class="lv1" href="#s8"><span class="n">8</span>검증 지표</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============ PPT 2쪽 · 1. 기획 배경 ============ -->
+<section id="s1">
+  <h2 class="sec"><span class="n">1.</span>기획 배경</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">아이템과 몬스터의 대량 추가</h3>
+      <p class="pt-body">베타임에도 신규 지역 4곳 · 던전 9개로 <em class="hl">몬스터 종류가 크게 증가</em>, 아이템 개편으로 <em class="hl">획득처와 효과가 기존과 달라진 아이템</em>이 많다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/ea467f9f60de2146121428ab43e919bc059e0ef4fb52c27a40d5ca7d4252f977" width="1500" height="1016" alt="신규 지역 4곳, 신규 던전 9개, 획득처와 효과가 바뀐 아이템이 나열되고 하단에 판정 기준은 비공개라고 적힌 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 1</b>늘어난 세계, 부족한 정보</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">위키 · 애드온에 의존하는 정보 구조</h3>
+      <p class="pt-body">유저에게 주어진 정보는 한정되어 있어 <em class="hl">외부 정보 사용 여부에 따른 정보 격차</em>가 커졌다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/87b4a3d1ff8d6c87b03c8732154466d975e2427ea429eaca437b519b96715a3e" width="1500" height="1016" alt="외부 정보를 쓰는 유저와 게임 내 정보만 쓰는 유저의 보유 정보량을 막대로 비교해 격차를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 2</b>정보 접근의 격차</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PPT 3쪽 · 2.1 시스템 소개 ============ -->
+<section id="s2-1">
+  <h2 class="sec"><span class="n">2.1</span>시스템 소개</h2>
+  <div class="band">
+    <p class="quote">“ 타인과 공유 가능한 던전, 몬스터 도감 ”</p>
+  </div>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">경험을 통해 해금되는 구조</h3>
+      <p class="pt-body">지역에 <em class="hl">최초 입장</em> 시 그 지역의 <em class="hl">도감이 생성</em>되고, <em class="hl">몬스터를 잡을수록 채워지는 구조</em></p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/35f16ed0d2d65b3fa1253019138077acf196ea686e2ab50c09093183d6503018" width="1500" height="1016" alt="겪는다, 기록된다, 건넨다로 이어지는 흐름과 건네받은 정보가 1시간 뒤 사라지는 구조를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 3</b>겪고, 기록하고, 건넨다</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">공유 가능한 도감</h3>
+      <p class="pt-body">포에버에 새로 추가된 모닥불과 연계하여, 모닥불에서 자신의 <em class="hl">도감을 공유 가능</em></p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/accde0563770f2a6743daa0bdbf3c1686501d0b1e66d519086c32b85384c9bd8" width="1500" height="1016" alt="내 도감의 분류 정보와 던전 지도가 모닥불의 사냥 기록판을 거쳐 주변 플레이어 세 명에게 1시간 동안 전달되는 구조를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 4</b>모닥불에서 건넨다</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PPT 4쪽 · 2.2 기획 의도 ============ -->
+<section id="s2-2">
+  <h2 class="sec"><span class="n">2.2</span>기획 의도</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">정보 불균형 해소</h3>
+      <p class="pt-body">정보들을 인게임 내에서 얻을 수 있도록 하여 정보 불균형을 해소하고, 게임의 핵심 가치인 <em class="hl">“경험”</em>을 지킬 수 있도록 함</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/e6301e49f510ef7da39ad29446ed2b8cd25ff90f2953a332c5d766846fbc2d8f" width="1500" height="1016" alt="정보 불균형 해소는 분류 정보 수록과 툴팁 역참조로, 교류 강화는 모닥불 공유로 실현된다는 대응 관계를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 5</b>의도와 실현 장치</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">유저 간 자연스러운 교류 증가</h3>
+      <p class="pt-body">모닥불에서 서로 필요한 도감 정보를 공유하는 과정 중, <em class="hl">자연스럽게 대화가 생기도록 유도</em></p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/400c90016b5cac91b755c5055777182a87049e52fa09f8bf89954f068e110f63" width="1500" height="1016" alt="모닥불 착석, 필요한 항목 질문, 기록판 설치, 대화 지속으로 이어지는 네 단계의 교류 흐름을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 6</b>정보가 대화를 만든다</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>의도 · 실현 장치</caption>
+      <thead><tr><th>의도</th><th>실현 장치</th></tr></thead>
+      <tbody>
+        <tr><td><strong>정보 불균형 해소</strong></td><td>수록 정보에 생물 종류 · 환경 분류 포함(4.1), 아이템 툴팁 역참조(7. UI 설계)</td></tr>
+        <tr><td><strong>유저 간 자연스러운 교류 증가</strong></td><td>모닥불 공유(5.1). 이것이 없으면 도감은 위키보다 못한 열람 UI에 그친다</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size:13.5px"><strong>비목표</strong></p>
+  <ul class="nope">
+    <li><strong>공략집 제공.</strong> 겪기 전에 보스 기술을 열람하게 하지 않는다.</li>
+    <li><strong>정보 은닉.</strong> 데이터마이닝은 막을 수 없고 목표도 아니다. 알트탭하기 싫은 유저에게 게임 안만으로 충분하게 만드는 것이 목표다.</li>
+    <li><strong>전투력 제공.</strong> 해금은 스탯을 주지 않는다.</li>
+    <li><strong>전수 수집 강제.</strong> 상시 서비스에서 도감은 영원히 미완성이다. 빈칸을 쌓으면 피로가 된다.</li>
+  </ul>
+</section>
+
+<!-- ============ 2.3 핵심 가치 보존 ============
+     PPT에 없는 절이다. 포에버가 공개한 4대 핵심 가치를 그대로 적고,
+     각 가치를 이 시스템이 어떤 설계로 지키는지를 표로 맞세운다.
+     4장 이후의 규격은 전부 이 표에서 나온다. -->
+<section id="s2-3">
+  <h2 class="sec"><span class="n">2.3</span>핵심 가치 보존</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">네 가지 가치를 깎지 않는다</h3>
+      <p class="pt-body">포에버는 <em class="hl">익숙함과 접근성 · 주인공은 아제로스 · 목적지보다 과정 · 소셜 경험</em>을 개발 기준으로 둔다. 도감은 이 넷 중 어느 것도 깎지 않는 선에서만 작동한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/532634a6d777dd78f42e8a5c80048a5ac6243c0ca56d451db7867afaf9392be8" width="1500" height="1016" alt="포에버의 네 가지 핵심 가치가 각각 도감의 어떤 설계로 지켜지는지 짝지어 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 7</b>네 가지 가치를 지키는 법</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">편의가 아니라 경험으로 푼다</h3>
+      <p class="pt-body">정보 부족은 편의 기능을 늘려서가 아니라 <em class="hl">겪은 만큼 열리는 기록</em>으로 푼다. 전투력을 주지 않고, 겪기 전에 알려주지 않고, 수집을 강제하지 않는다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/c7c10da5f0f0861cc8919ae7a55bb5dbe889bf185a397b19801966de773d5e85" width="1500" height="1016" alt="전투력 제공, 사전 공개, 전수 수집 강제는 하지 않고 겪은 결과로서의 해금만 남긴다는 네 가지 선을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 8</b>건드리지 않는 것</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>포에버 4대 핵심 가치와 도감의 대응</caption>
+      <thead><tr><th>핵심 가치</th><th>포에버가 지키려는 것</th><th>도감이 지키는 방식</th></tr></thead>
+      <tbody>
+        <tr><td><strong>익숙함과 접근성</strong></td><td>오리지널 클래식의 감성과 정신을 기준으로 삼는다. 비행 탈것과 레벨 스케일링을 도입하지 않고, 준비 · 소통 · 협동이 필수인 위험한 아제로스를 유지한다</td><td>도감은 편의 기능이 아니다. <strong>전투력을 주지 않고 겪기 전에 알려주지 않는다.</strong> 모르는 몹 앞에서의 준비와 소통은 그대로 남는다</td></tr>
+        <tr><td><strong>주인공은 바로 아제로스</strong></td><td>만렙뿐 아니라 1~60 레벨링 과정도 같은 무게로 다룬다. 모든 레벨대에 신규 지역 · 퀘스트 · 평판 · 보상을 더한다</td><td>기록은 <strong>레벨링 구간의 일반 몬스터에서 시작한다.</strong> 1레벨 지역의 거미 한 종도 레이드 보스와 같은 한 칸이다</td></tr>
+        <tr><td><strong>목적지보다 과정</strong></td><td>플레이어의 시간과 노력이 영구적 가치를 지니도록 설계한다. 이전 노력을 무력화하는 레벨 캡 인상은 계획하지 않는다</td><td>처치 수는 지워지지 않고 <strong>계정에 남는다.</strong> 공유로 받은 기록은 1시간 뒤 사라지므로 영구히 남는 것은 직접 겪은 것뿐이다</td></tr>
+        <tr><td><strong>소셜 경험 보호 및 육성</strong></td><td>무분별한 편의성 확장을 경계하고 플레이어 간 소통을 유도한다</td><td>공유는 <strong>모닥불에 앉아야</strong> 받을 수 있다. 정보를 묻고 건네는 과정이 대화의 계기가 된다(5.1)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 3.1 레퍼런스 소개 ============
+     수용 · 기각을 말하기 전에 무엇을 보았는지를 먼저 적는다.
+     3.2와 3.3의 판단 대상이 이 두 가지다. -->
+<section id="s3-1">
+  <h2 class="sec"><span class="n">3.1</span>레퍼런스 소개</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">와우 리테일 - 던전 도감</h3>
+      <p class="pt-body">지도, 보스 위치, 기술, 전리품을 <em class="hl">한 화면에 정리한 틀</em>이다. 구조는 검증됐지만 레벨 · 장비 · 경험과 무관하게 처음부터 전부 공개한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/063590e2238c8ec9738e232314b4f42da0deb12962d8055fc13afec6279a4def" width="1500" height="1016" alt="와우 리테일의 모험 안내서. 좌측에 그림자송곳니 성채의 보스 다섯이 모두 이름과 초상화로 나열되고, 우측에 던전 그림과 설명이 처음부터 열려 있는 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 9</b>와우 리테일의 던전 도감</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">코어 키퍼 - 지도 공유</h3>
+      <p class="pt-body">탐색한 지도를 <em class="hl">타인에게 건넬 수 있다.</em> 정보가 플레이어 사이를 오가지만, 건네받은 지도는 영구 소유가 된다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/5fee00c5c31571b64dfe8c35083c62d65047ba65d6081991bc36a2df93bc5362" width="1500" height="1016" alt="코어 키퍼에서 플레이어가 지도 받침대 앞에 서 있고, 받침대 위에 탐색한 지역이 그려진 지도가 펼쳐져 있는 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 10</b>코어 키퍼의 지도 받침대</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PPT 5쪽 · 3.2 레퍼런스 · 수용 ============
+     PPT 본문이 4쪽 문구 복사본이라 절에 맞는 내용으로 교체했다.
+     ✓ 항목 3개는 PPT에 적힌 그대로다. -->
+<section id="s3-2">
+  <h2 class="sec"><span class="n">3.2</span>레퍼런스 · 수용</h2>
+  <!-- ▪ 레퍼런스가 어떤 시스템인지, ▶ 그중 무엇을 가져오는지 순으로 적는다 -->
+  <div class="page stack">
+    <div class="col">
+      <div class="txt">
+        <h3 class="pt">던전 지도 및 보스 위치 표기</h3>
+        <p class="pt-body">리테일은 던전 지도에 <em class="hl">층 선택과 보스 초상화 핀</em>을 올려, 어느 구역에 누가 있는지를 지도 한 장으로 보여준다.</p>
+        <p class="pt-body take">지도 위에 보스 위치를 찍는 표기와 층 전환을 그대로 가져온다. 검증된 틀이라 재발명하지 않는다.</p>
+      </div>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/395aabe0b8254a59d9615c836771d1ee28a63049863dc6721933487af26e7241" width="1500" height="1016" alt="와우 리테일의 그림자송곳니 성채 지도. 층 선택 드롭다운이 있고 구역 평면도 위에 보스 초상화가 핀으로 놓여 있는 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 11</b>리테일의 던전 지도</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <div class="txt">
+        <h3 class="pt">몬스터별 전리품 · 기술 정보 기록</h3>
+        <p class="pt-body">보스를 고르면 설명과 <em class="hl">사용 기술</em>이 한 면에 펼쳐지고, 전리품은 옆 탭으로 나뉜다.</p>
+        <p class="pt-body take">설명 · 기술 · 전리품을 탭으로 가르는 정보 구조를 수용한다. 다만 공개 시점은 해금 조건으로 바꾼다.</p>
+      </div>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/1ea5b1fe77f91b92d15ac7c4c98bcf5b376b168530ba3312c83a63707d8dde6c" width="1500" height="1016" alt="와우 리테일 모험 안내서에서 남작 애쉬버리를 선택해 설명과 사용 기술 세 가지가 펼쳐지고 오른쪽에 탭이 세로로 놓인 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 12</b>보스 상세와 탭 구조</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <div class="txt">
+        <h3 class="pt">공유를 통한 정보 해금 구조</h3>
+        <p class="pt-body">코어 키퍼는 <em class="hl">탐색한 만큼만 지도가 드러나고</em>, 그 지도를 받침대에 올려 타인에게 건넬 수 있다.</p>
+        <p class="pt-body take">정보가 플레이어 사이를 오가는 구조를 모닥불 공유의 원형으로 삼는다. 다만 영구 소유는 1시간 임시 열람으로 바꾼다.</p>
+      </div>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/e42bb558ce48d3b49168d56a9bc66be87151f8f22417dac6abec1876f51656fa" width="1500" height="1016" alt="코어 키퍼의 지도 화면. 플레이어가 지나온 구역만 밝게 드러나고 나머지는 어둡게 남아 있는 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 13</b>탐색한 만큼 드러나는 지도</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PPT 6쪽 · 3.3 레퍼런스 · 기각 ============
+     PPT 제목이 "3.1 레퍼런스 - 기각"으로 5쪽과 번호가 겹쳐 있었다. 레퍼런스 소개를
+     3.1로 새로 두면서 수용 · 기각을 3.2 · 3.3으로 내렸다. -->
+<section id="s3-3">
+  <h2 class="sec"><span class="n">3.3</span>레퍼런스 · 기각</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">해금 과정 없이 모든 정보 공개</h3>
+      <p class="pt-body">리테일 도감은 레벨 · 장비 · 경험과 무관하게 전부 공개한다. <em class="hl">겪기 전에 알려주는 구조</em>라 "경험"을 지킬 수 없다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/284f9c45a31fd6f7be5d526317118b996795f16d6339275792ece65423519138" width="1500" height="1016" alt="전면 공개는 해금 조건으로, 정확한 드랍 확률 표기는 목록까지만 공개하는 방식으로 대체된다는 짝을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 14</b>가져오지 않는 것과 대체안</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">공유 정보 영구 저장</h3>
+      <p class="pt-body">코어 키퍼의 지도는 건네받으면 영구 소유가 된다. 그대로 쓰면 <em class="hl">한 명만 돌면 모두가 갖게 되므로</em>, 1시간 임시 열람으로 바꾼다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/cefafe4e4d4c41a7a9a3d14317dc5000d3088f8b1705893c79fd824e1e80b3b2" width="1500" height="1016" alt="코어 키퍼처럼 지도를 영구 소유하면 한 명의 탐색으로 전원이 보유하게 되므로 1시간 임시 열람으로 대체한다는 비교를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 15</b>빌린 지식은 빌린 것으로</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="spec">
+      <caption>레퍼런스별 수용 · 기각</caption>
+      <thead><tr><th>레퍼런스</th><th>항목</th><th>처리</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="4">와우 리테일<br>던전 도감</td><td>던전 지도 · 보스 위치 아이콘 표기</td><td><span class="chip ok">수용</span> 4.1 던전 지도와 연결</td></tr>
+        <tr><td>보스별 기술 · 전리품의 정보 구조</td><td><span class="chip ok">수용</span> 검증된 틀을 재발명하지 않는다</td></tr>
+        <tr><td>해금 과정 없이 전면 공개</td><td><span class="chip crit">기각</span> 4.1 해금 조건으로 대체</td></tr>
+        <tr><td>정확한 드랍 확률 표기</td><td><span class="chip crit">기각</span> 목록까지만 공개 (4.3 확률 비공개)</td></tr>
+        <tr><td rowspan="2">코어 키퍼<br>지도 공유</td><td>지도를 타인에게 건네는 구조</td><td><span class="chip ok">수용</span> 5.1 모닥불 공유의 원형</td></tr>
+        <tr><td>건네받은 정보의 영구 소유</td><td><span class="chip crit">기각</span> 1시간 임시 열람 (4.2 임시 열람)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PPT 7쪽 · 4.1 도감 해금 ============ -->
+<section id="s4-1">
+  <h2 class="sec"><span class="n">4.1</span>도감 해금</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">기록 3계층</h3>
+      <p class="pt-body">기록 대상을 세 층으로 나눈다. 몬스터 기록은 몬스터 한 종, 네임드 기록은 네임드 한 마리, 던전 지도는 던전 하나가 <em class="hl">기록 단위</em>다. 단위가 다르므로 해금 기준도 다르다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/450b316e6a95a2aee953c3442cb5a74b54e3cb853aa9c26cae7693e4b35c2f05" width="1500" height="1016" alt="지역에 흩어진 몬스터, 던전의 네임드, 던전 전체 지도로 기록 단위가 나뉘는 것을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 16</b>기록의 세 계층</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">단계 배분</h3>
+      <p class="pt-body">싸우면서 체감하는 순서를 그대로 단계로 옮긴다. 다만 <em class="hl">분류 정보는 최초 조우에서</em> 연다. 장비가 작동하는지를 50회 뒤에 알게 할 수 없다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/6f0a283cc31f1aa9c6320d07c0426747f7c92cb73704fcf0bc1538aa37a50a82" width="1500" height="1016" alt="처치 1회에 종류와 서식지, 10회에 체력, 20회에 사용 스킬, 50회에 드랍 목록이 순서대로 열리는 단계를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 17</b>처치에 따라 열리는 기록</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>몬스터 기록 단계별 해금</caption>
+      <thead><tr><th class="num">처치</th><th>해금 항목</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>이름, 초상화, <strong>레벨 범위</strong>, 생물 종류, 서식지, 환경 분류</td><td>정보 불균형 해소의 핵심 정보</td></tr>
+        <tr><td class="num">10</td><td>체력</td><td>전투 중 체력바로 체감되므로 이르게 열어도 손해가 없다</td></tr>
+        <tr><td class="num">20</td><td>사용 스킬 목록</td><td>기술을 전부 보려면 여러 번 붙어야 한다</td></tr>
+        <tr><td class="num">50</td><td>드랍 아이템 목록</td><td>희귀 드랍까지 보려면 가장 오래 걸린다</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tablewrap">
+    <table class="spec">
+      <caption>네임드 기록 · 던전 지도 해금 기준</caption>
+      <thead><tr><th>대상</th><th>기준</th><th>해금 항목</th></tr></thead>
+      <tbody>
+        <tr><td>던전 네임드</td><td>1회 처치</td><td>전 항목</td></tr>
+        <tr><td>레이드 보스</td><td>1회 도전 (교전 개시)</td><td>체력, 사용 스킬 — 전멸해도 기록된다</td></tr>
+        <tr><td>레이드 보스</td><td>1회 처치</td><td>드랍 목록. 무엇이 떨어지는지는 쓰러뜨려야 안다</td></tr>
+        <tr><td>던전 지도</td><td>전체 네임드 처치</td><td>전체 지도 · 네임드 배치</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 프로토타입 A · 처치에 따른 해금 ─────────────────────────
+       위 표의 1 · 10 · 20 · 50 단계를 직접 눌러 확인하는 자리다.
+       4.3의 회색 등급 제외 규칙도 같은 블록에서 켜고 끌 수 있다.
+       JS 없이도 초기 상태(숲 거미 7회)가 그대로 읽히게 적어 둔다. -->
+  <div class="proto" id="proto-unlock">
+    <div class="proto-head">
+      <span class="lbl">프로토타입 A · 도감 작동</span>
+      <span class="desc">몬스터를 고르고 처치 수를 올리면 단계가 열린다. 회색 등급으로 잡으면 집계되지 않는다.</span>
+    </div>
+    <div class="proto-body">
+      <div class="proto-l">
+        <h4>은빛소나무 숲 · 몬스터</h4>
+        <ul class="mlist" id="pu-list">
+          <li><button type="button" data-i="0" aria-pressed="true"><span class="nm">이끼땅거미</span><span class="dots"><i class="on"></i><i></i><i></i><i></i></span><span class="ct">7회</span></button></li>
+          <li><button type="button" data-i="1" aria-pressed="false"><span class="nm">점박이 검은늑대</span><span class="dots"><i></i><i></i><i></i><i></i></span><span class="ct">0회</span></button></li>
+          <li><button type="button" data-i="2" aria-pressed="false"><span class="nm">사나운 불곰</span><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="ct">23회</span></button></li>
+        </ul>
+        <p class="barnote" style="margin:12px 0 0">단계 기준은 위 표와 같은 1 · 10 · 20 · 50회다. 회색 등급 처치와 전투에 관여하지 않은 처치는 집계하지 않는다(4.3). 규칙 확인용 모형이며 실제 화면이 아니다.</p>
+      </div>
+      <div class="proto-r">
+        <h4 id="pu-name">이끼땅거미 · 해금 상태</h4>
+        <div class="bar"><i id="pu-barfill" style="width:70%"></i></div>
+        <p class="barnote" id="pu-note">처치 7회 · 다음 단계(체력)까지 3회</p>
+        <div class="rows" id="pu-rows">
+          <div class="row" data-open="1"><span class="need">1회</span><span class="val"><span class="k">레벨 범위 · 생물 종류 · 서식지</span>레벨 12-13 · 야수 · 암흑 땅거미굴 주변</span></div>
+          <div class="row" data-open="0"><span class="need">10회</span><span class="val"><span class="k">체력</span>3회 더 처치해야 열린다</span></div>
+          <div class="row" data-open="0"><span class="need">20회</span><span class="val"><span class="k">사용 스킬</span>13회 더 처치해야 열린다</span></div>
+          <div class="row" data-open="0"><span class="need">50회</span><span class="val"><span class="k">드랍 아이템 목록</span>43회 더 처치해야 열린다</span></div>
+        </div>
+        <div class="ctrl">
+          <button type="button" data-add="1">처치 +1</button>
+          <button type="button" data-add="10">처치 +10</button>
+          <label><input type="checkbox" id="pu-grey"> 회색 등급으로 처치</label>
+          <button type="button" class="ghost" id="pu-reset">초기화</button>
+          <span class="say" id="pu-say" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PPT 8쪽 · 4.2 도감 공유 ============ -->
+<section id="s4-2">
+  <h2 class="sec"><span class="n">4.2</span>도감 공유</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">공유 범위</h3>
+      <p class="pt-body">건너가는 것은 분류 정보, 던전 지도, <em class="hl">네임드의 이름과 위치</em>까지다. 어디에 누가 있는지는 길 안내지만, 네임드의 사용 스킬과 전리품은 공략이므로 제외한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/76e0a9fe39e9d7c3ecf5134afd8c7d833e085449ad253ebd1f4cfcc30bf2295f" width="1500" height="1016" alt="모닥불 게이트를 몬스터 기록과 던전 지도는 통과하고 네임드 기록은 차단되는 구조를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 18</b>공유할 수 있는 정보</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">임시 열람</h3>
+      <p class="pt-body">공유받은 항목은 <em class="hl">받은 시점부터 1시간</em> 뒤 사라진다. 모닥불을 떠나도 남은 시간은 유지되지만, 빌린 지식은 빌린 것으로 끝나 내 도감은 내가 겪은 것으로만 채워진다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/ce215e8ff9d11d843b39d2af71efa6ad19d7485436a35a8f6cd72e9ab6bdb193" width="1500" height="1016" alt="공유 시작부터 60분까지만 열람할 수 있고 이후 항목이 사라지며 열람만으로는 해금되지 않는다는 시간 흐름을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 19</b>1시간 뒤 사라진다</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ── 프로토타입 B · 모닥불 공유 ──────────────────────────────
+       화면은 기획자가 직접 만든 모험 안내서 UI 네 장이다.
+         ui-own-off  내 도감 · 공유하기 비활성 (기록판 없음)
+         ui-own-on   내 도감 · 공유하기 활성   (기록판 근처)
+         ui-shared   공유받은 도감 · 잔여 시간 표시
+         ui-locked   미해금 도감 · 전부 ???
+       잔여 시간만 이미지에 박혀 있어(01:00:00) 같은 자리에 판을
+       덮어 그리고 살아 있는 숫자를 올린다. 좌표는 원본 1550×1015
+       기준 x1226 y153 w223 h61 을 백분율로 바꾼 값이다.
+       1분을 1초로 압축해 재생한다. 60분을 실제로 기다리게 할 수 없고,
+       더 줄이면 "잠깐 빌린다"는 감각이 전달되지 않는다. -->
+  <div class="proto" id="proto-share">
+    <div class="proto-head">
+      <span class="lbl">프로토타입 B · 도감 공유</span>
+      <span class="desc">보는 사람과 기록판 상태에 따라 같은 화면이 어떻게 달라지는지 확인한다.</span>
+    </div>
+    <div class="proto-strip">
+      <div class="seg" id="ps-view" role="group" aria-label="보는 사람">
+        <button type="button" data-v="0" aria-pressed="true">설치자 A</button>
+        <button type="button" data-v="1" aria-pressed="false">수혜자 B</button>
+        <button type="button" data-v="2" aria-pressed="false">서 있는 C</button>
+      </div>
+      <div class="ctrl">
+        <button type="button" id="ps-set">사냥 기록판 설치</button>
+        <button type="button" class="ghost" id="ps-away" disabled>B 모닥불 떠나기</button>
+        <button type="button" class="ghost" id="ps-skip" disabled>60분 건너뛰기</button>
+      </div>
+    </div>
+    <div class="uiwrap">
+      <img class="on" data-s="own-off" src="/markfa/read/journal/files/daa1054c176d55a8a25f74ead1660a1a10b83b4c35835363ee0e327456e9607d" width="1550" height="1015" alt="모험 안내서에 그림자송곳니 성채의 네임드 목록과 설명이 모두 보이고, 오른쪽 아래 공유하기 단추가 회색으로 비활성인 화면" loading="lazy" decoding="async">
+      <img data-s="own-on" src="/markfa/read/journal/files/aa8bf3baf3b87278dbc1c5d32dc865d1c72d7276b51b6a4ba4809b76d5b52fcb" width="1550" height="1015" alt="같은 화면에서 오른쪽 아래 공유하기 단추가 금색으로 활성된 화면" loading="lazy" decoding="async">
+      <img data-s="shared" src="/markfa/read/journal/files/62586a6d06733425c4fcb6824481d399cd99a7776469f39b8589c834b908af78" width="1550" height="1015" alt="공유받아 내용이 열린 모험 안내서. 오른쪽 위에 남은 시간이 표시된 화면" loading="lazy" decoding="async">
+      <img data-s="locked" src="/markfa/read/journal/files/ad488ed49010f5880f7f371dd55bd083f36f6b80e08bd026a92ff40383724415" width="1550" height="1015" alt="아직 가보지 않아 네임드가 모두 검은 실루엣과 물음표로 가려진 모험 안내서 화면" loading="lazy" decoding="async">
+      <div class="uitimer" id="ps-time" hidden aria-hidden="true">01:00:00</div>
+    </div>
+    <p class="uicap" id="ps-say" role="status" aria-live="polite">설치자 A · 기록판이 없어 <b>공유하기</b>가 비활성이다.</p>
+    <p class="uicap sub">건너가는 것은 분류 정보 · 던전 지도 · 네임드의 이름과 위치까지다. 사용 스킬과 전리품은 범위 밖이라 보스 상세 탭에서 막힌다. 받을 때만 앉아서 휴식 상태여야 하고, 받은 뒤에는 자리를 떠나도 남은 시간 동안 유지된다. 화면 오른쪽 위 잔여 시간은 1분을 1초로 압축해 재생한다.</p>
+  </div>
+</section>
+
+<!-- ============ PPT 9쪽 · 4.3 조건 및 예외처리 ============ -->
+<section id="s4-3">
+  <h2 class="sec"><span class="n">4.3</span>조건 및 예외처리</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">집계 조건</h3>
+      <p class="pt-body">처치가 발생하면 <em class="hl">회색 등급 여부와 전투 관여 여부</em>를 차례로 판정해 둘 다 통과한 경우에만 집계한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/e5746eca765dc2013a0c7cd788fbef94d6a4296000121d7fffd8c8abf0a5ffec" width="1500" height="1016" alt="처치 발생 후 회색 등급 여부와 전투 관여 여부를 차례로 판정해 둘 다 통과해야 카운트가 오르는 흐름도를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 20</b>처치 집계 판정</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">예외 처리</h3>
+      <p class="pt-body">확률 비공개, 계정 단위 귀속, 던전 부분 기록, <em class="hl">하드코어 단방향 예외</em>를 함께 규정한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/31b7b74b5c9772ef88a03934f0f502b528c3a8c007f5a88463b85abe5f0c4111" width="1500" height="1016" alt="확률 비공개, 계정 단위 귀속, 던전 부분 기록, 하드코어 단방향의 네 가지 예외 규정을 2행 2열로 정리한 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 21</b>네 가지 예외</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="spec">
+      <caption>조건 및 예외처리</caption>
+      <thead><tr><th>항목</th><th>규격</th></tr></thead>
+      <tbody>
+        <tr><td>회색 등급 제외</td><td>회색 등급 몬스터 처치는 집계하지 않는다</td></tr>
+        <tr><td>전투 관여 요건</td><td>펫 · 소환물 처치는 집계하되, 플레이어가 해당 전투에서 피해를 주거나 받은 경우에 한정</td></tr>
+        <tr><td>확률 비공개</td><td>드랍은 목록까지만. 필요하면 흔함 / 드묾 / 희귀 3구간 정성 표기로 대체</td></tr>
+        <tr><td>계정 귀속</td><td>해금 상태는 계정 단위. 부캐가 같은 몹을 다시 50번 잡게 하면 레거시의 부캐 장려 설계와 충돌</td></tr>
+        <tr><td>부분 기록</td><td>던전 중도 이탈 시 지나간 구역만 기록</td></tr>
+        <tr><td>하드코어 예외</td><td>아래 참조</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="redline">
+    <p class="rl-head">하드코어 예외</p>
+    <div class="rl-chips">
+      <span class="rl-ok">도감 해금만 단방향 예외</span>
+      <span class="rl-no">수집품 · 레거시 포인트는 불가</span>
+    </div>
+    <ul class="rl-list">
+      <li>하드코어는 바깥 진척이 안으로 흐르지 않는 <em>단방향 생태계</em>다</li>
+      <li>그대로 적용하면 <em>정보가 가장 절실한 플레이어가 가장 적게 받는</em> 역설이 생긴다. 위험한 몹을 50번 상대할 여유가 가장 없기 때문이다</li>
+      <li>도감 해금에 한해, 다른 룰셋에서 얻은 <em>몬스터 기록과 던전 지도</em>가 하드코어에도 적용되게 한다</li>
+      <li>근거 — 지식은 전투력이 아니라 정보이며, 하드코어의 사망은 <em>판단 실수</em>에서 와야 공정하다</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PPT 10쪽 · 5.1 모닥불 ============ -->
+<section id="s5-1">
+  <h2 class="sec"><span class="n">5.1</span>모닥불</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">머물 이유를 하나 더 만든다</h3>
+      <p class="pt-body">모닥불은 지금 <em class="hl">버프만 받고 떠나는 장소</em>다. 여기에 서로 필요한 정보를 묻고 건네는 과정을 더한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/13b9d9bd6a0063c5380beac8f0e7d7386c7c656d00617e88ef01ee3508f8abef" width="1500" height="1016" alt="모닥불에 설치한 사냥 기록판이 주변 플레이어 세 명에게 몬스터 기록과 던전 지도를 1시간 동안 열어주는 장면을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 22</b>모닥불에 머무는 이유</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">기존 틀에 얹는다</h3>
+      <p class="pt-body">기본 모닥불의 <em class="hl">3개 오브젝트 상한, 1시간 지속, 설계도 습득</em> 규칙을 그대로 준용한다. 새 시스템을 만들지 않는다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/9ac415e3ee21f60ef52da4b50cdd39b6af64f6643999fa4a4ecc844f28c18ba1" width="1500" height="1016" alt="오브젝트 3개 상한, 1시간 지속, 설계도 습득이라는 기본 모닥불 규칙을 그대로 준용해 신규 규칙이 없다는 것을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 23</b>새로 만들지 않는다</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="spec">
+      <caption>사냥 기록판 — 야영 오브젝트 규격</caption>
+      <thead><tr><th>항목</th><th>값</th></tr></thead>
+      <tbody>
+        <tr><td>분류</td><td>야영 오브젝트 (고급 · 설계도 습득)</td></tr>
+        <tr><td>습득</td><td>신규 던전 보스 드랍 설계도. 전문기술 무관, 야영 NPC 해독</td></tr>
+        <tr><td>설치 제한</td><td>플레이어당 1개. 야영지당 오브젝트 3개 상한에 포함</td></tr>
+        <tr><td>지속</td><td><strong>수령 시점부터 1시간.</strong> 기록판의 남은 수명과 무관하게 각자 1시간을 받는다</td></tr>
+        <tr><td>공유 범위</td><td><strong>분류 정보 + 던전 지도 + 네임드 이름 · 위치.</strong> 네임드의 사용 스킬 · 전리품은 제외</td></tr>
+        <tr><td>지역 범위</td><td>현재 지역의 분류 정보, 보유한 모든 던전 지도와 그 네임드 배치</td></tr>
+        <tr><td>수혜 조건</td><td><strong>받는 시점에만</strong> 앉아서 휴식 상태. 받은 뒤에는 자리를 떠나도 남은 시간 동안 유지된다</td></tr>
+        <tr><td>영구화</td><td>열람만으로 해금되지 않는다. 직접 조건 충족 필요</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PPT 11쪽 · 5.2 레거시 ============ -->
+<section id="s5-2">
+  <h2 class="sec"><span class="n">5.2</span>레거시</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">지역 단위 집계</h3>
+      <p class="pt-body">지역별 해금 수를 집계해 <em class="hl">기준을 충족한 지역이 3개 이상이면 1점</em>을 준다. 16포인트 투자 상한에 포함된다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/fd845c75a75a59d392844d77d1f44d80f2f0a6825810b92345e373c7ca69672b" width="1500" height="1016" alt="다섯 지역의 해금 비율 막대 중 기준선을 넘은 세 개가 표시되고 레거시 1점으로 이어지는 것을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 24</b>지역 기록이 레거시로</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">절대 수치가 아니라 비율</h3>
+      <p class="pt-body">지역마다 몬스터 종류 수가 크게 달라, <em class="hl">"20종 해금"</em> 같은 기준은 어떤 지역에서는 불가능하고 어떤 지역에서는 너무 쉬워진다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/faee0136133431b86ae6e68ddc728c7d6bba5780d3095ff727fb3b7b3ceb2a29" width="1500" height="1016" alt="총 24종 지역에서 20종은 83퍼센트, 총 62종 지역에서 20종은 32퍼센트가 되어 절대 수치 기준이 성립하지 않는다는 막대 비교를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 25</b>20종 기준의 함정</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="spec">
+      <caption>레거시 연동 규격</caption>
+      <thead><tr><th>항목</th><th>규격</th></tr></thead>
+      <tbody>
+        <tr><td>집계 단위</td><td>지역별 해금 몬스터 수</td></tr>
+        <tr><td>달성 기준</td><td>해당 지역 몬스터 종류의 일정 비율 이상 해금. 비율값 미정</td></tr>
+        <tr><td>포인트</td><td>기준 충족 지역 <strong>3개 이상</strong>일 때 1점. 16포인트 투자 상한에 포함</td></tr>
+        <tr><td>보상 성격</td><td>외형 · 칭호 · 명성 한정. 경쟁적 이점 없음</td></tr>
+        <tr><td>완주 보상 금지</td><td>"도감 100%" 도전과제는 신설하지 않는다</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PPT 12쪽 · 6. 리스크 관리 ============ -->
+<section id="s6">
+  <h2 class="sec"><span class="n">6.</span>리스크 관리</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">데이터 선취 차단</h3>
+      <p class="pt-body">애드온은 막을 수 없다. 대신 <em class="hl">클라이언트에 미해금 데이터를 두지 않는다.</em> 포에버는 모던 애드온 API를 채택했으므로, 클라이언트에 데이터를 두면 출시 첫날 전부 공개된다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/af4ccd94f88c8bbc68b0e63b024263f9b5e9c391fe32a76906918919ed977419" width="1500" height="1016" alt="전체 도감 DB는 서버에만 있고 해금 상태 필터를 통과한 항목만 클라이언트로 전달되어 애드온이 미해금 항목을 읽을 수 없는 구조를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 26</b>클라이언트에 남기지 않는다</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">가치를 접근성에 둔다</h3>
+      <p class="pt-body">외부 DB는 출시 2주면 완비된다. 그래서 시스템의 가치를 은닉이 아니라 <em class="hl">접근성과 상호작용</em>에 둔다. 툴팁 역참조와 모닥불 공유는 위키가 구조적으로 제공할 수 없다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/bd76007b5e6071bcb3af0f938f0462fcb3218d7e327cb70c8d525b01068e64af" width="1500" height="1016" alt="외부 위키와 게임 내 도감이 각각 할 수 있는 것과 할 수 없는 것을 나란히 비교한 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 27</b>위키와 다른 경쟁 지점</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>리스크 레지스터</caption>
+      <thead><tr><th>리스크</th><th>등급</th><th>대응</th></tr></thead>
+      <tbody>
+        <tr><td>애드온으로 외부 DB를 불러와 미해금 도감 열람</td><td><span class="chip crit">높음</span></td><td>해금 항목만 클라이언트로 수신. 잠긴 항목은 클라이언트에 없다 (그림 26)</td></tr>
+        <tr><td>외부 DB 완비로 도감 가치 소멸</td><td><span class="chip warn">중간</span></td><td>가치를 <strong>접근성과 상호작용</strong>에 둔다 (그림 27)</td></tr>
+        <tr><td>50회 요구가 레벨링 흐름을 왜곡</td><td><span class="chip warn">중간</span></td><td>1회 처치 단계가 핵심 정보를 최초 조우에 배치. 회색 등급 제외 규칙이 소급 쓸어담기를 무력화</td></tr>
+        <tr><td>지도 공유로 신규 던전 9개의 발견 가치 조기 소진</td><td><span class="chip warn">중간</span></td><td>공유 범위가 네임드의 사용 스킬 · 전리품을 제외하므로 건너가는 것은 길 안내까지뿐</td></tr>
+        <tr><td>하드코어 정보 접근 역설</td><td><span class="chip warn">중간</span></td><td>하드코어 단방향 예외 적용</td></tr>
+        <tr><td>PvP에서 기록판 설치 지점이 갱킹 포인트로 고착</td><td><span class="chip ok">낮음</span></td><td>의도된 긴장으로 일부 수용. 단 설치자 외에게 위치를 광역 표시하지 않는다</td></tr>
+        <tr><td>패치마다 집필 · 번역 비용 재발생</td><td><span class="chip ok">낮음</span></td><td>몬스터 기록과 던전 지도는 기존 DB와 지형 데이터에서 <strong>자동 생성</strong>. 수작업은 네임드 기술 설명문으로 한정</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PPT 13쪽 · 7. UI 설계 ============ -->
+<section id="s7">
+  <h2 class="sec"><span class="n">7.</span>UI 설계</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">화면 구성</h3>
+      <p class="pt-body">상단에 <em class="hl">세계 → 대륙 → 지역 → 대상</em> 경로, 좌측에 대상 목록, 우측에 상세를 둔다. 상세는 정보 · 전리품 탭으로 나누고, 하단에서 필드 · 던전 · 공격대를 가른다. 진입하면 지금 있는 지역이 열려 있다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/32478c764130bf5a23d9570a718aa59f156ef1b15cd468d72f76ea8516bffe16" width="1500" height="1016" alt="상단 경로, 좌측 대상 목록, 우측 상세와 탭, 하단 분류 탭으로 이루어진 도감 화면 구성" loading="lazy" decoding="async">
+        <figcaption><b>그림 28</b>도감 화면 구성</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">노출 통제</h3>
+      <p class="pt-body">미발견은 <code>???</code> 카드로만 두고 <em class="hl">총량을 표시하지 않는다.</em> "12 / 47"로 보이면 던전 네임드 수가 입장 전에 노출된다. 검색도 해금된 항목 안에서만 작동한다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/b0014246cc1e033299075c06236153e9961c63c8e23e4812a2b842189264ab93" width="1500" height="1016" alt="지역 라벨에 해금 수만 표시하고 총량은 숨기며 검색이 해금된 항목 안에서만 작동하는 것을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 29</b>발견을 앞서 보여주지 않는다</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>UI 요구사항</caption>
+      <thead><tr><th>요구사항</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>진입 시 기본 선택은 <strong>현재 지역</strong></td><td>지금 사냥하는 몹을 찾으려 전체 목록을 스크롤하면 위키가 더 빠르다</td></tr>
+        <tr><td>미발견은 <code>???</code> 카드로만. <strong>총량 비표시</strong></td><td>총량을 보이면 던전 네임드 수와 미발견 희귀 몹의 존재가 입장 전에 노출된다</td></tr>
+        <tr><td>카드에 단계 진행도, 상세에 현재 처치 수와 다음 기준</td><td>10/20/50 모델은 "지금 몇 번째인지"를 모르면 작동하지 않는다</td></tr>
+        <tr><td>해금 시 화면 구석 짧은 표식 1회. 전체 화면 연출 금지</td><td>레벨링 중 수십 번 발생한다. 매번 연출이 끼면 사냥 흐름이 끊긴다</td></tr>
+        <tr><td>아이템 툴팁의 조건부 효과에서 <strong>해당 분류로 역참조</strong></td><td>정보 불균형 해소의 실사용 경로. 위키가 구조적으로 제공할 수 없고 도감 가치 소멸 리스크에 대한 가장 강한 대응</td></tr>
+        <tr><td>공유 열람 중에는 <strong>화면 우측 상단에 잔여 시간</strong>을 표시</td><td>공유 열람의 임시성. 모닥불을 떠난 뒤에도 남아 있어 내 것으로 착각하기 쉽다</td></tr>
+        <tr><td>던전 지도는 네임드 이름과 위치까지. <strong>미처치는 사용 스킬 · 전리품 비공개</strong></td><td>공유로 열리는 범위와 같게 맞춘다(4.2). 공유받은 화면과 직접 해금한 화면이 다르면 설명이 두 벌이 된다</td></tr>
+        <tr><td>검색은 <strong>해금된 항목 내에서만</strong></td><td>미해금이 검색으로 노출되면 서버 필터링이 무의미해진다</td></tr>
+        <tr><td>상단은 <strong>세계 → 대륙 → 지역 → 대상</strong> 4단 경로로 고정</td><td>지금 보는 위치가 경로로 남아야 지역을 오가며 비교할 수 있다</td></tr>
+        <tr><td>하단 분류 탭은 <strong>필드 · 던전 · 공격대</strong></td><td>기록 3계층과 같은 구분. 탭이 다르면 해금 기준도 다르다(4.1)</td></tr>
+        <tr><td>상세는 <strong>정보 · 전리품</strong> 탭으로 나눈다</td><td>한 화면에 몰면 50회 해금 항목까지 열린 뒤 목록이 길어져 읽히지 않는다</td></tr>
+        <tr><td>전리품 탭에 <strong>종류 · 등급 · 직업 필터.</strong> 확률은 표시하지 않는다</td><td>목록까지만 공개하는 4.3 규정을 화면에서 지킨다. 필터는 "내 직업에 쓸모 있나"를 답한다</td></tr>
+        <tr><td><strong>공유하기</strong>는 우하단 고정. 조건 미충족 시 회색 비활성</td><td>누를 수 없는 이유를 따로 설명하지 않아도 되도록 상태를 버튼에 둔다(4.2)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 프로토타입 C · 화면 둘러보기 ─────────────────────────────
+       위 표의 요구사항이 실제 화면에서 어떻게 생겼는지 한 자리에서
+       넘겨 본다. 눌러서 바꾸는 것 외에 상태는 없다. -->
+  <div class="proto" id="proto-screens">
+    <div class="proto-head">
+      <span class="lbl">프로토타입 C · 화면 구성</span>
+      <span class="desc">표의 요구사항이 실제 화면에서 어떻게 나타나는지 넘겨 본다.</span>
+    </div>
+    <div class="proto-strip">
+      <div class="seg" id="pc-seg" role="group" aria-label="화면">
+        <button type="button" data-s="f-base" aria-pressed="true">지역 기본</button>
+        <button type="button" data-s="f-mon" aria-pressed="false">몬스터 선택</button>
+        <button type="button" data-s="f-loot" aria-pressed="false">전리품 · 전체</button>
+        <button type="button" data-s="f-loot1" aria-pressed="false">전리품 · 대상</button>
+        <button type="button" data-s="boss" aria-pressed="false">보스 선택</button>
+        <button type="button" data-s="locked" aria-pressed="false">미해금</button>
+      </div>
+    </div>
+    <div class="uiwrap">
+      <img class="on" data-s="f-base" src="/markfa/read/journal/files/1e388543865ac3dcd41009a663992718672f993beafab3b88acc388b56e2cdb8" width="1550" height="1015" alt="은빛소나무 숲 도감의 기본 화면. 좌측에 몬스터 목록, 우측에 지역 그림과 설명, 하단에 필드 던전 공격대 탭" loading="lazy" decoding="async">
+      <img data-s="f-mon" src="/markfa/read/journal/files/a33ce263a5becf7faa9f89a53cd99593bb589ddb2dca6c6c214b5d0115d6d75a" width="1550" height="1015" alt="이끼땅거미를 선택해 레벨 범위와 생물 종류, 설명, 사용 스킬이 열린 화면" loading="lazy" decoding="async">
+      <img data-s="f-loot" src="/markfa/read/journal/files/75fbc6198a69e94732e3c7feab19b66e90a47745af5150246b106f687f71b5e5" width="1550" height="1015" alt="전리품 탭에서 종류와 등급 필터로 지역 전체의 전리품을 나열한 화면" loading="lazy" decoding="async">
+      <img data-s="f-loot1" src="/markfa/read/journal/files/b302afe31460361d049ec2e18139309b02d80650d4089c0f440f4973846abc26" width="1550" height="1015" alt="전리품 탭에서 이끼땅거미만 골라 그 몬스터의 전리품 세 가지만 남긴 화면" loading="lazy" decoding="async">
+      <img data-s="boss" src="/markfa/read/journal/files/2bfc2cb6e6a43606e40b5a80ac36c8bc4058b7ea6cb8bf220bb48d71d0640222" width="1550" height="1015" alt="던전 탭에서 남작 애쉬버리를 선택해 설명과 사용 스킬 세 가지가 열린 화면" loading="lazy" decoding="async">
+      <img data-s="locked" src="/markfa/read/journal/files/ad488ed49010f5880f7f371dd55bd083f36f6b80e08bd026a92ff40383724415" width="1550" height="1015" alt="가보지 않은 던전이라 보스가 실루엣과 물음표로 가려지고 설명이 비어 있는 화면" loading="lazy" decoding="async">
+    </div>
+    <p class="uicap" id="pc-say" role="status" aria-live="polite">필드 탭 · 은빛소나무 숲. 좌측 목록과 우측 지역 설명. 우하단 <b>공유하기</b>는 조건을 채우지 못해 회색이다.</p>
+  </div>
+</section>
+
+<!-- ============ PPT 14쪽 · 8. 검증 지표 ============
+     PPT 제목 "8. 시스템 검증 지표"를 목차와 맞춰 "8. 검증 지표"로 통일. -->
+<section id="s8">
+  <h2 class="sec"><span class="n">8.</span>검증 지표</h2>
+  <div class="page">
+    <div class="col">
+      <h3 class="pt">무엇을 측정하는가</h3>
+      <p class="pt-body">측정 대상은 <em class="hl">사람이 멈춰 섰는가</em>다. 핵심은 설치 1건당 수혜 인원으로, 이 값이 1에 가까우면 공유 설계가 작동하지 않는 것이다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/bddc4ef233c481d4682af58ed88b0bbcf124ed07b21882b06311445ca7955053" width="1500" height="1016" alt="정보 불균형 해소는 툴팁 클릭으로, 교류 강화는 모닥불 지표 네 개로, 노가다 우려는 단계 도달률로 검증하는 대응을 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 30</b>목표에 맞는 검증 지표</figcaption>
+      </figure>
+    </div>
+    <div class="col">
+      <h3 class="pt">무엇을 측정하지 않는가</h3>
+      <p class="pt-body"><em class="hl">도감 열람 수는 지표가 아니다.</em> 열람은 위키로도 가능하므로 숫자가 올라도 교류 증가 달성과 무관하다. 게임 안에서만 발생하는 행동이어야 지표가 된다.</p>
+      <figure>
+        <img class="fig" src="/markfa/read/journal/files/b04ca8593ee5b88adef527aba5591d6f8f7f00d035398629a3dff4adfa3da7eb" width="1500" height="1016" alt="도감 열람 수는 대체 경로가 있어 지표가 아니고 기록판 수혜 인원은 모닥불에서만 발생해 지표가 된다는 비교를 보여주는 도감 화면" loading="lazy" decoding="async">
+        <figcaption><b>그림 31</b>열람보다 교류를 측정한다</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><span class="k">기록판 설치</span><span class="v">—<span class="u">회/일</span></span></div>
+    <div class="tile"><span class="k">설치당 수혜</span><span class="v">—<span class="u">명</span></span></div>
+    <div class="tile"><span class="k">평균 체류</span><span class="v">—<span class="u">분</span></span></div>
+    <div class="tile"><span class="k">파티 결성</span><span class="v">—<span class="u">%</span></span></div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>지표 정의와 판정</caption>
+      <thead><tr><th>지표</th><th>검증</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td>일일 기록판 설치 수</td><td>교류 증가</td><td>낮으면 설계도 습득 경로 재검토</td></tr>
+        <tr><td>설치 1건당 수혜 플레이어 수</td><td>교류 증가</td><td><strong>핵심 지표.</strong> 1에 가까우면 5.1을 재설계한다</td></tr>
+        <tr><td>기록판 설치 야영지의 평균 체류 시간</td><td>교류 증가</td><td>일반 야영지 대비 길어야 "머물 이유가 버프뿐"이 해소된 것</td></tr>
+        <tr><td>기록판 반경 내 파티 결성 비율</td><td>교류 증가</td><td>"우연한 만남" 기둥의 직접 측정치</td></tr>
+        <tr><td>아이템 툴팁 역참조 클릭 수</td><td>정보 불균형 해소</td><td>정보 불균형 해소의 유일한 직접 지표</td></tr>
+        <tr><td>몬스터 기록 단계별 도달률</td><td>레벨링 왜곡 대응</td><td>50회 도달률이 극히 낮으면 수치 조정. 지나치게 높으면 노가다 유발 신호</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--mute)">타일 값은 베타 계측 연결 후 채운다. 현재는 지표 정의만 확정된 상태다.</p>
+</section>
+
+
+</main>
+</div><!-- /.grid -->
+</div><!-- /.shell -->
+
+
+<script>
+/* ============================================================
+   목차 활성 항목 하이라이트
+   ------------------------------------------------------------
+   장식이다. 실행되지 않아도 목차 앵커와 본문은 전부 정상 동작한다.
+   따라서 어떤 콘텐츠도 JS로 생성하지 않는다.
+   대분류와 소분류가 같은 섹션을 가리키는 경우가 있어(2 → s2-1),
+   한 섹션에 걸린 링크를 모두 켠다.
+   ============================================================ */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {}, targets = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);          // "#s1" → "s1"
+    var el = document.getElementById(id);
+    if (!el) return;
+    (map[id] = map[id] || []).push(a);
+    if (targets.indexOf(el) < 0) targets.push(el);     // 섹션 중복 등록 방지
+  });
+
+  if (!('IntersectionObserver' in window)) return;     // 없으면 조용히 포기
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;                   // 나가는 이벤트는 무시
+      links.forEach(function(a){ a.classList.remove('on'); });
+      (map[e.target.id] || []).forEach(function(a){ a.classList.add('on'); });
+    });
+  }, {
+    // 감지 띠를 화면 상단 8~30% 구간으로 좁힌다. 이 값이 없으면
+    // 긴 섹션 여러 개가 동시에 교차해 하이라이트가 깜빡인다.
+    rootMargin: '-8% 0px -70% 0px'
+  });
+
+  targets.forEach(function(el){ io.observe(el); });
+})();
+
+/* ============================================================
+   프로토타입 A — 처치 수에 따른 해금
+   ------------------------------------------------------------
+   표에 적은 1 · 10 · 20 · 50 단계가 실제로 어떻게 열리는지를
+   눌러서 확인하는 블록이다. 상태는 페이지를 벗어나면 사라진다.
+   저장하지 않는 이유: 기획서를 다시 열 때마다 같은 지점에서
+   시작해야 설명이 일관된다.
+   ============================================================ */
+(function(){
+  var root = document.getElementById('proto-unlock');
+  if (!root) return;
+
+  var STEP = [1, 10, 20, 50];
+  var KEY  = ['레벨 범위 · 생물 종류 · 서식지', '체력', '사용 스킬', '드랍 아이템 목록'];
+  // 처치 수는 초기값을 따로 보관해 '초기화'가 같은 지점으로 돌아가게 한다
+  var BASE = [7, 0, 23];
+  // 이름과 값은 7장 화면안의 은빛소나무 숲 도감과 같은 것을 쓴다
+  var MON = [
+    { n:'이끼땅거미',     v:['레벨 12-13 · 야수 · 암흑 땅거미굴 주변', '340', '독', '작은 거미 다리, 작은 독주머니, 땅거미 점액'] },
+    { n:'점박이 검은늑대', v:['레벨 11-12 · 야수 · 숲 전역',           '300', '물어뜯기', '늑대 가죽, 날카로운 송곳니'] },
+    { n:'사나운 불곰',     v:['레벨 13-14 · 야수 · 숲 북부',           '480', '휘둘러치기', '두꺼운 곰 가죽, 곰 발톱'] }
+  ];
+  var cnt = BASE.slice(), sel = 0;
+
+  var listEl = document.getElementById('pu-list');
+  var nameEl = document.getElementById('pu-name');
+  var fillEl = document.getElementById('pu-barfill');
+  var noteEl = document.getElementById('pu-note');
+  var rowsEl = document.getElementById('pu-rows');
+  var greyEl = document.getElementById('pu-grey');
+  var sayEl  = document.getElementById('pu-say');
+
+  function openCount(c){                     // 몇 단계까지 열렸는가
+    var k = 0;
+    for (var i = 0; i < STEP.length; i++) if (c >= STEP[i]) k++;
+    return k;
+  }
+
+  function paintList(){
+    listEl.querySelectorAll('button').forEach(function(b){
+      var i = +b.dataset.i, k = openCount(cnt[i]);
+      b.setAttribute('aria-pressed', i === sel ? 'true' : 'false');
+      b.querySelector('.ct').textContent = cnt[i] + '회';
+      b.querySelectorAll('.dots i').forEach(function(d, j){
+        d.classList.toggle('on', j < k);
+      });
+    });
+  }
+
+  // justIdx: 이번 조작으로 막 열린 행. 한 번 깜빡여 변화 지점을 알린다
+  function paintDetail(justIdx){
+    var m = MON[sel], c = cnt[sel], k = openCount(c);
+    nameEl.textContent = m.n + ' · 해금 상태';
+
+    var next = STEP[k];                      // 다음 단계 기준. 전부 열렸으면 undefined
+    if (next === undefined){
+      fillEl.style.width = '100%';
+      noteEl.textContent = '처치 ' + c + '회 · 전 단계 해금 완료';
+    } else {
+      var prev = k === 0 ? 0 : STEP[k - 1];
+      fillEl.style.width = Math.round((c - prev) / (next - prev) * 100) + '%';
+      noteEl.textContent = '처치 ' + c + '회 · 다음 단계(' + KEY[k] + ')까지 ' + (next - c) + '회';
+    }
+
+    rowsEl.textContent = '';
+    for (var i = 0; i < STEP.length; i++){
+      var open = c >= STEP[i];
+      var row = document.createElement('div');
+      row.className = 'row' + (i === justIdx ? ' just' : '');
+      row.setAttribute('data-open', open ? '1' : '0');
+      var need = document.createElement('span');
+      need.className = 'need';
+      need.textContent = STEP[i] + '회';
+      var val = document.createElement('span');
+      val.className = 'val';
+      var key = document.createElement('span');
+      key.className = 'k';
+      key.textContent = KEY[i];
+      val.appendChild(key);
+      val.appendChild(document.createTextNode(
+        open ? m.v[i] : (STEP[i] - c) + '회 더 처치해야 열린다'));
+      row.appendChild(need); row.appendChild(val);
+      rowsEl.appendChild(row);
+    }
+  }
+
+  function add(n){
+    if (greyEl.checked){                     // 회색 등급 제외 규칙
+      sayEl.textContent = '회색 등급 처치는 집계하지 않는다';
+      return;
+    }
+    sayEl.textContent = '';
+    var before = openCount(cnt[sel]);
+    cnt[sel] = Math.min(cnt[sel] + n, 999);
+    var after = openCount(cnt[sel]);
+    paintList();
+    paintDetail(after > before ? after - 1 : -1);
+  }
+
+  listEl.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b) return;
+    sel = +b.dataset.i; sayEl.textContent = '';
+    paintList(); paintDetail(-1);
+  });
+  root.querySelectorAll('.ctrl button[data-add]').forEach(function(b){
+    b.addEventListener('click', function(){ add(+b.dataset.add); });
+  });
+  document.getElementById('pu-reset').addEventListener('click', function(){
+    cnt = BASE.slice(); greyEl.checked = false; sayEl.textContent = '';
+    paintList(); paintDetail(-1);
+  });
+
+  paintList(); paintDetail(-1);
+})();
+
+/* ============================================================
+   프로토타입 B — 모닥불 공유
+   ------------------------------------------------------------
+   기획자가 만든 모험 안내서 UI 네 장을 상태에 따라 바꿔 보여준다.
+   규칙 두 가지를 한 자리에서 확인하는 것이 목적이다.
+     · 받을 때만 앉아서 휴식 상태여야 한다 (서 있는 C는 못 받는다)
+     · 한 번 받으면 자리를 떠나도 남은 시간 동안 유지된다
+   그래서 잔여 시간(sec)은 기록판 설치 여부(on)나 B의 위치(away)와
+   따로 돈다. 철거해도 이미 받은 쪽의 시간은 깎지 않는다.
+   잔여 시간은 이미지에 박혀 있어 같은 자리에 판을 덮어 그리고
+   살아 있는 숫자를 올린다. 1분을 1초로 압축하되 250ms마다 게임
+   시간 15초씩 줄여 숫자가 뚝뚝 끊기지 않게 했다 (3600 ÷ 60 = 60초).
+   ============================================================ */
+(function(){
+  var root = document.getElementById('proto-share');
+  if (!root) return;
+
+  var FULL = 3600, STEP = 15;
+  var view = 0;              // 0 설치자 A · 1 수혜자 B · 2 서 있는 C
+  var on = false;            // 기록판 설치 여부
+  var away = false;          // B가 모닥불을 떠났는가
+  var sec = 0;               // B가 보유한 잔여 시간. 0이면 미보유
+  var tick = null;
+
+  var viewEl = document.getElementById('ps-view');
+  var setEl  = document.getElementById('ps-set');
+  var awayEl = document.getElementById('ps-away');
+  var skipEl = document.getElementById('ps-skip');
+  var timeEl = document.getElementById('ps-time');
+  var sayEl  = document.getElementById('ps-say');
+  var shots  = root.querySelectorAll('.uiwrap img');
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function clock(t){
+    return pad(Math.floor(t / 3600)) + ':' +
+           pad(Math.floor(t / 60) % 60) + ':' + pad(t % 60);
+  }
+
+  function screenOf(){
+    if (view === 0) return on ? 'own-on' : 'own-off';
+    if (view === 1) return sec > 0 ? 'shared' : 'locked';
+    return 'locked';                                  // 서 있는 C는 늘 미해금
+  }
+
+  function expire(){
+    sec = 0;
+    if (tick){ clearInterval(tick); tick = null; }
+    paint();
+    sayEl.innerHTML = '1시간이 지나 공유가 끝났다. 직접 가본 적이 없으니 다시 <b>???</b>로 돌아간다. 열람만으로는 해금되지 않는다.';
+  }
+
+  // 받는 순간의 조건: 기록판이 있고, B가 자리에 앉아 있고, 아직 미보유
+  function maybeReceive(){
+    if (!on || away || sec > 0) return false;
+    sec = FULL;
+    if (!tick) tick = setInterval(function(){
+      sec -= STEP;
+      if (sec <= 0){ expire(); return; }
+      paint();
+    }, 250);
+    return true;
+  }
+
+  function say(){
+    var sc = screenOf();
+    if (sc === 'own-off') return '설치자 A · 기록판이 없어 <b>공유하기</b>가 비활성이다.';
+    if (sc === 'own-on')  return '설치자 A · 기록판 근처라 <b>공유하기</b>가 활성된다. 내 도감 자체는 달라지지 않는다.';
+    if (sc === 'shared')  return away
+      ? '수혜자 B · 모닥불을 떠났지만 남은 시간 동안 그대로 열려 있다.'
+      : '수혜자 B · 앉아서 받았다. 네임드의 <b>이름과 위치</b>까지 열리고, 사용 스킬 · 전리품은 잠긴 채다.';
+    if (view === 2) return '서 있는 C · 앉아서 휴식 상태가 아니라 받지 못한다. 기록판이 있어도 <b>???</b>다.';
+    if (on && away)  return '수혜자 B · 자리를 비워 받지 못했다. 돌아와 앉으면 그때부터 1시간이 시작된다.';
+    return '수혜자 B · 아직 받지 못했다. 가보지 않은 던전이라 전부 <b>???</b>다.';
+  }
+
+  function paint(){
+    var sc = screenOf();
+    shots.forEach(function(im){ im.classList.toggle('on', im.dataset.s === sc); });
+    viewEl.querySelectorAll('button').forEach(function(b){
+      b.setAttribute('aria-pressed', +b.dataset.v === view ? 'true' : 'false');
+    });
+    setEl.textContent  = on ? '기록판 철거' : '사냥 기록판 설치';
+    awayEl.textContent = away ? 'B 모닥불로 돌아오기' : 'B 모닥불 떠나기';
+    awayEl.disabled = false;
+    skipEl.disabled = sec <= 0;
+    timeEl.hidden = sc !== 'shared';
+    if (sc === 'shared') timeEl.textContent = clock(sec);
+    sayEl.innerHTML = say();
+  }
+
+  setEl.addEventListener('click', function(){
+    on = !on;
+    var got = on ? maybeReceive() : false;
+    paint();
+    if (!on && sec > 0)
+      sayEl.innerHTML = '기록판을 철거했다. 이미 받은 쪽은 남은 시간 동안 그대로 유지된다.';
+    else if (got && view !== 1)
+      sayEl.innerHTML = say() + ' <b>수혜자 B</b>로 바꿔 보면 받은 화면이 보인다.';
+  });
+
+  awayEl.addEventListener('click', function(){
+    away = !away;
+    var got = maybeReceive();          // 돌아와 앉는 순간 받을 수 있다
+    paint();
+    if (away && sec > 0)
+      sayEl.innerHTML = '수혜자 B · 모닥불을 떠났지만 남은 시간 동안 그대로 열려 있다.';
+    else if (got)
+      sayEl.innerHTML = '수혜자 B · 돌아와 앉자 그 시점부터 1시간이 시작된다.';
+  });
+
+  skipEl.addEventListener('click', function(){ if (sec > 0) expire(); });
+
+  viewEl.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b) return;
+    view = +b.dataset.v;
+    paint();
+  });
+
+  paint();
+})();
+
+/* ============================================================
+   프로토타입 C — 화면 둘러보기
+   ------------------------------------------------------------
+   상태가 없는 갤러리다. 버튼이 화면 한 장과 설명 한 줄을 고른다.
+   7장 표의 요구사항을 실제 화면에서 짚어 주는 것이 전부다.
+   ============================================================ */
+(function(){
+  var root = document.getElementById('proto-screens');
+  if (!root) return;
+  var SAY = {
+    'f-base' : '필드 탭 · 은빛소나무 숲. 좌측 목록과 우측 지역 설명. 우하단 <b>공유하기</b>는 조건을 채우지 못해 회색이다.',
+    'f-mon'  : '대상을 고르면 상단 경로에 이름이 붙고 <b>레벨 범위 · 생물 종류 · 설명 · 사용 스킬</b>이 열린다. 1회와 20회 해금 항목이 한 화면에 모인 모습이다.',
+    'f-loot' : '전리품 탭. <b>종류 · 등급 필터</b>로 지역 전체의 전리품을 훑는다. 확률은 어디에도 표시하지 않는다(4.3).',
+    'f-loot1': '대상을 고르면 그 몬스터의 전리품만 남는다. 목록까지만 공개하므로 "무엇이 나오는가"는 알고 "얼마나 나오는가"는 모른다.',
+    'boss'   : '던전 탭 · 남작 애쉬버리. 네임드는 <b>1회 처치로 전 항목</b>이 열려 사용 스킬 세 가지가 함께 보인다(4.1).',
+    'locked' : '가보지 않은 던전. 보스는 실루엣과 <b>???</b>, 설명은 비고 지도는 비활성이다. 총량도 표시하지 않는다.'
+  };
+  var seg = document.getElementById('pc-seg');
+  var say = document.getElementById('pc-say');
+  var shots = root.querySelectorAll('.uiwrap img');
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b) return;
+    var k = b.dataset.s;
+    seg.querySelectorAll('button').forEach(function(x){
+      x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+    });
+    shots.forEach(function(im){ im.classList.toggle('on', im.dataset.s === k); });
+    say.innerHTML = SAY[k];
+  });
+})();
+</script>
+<script>
+if (new URLSearchParams(location.search).get('check') === 'sharing') {
+  const root = document.getElementById('proto-share');
+  const report = document.createElement('section');
+  report.id = 'sharing-results';
+  report.style.cssText = 'padding:1.5rem;margin:1rem 0;border:1px solid currentColor;scroll-margin-top:5rem';
+  report.innerHTML = '<h2>도감 공유 규칙 검사</h2><p>실제 버튼을 눌러 예상한 도감 화면이 표시되는지 확인합니다.</p><ol></ol><p class="summary" role="status"></p><a href="/markfa/#ai">AI 활용 사례로 돌아가기</a>';
+  root.before(report);
+  const click = selector => root.querySelector(selector).click();
+  function check(label, expected) {
+    const actual = root.querySelector('.uiwrap img.on')?.dataset.s;
+    const item = document.createElement('li');
+    item.dataset.pass = String(expected === actual);
+    item.textContent = (expected === actual ? '통과 · ' : '실패 · ') + label;
+    report.querySelector('ol').append(item);
+  }
+  click('[data-v="1"]');
+  check('설치 전 B의 도감 잠김', 'locked');
+  click('#ps-set');
+  check('설치 후 앉아 있는 B에게 공유', 'shared');
+  click('[data-v="2"]');
+  check('서 있는 C의 도감 잠김', 'locked');
+  click('[data-v="1"]');
+  click('#ps-away');
+  click('#ps-set');
+  check('B 이탈 및 기록판 철거 후 열람 유지', 'shared');
+  click('#ps-skip');
+  check('60분 경과 후 B의 도감 잠김', 'locked');
+  report.querySelector('.summary').textContent = '5개 조건 중 ' + report.querySelectorAll('[data-pass="true"]').length + '개 통과';
+  report.scrollIntoView();
+}
+</script>

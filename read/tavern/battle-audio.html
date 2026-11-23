@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 전투 사운드</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="design-document.css">
+  <script defer src="_shared/report.js"></script>
+  <script defer src="battle-audio-review.js"></script>
+  <style>
+    .design-document .audio-review { margin-top: 0; }
+    .audio-sample { min-width: 0; margin: 0; padding: 12px; border: 1px solid var(--mak-border); border-radius: 8px; }
+    .audio-sample figcaption { margin-bottom: 6px; }
+    .audio-sample audio, .audio-unit audio:not([hidden]) { display: block; width: 100%; height: 44px; }
+    .audio-sample a { display: inline-block; margin-top: 6px; font-size: .88rem; }
+    .audio-unit label { display: grid; gap: 5px; min-width: 0; font-size: .9rem; }
+    .audio-unit :is(input, select) { box-sizing: border-box; width: 100%; min-height: 44px; }
+    .audio-unit [data-audio-player] { margin: 12px 0; }
+    @media (max-width: 660px) {
+      .design-document .panel-grid, .design-document .panel-grid.three { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<main class="design-document">
+  <header class="chapter audio-review">
+    <p><a href="index.html#battle">← 게임 디자인 문서</a></p>
+    <h1>전투 사운드</h1>
+    <p>홈 화면과 같은 악기 편성으로 연주하고, 같은 무기의 소리가 몰리면 한 번만 작게 들려준다.</p>
+  </header>
+  <section class="chapter" aria-labelledby="mix-title">
+    <h2 id="mix-title">교전에서 비교해 듣기</h2>
+    <p>60ms 안에 겹친 같은 효과음을 묶은 시안이다. 각 쌍은 같은 교전을 음악 유무로 비교한다.</p>
+    <div class="panel-grid">
+      <figure class="audio-sample">
+        <figcaption id="front-effects">초반 교전 · 효과음만</figcaption>
+        <audio controls preload="none" aria-labelledby="front-effects" src="media/battle-audio/v2/preview/frontier-effects.wav"></audio>
+      </figure>
+      <figure class="audio-sample">
+        <figcaption id="front-mix">초반 교전 · 음악과 함께</figcaption>
+        <audio controls preload="none" aria-labelledby="front-mix" src="media/battle-audio/v2/preview/frontier-mix.wav"></audio>
+      </figure>
+      <figure class="audio-sample">
+        <figcaption id="rift-effects">밀집 교전 · 효과음만</figcaption>
+        <audio controls preload="none" aria-labelledby="rift-effects" src="media/battle-audio/v2/preview/rift-effects.wav"></audio>
+      </figure>
+      <figure class="audio-sample">
+        <figcaption id="rift-mix">밀집 교전 · 음악과 함께</figcaption>
+        <audio controls preload="none" aria-labelledby="rift-mix" src="media/battle-audio/v2/preview/rift-mix.wav"></audio>
+        <a href="media/battle-audio/v2/preview/rift-mix.wav" download>WAV 다운로드</a>
+      </figure>
+    </div>
+  </section>
+  <section class="chapter audio-unit" aria-labelledby="unit-audio-title">
+    <h2 id="unit-audio-title">유닛 공격음</h2>
+    <p>아군 276종과 공허군 32종. 같은 무기는 유닛과 공격 모션이 달라도 같은 소리를 낸다.</p>
+    <div class="panel-grid">
+      <label>유닛 검색 <input type="search" placeholder="예: 개울 사냥꾼, 삼키는 자" data-audio-search disabled></label>
+      <label>유닛 <select data-audio-unit disabled><option value="brook-hunter">개울 사냥꾼 · 석궁</option></select></label>
+      <label>모션 <select data-audio-motion disabled><option value="crossbow">석궁 발사</option></select></label>
+    </div>
+    <p data-audio-phase></p>
+    <audio controls preload="none" data-audio-player aria-label="선택한 모션의 효과음" src="media/battle-audio/v2/sfx/crossbow.wav"></audio>
+    <div class="reference-links"><a data-audio-download href="media/battle-audio/v2/sfx/crossbow.wav" download>선택한 WAV 다운로드</a></div>
+    <p data-audio-status role="status" hidden></p>
+  </section>
+  <section class="chapter" aria-labelledby="music-review-title">
+    <h2 id="music-review-title">전투 배경음악</h2>
+    <div class="panel-grid three">
+      <figure class="audio-sample">
+        <figcaption id="frontier-theme"><strong>초소 너머</strong> · 1–6라운드</figcaption>
+        <audio controls loop preload="none" aria-labelledby="frontier-theme" src="media/battle-audio/v2/music/frontier.wav"></audio>
+        <a href="media/battle-audio/v2/music/frontier.wav" download>WAV 다운로드</a>
+      </figure>
+      <figure class="audio-sample">
+        <figcaption id="depths-theme"><strong>바위 아래 맥</strong> · 7–12라운드</figcaption>
+        <audio controls loop preload="none" aria-labelledby="depths-theme" src="media/battle-audio/v2/music/depths.wav"></audio>
+        <a href="media/battle-audio/v2/music/depths.wav" download>WAV 다운로드</a>
+      </figure>
+      <figure class="audio-sample">
+        <figcaption id="rift-theme"><strong>균열 앞의 마지막 진형</strong> · 13–15라운드</figcaption>
+        <audio controls loop preload="none" aria-labelledby="rift-theme" src="media/battle-audio/v2/music/rift.wav"></audio>
+        <a href="media/battle-audio/v2/music/rift.wav" download>WAV 다운로드</a>
+      </figure>
+    </div>
+  </section>
+  <div class="reference-links">
+    <a href="docs/battle-audio.md">전투 사운드 설계와 검증</a>
+    <a href="media/battle-audio/v2/profiles.json">유닛·스킬별 연결표</a>
+    <a href="media/battle-audio/v2/manifest.json">사운드 파일과 실측값</a>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document" data-mak-theme="custom">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tavern Heros · 선술집과 대기장 가로 모드</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="design-document.css">
+  <link rel="stylesheet" href="game-font.css">
+  <link rel="stylesheet" href="prep-landscape.css">
+  <link rel="stylesheet" href="mobile/run.css">
+  <link rel="stylesheet" href="game-screen.css">
+  <script defer src="_shared/report.js"></script>
+  <script defer src="game-screen.js"></script>
+  <script type="module" src="home/prep-entry.js"></script>
+</head>
+<body>
+<main class="prep-landscape game-screen" data-phone-default="iphone16" aria-label="선술집과 대기장 가로 모드">
+  <div id="prep-demo" class="prep-demo">
+    <button class="prep-mobile-switch" type="button" aria-label="대기장으로 이동" aria-controls="prep-slots">
+      <canvas data-icon="yard" data-prep-destination-icon="deck" aria-hidden="true"></canvas>
+      <canvas data-icon="shop" data-prep-destination-icon="tavern" aria-hidden="true" hidden></canvas>
+    </button>
+  </div>
+</main>
+<aside class="screen-rotate" role="status">
+  <span class="rotate-device" aria-hidden="true">↔</span>
+  <p>휴대폰을 가로로 돌려 주세요.</p>
+</aside>
+</body>
+</html>

@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "canvas": {
+    "width": 240,
+    "height": 135,
+    "scale": 7,
+    "maxColors": 48,
+    "seamWidth": 8
+  },
+  "ramps": {
+    "soil": {
+      "label": "흙",
+      "colors": [
+        "#524837",
+        "#716046",
+        "#917a51",
+        "#9b8256",
+        "#c49b66"
+      ]
+    },
+    "grass": {
+      "label": "풀",
+      "colors": [
+        "#3b4935",
+        "#536044",
+        "#70794c",
+        "#8e824e",
+        "#b4a354"
+      ]
+    },
+    "wood": {
+      "label": "나무",
+      "colors": [
+        "#312b29",
+        "#504238",
+        "#74533d",
+        "#9c6c49",
+        "#ca935c"
+      ]
+    },
+    "stone": {
+      "label": "석재",
+      "colors": [
+        "#4a4748",
+        "#6c645e",
+        "#766e63",
+        "#988576",
+        "#c2a187"
+      ]
+    },
+    "water": {
+      "label": "물",
+      "colors": [
+        "#34484d",
+        "#4d6063",
+        "#667a7b"
+      ]
+    },
+    "field": {
+      "label": "교전면 바탕",
+      "colors": ["#9e8e52", "#978850", "#655b62"]
+    },
+    "blightShadow": {
+      "label": "오염 그림자",
+      "colors": [
+        "#302436",
+        "#3a273d"
+      ]
+    },
+    "blightMid": {
+      "label": "오염 중간톤",
+      "colors": [
+        "#664361",
+        "#7b5a71"
+      ]
+    },
+    "coldShell": {
+      "label": "오염 차가운 면",
+      "colors": [
+        "#6f7286",
+        "#757c8e"
+      ]
+    },
+    "bone": {
+      "label": "뼈빛 밝은 면",
+      "colors": [
+        "#d1b6ac",
+        "#dac1b5"
+      ]
+    },
+    "stagedBlight": {
+      "label": "단계용 오염색",
+      "colors": [
+        "#473747",
+        "#514652",
+        "#5f5563",
+        "#6b5d6b",
+        "#776873",
+        "#635965",
+        "#524e61",
+        "#3c3544"
+      ]
+    },
+    "alliesAccent": {
+      "label": "아군 등불과 소품",
+      "colors": [
+        "#c98b43",
+        "#e5ac60",
+        "#f1cb88",
+        "#f5e3b6"
+      ]
+    },
+    "glow": {
+      "label": "외신 발광",
+      "colors": [
+        "#3e7d7c",
+        "#4aae9e"
+      ]
+    }
+  },
+  "measurement": {
+    "ground": {
+      "bounds": [
+        30,
+        34,
+        210,
+        103
+      ],
+      "boundsConvention": "240×135 논리 격자에서 좌·상 포함, 우·하 미포함.",
+      "method": "고정 영역에 포함된 바닥 픽셀의 HSL L 산술평균. 허용 바닥색 바깥의 픽셀과 고정 영역 바깥의 장식을 제외한다.",
+      "includedRamps": [
+        "soil",
+        "grass",
+        "field",
+        "stone",
+        "water",
+        "blightShadow",
+        "blightMid",
+        "coldShell",
+        "stagedBlight"
+      ],
+      "excludedColors": [
+        "#c2a187"
+      ],
+      "minimumCoverage": 0.72,
+      "excludedDescription": "나무, 등불, 뼈빛 돌의 밝은 면, 석재의 강조색, 청록 맥과 핵, 원경, 전경, 양쪽 경계. 유닛과 UI는 원본에 포함하지 않는다."
+    },
+    "blight": {
+      "ramps": [
+        "blightShadow",
+        "blightMid",
+        "coldShell",
+        "bone",
+        "stagedBlight"
+      ],
+      "denominator": "전체 32,400칸",
+      "note": "초기 비오염 재질에는 이 색을 쓰지 않는다."
+    },
+    "glow": {
+      "core": "#4aae9e",
+      "rim": "#3e7d7c",
+      "denominator": "전체 32,400칸",
+      "rawAndEmissive": true,
+      "nonEmissiveMark": {
+        "round": "r03",
+        "allowedColor": "#3e7d7c",
+        "reservedBounds": [
+          81,
+          13,
+          89,
+          23
+        ],
+        "targetCells": 12,
+        "cells": [[85, 13], [85, 14], [86, 14], [86, 15], [85, 16], [86, 16], [85, 17], [84, 18], [85, 18], [84, 19], [84, 20], [83, 21]],
+        "status": "원경 비발광 표식 12칸. 두 청록 합계와 표식 제외 발광량을 모두 집계한다."
+      }
+    },
+    "forbiddenHues": [
+      {
+        "range": [
+          290,
+          340
+        ],
+        "minSaturation": 0.4
+      },
+      {
+        "range": [
+          345,
+          10
+        ],
+        "minSaturation": 0.45
+      }
+    ],
+    "forbiddenExceptions": []
+  },
+  "stages": [
+    {
+      "rounds": [
+        1,
+        3
+      ],
+      "lightness": [
+        0.45,
+        0.48
+      ],
+      "blightPct": [
+        0,
+        0
+      ],
+      "glowPct": [
+        0,
+        0
+      ]
+    },
+    {
+      "rounds": [
+        4,
+        6
+      ],
+      "lightness": [
+        0.43,
+        0.46
+      ],
+      "blightPct": [
+        5,
+        15
+      ],
+      "glowPct": [
+        0,
+        0
+      ]
+    },
+    {
+      "rounds": [
+        7,
+        9
+      ],
+      "lightness": [
+        0.4,
+        0.43
+      ],
+      "blightPct": [
+        15,
+        35
+      ],
+      "glowPct": [
+        0,
+        0.3
+      ]
+    },
+    {
+      "rounds": [
+        10,
+        12
+      ],
+      "lightness": [
+        0.38,
+        0.4
+      ],
+      "blightPct": [
+        35,
+        60
+      ],
+      "glowPct": [
+        0.3,
+        1
+      ]
+    },
+    {
+      "rounds": [
+        13,
+        15
+      ],
+      "lightness": [
+        0.36,
+        0.38
+      ],
+      "blightPctByRound": [
+        [
+          60,
+          75
+        ],
+        [
+          75,
+          85
+        ],
+        [
+          85,
+          100
+        ]
+      ],
+      "glowPct": [
+        1,
+        3
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "r01",
+      "lightness": 0.478,
+      "blightPct": 0,
+      "glowPct": 0,
+      "landmark": "초소, 울타리, 밝은 풀밭"
+    },
+    {
+      "id": "r02",
+      "lightness": 0.473,
+      "blightPct": 0,
+      "glowPct": 0,
+      "landmark": "두 수레바퀴 자국, 얕은 물웅덩이"
+    },
+    {
+      "id": "r03",
+      "lightness": 0.466,
+      "blightPct": 0,
+      "glowPct": 0,
+      "landmark": "솔숲 갈림길과 원경의 비발광 균열"
+    },
+    {
+      "id": "r04",
+      "lightness": 0.457,
+      "blightPct": 6,
+      "glowPct": 0,
+      "landmark": "오른쪽 고목 뿌리 끝의 먹자두"
+    },
+    {
+      "id": "r05",
+      "lightness": 0.448,
+      "blightPct": 10,
+      "glowPct": 0,
+      "landmark": "밑동 양옆으로 갈라지는 흙길과 풀 덩어리"
+    },
+    {
+      "id": "r06",
+      "lightness": 0.437,
+      "blightPct": 14,
+      "glowPct": 0,
+      "landmark": "황갈색 마른 물길, 초록 둔덕과 오염된 잔해"
+    },
+    {
+      "id": "r07",
+      "lightness": 0.429,
+      "blightPct": 18,
+      "glowPct": 0,
+      "landmark": "무너진 외문, 회갈색 바닥, 왼쪽 호박 등불"
+    },
+    {
+      "id": "r08",
+      "lightness": 0.418,
+      "blightPct": 25,
+      "glowPct": 0.12,
+      "landmark": "쌍기둥을 감은 뿌리, 첫 청록 맥과 수정"
+    },
+    {
+      "id": "r09",
+      "lightness": 0.407,
+      "blightPct": 33,
+      "glowPct": 0.25,
+      "landmark": "낡은 판석과 회청색 수레 자국"
+    },
+    {
+      "id": "r10",
+      "lightness": 0.398,
+      "blightPct": 39,
+      "glowPct": 0.38,
+      "landmark": "회갈색 종유석 분지와 청록 샘"
+    },
+    {
+      "id": "r11",
+      "lightness": 0.391,
+      "blightPct": 48,
+      "glowPct": 0.62,
+      "landmark": "제단과 뼈빛 갑각 광물, 청록 핵"
+    },
+    {
+      "id": "r12",
+      "lightness": 0.384,
+      "blightPct": 57,
+      "glowPct": 0.88,
+      "landmark": "닳은 동굴 바닥과 자두빛 갑각 지층"
+    },
+    {
+      "id": "r13",
+      "lightness": 0.378,
+      "blightPct": 67,
+      "glowPct": 1.25,
+      "landmark": "떠 있는 지층과 끊어진 금"
+    },
+    {
+      "id": "r14",
+      "lightness": 0.371,
+      "blightPct": 80,
+      "glowPct": 1.8,
+      "landmark": "뼈빛 난간과 석교 이음, 협곡 맥"
+    },
+    {
+      "id": "r15",
+      "lightness": 0.363,
+      "blightPct": 91,
+      "glowPct": 2.65,
+      "landmark": "반쯤 잠식된 인장, 세로 균열과 비대칭 갑각"
+    }
+  ]
+}

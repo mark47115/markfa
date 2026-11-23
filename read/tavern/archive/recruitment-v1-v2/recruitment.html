@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>균열의 여관 · 선술집 아트 컨셉</title>
+  <link rel="stylesheet" href="../../_shared/report.css">
+  <script defer src="../../_shared/report.js"></script>
+  <style>
+    .views { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); }
+    .views figure { margin: 0; min-width: 0; }
+    .views img { display: block; width: 100%; height: auto; }
+    figcaption { margin-top: .5rem; color: var(--mak-muted); }
+    figure a { display: inline-block; margin-top: .35rem; }
+    .sketch { max-width: 440px; margin: .75rem 0; }
+    details { margin-block: .75rem; }
+  </style>
+</head>
+<body>
+<main class="container">
+  <h1>선술집에서 용병 기물 고용</h1>
+  <p>2층 회랑 중앙의 대장이 난간 너머로 1층 고용 홀을 내려다본다. <strong>테이블 하나가 기물 하나의 고용 칸</strong>이고, 그 기물을 구성하는 유닛 전원이 같은 원형 테이블에 둘러앉는다.</p>
+
+  <div class="views" aria-label="여관 등급별 Higgsfield 시안">
+    <figure>
+      <img src="tavern-tier-1-higgsfield-v2.png" width="2688" height="1520" loading="lazy" alt="앞줄 양끝이 비어 있는 선술집. 뒷줄 두 자리와 앞줄 가운데에서 세 기물의 유닛들이 각자의 원형 테이블에 함께 앉아 있다.">
+      <figcaption><strong>여관 1등급</strong> · 기물 테이블 3개</figcaption>
+      <a href="tavern-tier-1-higgsfield-v2.png" download>3테이블 원본 다운로드</a>
+    </figure>
+    <figure>
+      <img src="tavern-tier-5-higgsfield-v2.png" width="2688" height="1520" loading="lazy" alt="2층 중앙에 대장, 오른쪽에 계단이 있는 선술집. 1층 원형 테이블 다섯 곳에 이끼족, 망령, 강철 기계, 용병단, 검사들이 무리별로 앉아 있다.">
+      <figcaption><strong>여관 4–5등급</strong> · 기물 테이블 5개</figcaption>
+      <a href="tavern-tier-5-higgsfield-v2.png" download>5테이블 원본 다운로드</a>
+    </figure>
+  </div>
+  <p>두 시안은 첨부 스케치를 바탕으로 Higgsfield의 GPT Image 2.6에서 제작했다. 테이블 인원수와 복장은 배치를 확인하기 위한 예시다.</p>
+
+  <section>
+    <h2>등급별 테이블 배치</h2>
+    <table>
+      <thead><tr><th scope="col">여관 등급</th><th scope="col">테이블 수</th><th scope="col">배치 제안</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>3개</td><td>뒷줄 두 자리와 앞줄 가운데</td></tr>
+        <tr><th scope="row">2–3</th><td>4개</td><td>앞줄 오른쪽 끝 추가</td></tr>
+        <tr><th scope="row">4–5</th><td>5개</td><td>앞줄 왼쪽 끝 추가</td></tr>
+      </tbody>
+    </table>
+    <p>같은 카메라와 테이블 위치를 사용한다. 고용석을 선택하면 황동색 바닥 테두리가 테이블과 좌석 전체를 감싼다. 고용이 끝나면 기물의 유닛 전원이 해당 테이블을 비운다.</p>
+  </section>
+
+  <section>
+    <h2>아트 방향</h2>
+    <ul>
+      <li><strong>공간.</strong> 후면 2층의 긴 난간, 오른쪽 계단, 회랑 아래의 서비스 카운터로 층과 동선을 읽히게 한다. 원형 테이블 사이를 통로로 비운다.</li>
+      <li><strong>기물 구분.</strong> 같은 기물은 복장과 주조색을 공유한다. 따뜻한 촛불 아래에서도 이끼족의 뿔, 망령의 푸른 등불, 기계의 넓은 어깨가 구분된다.</li>
+      <li><strong>오토배틀 연결.</strong> 선술집 테이블에서 본 유닛의 실루엣과 종족 색을 전투에서도 유지한다. 실제 480×270 화면에서는 다섯 테이블의 간격과 좌석의 가독성을 확인한다.</li>
+    </ul>
+  </section>
+
+  <details>
+    <summary>사용자 스케치</summary>
+    <figure class="sketch">
+      <img src="tavern-group-layout-sketch.png" width="798" height="561" loading="lazy" alt="긴 2층 난간 중앙에 대장, 오른쪽에 계단, 1층에 카운터와 원형 테이블을 배치한 스케치">
+      <figcaption>2층 회랑과 1층 홀의 배치 원안</figcaption>
+      <a href="tavern-group-layout-sketch.png" download>스케치 다운로드</a>
+    </figure>
+  </details>
+  <details>
+    <summary>초기 시안 · 테이블당 용병 1명</summary>
+    <div class="views">
+      <figure>
+        <img src="tavern-tier-1-v1.png" width="1672" height="941" loading="lazy" alt="용병이 하나씩 앉아 있는 초기 3테이블 시안">
+        <figcaption>초기 3테이블</figcaption>
+        <a href="tavern-tier-1-v1.png" download>원본 다운로드</a>
+      </figure>
+      <figure>
+        <img src="tavern-tier-5-v1.png" width="1672" height="941" loading="lazy" alt="용병이 하나씩 앉아 있는 초기 5테이블 시안">
+        <figcaption>초기 5테이블</figcaption>
+        <a href="tavern-tier-5-v1.png" download>원본 다운로드</a>
+      </figure>
+    </div>
+  </details>
+</main>
+</body>
+</html>

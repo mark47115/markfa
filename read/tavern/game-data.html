@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document" data-mak-theme="custom" data-tavern-design>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 게임 데이터 표</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="game-font.css">
+  <link rel="stylesheet" href="tavern-design.css">
+  <script defer src="_shared/report.js"></script>
+  <script defer src="outputs/game-data/tables.js"></script>
+  <script defer src="outputs/game-data/workbook.js"></script>
+  <script defer src="game-data.js"></script>
+</head>
+<body>
+  <main class="table-report">
+    <a href="index.html#data">← 게임 디자인 문서</a>
+    <h1>게임 데이터 표</h1>
+    <p class="data-scope">Android 원정에 연결한 효과·스킬·기물·유닛 데이터다. 대장 전용 기물 설계는 <a href="index.html#captain-rules">전용 기물 규칙</a>에서 볼 수 있다.</p>
+    <nav class="table-selector" aria-label="데이터 분류">
+      <a href="#effects" data-table="효과">효과</a>
+      <a href="#skills" data-table="스킬">스킬</a>
+      <a href="#pieces" data-table="기물">기물</a>
+      <a href="#units" data-table="유닛">유닛</a>
+    </nav>
+    <div class="table-actions">
+      <label><span class="visually-hidden">현재 표 검색</span><input id="data-query" type="search" placeholder="이름·ID·내용 검색"></label>
+      <span id="table-counter" role="status">표를 불러오는 중</span>
+      <a id="workbook-download" href="outputs/game-data/Tavern-Heros-Game-Data.xlsx?download=1" download="Tavern-Heros-Game-Data.xlsx">엑셀 다운로드</a>
+    </div>
+    <p class="table-download-status" role="status"></p>
+    <p class="table-scroll-hint">옆으로 밀어 더 보기</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="게임 데이터">
+      <table>
+        <caption class="visually-hidden">게임 데이터</caption>
+        <thead></thead><tbody></tbody>
+      </table>
+    </div>
+    <div class="data-pages">
+      <button type="button" data-page="-1">이전</button><span></span><button type="button" data-page="1">다음</button>
+    </div>
+  </main>
+</body>
+</html>

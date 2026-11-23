@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 전투 이펙트</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="game-font.css">
+  <link rel="stylesheet" href="combat-vfx.css">
+  <script defer src="_shared/report.js"></script>
+  <script type="module" src="combat-vfx.mjs"></script>
+</head>
+<body>
+  <main class="vfx-report">
+    <header>
+      <h1>Tavern Heros 전투 이펙트</h1>
+      <p>전투 화면 크기에서 평타, 액티브, 패시브를 재생합니다.</p>
+    </header>
+    <p id="vfx-status" role="status">도트 시안을 불러오고 있습니다.</p>
+    <div id="vfx-lab" class="vfx-lab" hidden>
+      <section class="vfx-view" aria-label="전투 재생">
+        <figure>
+          <canvas id="vfx-canvas" width="480" height="270" role="img" aria-describedby="vfx-caption"></canvas>
+          <figcaption id="vfx-caption">청록 바닥 표식은 아군, 보라는 공허 유닛입니다.</figcaption>
+        </figure>
+        <div class="vfx-controls" role="group" aria-label="재생">
+          <button id="vfx-play" type="button">재생</button>
+          <button id="vfx-event" type="button">발동 순간</button>
+          <button id="vfx-cancel" type="button" hidden>준비 중단</button>
+          <label for="vfx-time">시간</label>
+          <input id="vfx-time" type="range" min="0" max="1350" value="0">
+          <output id="vfx-clock" for="vfx-time"></output>
+        </div>
+        <div class="vfx-controls vfx-options">
+          <label><input id="vfx-fx" type="checkbox" checked> 이펙트</label>
+          <label><input id="vfx-clarity" type="checkbox" checked> 시전자·도착 표시</label>
+          <label><input id="vfx-dense" type="checkbox"> 주변 유닛 100기</label>
+          <label><input id="vfx-overlap" type="checkbox" disabled> 동시 시전</label>
+          <label for="vfx-terrain">전장</label>
+          <select id="vfx-terrain">
+            <option value="border">변경의 풀밭</option>
+            <option value="rift">공허 균열</option>
+          </select>
+          <button id="vfx-shot" type="button">현재 프레임 PNG</button>
+        </div>
+      </section>
+      <section class="vfx-panel" aria-label="유닛과 기술">
+        <div class="vfx-choose">
+          <div id="vfx-mode" class="vfx-mode" role="group" aria-label="이펙트 종류">
+            <button type="button" data-mode="active" aria-pressed="true">액티브</button>
+            <button type="button" data-mode="passive" aria-pressed="false">패시브</button>
+            <button type="button" data-mode="basic" aria-pressed="false">평타</button>
+          </div>
+          <label for="vfx-unit">유닛</label>
+          <select id="vfx-unit"></select>
+          <div id="vfx-variants" class="vfx-variants" hidden>
+            <label for="vfx-variant">동작</label>
+            <select id="vfx-variant"></select>
+          </div>
+        </div>
+        <div class="vfx-details">
+          <h2 id="vfx-title"></h2>
+          <p id="vfx-cue"></p>
+          <dl class="vfx-facts">
+            <div><dt>발동</dt><dd id="vfx-trigger"></dd></div>
+            <div><dt>대상</dt><dd id="vfx-target"></dd></div>
+          </dl>
+          <p id="vfx-trait" class="vfx-trait"></p>
+        </div>
+      </section>
+    </div>
+    <footer class="vfx-links">
+      <a href="media/combat-vfx/v11/native-comparison.png">Unity 전투 이펙트 전후</a>
+      <a href="media/combat-vfx/v11/native-skills.png">Unity 스킬 발동 캡처</a>
+      <a href="sections/10-vfx.md">이펙트 설계와 이벤트 규격</a>
+      <a href="ally-animation.html">아군 무기 모션</a>
+    </footer>
+  </main>
+</body>
+</html>

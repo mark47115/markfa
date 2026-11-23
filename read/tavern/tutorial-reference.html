@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 첫 원정 튜토리얼</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="design-document.css">
+  <link rel="stylesheet" href="game-font.css">
+  <script defer src="_shared/report.js"></script>
+  <style>
+    .design-document .tutorial-opening { margin-top: 0; }
+    .design-document .tutorial-opening nav { margin: 0 0 4px; }
+    .design-document .tutorial-cuts { margin-bottom: 0; }
+    @media (max-width: 650px) {
+      .design-document .tutorial-cuts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main class="design-document">
+  <header class="chapter tutorial-opening">
+    <p><a href="index.html#first-expedition-tutorial">← 게임 디자인 문서</a></p>
+    <h1>첫 원정 튜토리얼</h1>
+    <p>가로 모바일 인게임 화면을 바탕으로 만든 3라운드 시안. 이미지를 눌러 확대할 수 있다.</p>
+    <nav class="design-nav" aria-label="라운드별 시안">
+      <a href="#round-1">1라운드 · 기본 조작</a>
+      <a href="#round-2">2라운드 · 보호막</a>
+      <a href="#round-3">3라운드 · 선술집 선택</a>
+      <a href="media/tutorial-reference/overview.png" download>전체 9컷 PNG</a>
+    </nav>
+  </header>
+  <section class="chapter" id="round-1" aria-labelledby="round-1-title">
+    <h2 id="round-1-title">1라운드 · 고용에서 전투까지</h2>
+    <div class="panel-grid tutorial-cuts">
+      <figure class="shot"><img src="media/tutorial-reference/01-hire.png" width="852" height="393" alt="선술집에서 개울 정찰대를 열면 3골드 고용 버튼이 강조된다."><figcaption>01 · 고용</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/02-place.png" width="852" height="393" alt="대기장에서 정찰대를 옆 빈칸으로 끌어 놓는다."><figcaption>02 · 배치</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/02-departure.png" width="852" height="393" alt="대기장 하단 가운데 출정 버튼과 자동 전투를 설명하는 첫 출정 안내."><figcaption>03 · 출정 버튼 안내</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/03-autobattle.png" width="852" height="393" alt="변경 초소에서 개울 정찰대가 공허군과 자동으로 싸운다."><figcaption>04 · 자동 전투</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/04-next.png" width="852" height="393" alt="승리 화면의 다음 선술집 버튼에서 2라운드로 이어진다."><figcaption>05 · 전투 결과</figcaption></figure>
+    </div>
+  </section>
+  <section class="chapter" id="round-2" aria-labelledby="round-2-title">
+    <h2 id="round-2-title">2라운드 · 배치의 효과 확인</h2>
+    <div class="panel-grid tutorial-cuts">
+      <figure class="shot"><img src="media/tutorial-reference/05-protect.png" width="852" height="393" alt="황혼 방패병을 정찰대 옆에 두자 정찰대에 보호막 2가 표시된다."><figcaption>06 · 옆 팀에 보호막 부여</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/06-shield-result.png" width="852" height="393" alt="전투 결과에 방패병이 정찰대에 준 보호막으로 막은 피해가 표시된다."><figcaption>07 · 보호막으로 막은 피해</figcaption></figure>
+    </div>
+  </section>
+  <section class="chapter" id="round-3" aria-labelledby="round-3-title">
+    <h2 id="round-3-title">3라운드 · 골드 사용법</h2>
+    <p>원하는 기물이 없을 때 리롤을, 레벨업 비용을 모았을 때 레벨업을 안내한다. 둘 다 건너뛸 수 있다.</p>
+    <div class="panel-grid tutorial-cuts">
+      <figure class="shot"><img src="media/tutorial-reference/07-reroll.png" width="852" height="393" alt="선술집 왼쪽 아래의 리롤 아이콘을 누르면 1골드로 테이블의 기물이 바뀐다."><figcaption>08 · 리롤 1골드</figcaption></figure>
+      <figure class="shot"><img src="media/tutorial-reference/08-upgrade.png" width="852" height="393" alt="선술집 위쪽의 레벨업 버튼이 강조된다. 3골드로 선술집을 2레벨로 올린다."><figcaption>09 · 선술집 레벨업 3골드</figcaption></figure>
+    </div>
+  </section>
+  <details class="source-panel">
+    <summary>캡처 출처와 재현</summary>
+    <p>03의 출정 안내는 게임에 적용했다. 나머지 안내 상자, 강조선, 보호막 요약 행은 시안 요소다. 전투는 같은 편성을 Unity에서 재생했다.</p>
+    <div class="reference-links">
+      <a href="media/tutorial-reference/scenario.json">라운드별 캡처 기록</a>
+      <a href="media/tutorial-reference/source/r01-battle.png">1라운드 전투 원본</a>
+      <a href="media/tutorial-reference/source/r02-battle.png">2라운드 전투 원본</a>
+    </div>
+  </details>
+</main>
+</body>
+</html>

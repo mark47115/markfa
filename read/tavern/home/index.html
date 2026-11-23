@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document" data-mak-theme="custom">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tavern Heros · 게임 시작화면</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <link rel="stylesheet" href="../game-font.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="../game-screen.css">
+  <script defer src="../_shared/report.js"></script>
+  <script defer src="../game-screen.js"></script>
+  <script defer src="home.js"></script>
+  <script type="module" src="title-menu.js"></script>
+</head>
+<body>
+<main class="home game-screen">
+  <section class="hero" aria-labelledby="game-title">
+    <img class="hero-art" src="../media/start-screen/v11/art-sprite-grid-matched-pixels-pc.png" width="1671" height="941" alt="로언과 삼키는 자 아래에서 아군과 공허 군대가 푸른 초원과 메마른 전장 사이에서 맞부딪힌다.">
+    <div class="hero-content">
+      <h1 id="game-title"><img class="title-art" src="../media/start-screen/v5/tavern-heros-title.png" width="194" height="24" alt="Tavern Heros"></h1>
+      <nav class="title-menu" aria-label="시작 메뉴">
+        <a class="primary start" href="lobby.html" data-screen-link>게임 시작</a>
+        <button type="button" data-title-dialog="title-settings" aria-haspopup="dialog" aria-controls="title-settings">설정</button>
+        <button type="button" data-title-dialog="title-help" aria-haspopup="dialog" aria-controls="title-help">도움말</button>
+        <button type="button" data-title-dialog="title-exit" aria-haspopup="dialog" aria-controls="title-exit">나가기</button>
+      </nav>
+    </div>
+    <a class="title-touch" href="lobby.html" data-screen-link aria-label="홈 화면으로 이동"></a>
+  </section>
+
+  <div class="home-panels" hidden>
+    <section class="panel" aria-labelledby="captains-title">
+      <span class="glyph captain-glyph" aria-hidden="true">◆</span>
+      <div class="panel-info">
+        <h2 id="captains-title">대장 관리</h2>
+        <p id="captain-summary">선봉 대장 · Lv. 1</p>
+        <p class="muted" id="captain-progress">대장 조각 2 / 4</p>
+      </div>
+      <button class="secondary" id="manage-captains" type="button">대장 보기</button>
+    </section>
+    <section class="panel" aria-labelledby="packs-title">
+      <span class="glyph pack-glyph" aria-hidden="true">✦</span>
+      <div class="panel-info">
+        <h2 id="packs-title">대장 팩</h2>
+        <p>보유 <strong id="pack-count">2</strong>개</p>
+        <p class="muted">기간 내 획득 <strong>2 / 3</strong></p>
+      </div>
+      <button class="secondary" id="open-pack" type="button">팩 열기</button>
+    </section>
+  </div>
+</main>
+<aside class="screen-rotate" role="status">
+  <span class="rotate-device" aria-hidden="true">↔</span>
+  <p>휴대폰을 가로로 돌려 주세요.</p>
+</aside>
+
+<dialog class="title-dialog" id="title-settings" aria-labelledby="title-settings-heading">
+  <div class="dialog-header">
+    <h2 id="title-settings-heading">설정</h2>
+    <form method="dialog"><button class="close" type="submit">닫기</button></form>
+  </div>
+  <div class="title-dialog-content">
+    <div class="title-volume">
+      <label for="title-music">배경 음악</label><output for="title-music">100%</output>
+      <input id="title-music" data-setting="music" type="range" min="0" max="100" value="100">
+    </div>
+    <div class="title-volume">
+      <label for="title-effects">효과음</label><output for="title-effects">100%</output>
+      <input id="title-effects" data-setting="effects" type="range" min="0" max="100" value="100">
+    </div>
+    <p class="muted">음량 설정은 시작 화면과 홈에서 공유합니다.</p>
+    <label class="title-check"><input data-setting="contrast" type="checkbox"> 글자 대비 높이기</label>
+    <button class="secondary fullscreen-toggle" type="button">전체 화면</button>
+    <p id="fullscreen-status" role="status" hidden>이 미리보기에서는 전체 화면을 사용할 수 없습니다.</p>
+  </div>
+</dialog>
+
+<dialog class="title-dialog" id="title-help" aria-labelledby="title-help-heading">
+  <div class="dialog-header">
+    <h2 id="title-help-heading">도움말</h2>
+    <form method="dialog"><button class="close" type="submit">닫기</button></form>
+  </div>
+  <ol class="title-guide">
+    <li><strong>고용</strong><p>첫 라운드는 3골드로 시작합니다. 기물 고용은 3골드, 판매는 1골드입니다.</p></li>
+    <li><strong>배치</strong><p>대기장에 최대 6개 기물을 놓습니다. 종대와 횡대를 바꾸고, 기물을 끌어 자리를 옮길 수 있습니다.</p></li>
+    <li><strong>출정</strong><p>전투는 자동으로 진행됩니다. 아군이 전멸하면 침식도가 오르고, 100%가 되면 원정에 실패합니다.</p></li>
+  </ol>
+</dialog>
+
+<dialog class="title-dialog" id="title-exit" aria-labelledby="title-exit-heading" aria-describedby="title-exit-description">
+  <div class="dialog-header"><h2 id="title-exit-heading">나가기</h2></div>
+  <p class="title-dialog-content" id="title-exit-description">게임 화면을 나가 프로젝트로 돌아갈까요?</p>
+  <form method="dialog" class="dialog-actions">
+    <button class="secondary" type="submit" autofocus>취소</button>
+    <a class="primary title-exit-link" href="../index.html#home-title">나가기</a>
+  </form>
+</dialog>
+
+<dialog id="captains" aria-labelledby="roster-title">
+  <div class="dialog-header">
+    <h2 id="roster-title">대장 관리</h2>
+    <form method="dialog"><button class="close" type="submit">닫기</button></form>
+  </div>
+  <div class="roster" id="roster" aria-label="대장 목록"></div>
+  <section class="captain-detail" aria-labelledby="detail-name">
+    <h3 id="detail-name"></h3>
+    <p id="detail-ability"></p>
+    <label id="fragment-label" for="fragment-progress"></label>
+    <progress id="fragment-progress"></progress>
+    <div class="dialog-actions">
+      <button class="primary" id="progress-captain" type="button"></button>
+      <button class="secondary" id="select-captain" type="button">출정 대장으로 선택</button>
+    </div>
+    <p class="feedback" id="captain-feedback" role="status"></p>
+  </section>
+</dialog>
+
+<dialog id="pack-result" aria-labelledby="pack-result-title">
+  <div class="dialog-header">
+    <h2 id="pack-result-title">대장 팩 결과</h2>
+    <form method="dialog"><button class="close" type="submit">닫기</button></form>
+  </div>
+  <p class="result" id="pack-reward"></p>
+  <p class="muted" id="pack-description"></p>
+  <div class="dialog-actions"><button class="primary" id="view-reward-captain" type="button">대장 관리로 이동</button></div>
+</dialog>
+
+</body>
+</html>

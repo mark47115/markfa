@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document" data-mak-theme="custom">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cavern Heros · 선술집 레벨 레퍼런스</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    html[data-mak-report=document] body { min-height: 0; padding: 0; background: #2e2637; color: #f8e7cf; }
+    .screen {
+      --art: url("../references/tavern-in-game-layout.png");
+      --early-art: url("../media/art-direction/tavern-shop-team-v6.png");
+      width: min(100vw, 1600px); aspect-ratio: 16 / 9; position: relative; margin-inline: auto;
+      overflow: hidden; font: 700 16px/1.25 "Malgun Gothic", sans-serif;
+      background: #342839;
+    }
+    html[data-mak-report=document] body > main.screen { max-width: none; }
+    .screen.mobile { width: min(100vw, 450px); aspect-ratio: 9 / 16; }
+    html[data-mak-report=document] .screen .hud { background: #302334; border-radius: 0; border-color: #ad7645; }
+    .hud { display: flex; gap: 20px; align-items: center; min-height: 62px; box-sizing: border-box; position: relative; z-index: 1; padding: 8px 20px; border-bottom: 2px solid; box-shadow: 0 3px #211926; }
+    .hud-name { color: #ffda93; font-size: 20px; white-space: nowrap; }
+    .hud-facts { display: flex; flex-wrap: wrap; gap: 3px 14px; color: #f5dfc7; }
+    .shop-action { display: flex; gap: 12px; align-items: center; margin-inline-start: auto; }
+    .next { color: #f3c991; font-size: 14px; }
+    .upgrade { display: grid; place-items: center; box-sizing: border-box; min-height: 40px; background: #ebac60; color: #342136; padding: 3px 12px; border: 2px solid #fedb94; box-shadow: 2px 2px #191323; font-size: 16px; white-space: nowrap; }
+    .mobile .hud { display: grid; gap: 4px; padding: 8px 12px; min-height: 70px; }
+    .mobile .hud-name { font-size: 22px; }
+    .mobile .hud-facts { font-size: 16px; }
+    .mobile .shop-action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(132px, auto); gap: 8px; margin: 0; }
+    .mobile .upgrade { height: 48px; font-size: 17px; }
+    .playfield { position: absolute; inset: 62px 0 75px; overflow: hidden; }
+    .pc .playfield { background: var(--art) center top / 100% 119.5% no-repeat; }
+    .pc.early .playfield { background-image: var(--early-art); background-size: 100% 117%; }
+    .mobile .playfield { inset: 70px 0 158px; background: #a8757b; }
+    .hall { position: absolute; left: 50%; top: 0; width: 450px; height: 570px; transform-origin: top center; transform: translateX(-50%) scale(var(--hall-scale, 1)); }
+    .floor { position: absolute; inset: 140px 0 0; background: #956b71; overflow: hidden; }
+    .floor-row { display: flex; height: 37px; width: 150%; margin-left: -10%; transform: skewX(-19deg); }
+    .floor-row:nth-child(even) { margin-left: -18%; }
+    .floor-row span { width: 60px; border: 2px solid #956b71; background: #ae7b7c; }
+    .floor-row span:nth-child(3n + 1) { background: #aa7779; }
+    .floor-row span:nth-child(5n + 3) { background: #b47f80; }
+    .gallery { position: absolute; inset: 0 0 auto; height: 198px; background: var(--art) -247px 1px / 756px auto no-repeat; clip-path: polygon(0 0,100% 0,100% 92%,88% 92%,85% 74%,72% 72%,72% 65%,47% 65%,47% 76%,16% 76%,16% 74%,0 74%); }
+    .crew { position: absolute; width: var(--w); height: var(--h); background: var(--art) var(--x) var(--y) / 736px auto; clip-path: var(--clip); }
+    .badge { position: absolute; z-index: 1; font-size: 14px; white-space: nowrap; color: #ffe1a7; background: #362539; padding: 2px 7px; border: 1px solid #b18356; box-shadow: 0 2px #2c1e31; transform: translateX(-50%); }
+    .mobile .badge { font-size: 20px; }
+    .badge.is-top { border-color: #ffd478; background: #59372e; color: #fff1cb; }
+    .team { --slot-size: 46px; position: absolute; inset: auto 50% 9px auto; transform: translateX(50%); width: min(calc(100% - 32px), 680px); display: flex; gap: 16px; align-items: center; justify-content: center; min-height: 56px; border: 2px solid #68c9b6; box-shadow: inset 0 0 0 2px #2c686b, 0 3px #23202c; background: #232d40; }
+    .team-name { font-size: 16px; color: #d9fff2; }
+    .team-slots { display: flex; justify-content: space-between; gap: 9px; }
+    .slot { box-sizing: border-box; width: var(--slot-size); height: var(--slot-size); border: 1px solid #64b9ad; background: #253347; box-shadow: inset 0 0 0 1px #303e51; }
+    .slot.has-portrait { border-color: #83e0cd; background: var(--art) calc(var(--slot-size) * var(--portrait-x)) calc(var(--slot-size) * -6.46875) / calc(var(--slot-size) * 13.25) auto; }
+    .mobile .team { --slot-size: 44px; inset: auto 7px 8px; width: auto; transform: none; display: grid; align-content: center; gap: 6px; padding: 6px 5px; padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+    .mobile .team-name { font-size: 18px; margin-inline: 3px; }
+    .mobile .team-slots { gap: 4px; }
+    @media (max-width: 350px) { .mobile .team { --slot-size: calc((100vw - 52px) / 7); } }
+  </style>
+</head>
+<body>
+  <main class="screen" aria-label="선술집 고용 화면">
+    <header class="hud">
+      <span class="hud-name"></span>
+      <div class="hud-facts"><span class="count"></span><span class="range"></span></div>
+      <div class="shop-action"><span class="next"></span><span class="upgrade">레벨 올리기</span></div>
+    </header>
+    <div class="playfield"></div>
+    <footer class="team">
+      <span class="team-name">내 팀</span>
+      <div class="team-slots" aria-label="7칸 중 3칸 사용"></div>
+    </footer>
+  </main>
+  <script>
+    const query = new URLSearchParams(location.search);
+    const mobile = query.get('device') === 'mobile';
+    const early = query.get('level') === '1';
+    const screen = document.querySelector('.screen');
+    screen.classList.add(mobile ? 'mobile' : 'pc', early ? 'early' : 'expanded');
+    screen.querySelector('.hud-name').textContent = early ? '선술집 Lv. 1' : '선술집 Lv. 4';
+    screen.querySelector('.count').textContent = early ? '고용 테이블 3개' : '고용 테이블 5개';
+    screen.querySelector('.range').textContent = early ? '등장 기물 1등급' : '등장 기물 1~4등급';
+    screen.querySelector('.next').textContent = early ? '다음 Lv. 2 · 2등급 해금 · 테이블 +1' : '다음 Lv. 5 · 5등급 해금';
+    const playfield = screen.querySelector('.playfield');
+    const slots = screen.querySelector('.team-slots');
+    if (mobile) screen.querySelector('.team').append(screen.querySelector('.shop-action'));
+    for (const x of [-81, -126, -171, null, null, null, null]) {
+      const slot = document.createElement('span');
+      slot.className = 'slot';
+      if (x !== null) {
+        slot.classList.add('has-portrait');
+        slot.style.setProperty('--portrait-x', x / 32);
+      }
+      slots.append(slot);
+    }
+    function addBadge(parent, x, y, tier) {
+      const badge = document.createElement('span');
+      badge.className = 'badge' + (tier === 4 ? ' is-top' : '');
+      badge.textContent = tier + '등급';
+      badge.style.left = x;
+      badge.style.top = y;
+      parent.append(badge);
+    }
+    if (mobile) {
+      const hall = document.createElement('div');
+      hall.className = 'hall';
+      playfield.append(hall);
+      new ResizeObserver(([entry]) => {
+        const {width, height} = entry.contentRect;
+        hall.style.setProperty('--hall-scale', Math.min(width / 450, height / 570));
+      }).observe(playfield);
+      const floor = document.createElement('div');
+      floor.className = 'floor';
+      floor.setAttribute('aria-hidden', 'true');
+      for (let i = 0; i < 14; i++) {
+        const row = document.createElement('div');
+        row.className = 'floor-row';
+        for (let j = 0; j < 11; j++) row.append(document.createElement('span'));
+        floor.append(row);
+      }
+      const gallery = document.createElement('div');
+      gallery.className = 'gallery';
+      hall.append(floor, gallery);
+      // Crop polygons trace the furniture and seated squads in the accepted screen.
+      const crews = [
+        { x: 268, y: 281, w: 389, h: 255, left: 23, top: 169, tier: 1, clip: '0% 58%, 3% 46%, 4% 29%, 14% 20%, 31% 20%, 36% 8%, 47% 0, 56% 3%, 63% 12%, 65% 25%, 80% 20%, 92% 27%, 98% 49%, 100% 59%, 100% 90%, 90% 100%, 15% 100%, 4% 90%' },
+        { x: 915, y: 308, w: 344, h: 228, left: 250, top: 176, tier: 4, clip: '0% 61%, 3% 30%, 11% 15%, 22% 17%, 28% 20%, 33% 18%, 30% 5%, 37% 0, 58% 0, 62% 13%, 70% 0, 77% 5%, 75% 20%, 80% 21%, 89% 13%, 96% 19%, 97% 47%, 100% 60%, 98% 85%, 89% 100%, 10% 100%, 2% 87%' },
+        { x: 628, y: 524, w: 362, h: 240, left: 33, top: 321, tier: 2, clip: '0% 43%, 8% 41%, 8% 20%, 20% 0, 32% 2%, 41% 12%, 42% 32%, 46% 33%, 55% 30%, 62% 7%, 75% 1%, 85% 10%, 89% 38%, 100% 44%, 99% 81%, 93% 100%, 8% 100%, 0 80%' },
+        { x: 1144, y: 534, w: 338, h: 234, left: 252, top: 324, tier: 3, clip: '0% 43%, 1% 20%, 4% 0, 14% 1%, 20% 11%, 29% 0, 40% 0, 44% 14%, 45% 33%, 52% 39%, 59% 35%, 61% 16%, 66% 0, 80% 1%, 83% 11%, 90% 1%, 97% 2%, 99% 37%, 100% 66%, 100% 88%, 91% 100%, 4% 100%, 0 79%' },
+        { x: 181, y: 533, w: 339, h: 230, left: 149, top: 469, tier: 4, clip: '0% 32%, 3% 12%, 15% 0, 28% 1%, 39% 10%, 43% 29%, 46% 28%, 50% 26%, 57% 28%, 61% 12%, 72% 0, 85% 2%, 94% 11%, 99% 30%, 100% 60%, 97% 88%, 90% 100%, 10% 100%, 3% 92%, 0 68%' },
+      ];
+      const scale = 736 / 1672;
+      for (const crew of early ? crews.slice(0, 3) : crews) {
+        const item = document.createElement('div');
+        item.className = 'crew';
+        item.style.left = crew.left + 'px';
+        const top = crew.top - (crew.top > 450 ? 40 : crew.top > 300 ? 9 : 0);
+        item.style.top = top + 'px';
+        item.style.setProperty('--w', crew.w * scale + 'px');
+        item.style.setProperty('--h', crew.h * scale + 'px');
+        item.style.setProperty('--x', -crew.x * scale + 'px');
+        item.style.setProperty('--y', -crew.y * scale + 'px');
+        item.style.setProperty('--clip', 'polygon(' + crew.clip + ')');
+        hall.append(item);
+        addBadge(hall, crew.left + crew.w * scale / 2 + 'px', top + crew.h * scale + 1 + 'px', early ? 1 : crew.tier);
+      }
+    } else {
+      const grades = early ? [[34,78,1],[70,69,1],[54,93,1]] : [[28,62,1],[65,64,4],[21,91,4],[49,92,2],[78,92,3]];
+      for (const [x, y, tier] of grades) addBadge(playfield, x + '%', y + '%', tier);
+    }
+  </script>
+</body>
+</html>

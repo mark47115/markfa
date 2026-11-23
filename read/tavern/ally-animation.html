@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 유닛 애니메이션</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="ally-animation.css">
+  <script defer src="_shared/report.js"></script>
+  <script defer src="media/unit-sprites/unit-motion-v10/preview-data.js"></script>
+  <script defer src="ally-motion-vfx.js"></script>
+  <script defer src="ally-animation.js"></script>
+</head>
+<body>
+  <main class="motion-report">
+    <header class="motion-header">
+      <h1>유닛 애니메이션</h1>
+      <p>유닛과 동작을 선택해 실제 도트와 확대 모션을 함께 확인합니다.</p>
+      <a href="media/unit-sprites/unit-motion-v10/tavern-heros-unit-motion-v10.zip" download>아군 276종·적군 32종 시트 ZIP 다운로드</a>
+    </header>
+    <section class="motion-panel" aria-label="애니메이션 재생">
+      <div class="motion-select">
+        <label for="motion-unit">유닛</label>
+        <select id="motion-unit" aria-describedby="motion-profile" disabled></select>
+        <span id="motion-profile"></span>
+      </div>
+      <div class="motion-select motion-attack" hidden>
+        <label for="motion-attack-kind">공격 자세</label>
+        <select id="motion-attack-kind" disabled></select>
+      </div>
+      <div class="motion-actions" role="group" aria-label="동작 선택">
+        <button type="button" data-clip="idle" aria-pressed="false" disabled>대기</button>
+        <button type="button" data-clip="walk" aria-pressed="true" disabled>이동</button>
+        <button type="button" data-clip="attack" aria-pressed="false" disabled>공격</button>
+        <button type="button" data-clip="skill" aria-pressed="false" disabled>스킬</button>
+        <button type="button" data-clip="hit" aria-pressed="false" disabled>피격</button>
+      </div>
+      <div class="motion-stages" aria-label="크기별 애니메이션">
+        <figure>
+          <canvas width="152" height="96" class="motion-zoom" aria-label="확대된 유닛"></canvas>
+          <figcaption>확대</figcaption>
+        </figure>
+        <figure>
+          <canvas width="152" height="96" class="motion-native" aria-label="도트 실제 크기 유닛"></canvas>
+          <figcaption>실제 크기</figcaption>
+        </figure>
+      </div>
+      <div class="motion-controls motion-layers" role="group" aria-label="이펙트 검토">
+        <label><input type="checkbox" id="motion-effects" checked> 이펙트</label>
+        <label><input type="checkbox" id="motion-dense"> 밀집 교전</label>
+        <label for="motion-ground">장판 시안</label>
+        <select id="motion-ground" disabled>
+          <option value="off">없음</option>
+          <option value="circle">원형</option>
+          <option value="rect">직사각형</option>
+        </select>
+      </div>
+      <figure class="motion-crowd" hidden>
+        <canvas width="320" height="152" aria-label="공격, 진영 표식, 체력바와 장판을 함께 보는 밀집 교전"></canvas>
+        <figcaption>밀집 교전 · 청록 원은 아군, 보라 마름모는 적군</figcaption>
+      </figure>
+      <div class="motion-controls">
+        <button type="button" id="motion-toggle" disabled>재생</button>
+        <button type="button" id="motion-next" disabled>다음 프레임</button>
+        <button type="button" id="motion-flip" aria-pressed="false" disabled>좌우 반전</button>
+        <label for="motion-speed">속도</label>
+        <select id="motion-speed" disabled>
+          <option value="0.5">0.5배</option>
+          <option value="1" selected>1배</option>
+          <option value="2">2배</option>
+        </select>
+      </div>
+      <div class="motion-frame">
+        <label for="motion-frame">프레임</label>
+        <input id="motion-frame" type="range" min="1" max="8" value="1" disabled>
+        <output for="motion-frame" id="motion-frame-label" aria-live="off"></output>
+      </div>
+      <p id="motion-status" role="status">스프라이트 시트를 불러오는 중</p>
+    </section>
+    <section class="motion-panel motion-sheet" aria-labelledby="motion-sheet-title" hidden>
+      <h2 id="motion-sheet-title">스프라이트 시트</h2>
+      <figure>
+        <img id="motion-sheet" width="880" height="616" alt="">
+        <figcaption>위에서부터 대기·이동·기본 공격·피격. 추가 공격은 그 아래, 스킬은 마지막 행에 배치합니다.</figcaption>
+      </figure>
+      <p><a id="motion-download" download>이 유닛의 PNG 다운로드</a> · <a href="sections/09-animation.md">프레임과 이벤트 규격</a></p>
+    </section>
+  </main>
+</body>
+</html>

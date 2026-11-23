@@ -1,0 +1,117 @@
+{
+  "viewport": {
+    "width": 852,
+    "height": 393
+  },
+  "language": "ko",
+  "waves": [
+    "R01A",
+    "R02A",
+    "R03B"
+  ],
+  "captain": "rowan",
+  "capture": {
+    "preparation": "mobile web shell",
+    "battle": "Unity offscreen camera",
+    "battleHud": false
+  },
+  "battles": [
+    {
+      "round": 1,
+      "outcome": "Win",
+      "tick": 15,
+      "source": "source/r01-battle.png"
+    },
+    {
+      "round": 2,
+      "outcome": "Win",
+      "tick": 37,
+      "source": "source/r02-battle.png",
+      "protection": {
+        "source": "Guard-1-0",
+        "target": "Hunt-1-0",
+        "shield": 2,
+        "blocked": 1
+      }
+    }
+  ],
+  "thirdRound": {
+    "gold": 5,
+    "rerollCost": 1,
+    "upgradeCost": 3
+  },
+  "frames": [
+    {
+      "file": "01-hire.png",
+      "source": "source/01-hire.png",
+      "round": 1,
+      "label": "고용",
+      "prompt": "첫 용병을 고용하세요.",
+      "hint": "3골드로 개울 정찰대를 데려와요."
+    },
+    {
+      "file": "02-place.png",
+      "source": "source/02-place.png",
+      "round": 1,
+      "label": "배치",
+      "prompt": "용병을 옆 빈칸으로 옮기세요.",
+      "hint": "옮길 칸 위에서 손을 떼세요."
+    },
+    {
+      "file": "02-departure.png",
+      "source": "02-departure.png",
+      "round": 1,
+      "label": "출정",
+      "prompt": "배치를 마쳤다면 출정을 누르세요.",
+      "hint": "전투는 자동으로 진행돼요."
+    },
+    {
+      "file": "03-autobattle.png",
+      "source": "source/r01-battle.png",
+      "round": 1,
+      "label": "자동 전투",
+      "prompt": "유닛은 자동으로 싸워요.",
+      "hint": "배치한 용병이 어떻게 싸우는지 지켜보세요."
+    },
+    {
+      "file": "04-next.png",
+      "source": "source/04-next.png",
+      "round": 1,
+      "label": "결과 확인",
+      "prompt": "전투 결과를 확인하세요.",
+      "hint": "다음 선술집을 누르면 2라운드가 시작돼요."
+    },
+    {
+      "file": "05-protect.png",
+      "source": "source/05-protect.png",
+      "round": 2,
+      "label": "옆 팀 보호",
+      "prompt": "방패병을 정찰대 옆에 두세요.",
+      "hint": "개울 정찰대의 첫 유닛에 보호막 2가 생겨요."
+    },
+    {
+      "file": "06-shield-result.png",
+      "source": "source/06-shield-result.png",
+      "round": 2,
+      "label": "효과 확인",
+      "prompt": "보호막이 피해를 막았어요.",
+      "hint": "어느 기물이 도왔는지 결과에서 확인할 수 있어요."
+    },
+    {
+      "file": "07-reroll.png",
+      "source": "source/07-reroll.png",
+      "round": 3,
+      "label": "기물 다시 뽑기",
+      "prompt": "원하는 기물이 없나요?",
+      "hint": "1골드로 테이블의 기물을 다시 뽑아요."
+    },
+    {
+      "file": "08-upgrade.png",
+      "source": "source/07-reroll.png",
+      "round": 3,
+      "label": "선술집 레벨업",
+      "prompt": "더 높은 등급을 보고 싶나요?",
+      "hint": "3골드로 선술집을 올리면 높은 등급 기물이 나와요."
+    }
+  ]
+}

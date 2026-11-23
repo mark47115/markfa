@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>클래시 로얄 카드 일러스트 가시성</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <link rel="stylesheet" href="design-document.css">
+  <script defer src="_shared/report.js"></script>
+  <style>
+    .card-study fieldset { margin: 0; padding: 0; border: 0; }
+    .card-study .modes { display: flex; flex-wrap: wrap; gap: 0 16px; }
+    .card-study .modes label { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; }
+    .card-study .examples {
+      --scale: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(101px, 1fr));
+      gap: 10px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .card-study:has(#cards-half:checked) .examples,
+    .card-study:has(#cards-gray:checked) .examples { --scale: .5; }
+    .card-study:has(#cards-gray:checked) .sample-image { filter: grayscale(1); }
+    .card-study .examples li {
+      display: grid;
+      justify-items: center;
+      align-content: end;
+      gap: 6px;
+      margin: 0;
+      min-width: 0;
+      padding: 5px 3px 8px;
+      border: 1px solid var(--mak-border);
+      border-radius: 6px;
+      color: var(--mak-text);
+      font-size: .86rem;
+      text-align: center;
+    }
+    .card-study .sample-image {
+      display: block;
+      width: calc(var(--w) * var(--scale) * 1px);
+      height: calc(var(--h) * var(--scale) * 1px);
+      background-image: var(--source);
+      background-size: calc(var(--sw) * var(--scale) * 1px) calc(var(--sh) * var(--scale) * 1px);
+      background-position: calc(var(--x) * var(--scale) * -1px) calc(var(--y) * var(--scale) * -1px);
+      background-repeat: no-repeat;
+    }
+    .card-study .deck { --source: url('media/card-readability/deck-reference.png'); --sw: 480; --sh: 638; }
+    .card-study .collection { --source: url('media/card-readability/collection-reference.png'); --sw: 415; --sh: 739; }
+    .card-study .originals { align-items: start; }
+    .card-study .originals img { max-height: 580px; object-fit: contain; }
+    @media (max-width: 540px) {
+      .card-study .originals { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main class="design-document card-study">
+  <header class="chapter">
+    <p><a href="index.html#captains-and-units">← 게임 디자인 문서</a></p>
+    <h1>클래시 로얄 카드 일러스트 가시성</h1>
+    <p>작은 카드에서도 얼굴, 장비, 물체의 특징적인 모양으로 대상을 알아볼 수 있다. 첨부한 덱·수집 화면 두 장과 슈퍼셀 및 제작 참여자의 공개 자료를 살폈다.</p>
+  </header>
+
+  <section class="chapter" aria-labelledby="thumbnail-title">
+    <h2 id="thumbnail-title">카드 축소 비교</h2>
+    <fieldset>
+      <legend>표시 방식</legend>
+      <div class="modes">
+        <label><input type="radio" name="card-scale" id="cards-original" checked> 첨부 크기</label>
+        <label><input type="radio" name="card-scale" id="cards-half"> 50% 컬러</label>
+        <label><input type="radio" name="card-scale" id="cards-gray"> 50% 흑백</label>
+      </div>
+    </fieldset>
+    <ul class="examples">
+      <li class="deck"><span class="sample-image" style="--x:65;--y:47;--w:84;--h:98" aria-hidden="true"></span>자이언트</li>
+      <li class="deck"><span class="sample-image" style="--x:328;--y:46;--w:85;--h:100" aria-hidden="true"></span>미니 P.E.K.K.A.</li>
+      <li class="collection"><span class="sample-image" style="--x:211;--y:519;--w:97;--h:118" aria-hidden="true"></span>P.E.K.K.A.</li>
+      <li class="deck"><span class="sample-image" style="--x:328;--y:182;--w:85;--h:98" aria-hidden="true"></span>해골 군대</li>
+      <li class="collection"><span class="sample-image" style="--x:111;--y:366;--w:97;--h:119" aria-hidden="true"></span>분노</li>
+      <li class="collection"><span class="sample-image" style="--x:313;--y:211;--w:97;--h:119" aria-hidden="true"></span>로켓</li>
+      <li class="collection"><span class="sample-image" style="--x:110;--y:519;--w:97;--h:118" aria-hidden="true"></span>인페르노 타워</li>
+    </ul>
+  </section>
+
+  <section class="chapter" aria-labelledby="principles-title">
+    <h2 id="principles-title">첨부 화면에서 반복되는 규칙</h2>
+    <dl class="label-pairs">
+      <div><dt>큰 특징 하나부터</dt><dd>자이언트는 얼굴과 주황색 머리가 화면을 크게 채운다. 미니 P.E.K.K.A.는 밝은 푸른 눈과 각진 투구가 먼저 보인다.</dd></div>
+      <div><dt>비슷한 카드에 두 가지 단서</dt><dd>두 P.E.K.K.A.는 눈빛 색이 다르다. 흑백으로 줄여도 미니의 <strong>둥근 이마와 넓은 눈 구멍</strong>, 큰 P.E.K.K.A.의 <strong>뿔과 뾰족한 얼굴 판</strong>이 구분된다.</dd></div>
+      <div><dt>카드 유형에 맞춰 구도 선택</dt><dd>군집은 앞의 한 형체를 크게 두고 뒤에 반복한다. 해골 군대가 그 예다. 분노는 병과 액체, 로켓은 대각선으로 치솟는 본체와 불꽃, 인페르노 타워는 발광하는 포탑 윗부분이 중심이다.</dd></div>
+      <div><dt>가장 큰 명암 차이는 핵심에</dt><dd>해골의 밝은 두개골과 검은 눈구멍, 미니 P.E.K.K.A.의 눈과 어두운 얼굴 판처럼 밝고 어두운 큰 면이 붙는다. 배경은 대체로 부드럽고 세부 대비가 약하다.</dd></div>
+      <div><dt>수치 영역을 카드마다 고정</dt><dd>비용은 좌상단, 레벨과 성장 진행은 하단에 놓인다. 일러스트의 중심 특징은 그 사이에 남는다. 진화 준비 상태를 카드 상단의 별도 표식으로 전달한 공개 사례도 있다. <a href="https://supercell.com/en/games/clashroyale/blog/release-notes/card-evolution-2/">슈퍼셀 진화 업데이트</a></dd></div>
+    </dl>
+  </section>
+
+  <section class="chapter" aria-labelledby="process-title">
+    <h2 id="process-title">공개 제작 자료에서 확인한 것</h2>
+    <p>슈퍼셀 아티스트 Aleksei Kalibin의 강연 소개에는 형태, 반복과 리듬, 시각적 대비가 캐릭터를 설계하는 도구로 명시돼 있다. 위의 카드별 규칙은 그 원칙을 첨부 표본에서 확인한 분석이다. <a href="https://www.youtube.com/watch?v=WzrfcZvniWY">슈퍼셀 LightBox Expo 강연</a></p>
+    <p>미니 P.E.K.K.A.와 로얄 자이언트의 UI 아이콘 작업은 모델 작업과 포즈·조명·합성을 구분해 크레딧을 표기한다. 로얄 훈련병 제작 페이지는 카드 이미지와 인게임 팝업도 각각 공개한다. <a href="https://dllxtt.artstation.com/projects/8wg1ZG?album_id=6469315">미니 P.E.K.K.A.</a> · <a href="https://dllxtt.artstation.com/projects/kl9bPA">로얄 자이언트</a> · <a href="https://bricelavillesaintmartin.artstation.com/projects/ZA0gG">로얄 훈련병</a></p>
+  </section>
+
+  <section class="chapter" aria-labelledby="tavern-title">
+    <h2 id="tavern-title">Tavern Heros 기물 카드에 적용</h2>
+    <ul>
+      <li><strong>대표 한 명과 특징 하나.</strong> 개울 정찰대는 개울 사냥꾼의 석궁을 얼굴 옆에, 황혼 방패병은 방패 외곽과 투구를, 리벳 조립반은 조립형 로봇의 넓은 어깨와 관절을 남긴다.</li>
+      <li><strong>동료는 편성 정보를 보탠다.</strong> 뒤쪽에 작게 배치하거나 인원 표기를 사용한다. 비용·등급·강화 표식은 일러스트에서 고정된 위치로 분리한다.</li>
+      <li><strong>가장 작은 슬롯에서 함께 검사.</strong> 실제 화면의 카드 크기와 흑백 상태에서 세 장을 나란히 보고, 이름을 가렸을 때 남는 장비나 외곽을 기록한다.</li>
+    </ul>
+  </section>
+
+  <section class="chapter" aria-labelledby="references-title">
+    <h2 id="references-title">첨부 원본</h2>
+    <div class="panel-grid originals">
+      <figure class="shot"><img src="media/card-readability/deck-reference.png" width="480" height="638" loading="lazy" alt="클래시 로얄의 전투 덱과 카드 수집 화면. 자이언트, 미니 P.E.K.K.A., 해골 군대가 보인다."><figcaption>전투 덱 화면 · <a href="media/card-readability/deck-reference.png" download>원본 저장</a></figcaption></figure>
+      <figure class="shot"><img src="media/card-readability/collection-reference.png" width="415" height="739" loading="lazy" alt="카드 수집 화면. 로켓, 분노, 인페르노 타워, P.E.K.K.A.가 보인다."><figcaption>카드 수집 화면 · <a href="media/card-readability/collection-reference.png" download>원본 저장</a></figcaption></figure>
+    </div>
+  </section>
+</main>
+</body>
+</html>

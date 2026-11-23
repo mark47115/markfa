@@ -1,0 +1,2160 @@
+{
+  "units": [
+    {
+      "id": "seedling-keeper",
+      "basic": "seed",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "sprout-archer",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "seed-horn",
+      "basic": "rally",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "tongs-hammer",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "furnace-helper",
+      "basic": "ember",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "brook-hunter",
+      "basic": "bolt",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "fox-apprentice",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "wolf-javelin",
+      "basic": "javelin",
+      "tint": "#e5d49a",
+      "active": "markpierce",
+      "passive": ""
+    },
+    {
+      "id": "lynx-scout",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "falcon-lookout",
+      "basic": "claw",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "shield-deputy",
+      "basic": "shield",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "gate-apprentice",
+      "basic": "pierce",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "citadel-captain",
+      "basic": "shield",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "citadel-archer",
+      "basic": "arrow",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "lantern-priest",
+      "basic": "cast",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "belltower-sentry",
+      "basic": "rally",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "assembly-robot",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "rivet-bot",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "ledger-carrier",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "note-slinger",
+      "basic": "stone",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "stone-shoulder-orc",
+      "basic": "hammer",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "pebble-hurler",
+      "basic": "stone",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "war-drummer",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "orc-messenger",
+      "basic": "cast",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "rift-tick",
+      "basic": "tick",
+      "tint": "#cab79b",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "ruin-shell",
+      "basic": "slab",
+      "tint": "#cec5b1",
+      "active": "",
+      "passive": "taunt"
+    },
+    {
+      "id": "imperfect-hybrid",
+      "basic": "pincer",
+      "tint": "#e7abc0",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "veil-wraith",
+      "basic": "veil",
+      "tint": "#abaeea",
+      "active": "",
+      "passive": "revive"
+    },
+    {
+      "id": "broken-crown",
+      "basic": "pincer",
+      "tint": "#e7abc0",
+      "active": "",
+      "passive": "taunt"
+    },
+    {
+      "id": "abyssal-choir",
+      "basic": "echo",
+      "tint": "#92d6e1",
+      "active": "",
+      "passive": "revive"
+    },
+    {
+      "id": "the-devourer",
+      "basic": "maw",
+      "tint": "#ffd0bb",
+      "active": "",
+      "passive": "split"
+    },
+    {
+      "id": "devourer-split",
+      "basic": "rift",
+      "tint": "#c1a6ed",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "dim-spore",
+      "basic": "spore",
+      "tint": "#b4d7aa",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "hook-young",
+      "basic": "hook",
+      "tint": "#e1aaaf",
+      "active": "",
+      "passive": "approach"
+    },
+    {
+      "id": "shell-carrier",
+      "basic": "shell",
+      "tint": "#ead4b6",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "echo-worm",
+      "basic": "echo",
+      "tint": "#92d6e1",
+      "active": "",
+      "passive": "echo"
+    },
+    {
+      "id": "mirror-watcher",
+      "basic": "mirror",
+      "tint": "#f1b4ee",
+      "active": "",
+      "passive": "weaken"
+    },
+    {
+      "id": "blue-gatekeeper",
+      "basic": "gate",
+      "tint": "#9cdae4",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "warped-turret",
+      "basic": "cannon",
+      "tint": "#f0adb4",
+      "active": "",
+      "passive": "cannon"
+    },
+    {
+      "id": "split-prophet",
+      "basic": "rift",
+      "tint": "#c1a6ed",
+      "active": "",
+      "passive": "omen"
+    },
+    {
+      "id": "allies-004",
+      "basic": "blade",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-005",
+      "basic": "shield",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-006",
+      "basic": "aid",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-007",
+      "basic": "pierce",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-008",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-009",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-010",
+      "basic": "arcane",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-011",
+      "basic": "seed",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-012",
+      "basic": "seed",
+      "tint": "#bdd38a",
+      "active": "canopy",
+      "passive": ""
+    },
+    {
+      "id": "allies-013",
+      "basic": "bolt",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-014",
+      "basic": "shield",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-015",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-016",
+      "basic": "pierce",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-017",
+      "basic": "scout",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-018",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-019",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-020",
+      "basic": "pierce",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-021",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-022",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-023",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-024",
+      "basic": "rally",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-025",
+      "basic": "bolt",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-026",
+      "basic": "arcane",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-027",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-028",
+      "basic": "hammer",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-029",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-030",
+      "basic": "shield",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-031",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-032",
+      "basic": "hammer",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-033",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-034",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "rake",
+      "passive": ""
+    },
+    {
+      "id": "allies-035",
+      "basic": "punch",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-036",
+      "basic": "stomp",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-037",
+      "basic": "arrow",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-038",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-039",
+      "basic": "bite",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-040",
+      "basic": "arcane",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-041",
+      "basic": "claw",
+      "tint": "#bdd38a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-044",
+      "basic": "aid",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-045",
+      "basic": "bolt",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-046",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-047",
+      "basic": "punch",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-048",
+      "basic": "punch",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-049",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-050",
+      "basic": "shot",
+      "tint": "#ffb478",
+      "active": "buckshot",
+      "passive": ""
+    },
+    {
+      "id": "allies-051",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-052",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-053",
+      "basic": "bolt",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-054",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-055",
+      "basic": "shot",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-056",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-057",
+      "basic": "aid",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-058",
+      "basic": "repair",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-059",
+      "basic": "punch",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-060",
+      "basic": "repair",
+      "tint": "#ffb478",
+      "active": "load",
+      "passive": ""
+    },
+    {
+      "id": "allies-061",
+      "basic": "punch",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-062",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-063",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-064",
+      "basic": "hammer",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-065",
+      "basic": "shot",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-066",
+      "basic": "repair",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-067",
+      "basic": "bolt",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-068",
+      "basic": "arcane",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-069",
+      "basic": "shot",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-072",
+      "basic": "javelin",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-073",
+      "basic": "blade",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-074",
+      "basic": "pierce",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-075",
+      "basic": "blade",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-079",
+      "basic": "rally",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-080",
+      "basic": "javelin",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-081",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-082",
+      "basic": "javelin",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-083",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-084",
+      "basic": "bolt",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-085",
+      "basic": "claw",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-086",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-087",
+      "basic": "scout",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-088",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-089",
+      "basic": "rally",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-090",
+      "basic": "blade",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-091",
+      "basic": "pierce",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-092",
+      "basic": "blade",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-093",
+      "basic": "pierce",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-094",
+      "basic": "blade",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-095",
+      "basic": "arcane",
+      "tint": "#e5d49a",
+      "active": "hunt",
+      "passive": ""
+    },
+    {
+      "id": "allies-096",
+      "basic": "claw",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-097",
+      "basic": "hammer",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-098",
+      "basic": "punch",
+      "tint": "#e5d49a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-101",
+      "basic": "cast",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-102",
+      "basic": "hammer",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-103",
+      "basic": "shield",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-104",
+      "basic": "blade",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-105",
+      "basic": "hammer",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-106",
+      "basic": "bolt",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-107",
+      "basic": "cast",
+      "tint": "#cdd3f4",
+      "active": "handoff",
+      "passive": ""
+    },
+    {
+      "id": "allies-108",
+      "basic": "bolt",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-109",
+      "basic": "shield",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-110",
+      "basic": "arcane",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-115",
+      "basic": "blade",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-116",
+      "basic": "pierce",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-117",
+      "basic": "pierce",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-118",
+      "basic": "blade",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-119",
+      "basic": "pierce",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-120",
+      "basic": "stomp",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-121",
+      "basic": "rally",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-122",
+      "basic": "arrow",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-123",
+      "basic": "cast",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-124",
+      "basic": "arrow",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-125",
+      "basic": "blade",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-126",
+      "basic": "bolt",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-127",
+      "basic": "hammer",
+      "tint": "#cdd3f4",
+      "active": "oath",
+      "passive": ""
+    },
+    {
+      "id": "allies-128",
+      "basic": "rally",
+      "tint": "#cdd3f4",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-131",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-132",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-133",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-134",
+      "basic": "pierce",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-135",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-136",
+      "basic": "stone",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-137",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-138",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-139",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "circuit",
+      "passive": ""
+    },
+    {
+      "id": "allies-140",
+      "basic": "shot",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-141",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-142",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-143",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-144",
+      "basic": "pierce",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-145",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-146",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-147",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-148",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-149",
+      "basic": "shield",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-150",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-151",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-152",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-153",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "discharge",
+      "passive": ""
+    },
+    {
+      "id": "allies-154",
+      "basic": "shot",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-155",
+      "basic": "electric",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-156",
+      "basic": "arcane",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-159",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-160",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-161",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-162",
+      "basic": "cast",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-163",
+      "basic": "pierce",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-164",
+      "basic": "shield",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-165",
+      "basic": "aid",
+      "tint": "#f2cf81",
+      "active": "potion",
+      "passive": ""
+    },
+    {
+      "id": "allies-166",
+      "basic": "bolt",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-167",
+      "basic": "aid",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-168",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-169",
+      "basic": "cast",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-170",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-171",
+      "basic": "aid",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-172",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-173",
+      "basic": "aid",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-174",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-175",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-176",
+      "basic": "shield",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-177",
+      "basic": "cast",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-178",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-179",
+      "basic": "shield",
+      "tint": "#f2cf81",
+      "active": "check",
+      "passive": ""
+    },
+    {
+      "id": "allies-180",
+      "basic": "shot",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-181",
+      "basic": "shield",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-182",
+      "basic": "bolt",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-183",
+      "basic": "rally",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-184",
+      "basic": "bolt",
+      "tint": "#f2cf81",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-187",
+      "basic": "pierce",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-188",
+      "basic": "stone",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-189",
+      "basic": "punch",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-190",
+      "basic": "stone",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-191",
+      "basic": "punch",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-192",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-193",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-194",
+      "basic": "hammer",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-195",
+      "basic": "punch",
+      "tint": "#ed997a",
+      "active": "stomp",
+      "passive": ""
+    },
+    {
+      "id": "allies-196",
+      "basic": "shield",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-197",
+      "basic": "punch",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-198",
+      "basic": "bolt",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-201",
+      "basic": "rally",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-202",
+      "basic": "pierce",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-203",
+      "basic": "cast",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-204",
+      "basic": "rally",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-205",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-206",
+      "basic": "hammer",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-207",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-208",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-209",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "drum",
+      "passive": ""
+    },
+    {
+      "id": "allies-210",
+      "basic": "sound",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-211",
+      "basic": "shield",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "allies-212",
+      "basic": "rally",
+      "tint": "#ed997a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "reforged-shieldbearer",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "alloy-spearman",
+      "basic": "pierce",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "work-robot",
+      "basic": "punch",
+      "tint": "#8ee1df",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-213",
+      "basic": "shield",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-214",
+      "basic": "cast",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-215",
+      "basic": "javelin",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-216",
+      "basic": "rally",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-217",
+      "basic": "pierce",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-218",
+      "basic": "bolt",
+      "tint": "#f1ba85",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-219",
+      "basic": "rally",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-220",
+      "basic": "stone",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-221",
+      "basic": "bolt",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-222",
+      "basic": "rally",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-223",
+      "basic": "arcane",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-224",
+      "basic": "shot",
+      "tint": "#d5b6ef",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-225",
+      "basic": "punch",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-226",
+      "basic": "repair",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-227",
+      "basic": "repair",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-228",
+      "basic": "rally",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-229",
+      "basic": "punch",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-230",
+      "basic": "shield",
+      "tint": "#a2ddd2",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-231",
+      "basic": "cast",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-232",
+      "basic": "rally",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-233",
+      "basic": "mark",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-234",
+      "basic": "scout",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-235",
+      "basic": "blade",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-236",
+      "basic": "arrow",
+      "tint": "#bae3b9",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-237",
+      "basic": "aid",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-238",
+      "basic": "hammer",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-239",
+      "basic": "pierce",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-240",
+      "basic": "bolt",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-241",
+      "basic": "repair",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-242",
+      "basic": "arrow",
+      "tint": "#e8bf8a",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-243",
+      "basic": "pierce",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-244",
+      "basic": "stone",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-245",
+      "basic": "shield",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-246",
+      "basic": "hammer",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-247",
+      "basic": "hammer",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-248",
+      "basic": "shot",
+      "tint": "#e5d4b5",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-249",
+      "basic": "bolt",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-250",
+      "basic": "blade",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-251",
+      "basic": "bolt",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-252",
+      "basic": "aid",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-253",
+      "basic": "rally",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-254",
+      "basic": "arrow",
+      "tint": "#a6dfc3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-255",
+      "basic": "aid",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-256",
+      "basic": "stone",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-257",
+      "basic": "aid",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-258",
+      "basic": "aid",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-259",
+      "basic": "shield",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-260",
+      "basic": "shot",
+      "tint": "#9de4f1",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-261",
+      "basic": "hammer",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-262",
+      "basic": "cast",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-263",
+      "basic": "blade",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-264",
+      "basic": "shot",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-265",
+      "basic": "rally",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-266",
+      "basic": "bolt",
+      "tint": "#d9c092",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-267",
+      "basic": "cast",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-268",
+      "basic": "smoke",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-269",
+      "basic": "cast",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-270",
+      "basic": "javelin",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-271",
+      "basic": "ember",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "retinues-272",
+      "basic": "cast",
+      "tint": "#9cdaca",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "void-274",
+      "basic": "pounce",
+      "tint": "#bcb2e0",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "void-277",
+      "basic": "fang",
+      "tint": "#e6bcb3",
+      "active": "",
+      "passive": ""
+    },
+    {
+      "id": "void-280",
+      "basic": "spine",
+      "tint": "#d2c8ed",
+      "active": "",
+      "passive": "growth"
+    },
+    {
+      "id": "void-281",
+      "basic": "veil",
+      "tint": "#abaeea",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "void-282",
+      "basic": "fault",
+      "tint": "#d8b6ae",
+      "active": "",
+      "passive": "taunt"
+    },
+    {
+      "id": "void-284",
+      "basic": "slab",
+      "tint": "#cec5b1",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "void-285",
+      "basic": "sickle",
+      "tint": "#e7a7be",
+      "active": "",
+      "passive": "growth"
+    },
+    {
+      "id": "void-286",
+      "basic": "spine",
+      "tint": "#d2c8ed",
+      "active": "",
+      "passive": "taunt"
+    },
+    {
+      "id": "void-287",
+      "basic": "sickle",
+      "tint": "#e7a7be",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "void-291",
+      "basic": "shell",
+      "tint": "#ead4b6",
+      "active": "",
+      "passive": "guard"
+    },
+    {
+      "id": "void-293",
+      "basic": "breath",
+      "tint": "#9de2dc",
+      "active": "",
+      "passive": "slow"
+    },
+    {
+      "id": "void-294",
+      "basic": "glass",
+      "tint": "#bce4f5",
+      "active": "",
+      "passive": "glass"
+    },
+    {
+      "id": "void-295",
+      "basic": "sand",
+      "tint": "#debc93",
+      "active": "",
+      "passive": "approach"
+    },
+    {
+      "id": "void-298",
+      "basic": "seam",
+      "tint": "#a7eac7",
+      "active": "",
+      "passive": "mend"
+    },
+    {
+      "id": "void-302",
+      "basic": "fang",
+      "tint": "#e6bcb3",
+      "active": "",
+      "passive": "mend"
+    },
+    {
+      "id": "void-304",
+      "basic": "cloud",
+      "tint": "#b7b4d6",
+      "active": "",
+      "passive": "ward"
+    },
+    {
+      "id": "temporary-shield-guard",
+      "basic": "shield",
+      "tint": "#ffb478",
+      "active": "",
+      "passive": ""
+    }
+  ]
+}

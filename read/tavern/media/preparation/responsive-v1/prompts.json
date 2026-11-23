@@ -1,0 +1,111 @@
+{
+  "generator": "기본 내장 OpenAI ImageGen",
+  "foregroundRepair": {
+    "id": "tavern-5",
+    "generated": "sources/detail-repair/tavern-5.png",
+    "guide": "이음새를 보정한 5레벨 배경을 1408×704로 확대하고 오른쪽 전경에만 자주색 표시를 놓았다.",
+    "prompt": "Precise local repair of the supplied golden-brown pixel-art fantasy tavern interior. Image 1 is the exact full 2:1 inpaint canvas: replace only the solid purple foreground region. Image 2 is the exact scene without a mask and establishes camera, original objects, warm amber palette and low-resolution pixel-art texture. In this lower-right region, replace the confusing oversized cut-off foreground wooden slab and detached raised stone pieces with uninterrupted warm oak plank flooring, aligned to the same vanishing point and board rows as the floor on the left and behind. The rear structural column just above the edit stays, with its masonry footing finished as one readable two-course stack on the floor. Continue the existing base stones and the wall/floor junction to the right edge, with the same angles and elevations. Match the existing darker side-floor values. Make all edges hard stylized stepped pixels. Keep the current crop, upper windows, roof and both structural side arches exactly positioned, preserve the LEFT foreground entrance trim and the entire rest of the room. No new furniture, no extra props, no changes to lighting, no text, characters or UI. No purple, no seams, no blend strips, no relocated pillars. Return one full-bleed 2:1 image."
+  },
+  "guide": {
+    "canvas": [
+      1408,
+      704
+    ],
+    "sourceRect": [
+      320,
+      96,
+      768,
+      512
+    ],
+    "matte": "#a4409e",
+    "note": "각 기존 배경을 최근접으로 768×512에 맞춘 뒤 중앙에 붙인 가이드다."
+  },
+  "postprocess": "확장 단계에서는 생성본의 랜드마크를 정렬해 중앙 기준 그림 주변에 새 외곽을 맞췄다. 이음새를 다시 그린 최종본은 기존 배치 기준에 정렬한 뒤 전체의 주변광을 같은 양으로 보정해 한 장으로 저장했다.",
+  "scenes": [
+    {
+      "id": "tavern-1",
+      "source": "../modular-tavern/rendered/tavern-1.png",
+      "prompt": "Precise pixel-art outpainting of this original game's tavern interior. The FIRST image is the definitive 2:1 full target canvas and edit target. Its reference art lies at exactly x 22.727%–77.273%, y 13.636%–86.364%. Completely remove and paint over the solid magenta matte only. Place every central element exactly where it sits now on the first canvas, with the same apparent size, perspective, earthy lighting, and the same framing inside this rectangle. The SECOND image is the unpadded version of that exact artwork for matching all details and its low-resolution palette. This is a true camera pullback with painted margin and NO movement/repaint of the existing shot. Left/right add immediately neighboring side structure, continuing the original sidewall and timber framing, right to the first canvas's outer left/right edges. Continue interrupted beam diagonals, roof shingles and existing flat wood planks in the correct direction. Upper margin continues the dark roof/joists. Lower margin continues the near floor or threshold in the direction it was cut, with low-detail dark wood and stone. Maintain the original one-point camera and pixel density. Broad dark wood and cream plaster, dim warm scene edges, no black voids, no extra focal furniture, no extra windows or portals, no mirror-copy of corners, no characters, no signage, no user interface, no frames or borders. The original room is the centerpiece; put details in matte only. No blur or gradients. Return full-bleed 2:1 horizontal art, exactly the composition of the first image plus its newly filled margins.",
+      "generated": "sources/tavern-1.png"
+    },
+    {
+      "id": "tavern-2",
+      "source": "../modular-tavern/rendered/tavern-2.png",
+      "prompt": "Precise pixel-art outpainting of this original game's tavern interior. The FIRST image is the definitive 2:1 full target canvas and edit target. Its reference art lies at exactly x 22.727%–77.273%, y 13.636%–86.364%. Completely remove and paint over the solid magenta matte only. Place every central element exactly where it sits now on the first canvas, with the same apparent size, perspective, earthy lighting, and the same framing inside this rectangle. The SECOND image is the unpadded version of that exact artwork for matching all details and its low-resolution palette. This is a true camera pullback with painted margin and NO movement/repaint of the existing shot. Left/right add immediately neighboring side structure, continuing the original sidewall and timber framing, right to the first canvas's outer left/right edges. Continue interrupted beam diagonals, roof shingles and existing flat wood planks in the correct direction. Upper margin continues the dark roof/joists. Lower margin continues the near floor or threshold in the direction it was cut, with low-detail dark wood and stone. Maintain the original one-point camera and pixel density. Broad dark wood and cream plaster, dim warm scene edges, no black voids, no extra focal furniture, no extra windows or portals, no mirror-copy of corners, no characters, no signage, no user interface, no frames or borders. The original room is the centerpiece; put details in matte only. No blur or gradients. Return full-bleed 2:1 horizontal art, exactly the composition of the first image plus its newly filled margins.",
+      "generated": "sources/tavern-2.png"
+    },
+    {
+      "id": "tavern-3",
+      "source": "../modular-tavern/rendered/tavern-3.png",
+      "prompt": "Precise pixel-art outpainting of this original game's tavern interior. The FIRST image is the definitive 2:1 full target canvas and edit target. Its reference art lies at exactly x 22.727%–77.273%, y 13.636%–86.364%. Completely remove and paint over the solid magenta matte only. Place every central element exactly where it sits now on the first canvas, with the same apparent size, perspective, earthy lighting, and the same framing inside this rectangle. The SECOND image is the unpadded version of that exact artwork for matching all details and its low-resolution palette. This is a true camera pullback with painted margin and NO movement/repaint of the existing shot. Left/right add immediately neighboring side structure, continuing the original sidewall and timber framing, right to the first canvas's outer left/right edges. Continue interrupted beam diagonals, roof shingles and existing flat wood planks in the correct direction. Upper margin continues the dark roof/joists. Lower margin continues the near floor or threshold in the direction it was cut, with low-detail dark wood and stone. Maintain the original one-point camera and pixel density. Broad dark wood and cream plaster, dim warm scene edges, no black voids, no extra focal furniture, no extra windows or portals, no mirror-copy of corners, no characters, no signage, no user interface, no frames or borders. The original room is the centerpiece; put details in matte only. No blur or gradients. Return full-bleed 2:1 horizontal art, exactly the composition of the first image plus its newly filled margins.",
+      "generated": "sources/tavern-3.png"
+    },
+    {
+      "id": "tavern-4",
+      "source": "../modular-tavern/rendered/tavern-4.png",
+      "prompt": "Precise pixel-art outpainting of this original game's tavern interior. The FIRST image is the definitive 2:1 full target canvas and edit target. Its reference art lies at exactly x 22.727%–77.273%, y 13.636%–86.364%. Completely remove and paint over the solid magenta matte only. Place every central element exactly where it sits now on the first canvas, with the same apparent size, perspective, earthy lighting, and the same framing inside this rectangle. The SECOND image is the unpadded version of that exact artwork for matching all details and its low-resolution palette. This is a true camera pullback with painted margin and NO movement/repaint of the existing shot. Left/right add immediately neighboring side structure, continuing the original sidewall and timber framing, right to the first canvas's outer left/right edges. Continue interrupted beam diagonals, roof shingles and existing flat wood planks in the correct direction. Upper margin continues the dark roof/joists. Lower margin continues the near floor or threshold in the direction it was cut, with low-detail dark wood and stone. Maintain the original one-point camera and pixel density. Broad dark wood and cream plaster, dim warm scene edges, no black voids, no extra focal furniture, no extra windows or portals, no mirror-copy of corners, no characters, no signage, no user interface, no frames or borders. The original room is the centerpiece; put details in matte only. No blur or gradients. Return full-bleed 2:1 horizontal art, exactly the composition of the first image plus its newly filled margins.",
+      "generated": "sources/tavern-4.png"
+    },
+    {
+      "id": "tavern-5",
+      "source": "../modular-tavern/rendered/tavern-5.png",
+      "prompt": "Precise pixel-art outpainting of this original game's tavern interior. The FIRST image is the definitive 2:1 full target canvas and edit target. Its reference art lies at exactly x 22.727%–77.273%, y 13.636%–86.364%. Completely remove and paint over the solid magenta matte only. Place every central element exactly where it sits now on the first canvas, with the same apparent size, perspective, earthy lighting, and the same framing inside this rectangle. The SECOND image is the unpadded version of that exact artwork for matching all details and its low-resolution palette. This is a true camera pullback with painted margin and NO movement/repaint of the existing shot. Left/right add immediately neighboring side structure, continuing the original sidewall and timber framing, right to the first canvas's outer left/right edges. Continue interrupted beam diagonals, roof shingles and existing flat wood planks in the correct direction. Upper margin continues the dark roof/joists. Lower margin continues the near floor or threshold in the direction it was cut, with low-detail dark wood and stone. Maintain the original one-point camera and pixel density. Broad dark wood and cream plaster, dim warm scene edges, no black voids, no extra focal furniture, no extra windows or portals, no mirror-copy of corners, no characters, no signage, no user interface, no frames or borders. The original room is the centerpiece; put details in matte only. No blur or gradients. Return full-bleed 2:1 horizontal art, exactly the composition of the first image plus its newly filled margins.",
+      "generated": "sources/tavern-5.png"
+    },
+    {
+      "id": "yard-1",
+      "source": "../level-up/yard-1.png",
+      "prompt": "Precisely outpaint the original Tavern Heros open-air staging yard in pixel art. Image 1 is the exact full 2:1 target canvas with a magenta working matte. Keep the art in its centered rectangle exactly identical (x 22.727%–77.273%, y 13.636%–86.364%), without resizing or moving the teal-roof tavern, the warm windows, woodland horizon, grass area, or path. Image 2 is the same original unpadded artwork, the sole pixel style and palette reference. Completely replace only the magenta with new seamless extensions. Extend the exact matching apricot sunset sky and a few crumbly puffy pixel clouds above, the original grass, rocks, tree silhouettes, modest fence and foliage outward into the side margins, and the quiet straw-grass clearing and existing center dirt footpath into the bottom margin. Preserve all original pixel contours at the boundary; a few near grass tufts and stones can anchor the edge. Continue the cut fence, path and canopy so they never mirror at a seam. One house only, ample quiet clearing, landscape camera, no extra architecture, no figures, no props in the gameplay field, no text, no interface, no frame, no visible matte, no blur. Output exact full 2:1 horizontal art with identical central subject scale and location.",
+      "generated": "sources/yard-1.png"
+    }
+  ],
+  "seamRepair": {
+    "guide": {
+      "canvas": [
+        1408,
+        704
+      ],
+      "rectangle": [
+        299,
+        75,
+        1108,
+        628
+      ],
+      "borderWidth": 42,
+      "matte": "#a4409e",
+      "note": "기존 확장본 위에 이음새 네 면만 표시한 편집 가이드와 표시가 없는 확장본을 함께 사용했다."
+    },
+    "scenes": [
+      {
+        "id": "tavern-1",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. In this room, reconnect the beams and teal roof seams from the top into their exact angled lines; reconnect wooden posts, cream plaster borders, stone courses, and the lower wooden boards and threshold. A post must have a continuous shaft with correctly stacked large stone footing and consistent depth on both sides. No detached cut fragments and no new window, post, or doorway.",
+        "generated": "sources/seam-repair/tavern-1.png"
+      },
+      {
+        "id": "tavern-2",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. In this room, reconnect the beams and teal roof seams from the top into their exact angled lines; reconnect wooden posts, cream plaster borders, stone courses, and the lower wooden boards and threshold. A post must have a continuous shaft with correctly stacked large stone footing and consistent depth on both sides. No detached cut fragments and no new window, post, or doorway.",
+        "generated": "sources/seam-repair/tavern-2.png"
+      },
+      {
+        "id": "tavern-3",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. In this room, reconnect the beams and teal roof seams from the top into their exact angled lines; reconnect wooden posts, cream plaster borders, stone courses, and the lower wooden boards and threshold. A post must have a continuous shaft with correctly stacked large stone footing and consistent depth on both sides. No detached cut fragments and no new window, post, or doorway.",
+        "generated": "sources/seam-repair/tavern-3.png"
+      },
+      {
+        "id": "tavern-4",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. In this room, reconnect the beams and teal roof seams from the top into their exact angled lines; reconnect wooden posts, cream plaster borders, stone courses, and the lower wooden boards and threshold. A post must have a continuous shaft with correctly stacked large stone footing and consistent depth on both sides. No detached cut fragments and no new window, post, or doorway.",
+        "generated": "sources/seam-repair/tavern-4.png"
+      },
+      {
+        "id": "tavern-5",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. In this room, reconnect the beams and teal roof seams from the top into their exact angled lines; reconnect wooden posts, cream plaster borders, stone courses, and the lower wooden boards and threshold. A post must have a continuous shaft with correctly stacked large stone footing and consistent depth on both sides. No detached cut fragments and no new window, post, or doorway.",
+        "generated": "sources/seam-repair/tavern-5.png"
+      },
+      {
+        "id": "yard-1",
+        "prompt": "Faithful localized repair of original pixel-art game background. Image 1 is the edit canvas: replace only the purple rectangular working belt with proper pixel art continuing the scene across the masked region. Image 2 is the same frame with the old, defective joins visible; use it for precise framing, materials, and landmarks, and correct those joins rather than repeating them. This is one continuous scene. Preserve the whole 2:1 canvas bounds, exact camera and perspective, line trajectories, existing unmasked content, palette, lighting and logical pixel density. Fit the elements that enter the belt from BOTH sides into continuous believable silhouettes with carried-through shapes. Leave no straight rectangular boundary at all, no doubled outlines, broken objects, soft blends, abrupt colors, smears or purple guide tint. Make no selections or composition changes elsewhere; do not add objects, characters, text, frame, or UI. Return a complete edge-to-edge 2:1 image. On the exterior yard, reconnect the two broad trees, layered grass and mountains, fence rails with their posts, near stones with their silhouettes, and the central path across the bottom. Rebuild any rock whose silhouette is bisected as a single readable whole rock. The grass should meet as a quiet flat olive field with no color step or band. Preserve the teal-roof building, empty game area, stairs, and camera exactly.",
+        "generated": "sources/seam-repair/yard-1.png"
+      }
+    ]
+  }
+}

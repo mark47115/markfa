@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavern Heros · 아트 방향성</title>
+  <link rel="stylesheet" href="_shared/report.css">
+  <script defer src="_shared/report.js"></script>
+  <style>
+    .concept { margin: 1.25rem 0; }
+    .concept img { display: block; width: 100%; height: auto; border: 1px solid var(--mak-border); border-radius: 8px; }
+    .concept figcaption { margin-top: .5rem; color: var(--mak-muted); }
+    .concept a { display: inline-block; margin-top: .35rem; }
+    .reference { max-width: 225px; margin-top: 1rem; }
+    .native-pixels { image-rendering: pixelated; }
+  </style>
+</head>
+<body>
+<main class="container">
+  <h1>Tavern Heros 아트 방향성</h1>
+  <p>용병과 공허 적 스타일 시트를 전체 그림체의 기준으로 삼는다. 큰 정사각 픽셀과 단순한 색 면으로 캐릭터와 배경을 통일하고, 아군과 적은 실루엣과 색으로 구분한다.</p>
+
+  <section>
+    <h2>용병과 공허 적</h2>
+    <figure class="concept">
+      <img src="media/art-direction/character-style-v3.png" width="2688" height="1520" loading="lazy" alt="위쪽에는 방패병, 이끼 정찰병, 태엽 수호병 도트. 아래쪽에는 다안 촉수 생물, 외눈 껍질 생물, 긴 관절을 가진 공허 생물 도트.">
+      <figcaption>아군과 적의 픽셀 밀도, 명암 단계, 실루엣을 비교한 Higgsfield 시안.</figcaption>
+      <a href="media/art-direction/character-style-v3.png" download>캐릭터 스타일 시트 다운로드</a>
+    </figure>
+    <ul>
+      <li><strong>아군.</strong> 머리는 몸 높이의 절반에 가깝게, 손발은 짧게. 표정과 방패·뿔 후드·태엽 같은 실루엣으로 직업을 구분한다.</li>
+      <li><strong>적.</strong> 먹보라와 짙은 청회색을 바탕으로 눈과 일부 촉수에 밝은 포인트를 둔다.</li>
+      <li><strong>공통.</strong> 머리카락, 천, 금속을 몇 개의 색 면으로 정리하고 계단형 윤곽을 유지한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>공통 그래픽 기준</h2>
+    <ul>
+      <li><strong>도트.</strong> 용병과 공허 적 시트를 참조 이미지로 넣어 생성·편집한다. 큰 픽셀 색 면, 계단형 윤곽과 짧은 명암 단계를 화면 전체에서 맞춘다.</li>
+      <li><strong>명암.</strong> 기본색, 그림자, 작은 하이라이트로 형태를 잡는다. 목재와 돌바닥의 잔무늬를 줄여 캐릭터의 외곽이 먼저 읽히게 한다.</li>
+      <li><strong>색.</strong> 선술집은 호박색 조명과 적갈색 목재, 공허 전장은 먹보라와 청회색을 쓴다. 용병의 밝은 살구·이끼색·청록은 두 공간에서 역할을 구분하는 색으로 쓴다.</li>
+      <li><strong>상태.</strong> 전체 고용 테이블의 선택은 호박색, 하단의 내 팀은 청록색 슬롯으로 표시한다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>선술집 · 내 팀과 고용 테이블</h2>
+    <figure class="concept">
+      <img src="media/art-direction/tavern-shop-team-v6.png" width="1672" height="941" loading="lazy" alt="용병 스타일 시트의 색 면과 명암으로 수정한 2층 선술집. 세 고용 테이블, 오른쪽 계단과 내 팀 7칸이 보인다.">
+      <figcaption>선술집 v6 · 여관 1등급. 용병 시트의 얼굴과 비율을 적용하고, 호박색 빛과 보라색 그림자로 목재와 돌의 깊이를 표현했다.</figcaption>
+      <a href="media/art-direction/tavern-shop-team-v6.png" download>선술집 v6 다운로드</a>
+    </figure>
+    <ul>
+      <li><strong>카메라.</strong> 대각선 위에서 더 가까이 내려다본다. 테이블 윗면과 의자, 계단의 동선을 함께 읽을 수 있게 한다.</li>
+      <li><strong>1층 고용석.</strong> 원형 테이블 하나에 고용할 기물 하나를 배치한다. 기물을 구성하는 유닛 전원이 앉고, 선택 테두리가 테이블과 의자를 함께 감싼다.</li>
+      <li><strong>하단 내 팀.</strong> 고용한 기물과 전투 순서를 7칸에 상시 표시한다. 채운 칸은 대표 도트와 구성원 수, 빈 칸은 배치 여유를 보여 준다.</li>
+      <li><strong>가독성 확인.</strong> 시안을 480×270으로 표시해 세 기물의 실루엣, 선택 테두리, 내 팀 7칸을 확인했다. 5테이블 배치와 Unity 내 가독성은 후속 검증 항목이다.</li>
+    </ul>
+  </section>
+
+  <details>
+    <summary>이전 선술집 v3–v5 비교</summary>
+    <figure class="concept">
+      <img class="native-pixels" src="media/art-direction/tavern-shop-team-v5-3x.png" width="1440" height="810" loading="lazy" alt="480×270 픽셀 격자에 직접 그린 선술집 v5의 3배 확대본">
+      <a href="media/art-direction/tavern-shop-team-v5.png" download>v5 480×270 원본</a> · <a href="art-source/tavern-v5.mjs" download>v5 편집 소스</a>
+    </figure>
+    <figure class="concept">
+      <img src="media/art-direction/tavern-shop-team-v4.png" width="1672" height="941" loading="lazy" alt="이전 선술집 v4 시안">
+      <a href="media/art-direction/tavern-shop-team-v4.png" download>선술집 v4 다운로드</a>
+    </figure>
+    <figure class="concept">
+      <img src="media/art-direction/tavern-shop-team-v3.png" width="1344" height="752" loading="lazy" alt="수정 전 선술집 v3. 세 테이블과 내 팀 7칸이 같은 구도로 배치돼 있다.">
+      <a href="media/art-direction/tavern-shop-team-v3.png" download>선술집 v3 다운로드</a>
+    </figure>
+  </details>
+  <details>
+    <summary>사용자 도트 레퍼런스</summary>
+    <figure class="concept reference">
+      <img src="references/pixel-style-reference.png" width="225" height="225" loading="lazy" alt="큰 정사각 픽셀과 밝은 색 면을 참고한 2등신 도트 레퍼런스">
+      <a href="references/pixel-style-reference.png" download>레퍼런스 다운로드</a>
+    </figure>
+  </details>
+  
+  <p><a href="archive/recruitment-v1-v2/recruitment.html">이전 선술집 시안</a> · <a href="docs/art-generation.md">생성 프롬프트</a> · <a href="references/rift-tavern-game-summary.pdf">초기 게임 요약 PDF</a></p>
+</main>
+</body>
+</html>

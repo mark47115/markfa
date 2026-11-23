@@ -1,0 +1,5058 @@
+{
+  "units": [
+    {
+      "id": "seedling-keeper",
+      "name": "묘목 지기",
+      "side": "ally",
+      "family": "seedling",
+      "impact": "hit-wood",
+      "motions": [
+        {
+          "key": "seed",
+          "cue": "seed",
+          "phase": "cast",
+          "label": "묘목을 앞으로 내려놓기"
+        }
+      ]
+    },
+    {
+      "id": "sprout-archer",
+      "name": "새싹 사수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "seed-horn",
+      "name": "씨앗 나팔수",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "tongs-hammer",
+      "name": "집게 망치병",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "furnace-helper",
+      "name": "용광로 조수",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "furnace",
+          "cue": "fire",
+          "phase": "cast",
+          "label": "화로를 열어 불꽃 끌어내기"
+        }
+      ]
+    },
+    {
+      "id": "brook-hunter",
+      "name": "개울 사냥꾼",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "fox-apprentice",
+      "name": "여우 견습",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "wolf-javelin",
+      "name": "늑대 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "lynx-scout",
+      "name": "살쾡이 정찰병",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "falcon-lookout",
+      "name": "솔개 파수꾼",
+      "side": "ally",
+      "family": "bird",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wing",
+          "cue": "wing",
+          "phase": "contact",
+          "label": "날개로 몸을 밀어 돌진"
+        }
+      ]
+    },
+    {
+      "id": "shield-deputy",
+      "name": "방패 부사수",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "gate-apprentice",
+      "name": "성문 견습",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "citadel-captain",
+      "name": "성루 방패대장",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "citadel-archer",
+      "name": "성무 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "lantern-priest",
+      "name": "등불 사제",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "belltower-sentry",
+      "name": "종탑 파수병",
+      "side": "ally",
+      "family": "bell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bell",
+          "cue": "bell",
+          "phase": "cast",
+          "label": "종을 쳐 울리기"
+        }
+      ]
+    },
+    {
+      "id": "assembly-robot",
+      "name": "조립형 로봇",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "rivet-bot",
+      "name": "못박이",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "ledger-carrier",
+      "name": "장부 가방잡이",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "note-slinger",
+      "name": "어음 사수",
+      "side": "ally",
+      "family": "sling",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "sling",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투석 장비를 당겨 발사"
+        }
+      ]
+    },
+    {
+      "id": "stone-shoulder-orc",
+      "name": "돌어깨 오크",
+      "side": "ally",
+      "family": "club",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "club",
+          "cue": "wood",
+          "phase": "contact",
+          "label": "몽둥이를 들어 횡으로 휘두르기"
+        }
+      ]
+    },
+    {
+      "id": "pebble-hurler",
+      "name": "돌멩이 투척수",
+      "side": "ally",
+      "family": "throwing",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throwing",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투척물을 치켜들어 던지기"
+        }
+      ]
+    },
+    {
+      "id": "war-drummer",
+      "name": "전투 북잡이",
+      "side": "ally",
+      "family": "drum",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "drumHit",
+          "cue": "drum",
+          "phase": "release",
+          "label": "북을 내리쳐 전방 음파"
+        },
+        {
+          "key": "drumRally",
+          "cue": "drum",
+          "phase": "cast",
+          "label": "두 박자 북을 쳐 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "orc-messenger",
+      "name": "전령 오크",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "rift-tick",
+      "name": "균열 진드기",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-pounce",
+          "phase": "contact",
+          "label": "앞다리 튕겨 덮치기"
+        }
+      ]
+    },
+    {
+      "id": "ruin-shell",
+      "name": "폐허 등껍질",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "shell",
+          "phase": "contact",
+          "label": "패인 등판으로 밀기"
+        }
+      ]
+    },
+    {
+      "id": "imperfect-hybrid",
+      "name": "불완전한 혼종",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "큰 집게 벌려 찍기"
+        }
+      ]
+    },
+    {
+      "id": "veil-wraith",
+      "name": "장막 유령",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-veil",
+          "phase": "contact",
+          "label": "천막 끝 휘감기"
+        }
+      ]
+    },
+    {
+      "id": "broken-crown",
+      "name": "깨진 왕관",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "게 집게로 옆을 긁기"
+        }
+      ]
+    },
+    {
+      "id": "abyssal-choir",
+      "name": "심연 합창단",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-bite",
+          "phase": "contact",
+          "label": "세 입을 시간차로 벌려 덮치기"
+        }
+      ]
+    },
+    {
+      "id": "the-devourer",
+      "name": "삼키는 자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-maw",
+          "phase": "contact",
+          "label": "양쪽 갑각 걷고 가운데 입 닫기"
+        }
+      ]
+    },
+    {
+      "id": "devourer-split",
+      "name": "분열체",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "절단면 아래 핵을 낮춰 긁기"
+        }
+      ]
+    },
+    {
+      "id": "dim-spore",
+      "name": "미광 포자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidShot",
+          "cue": "smoke",
+          "phase": "release",
+          "label": "촛농 몸 부풀려 포자 뱉기"
+        }
+      ]
+    },
+    {
+      "id": "hook-young",
+      "name": "갈고리 새끼",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "갈고리 꼬리 아래로 긁기"
+        }
+      ]
+    },
+    {
+      "id": "shell-carrier",
+      "name": "조개 등짐꾼",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "shell",
+          "phase": "contact",
+          "label": "아래 조개를 앞으로 돌려 밀기"
+        }
+      ]
+    },
+    {
+      "id": "echo-worm",
+      "name": "메아리 갯지렁이",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-bite",
+          "phase": "contact",
+          "label": "말린 마디 풀며 턱 깨물기"
+        }
+      ]
+    },
+    {
+      "id": "mirror-watcher",
+      "name": "거울 감시자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidShot",
+          "cue": "void-glass",
+          "phase": "release",
+          "label": "기울인 거울로 빛 되쏘기"
+        }
+      ]
+    },
+    {
+      "id": "blue-gatekeeper",
+      "name": "청람 문지기",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "shell",
+          "phase": "contact",
+          "label": "세 발을 디뎌 푸른 쇄골 밀기"
+        }
+      ]
+    },
+    {
+      "id": "warped-turret",
+      "name": "기형 망루",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidShot",
+          "cue": "void-cannon",
+          "phase": "release",
+          "label": "관절 고정하고 포구 발사"
+        }
+      ]
+    },
+    {
+      "id": "split-prophet",
+      "name": "갈라진 예언자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidChant",
+          "cue": "void-chant",
+          "phase": "release",
+          "label": "상하 촉수 사이로 빛 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-004",
+      "name": "접목꾼",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-005",
+      "name": "가지 경비",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-006",
+      "name": "이슬 채집꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-007",
+      "name": "가시 약초꾼",
+      "side": "ally",
+      "family": "thorn",
+      "impact": "hit-wood",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-008",
+      "name": "약초 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-009",
+      "name": "숲 화살수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-010",
+      "name": "뿌리 전령",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-011",
+      "name": "새순 사수",
+      "side": "ally",
+      "family": "seedShot",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "seedShot",
+          "cue": "seed",
+          "phase": "release",
+          "label": "새순을 장전해 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-012",
+      "name": "수관 재배사",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "seed",
+          "cue": "seed",
+          "phase": "cast",
+          "label": "묘목을 앞으로 내려놓기"
+        }
+      ]
+    },
+    {
+      "id": "allies-013",
+      "name": "올빼미 경비",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-014",
+      "name": "세계수 파수꾼",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-015",
+      "name": "수관 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-016",
+      "name": "달빛 창병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-017",
+      "name": "정찰궁수",
+      "side": "ally",
+      "family": "scope",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "scope",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "관측경을 대고 전방 조사"
+        }
+      ]
+    },
+    {
+      "id": "allies-018",
+      "name": "어린 곰",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-019",
+      "name": "들여우",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-020",
+      "name": "솔창병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-021",
+      "name": "솔잎 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-022",
+      "name": "들멧돼지",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-023",
+      "name": "잿빛 오소리",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-024",
+      "name": "달빛 연주자",
+      "side": "ally",
+      "family": "instrument",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "instrument",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "악기를 연주해 아군 지원"
+        }
+      ]
+    },
+    {
+      "id": "allies-025",
+      "name": "늦은달 사수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-026",
+      "name": "나무지팡이",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-027",
+      "name": "부엉이 사수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-028",
+      "name": "너구리 투사",
+      "side": "ally",
+      "family": "club",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "club",
+          "cue": "wood",
+          "phase": "contact",
+          "label": "몽둥이를 들어 횡으로 휘두르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-029",
+      "name": "황갈색 족제비",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-030",
+      "name": "발자국 수호자",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-031",
+      "name": "잎비 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-032",
+      "name": "왕도토리 초병",
+      "side": "ally",
+      "family": "mace",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "mace",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "철퇴 머리로 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-033",
+      "name": "호각 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-034",
+      "name": "얼룩 스라소니",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-035",
+      "name": "숲 삵",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-036",
+      "name": "달뿔 인간",
+      "side": "ally",
+      "family": "bluff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bluff",
+          "cue": "stomp",
+          "phase": "contact",
+          "label": "앞발을 굴러 위협"
+        }
+      ]
+    },
+    {
+      "id": "allies-037",
+      "name": "숲매",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-038",
+      "name": "달뿔 큰사슴",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-039",
+      "name": "순록 새끼",
+      "side": "ally",
+      "family": "beast",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bite",
+          "cue": "bite",
+          "phase": "contact",
+          "label": "물어뜯기"
+        },
+        {
+          "key": "paw",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발 내려찍기"
+        },
+        {
+          "key": "rise",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "웅크려 올려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-040",
+      "name": "달뿔 파수꾼",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-041",
+      "name": "뿔 올빼미",
+      "side": "ally",
+      "family": "bird",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wing",
+          "cue": "wing",
+          "phase": "contact",
+          "label": "날개로 몸을 밀어 돌진"
+        }
+      ]
+    },
+    {
+      "id": "allies-044",
+      "name": "폐철 수거꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-045",
+      "name": "등짐 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-046",
+      "name": "화덕 경비",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-047",
+      "name": "불집게 조수",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-048",
+      "name": "조립 기사",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-049",
+      "name": "리벳 일꾼",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-050",
+      "name": "잉걸 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-051",
+      "name": "열받이 경비",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-052",
+      "name": "주조 반장",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-053",
+      "name": "합금 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-054",
+      "name": "감독관",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-055",
+      "name": "화덕 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-056",
+      "name": "어린 대장장이",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-057",
+      "name": "장비 운반공",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-058",
+      "name": "숫돌 대장",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "allies-059",
+      "name": "장비 수습공",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-060",
+      "name": "가죽 정비공",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "allies-061",
+      "name": "공구 사수",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-062",
+      "name": "모루 경비",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-063",
+      "name": "망치잡이",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-064",
+      "name": "담금질 도끼병",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-065",
+      "name": "통풍구 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-066",
+      "name": "모루 파수꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "allies-067",
+      "name": "방열 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-068",
+      "name": "룬 수문장",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-069",
+      "name": "철조각 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-072",
+      "name": "갈대 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-073",
+      "name": "수달 기습병",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-074",
+      "name": "덫줄 살쾡이",
+      "side": "ally",
+      "family": "hook",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hook",
+          "cue": "point",
+          "phase": "contact",
+          "label": "갈고리 당기기"
+        }
+      ]
+    },
+    {
+      "id": "allies-075",
+      "name": "물비늘 수인",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-079",
+      "name": "뼈호각 늑대",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "allies-080",
+      "name": "발자국 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-081",
+      "name": "능선 대장",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "guard",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "앞발을 딛고 짧게 손 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-082",
+      "name": "산토끼 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-083",
+      "name": "흰발 사냥대장",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "guard",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "앞발을 딛고 짧게 손 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-084",
+      "name": "눈토끼 명사수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-085",
+      "name": "담장 달리미",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "rake",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발을 디디고 두 손의 발톱으로 긁기"
+        }
+      ]
+    },
+    {
+      "id": "allies-086",
+      "name": "아래턱 강아지",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-087",
+      "name": "자갈 척후",
+      "side": "ally",
+      "family": "scope",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "scope",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "관측경을 대고 전방 조사"
+        }
+      ]
+    },
+    {
+      "id": "allies-088",
+      "name": "회색 발톱",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-089",
+      "name": "핏자국 관측병",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-090",
+      "name": "발굽 정찰병",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-091",
+      "name": "산양 도약병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-092",
+      "name": "비탈길 추격수",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-093",
+      "name": "갈고리 선도자",
+      "side": "ally",
+      "family": "hook",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hook",
+          "cue": "point",
+          "phase": "contact",
+          "label": "갈고리 당기기"
+        }
+      ]
+    },
+    {
+      "id": "allies-094",
+      "name": "길쥐 추적수",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-095",
+      "name": "가시언덕 몰이꾼",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-096",
+      "name": "긴발 사냥개",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "rake",
+          "cue": "claw",
+          "phase": "contact",
+          "label": "앞발을 디디고 두 손의 발톱으로 긁기"
+        }
+      ]
+    },
+    {
+      "id": "allies-097",
+      "name": "벼랑 송곳니",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-098",
+      "name": "돌꼬리 수인",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-101",
+      "name": "철등불 기사",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "allies-102",
+      "name": "돌계단 종자",
+      "side": "ally",
+      "family": "mace",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "mace",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "철퇴 머리로 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-103",
+      "name": "망토 방패병",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-104",
+      "name": "망토 보조검",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-105",
+      "name": "저녁 경비기사",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-106",
+      "name": "초병 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-107",
+      "name": "성문 교대기사",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-108",
+      "name": "교대 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-109",
+      "name": "성루 구호기사",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-110",
+      "name": "온기 사제",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-115",
+      "name": "맹약 견습검사",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-116",
+      "name": "맹약 종자",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-117",
+      "name": "상복 창병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-118",
+      "name": "밤길 종자",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-119",
+      "name": "선발 창병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-120",
+      "name": "기수 견습",
+      "side": "ally",
+      "family": "rider",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "ride",
+          "cue": "stomp",
+          "phase": "contact",
+          "label": "고삐를 당기고 기승 돌진"
+        }
+      ]
+    },
+    {
+      "id": "allies-121",
+      "name": "잔류대 부관",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-122",
+      "name": "잔류대 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-123",
+      "name": "검은기 호위",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-124",
+      "name": "묵념 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-125",
+      "name": "잿빛 검무관",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-126",
+      "name": "서약 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-127",
+      "name": "집행관",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-128",
+      "name": "맹세의 시종",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-131",
+      "name": "선반 조작기",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-132",
+      "name": "소형 토크봇",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-133",
+      "name": "케이블 기사",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-134",
+      "name": "절연 탐침",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-135",
+      "name": "부품 로봇",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-136",
+      "name": "원반 사수",
+      "side": "ally",
+      "family": "throwing",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throwing",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투척물을 치켜들어 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-137",
+      "name": "레일 정비기",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-138",
+      "name": "바퀴 정찰기",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-139",
+      "name": "분기 조립기",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-140",
+      "name": "관절 조정기",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-141",
+      "name": "주조소 본체",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-142",
+      "name": "운반 로봇",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-143",
+      "name": "코일 주먹",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-144",
+      "name": "전선 탐침",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-145",
+      "name": "스파크 코어",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-146",
+      "name": "분전 로봇",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-147",
+      "name": "접지 발판기",
+      "side": "ally",
+      "family": "grounder",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "ground",
+          "cue": "electric",
+          "phase": "cast",
+          "label": "접지 발판을 펼쳐 고정"
+        }
+      ]
+    },
+    {
+      "id": "allies-148",
+      "name": "구리 탐침",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "allies-149",
+      "name": "반출 로봇",
+      "side": "ally",
+      "family": "ram",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "ram",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "기계 몸체 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-150",
+      "name": "배터리 드론",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-151",
+      "name": "예열 코어",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-152",
+      "name": "증폭 렌즈",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-153",
+      "name": "축전 관제 본체",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-154",
+      "name": "진공관 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-155",
+      "name": "과부하 본체",
+      "side": "ally",
+      "family": "coil",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "coil",
+          "cue": "electric",
+          "phase": "release",
+          "label": "코일의 전하를 모아 방출"
+        }
+      ]
+    },
+    {
+      "id": "allies-156",
+      "name": "피뢰침 호위기",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "allies-159",
+      "name": "짐표 배달장",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-160",
+      "name": "손수레 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-161",
+      "name": "장터 안내꾼",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "allies-162",
+      "name": "깃발 엄호원",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-163",
+      "name": "수레 몰이꾼",
+      "side": "ally",
+      "family": "hook",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hook",
+          "cue": "point",
+          "phase": "contact",
+          "label": "갈고리 당기기"
+        }
+      ]
+    },
+    {
+      "id": "allies-164",
+      "name": "물건 호위",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-165",
+      "name": "약통 상인",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-166",
+      "name": "압인 쇠뇌수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-167",
+      "name": "갑옷 짐꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-168",
+      "name": "전표 총잡이",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-169",
+      "name": "총상인 경비대장",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-170",
+      "name": "금화총 경비원",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-171",
+      "name": "자루 지기",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-172",
+      "name": "저울 보초",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-173",
+      "name": "길목 짐수레꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "allies-174",
+      "name": "자물쇠 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-175",
+      "name": "황동 호각수",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "allies-176",
+      "name": "구두쇠 경비",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-177",
+      "name": "환전소 문지기",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-178",
+      "name": "금고 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-179",
+      "name": "금고 방패병",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-180",
+      "name": "금고열쇠 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "allies-181",
+      "name": "수레 방패지기",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-182",
+      "name": "차축 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-183",
+      "name": "금고지기",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-184",
+      "name": "황동 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-187",
+      "name": "깨진뿔 보병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-188",
+      "name": "뼈투석수",
+      "side": "ally",
+      "family": "sling",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "sling",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투석 장비를 당겨 발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-189",
+      "name": "붕대 투사",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-190",
+      "name": "헝겊 투척수",
+      "side": "ally",
+      "family": "throwing",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throwing",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투척물을 치켜들어 던지기"
+        }
+      ]
+    },
+    {
+      "id": "allies-191",
+      "name": "갈기 타우렌",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-192",
+      "name": "북지기 보조",
+      "side": "ally",
+      "family": "drum",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "drumHit",
+          "cue": "drum",
+          "phase": "release",
+          "label": "북을 내리쳐 전방 음파"
+        },
+        {
+          "key": "drumRally",
+          "cue": "drum",
+          "phase": "cast",
+          "label": "두 박자 북을 쳐 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-193",
+      "name": "징지기 타우렌",
+      "side": "ally",
+      "family": "gong",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gong",
+          "cue": "gong",
+          "phase": "release",
+          "label": "징 중심을 쳐 전방 음파"
+        },
+        {
+          "key": "gongRally",
+          "cue": "gong",
+          "phase": "cast",
+          "label": "징을 두 번 울려 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-194",
+      "name": "징채 호위",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "allies-195",
+      "name": "진홍뿔 타우렌",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-196",
+      "name": "붉은가죽 호위",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-197",
+      "name": "붉은뿔 타우렌",
+      "side": "ally",
+      "family": "fist",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "punch",
+          "cue": "fist",
+          "phase": "contact",
+          "label": "주먹 내지르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-198",
+      "name": "가죽 사수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "allies-201",
+      "name": "전열 나팔 오크",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "allies-202",
+      "name": "뿔장식 초병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-203",
+      "name": "진형 선도 오크",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "allies-204",
+      "name": "갈대 나팔 보조",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "allies-205",
+      "name": "팽팽북 타우렌",
+      "side": "ally",
+      "family": "drum",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "drumHit",
+          "cue": "drum",
+          "phase": "release",
+          "label": "북을 내리쳐 전방 음파"
+        },
+        {
+          "key": "drumRally",
+          "cue": "drum",
+          "phase": "cast",
+          "label": "두 박자 북을 쳐 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-206",
+      "name": "북채 투사",
+      "side": "ally",
+      "family": "club",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "club",
+          "cue": "wood",
+          "phase": "contact",
+          "label": "몽둥이를 들어 횡으로 휘두르기"
+        }
+      ]
+    },
+    {
+      "id": "allies-207",
+      "name": "메아리 타우렌",
+      "side": "ally",
+      "family": "gong",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gong",
+          "cue": "gong",
+          "phase": "release",
+          "label": "징 중심을 쳐 전방 음파"
+        },
+        {
+          "key": "gongRally",
+          "cue": "gong",
+          "phase": "cast",
+          "label": "징을 두 번 울려 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-208",
+      "name": "가죽 북 보조",
+      "side": "ally",
+      "family": "drum",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "drumHit",
+          "cue": "drum",
+          "phase": "release",
+          "label": "북을 내리쳐 전방 음파"
+        },
+        {
+          "key": "drumRally",
+          "cue": "drum",
+          "phase": "cast",
+          "label": "두 박자 북을 쳐 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-209",
+      "name": "협곡 북대장",
+      "side": "ally",
+      "family": "gong",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gong",
+          "cue": "gong",
+          "phase": "release",
+          "label": "징 중심을 쳐 전방 음파"
+        },
+        {
+          "key": "gongRally",
+          "cue": "gong",
+          "phase": "cast",
+          "label": "징을 두 번 울려 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-210",
+      "name": "북 응답수",
+      "side": "ally",
+      "family": "drum",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "drumHit",
+          "cue": "drum",
+          "phase": "release",
+          "label": "북을 내리쳐 전방 음파"
+        },
+        {
+          "key": "drumRally",
+          "cue": "drum",
+          "phase": "cast",
+          "label": "두 박자 북을 쳐 아군 강화"
+        }
+      ]
+    },
+    {
+      "id": "allies-211",
+      "name": "천둥목 우두머리",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "allies-212",
+      "name": "뿔나팔 호위",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "reforged-shieldbearer",
+      "name": "조립 방패병",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "alloy-spearman",
+      "name": "합금 창병",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "work-robot",
+      "name": "작업 로봇",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-213",
+      "name": "교대 방패수",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-214",
+      "name": "회랑 종자",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-215",
+      "name": "계약 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-216",
+      "name": "연락원",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-217",
+      "name": "회랑 기수",
+      "side": "ally",
+      "family": "spear",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "spear",
+          "cue": "point",
+          "phase": "contact",
+          "label": "창을 당겨 수평으로 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-218",
+      "name": "계약 사수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-219",
+      "name": "묘비 판독자",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-220",
+      "name": "잉크 심부름꾼",
+      "side": "ally",
+      "family": "throwing",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throwing",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투척물을 치켜들어 던지기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-221",
+      "name": "관측 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-222",
+      "name": "청동 기록원",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-223",
+      "name": "봉랍 참모",
+      "side": "ally",
+      "family": "staff",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "wand",
+          "cue": "magic",
+          "phase": "release",
+          "label": "지팡이 내뻗기"
+        },
+        {
+          "key": "cast",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "지팡이 들어 시전"
+        }
+      ]
+    },
+    {
+      "id": "retinues-224",
+      "name": "서고 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "retinues-225",
+      "name": "현장 기사",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-226",
+      "name": "못 상자 운반공",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "retinues-227",
+      "name": "조율 기사",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "retinues-228",
+      "name": "건반 기사",
+      "side": "ally",
+      "family": "instrument",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "instrument",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "악기를 연주해 아군 지원"
+        }
+      ]
+    },
+    {
+      "id": "retinues-229",
+      "name": "동력 반장",
+      "side": "ally",
+      "family": "claw",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "wrench",
+          "cue": "mechanical",
+          "phase": "contact",
+          "label": "기계 팔 내밀기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-230",
+      "name": "손잡이 경비원",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-231",
+      "name": "표지판 경비",
+      "side": "ally",
+      "family": "flag",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flag",
+          "cue": "cloth",
+          "phase": "cast",
+          "label": "깃발 들어 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-232",
+      "name": "갈림길 심부름꾼",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "orders",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "장비를 받치고 다른 손으로 신호"
+        }
+      ]
+    },
+    {
+      "id": "retinues-233",
+      "name": "분필 사수",
+      "side": "ally",
+      "family": "brush",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "brush",
+          "cue": "seed",
+          "phase": "cast",
+          "label": "붓으로 전방에 표식 그리기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-234",
+      "name": "측량추 운반공",
+      "side": "ally",
+      "family": "scope",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "scope",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "관측경을 대고 전방 조사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-235",
+      "name": "역참 경비대장",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-236",
+      "name": "도로 사수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-237",
+      "name": "들보 대장",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "retinues-238",
+      "name": "못통 조수",
+      "side": "ally",
+      "family": "hammer",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hammer",
+          "cue": "hammer",
+          "phase": "contact",
+          "label": "도구 내려치기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-239",
+      "name": "난간 경비",
+      "side": "ally",
+      "family": "hook",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hook",
+          "cue": "point",
+          "phase": "contact",
+          "label": "갈고리 당기기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-240",
+      "name": "비계 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-241",
+      "name": "개관 책임자",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "repair",
+          "cue": "mechanical",
+          "phase": "cast",
+          "label": "공구를 내밀어 장비 손질"
+        }
+      ]
+    },
+    {
+      "id": "retinues-242",
+      "name": "창고 궁수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-243",
+      "name": "문빗장 보초",
+      "side": "ally",
+      "family": "hook",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "hook",
+          "cue": "point",
+          "phase": "contact",
+          "label": "갈고리 당기기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-244",
+      "name": "성벽 돌잡이",
+      "side": "ally",
+      "family": "sling",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "sling",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투석 장비를 당겨 발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-245",
+      "name": "벽돌 병졸",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-246",
+      "name": "교대 경비",
+      "side": "ally",
+      "family": "club",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "club",
+          "cue": "wood",
+          "phase": "contact",
+          "label": "몽둥이를 들어 횡으로 휘두르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-247",
+      "name": "쇠사슬 갑병",
+      "side": "ally",
+      "family": "flail",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "flail",
+          "cue": "chain",
+          "phase": "contact",
+          "label": "사슬 철퇴 휘두르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-248",
+      "name": "쇠고리 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "retinues-249",
+      "name": "쌍깃 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-250",
+      "name": "길막 정찰수",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-251",
+      "name": "돌화살 사수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-252",
+      "name": "화살통 기사",
+      "side": "ally",
+      "family": "supply",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "retinues-253",
+      "name": "양열 신호장",
+      "side": "ally",
+      "family": "horn",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "horn",
+          "cue": "horn",
+          "phase": "cast",
+          "label": "나팔을 입에 대고 불기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-254",
+      "name": "이중화살 사수",
+      "side": "ally",
+      "family": "bow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bow",
+          "cue": "bow",
+          "phase": "release",
+          "label": "활을 들어 시위를 당기고 발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-255",
+      "name": "붕대 운반수",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "retinues-256",
+      "name": "약초 돌팔매",
+      "side": "ally",
+      "family": "sling",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "sling",
+          "cue": "sling",
+          "phase": "release",
+          "label": "투석 장비를 당겨 발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-257",
+      "name": "들것 호위",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "retinues-258",
+      "name": "약병 주자",
+      "side": "ally",
+      "family": "gear",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "supply",
+          "cue": "vial",
+          "phase": "cast",
+          "label": "손을 뻗어 아군에 보급"
+        }
+      ]
+    },
+    {
+      "id": "retinues-259",
+      "name": "진료소 수비대장",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-260",
+      "name": "의약 상자 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "retinues-261",
+      "name": "등잔 도끼수",
+      "side": "ally",
+      "family": "axe",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "axeDown",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 내려찍기"
+        },
+        {
+          "key": "axeSweep",
+          "cue": "axe",
+          "phase": "contact",
+          "label": "도끼 가로 베기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-262",
+      "name": "등잔 종자",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-263",
+      "name": "시보 검병",
+      "side": "ally",
+      "family": "sword",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "cutUp",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "올려베기"
+        },
+        {
+          "key": "cutDown",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "내려베기"
+        },
+        {
+          "key": "stab",
+          "cue": "blade",
+          "phase": "contact",
+          "label": "찌르기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-264",
+      "name": "톱니수 사수",
+      "side": "ally",
+      "family": "gun",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "gun",
+          "cue": "gun",
+          "phase": "release",
+          "label": "총 받치기·조준·격발·반동"
+        }
+      ]
+    },
+    {
+      "id": "retinues-265",
+      "name": "큰 종 타수",
+      "side": "ally",
+      "family": "bell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "bell",
+          "cue": "bell",
+          "phase": "cast",
+          "label": "종을 쳐 울리기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-266",
+      "name": "종루 석궁수",
+      "side": "ally",
+      "family": "crossbow",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "crossbow",
+          "cue": "crossbow",
+          "phase": "release",
+          "label": "석궁 시위 당기기·장전·발사"
+        }
+      ]
+    },
+    {
+      "id": "retinues-267",
+      "name": "등불 달리미",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-268",
+      "name": "안개 엄호수",
+      "side": "ally",
+      "family": "smoke",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "smoke",
+          "cue": "smoke",
+          "phase": "release",
+          "label": "분사구를 조준해 연막 방출"
+        }
+      ]
+    },
+    {
+      "id": "retinues-269",
+      "name": "항로 보초",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-270",
+      "name": "표식 투창수",
+      "side": "ally",
+      "family": "javelin",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "throw",
+          "cue": "javelin",
+          "phase": "release",
+          "label": "투창을 뒤로 젖혀 던지기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-271",
+      "name": "횃불 도선장",
+      "side": "ally",
+      "family": "torch",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "torch",
+          "cue": "fire",
+          "phase": "cast",
+          "label": "횃불을 들어 앞을 밝히기"
+        }
+      ]
+    },
+    {
+      "id": "retinues-272",
+      "name": "쪽불 추적수",
+      "side": "ally",
+      "family": "lantern",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "lantern",
+          "cue": "magic",
+          "phase": "cast",
+          "label": "등불 들어 올리기"
+        }
+      ]
+    },
+    {
+      "id": "void-274",
+      "name": "틈새 추적자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-pounce",
+          "phase": "contact",
+          "label": "접힌 뒷다리 펴 돌진"
+        }
+      ]
+    },
+    {
+      "id": "void-277",
+      "name": "공허 송곳니",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-bite",
+          "phase": "contact",
+          "label": "낫 턱으로 가로 물기"
+        }
+      ]
+    },
+    {
+      "id": "void-280",
+      "name": "뒤틀린 창",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidThrust",
+          "cue": "void-spine",
+          "phase": "contact",
+          "label": "창날 팔 뒤로 빼 전방 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "void-281",
+      "name": "먹빛 장막",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "void-veil",
+          "phase": "contact",
+          "label": "반달 띠 앞으로 감아 치기"
+        }
+      ]
+    },
+    {
+      "id": "void-282",
+      "name": "균열 거신",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidSlam",
+          "cue": "stomp",
+          "phase": "contact",
+          "label": "돌 아치 들어 바닥 찍기"
+        }
+      ]
+    },
+    {
+      "id": "void-284",
+      "name": "고난의 성벽",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "shell",
+          "phase": "contact",
+          "label": "돌문 한쪽을 닫아 밀기"
+        }
+      ]
+    },
+    {
+      "id": "void-285",
+      "name": "황폐 집행자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidSweep",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "몸 옆 칼날을 올려베기"
+        }
+      ]
+    },
+    {
+      "id": "void-286",
+      "name": "공허 대장군",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidThrust",
+          "cue": "void-spine",
+          "phase": "contact",
+          "label": "등 장창 당겨 연달아 찌르기"
+        }
+      ]
+    },
+    {
+      "id": "void-287",
+      "name": "심연 대장군",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidSweep",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "어깨 반원관을 비틀어 가르기"
+        }
+      ]
+    },
+    {
+      "id": "void-291",
+      "name": "실금 알껍질",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-shell",
+      "motions": [
+        {
+          "key": "voidBash",
+          "cue": "shell",
+          "phase": "contact",
+          "label": "금 간 알 한쪽으로 박치기"
+        }
+      ]
+    },
+    {
+      "id": "void-293",
+      "name": "속빈 미아",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidShot",
+          "cue": "void-veil",
+          "phase": "release",
+          "label": "빈 흉곽 열어 푸른 숨 불기"
+        }
+      ]
+    },
+    {
+      "id": "void-294",
+      "name": "유리 촉수",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidShot",
+          "cue": "void-glass",
+          "phase": "release",
+          "label": "유리 촉수 셋으로 파편 튕기기"
+        }
+      ]
+    },
+    {
+      "id": "void-295",
+      "name": "모래 잠복자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidClaw",
+          "cue": "void-claw",
+          "phase": "contact",
+          "label": "모래톱 밀고 낮게 덮치기"
+        }
+      ]
+    },
+    {
+      "id": "void-298",
+      "name": "빈껍질 집전관",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidChant",
+          "cue": "void-chant",
+          "phase": "release",
+          "label": "껍질 사이로 세로 핵편 쏘기"
+        }
+      ]
+    },
+    {
+      "id": "void-302",
+      "name": "검푸른 금식자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidBite",
+          "cue": "void-bite",
+          "phase": "contact",
+          "label": "긴 옆턱 뻗어 사냥감 물기"
+        }
+      ]
+    },
+    {
+      "id": "void-304",
+      "name": "먹구름 순례자",
+      "side": "enemy",
+      "family": "shell",
+      "impact": "hit-body",
+      "motions": [
+        {
+          "key": "voidChant",
+          "cue": "void-chant",
+          "phase": "release",
+          "label": "등 갑각 떨쳐 먹빛 구름 뿜기"
+        }
+      ]
+    },
+    {
+      "id": "temporary-shield-guard",
+      "name": "임시 방패병",
+      "side": "ally",
+      "family": "shield",
+      "impact": "hit-armor",
+      "motions": [
+        {
+          "key": "bash",
+          "cue": "shield",
+          "phase": "contact",
+          "label": "방패 밀어치기"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "Rally",
+      "cue": "gong"
+    },
+    {
+      "id": "MarkedThrow",
+      "cue": "javelin"
+    },
+    {
+      "id": "Mend",
+      "cue": "heal"
+    },
+    {
+      "id": "GreenShade",
+      "cue": "grove"
+    },
+    {
+      "id": "SpareLoad",
+      "cue": "crossbow"
+    },
+    {
+      "id": "PursuitSignal",
+      "cue": "horn"
+    },
+    {
+      "id": "ShieldRelay",
+      "cue": "ward"
+    },
+    {
+      "id": "PowerShare",
+      "cue": "mechanical"
+    },
+    {
+      "id": "EmergencyVial",
+      "cue": "vial"
+    },
+    {
+      "id": "RakeSweep",
+      "cue": "chain"
+    },
+    {
+      "id": "EmberScatter",
+      "cue": "fire"
+    },
+    {
+      "id": "OathCounter",
+      "cue": "point"
+    },
+    {
+      "id": "CapacitorBurst",
+      "cue": "electric"
+    },
+    {
+      "id": "ShieldFeint",
+      "cue": "shield"
+    },
+    {
+      "id": "RageStomp",
+      "cue": "stomp"
+    }
+  ]
+}

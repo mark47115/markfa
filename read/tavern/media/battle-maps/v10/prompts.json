@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "generator": "기본 내장 OpenAI ImageGen",
+  "postprocess": "원본의 대표색을 240×135 논리 격자로 뽑아 디더 없이 양자화했다. 넓은 바닥과 외곽 재질을 별도로 칠하고 고립 칸을 정리했다. 원본의 그림자와 밝은 면을 참조해 외곽 랜드마크의 면을 구분했다. 연결부 양쪽 8칸에 재질 윤곽을 맞추고 논리 격자 PNG를 7배 최근접 확대했다.",
+  "rounds": [
+    {
+      "id": "r01",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r01.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 01, warm olive border outpost meadow. Hold the exact timber outpost centered along the far edge, stone arch left, covered wagon right, foreground fence and warm lantern placement in reference 2, and hold the straight horizontal dirt track and the wheel turn at the far right. Preserve the composition faithfully. Dark olive grass near #8e824e, dirt in muted warm ocher, wood warm brown and stone warm-gray. Use no corruption or teal, and keep the large grass fighting floor visually quiet.",
+      "source": "sources/r01.png",
+      "editableGrid": "grid/r01.png",
+      "postprocess": "초소와 수레, 풀밭의 큰 색면을 정리하고 오른쪽 수레 자국을 r02의 두 줄과 연결했다."
+    },
+    {
+      "id": "r02",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r02.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 02, wagon ruts. Preserve the wagon and barrels on the upper left, arch opening and shallow puddle along the far strip, and two curved dirt ruts from the left meeting the Round 03 path at right. Keep olives and warm ocher, ordinary gray water, no teal or corruption.",
+      "source": "sources/r02.png",
+      "editableGrid": "grid/r02.png",
+      "postprocess": "두 수레 자국과 웅덩이를 남기고 올리브 바탕과 황토를 분리했다."
+    },
+    {
+      "id": "r03",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r03.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 03, original Pine Fork. Preserve the exact same recognizable open fork with its horizontal road, two branching ocher arms, stepping stones, forest frame, northern arch, broken logs and foreground stump. This map is the style baseline, so make only the adaptation to a broader exact pixel grid and a tiny non-luminous distant deep dull teal rim mark inside the northern stone arch, near 35% of the width and 14% down. No glowing core or corruption. Olive grass and warm ocher path.",
+      "source": "sources/r03.png",
+      "editableGrid": "grid/r03.png",
+      "postprocess": "솔숲 갈림길 형태를 유지하고 원경의 아치 안쪽에 비발광 표식 12칸을 찍었다."
+    },
+    {
+      "id": "r04",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r04.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 04, Twisted Root Clearing. Keep the low roots on both sides and the warm dirt path, with early muted dark-plum restricted to the roots on the right, mostly their shadows and tips. Soil hues warm muted brown 30–50 degrees, ocher olives remain. No luminescence.",
+      "source": "sources/r04.png",
+      "editableGrid": "grid/r04.png",
+      "postprocess": "오른쪽 위아래 뿌리 쪽으로 오염색을 제한하고 황토 바닥을 평평하게 정리했다."
+    },
+    {
+      "id": "r05",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r05.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 05, Old Stump Split. Keep the central cut stump, ring-shaped dual route and dead roots at edges. Rebuild the round airbrushed center as two joined flat shapes of dry grass and warm muted ocher dirt, carrying the grass right toward a dry creek. Dark plum confined to root shadows along outer edges, no luminescence.",
+      "source": "sources/r05.png",
+      "editableGrid": "grid/r05.png",
+      "postprocess": "밑동 옆 두 길과 풀 바닥을 독립된 색면으로 정리했다."
+    },
+    {
+      "id": "r06",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r06.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 06, Dry Streambed. Keep the shallow dry stream and its two rough bank wrecks, with upper right stone gate. Switch reddish brown basin to muted soil hues 30–50 degrees, preserve patches of green olive grass on shoulders, dark plum only in shade and waterside debris. No luminescence.",
+      "source": "sources/r06.png",
+      "editableGrid": "grid/r06.png",
+      "postprocess": "초록 둔덕과 황갈색 바닥을 남기고 물가 잔해를 오염 램프로 정리했다."
+    },
+    {
+      "id": "r07",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r07.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 07, Fallen Outer Gate. Preserve left ruined doorway and two offset wall pieces, the open central approach, and the warm amber lamp above the left gate. Floor broad low-saturation gray-brown clusters, dead brown trees, dark plum root tips, no teal light. Discontinuous worn stones in the approach without individual dark outlines.",
+      "source": "sources/r07.png",
+      "editableGrid": "grid/r07.png",
+      "postprocess": "교전면을 회갈색 덩어리로 묶고 왼쪽 호박색 등불을 유지했다."
+    },
+    {
+      "id": "r08",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r08.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 08, Twin Pillar Gate. Keep symmetrical two gate pillars at same depth, tangled roots curling around them, old doorway and moss-free raised paving. All vegetation dead. First tiny restrained teal veins in cobble gaps and two-step teal crystal accents at edge: #4aae9e core enclosed by #3e7d7c dark rim. Low-saturation gray brown flat fighting floor. Keep stone colors subdued.",
+      "source": "sources/r08.png",
+      "editableGrid": "grid/r08.png",
+      "postprocess": "생성 중 추가된 중앙 문을 v9의 벽과 등잔으로 복원했다. 포석 틈의 맥과 오른쪽 수정 핵을 칸 단위로 지정했다."
+    },
+    {
+      "id": "r09",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r09.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 09, Cracked Haul Road. Preserve the bent portion of cart ruts with ordinary dull slate water, old mining gear at back, mine mouth to right, and low rock ruins. Use midgray brown and slate stone ramps with clustered facets, no orange stone and no dark outline for every individual stone. Broken worn cart impressions, not a bright horizontal stripe, and very sparse teal at periphery with dark teal enclosing the core.",
+      "source": "sources/r09.png",
+      "editableGrid": "grid/r09.png",
+      "postprocess": "냉청색으로 생성된 바닥을 낮은 채도의 회갈색으로 되돌리고 석재와 고인 물을 구분했다."
+    },
+    {
+      "id": "r10",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r10.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 10, Stalactite Basin. Preserve staggered mineral bases and the limestone pool in the upper-right rim. Choose gray brown and cool slate stone, mostly even muted dusty plum fighting surface. Use just two shades of teal in the spring (#4aae9e core held inside #3e7d7c rim). Replace orange line with intermittent worn cave floor marks in local tones. Keep lit edge formations scarce.",
+      "source": "sources/r10.png",
+      "editableGrid": "grid/r10.png",
+      "postprocess": "외곽의 샘을 두 청록색으로 정리하고 중앙의 마모 자국을 서로 분리했다."
+    },
+    {
+      "id": "r11",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r11.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 11, Black Altar Entrance. Keep the upper central altar precisely and the low mineral formation outside the lanes. Replace all magenta crystals with bone-color limestone, subdued plum shell strata and a sparse teal core surrounded by dark teal. Quiet subdued plum floor, cave scuffs in similar colors, no orange band or bright roots crossing the middle.",
+      "source": "sources/r11.png",
+      "editableGrid": "grid/r11.png",
+      "postprocess": "제단과 기단을 고정하고 뼈빛 석재, 자두빛 갑각과 청록 핵으로 색을 맞췄다."
+    },
+    {
+      "id": "r12",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r12.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 12, Hushed Crystal Cave. Preserve low peripheral crystals, column silhouettes and open distant ranged-combat space. Replace broad gradient with large flat subdued plum floor clusters, red strata with plum shell facets, magenta crystals with bone and cool slate mineral plates with tiny terraced dark teal and enclosed teal cores. Use worn scuffs in the cave floor with no orange line.",
+      "source": "sources/r12.png",
+      "editableGrid": "grid/r12.png",
+      "postprocess": "교전면의 잔광을 줄이고 외곽 수정과 갑각 지층에 청록을 집중했다."
+    },
+    {
+      "id": "r13",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r13.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 13, Torn Strata. Preserve floating land masses, broken rock ledges and entry to bridge on right. Redraw shadow planes in dark plum and cool slate; quiet, dark broad stone fighting floor split by short irregular fissures. No bright path. Leave teal seams sparse and in fissures with brighter cores fully surrounded by darker teal.",
+      "source": "sources/r13.png",
+      "editableGrid": "grid/r13.png",
+      "postprocess": "떠 있는 바닥의 암부를 낮추고 밝은 길 자리에 갈라진 금이 이어지도록 정리했다."
+    },
+    {
+      "id": "r14",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r14.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 14, Suspended Stone Bridge. Preserve broad bridge, two offset low obstacles and bleached parapets, abutments and chasm. Remove salmon tint. Use bone-color stone on railings, weathered cool plum slabs on the deck with subtle broken interlocking joints, and rimmed teal veins concentrated in the side chasm. No orange road stripe; do not add any scenery outside the fixed scene.",
+      "source": "sources/r14.png",
+      "editableGrid": "grid/r14.png",
+      "postprocess": "뼈빛 난간과 협곡의 맥을 남기고 판석 이음을 바닥과 낮은 대비로 구분했다."
+    },
+    {
+      "id": "r15",
+      "references": [
+        "../v5/r03.png",
+        "../v9/r15.png",
+        "../../unit-sprites/v1/void-b-comparison.png"
+      ],
+      "prompt": "Faithful image edit for an original fantasy autobattler, landscape 16:9 edge-to-edge gameplay map at a fixed 55-degree elevated camera. Reference 1 provides pixel cluster scale, palette ramps, dim silhouette outlines and light/shadow structure only. Reference 2 is the exact map composition and edit target: preserve its horizon-free game framing, ground, playable layout, routes, landmarks and both edge transitions. Reference 3 provides shell/stone material and two-step teal light references for later maps only. Do not copy the fork or any landmark from reference 1 or any sprite from reference 3. The final image should look hand-placed on a single 240 by 135 logical pixel grid; use broad flat shapes, crisp square stepped contours, only 2–3 values on large floor areas; shadow outline at outer silhouettes, interior stone facets with solid fills. No gradients, airbrush, blurred outlines, dithering, antialiasing, text, units, interface, frame or borders. Round 15, The Devourer's Rift. The lower-contrast wide paved fighting floor is darkest of all maps. Keep the old circular sigil centered and half encroached by plum shell strata. Remove the horizontal road entirely so no path crosses the sigil. Redraw only the outer rift behind the enemy on the far right as a vertical black split maw with two massive visibly asymmetrical shell masses patterned after Reference 3, but made of terrain stone with no limbs, eyes, face or creature. Convert all red veins to two-tone teal, core #4aae9e wholly enclosed by #3e7d7c rim. Corrupt the existing flags and pillars to plum, cool slate and bone. Move any remaining contrast to the outer edges.",
+      "source": "sources/r15.png",
+      "editableGrid": "grid/r15.png",
+      "postprocess": "반쯤 잠식된 인장, 청록 맥과 오른쪽의 세로 균열을 보존했다."
+    }
+  ]
+}
