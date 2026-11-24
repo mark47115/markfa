@@ -905,22 +905,44 @@ html:has(#portfolio-reader[open]) {overflow:hidden}
   .poster-copy h1 span {text-wrap:balance}
 }
 
-/* 게임별 AI 활용: two game blocks that reuse the timeline styles. */
+/* 게임별 AI 활용: three strengths, the working method, then each game's images, evidence and steps. */
+.strength-tag {display:inline-block;padding:2px 8px;border:1px solid currentColor;font-size:13px;font-weight:700;line-height:1.6;color:var(--green)}
+.strength-list .strength-tag {margin-bottom:6px}
+.strength-proof {font-size:14px!important;font-weight:700;color:var(--ink)!important}
+.game-ai-flow {margin-top:clamp(32px,4vw,56px)}
+.game-ai-flow h3, .game-ai-evidence h3, .game-ai-steps-title {margin:0 0 12px;font-size:17px}
+.game-ai-flow ol {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none;counter-reset:flow}
+.game-ai-flow li {display:grid;align-content:start;gap:6px;padding:16px;background:var(--wash);border-top:2px solid var(--green);counter-increment:flow}
+.game-ai-flow li:before {content:counter(flow,decimal-leading-zero);font-weight:700;color:var(--green)}
+.game-ai-flow strong {font-size:16px;line-height:1.4}
+.game-ai-flow span {font-size:14px;line-height:1.6;color:var(--soft)}
 .game-ai-switch {margin-top:clamp(32px,4vw,56px)}
 .game-ai {padding-top:clamp(32px,4vw,56px);scroll-margin-top:24px}
 .game-ai + .game-ai {margin-top:clamp(32px,4vw,56px);border-top:2px solid var(--ink)}
-.game-ai .page-title h2 {font-size:clamp(28px,3vw,40px)}
-.game-ai-kicker {margin:0 0 8px!important;font-size:14px!important;font-weight:700;color:var(--green)!important}
-.game-ai .page-title h3 {margin:28px 0 0;font-size:17px}
-.game-ai-uses {margin:8px 0 0;border-top:1px solid var(--rule)}
-.game-ai-uses div {display:grid;grid-template-columns:minmax(0,7.5em) minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
-.game-ai-uses dt {font-weight:700;color:var(--ink)}
-.game-ai-uses dd {margin:0;color:var(--soft);line-height:1.65;font-size:15px}
+.game-ai-head h2 {font-size:clamp(28px,3vw,40px)}
+.game-ai-kicker {margin:0 0 8px;font-size:14px;font-weight:700;color:var(--green)}
+.game-ai-concept {margin:12px 0 0;max-width:46ch;font-size:clamp(17px,1.5vw,21px);font-weight:700;line-height:1.5;color:var(--ink)}
+.game-ai-body {display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--gap);align-items:start;margin-top:24px}
+.game-ai-media {display:grid;gap:12px}
+.game-ai-portrait {grid-template-columns:repeat(2,minmax(0,1fr))}
+.game-ai-shot {margin:0}
+.game-ai-shot a {display:block;background:var(--deep)}
+.game-ai-shot img {display:block;width:100%;height:auto;image-rendering:pixelated}
+.game-ai-portrait .game-ai-shot img {aspect-ratio:9/16;object-fit:cover}
+.game-ai-shot figcaption {padding-top:8px;font-size:14px;color:var(--soft)}
+.game-ai-proof {margin:0;border-top:2px solid var(--ink)}
+.game-ai-proof div {padding:14px 0;border-bottom:1px solid var(--rule)}
+.game-ai-proof dd {margin:8px 0 0;line-height:1.7;font-size:15px;color:var(--ink)}
+.game-ai-steps-title {margin-top:clamp(28px,3vw,40px)}
 .game-ai-step {grid-template-columns:minmax(0,1fr)}
 .game-ai .wf-step:first-child {border-top:0}
 #ai .ai-related {margin-top:clamp(32px,4vw,48px)}
-@media(max-width:600px) {
-  .game-ai-uses div {grid-template-columns:minmax(0,1fr);gap:2px}
+@media(max-width:980px) {
+  .game-ai-flow ol {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .game-ai-body {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:520px) {
+  .game-ai-flow ol {grid-template-columns:minmax(0,1fr)}
 }
 /* 게임 제작 문서: a taller document window. */
 @media(min-width:821px) {
