@@ -294,7 +294,7 @@
   const caption = document.querySelector('#path-caption');
   const captions = {
     all: caption.textContent,
-    codex: 'Codex가 Higgsfield로 시안을 탐색하고, Tripo·Meshy와 Blender로 모델을 준비합니다.',
+    codex: 'Codex가 Higgsfield로 시안을 탐색하고, Tripo·Meshy와 Blender로 모델을 준비합니다. ElevenLabs로 음성과 효과음을 만듭니다.',
     claude: 'Claude Code가 Blender·Cascadeur에서 동작을 다루고, Unity 또는 Unreal Engine에서 입력과 판정을 연결합니다.'
   };
   const diagrams = tree.querySelectorAll('.tree-landscape, .tree-portrait');
