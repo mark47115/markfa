@@ -937,6 +937,7 @@ html:has(#portfolio-reader[open]) {overflow:hidden}
 .game-ai-step {grid-template-columns:minmax(0,1fr)}
 .game-ai-step p {max-width:40em}
 .game-ai .wf-step:first-child {border-top:0}
+.game-ai .wf-detail summary {grid-template-columns:minmax(0,1fr) 12px}
 #ai .ai-related {margin-top:clamp(32px,4vw,48px)}
 @media(max-width:980px) {
   .game-ai-flow ol {grid-template-columns:repeat(2,minmax(0,1fr))}
