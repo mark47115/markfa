@@ -10,12 +10,12 @@ async function show() {
   const run = await openRun('rowan');
   const { last, round, ended } = run.state;
   const text = (id, value) => { document.getElementById(id).textContent = value; };
-  text('result-round', `${round} / 15 라운드 · ${run.wave.title}`);
+  text('result-round', `스테이지 ${round}`);
   text('result-title', ended ? (round === 15 && last.outcome === 'Win' ? '원정 성공' : '원정 실패') :
     { Win: '승리', Loss: '패배', Draw: '무승부' }[last.outcome]);
-  text('result-allies', last.allies);
-  text('result-enemies', last.enemies);
-  text('result-erosion', last.erosion === last.previous ? `${last.erosion}%` : `${last.previous}% → ${last.erosion}%`);
+  const erosion = Math.max(0, Math.min(100, run.state.erosion));
+  document.getElementById('result-erosion').value = erosion;
+  text('erosion-percent', `${erosion}%`);
   const next = document.getElementById('result-next');
   if (ended) {
     const reward = document.getElementById('result-pack');
@@ -32,7 +32,7 @@ async function show() {
     }
   }
   next.hidden = false;
-  next.textContent = ended ? '새 원정' : `다음 선술집 · 골드 ${round + 3}`;
+  next.textContent = ended ? '새 원정' : '다음 스테이지';
   next.addEventListener('click', () => {
     if (ended) {
       if (run.clear()) location.replace('../home/lobby.html');

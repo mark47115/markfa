@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 먹결 정찰개미 모션</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .scout-report .subtle { color: var(--mak-muted); }
+    .scout-report .links, .scout-report .controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+    .scout-report .controls label { display: flex; gap: 5px; align-items: center; }
+    .scout-report .controls :is(select, button) {
+      min-height: 44px;
+      max-width: 100%;
+      padding: 4px 10px;
+      border: 1px solid var(--mak-border);
+      border-radius: 6px;
+      background: var(--mak-surface);
+      color: var(--mak-text);
+      font: inherit;
+    }
+    .scout-report .check { min-height: 44px; }
+    .scout-report .viewer { margin: 12px 0 8px; padding: 10px; border-radius: 10px; background: #181a25; border: 1px solid #424559; }
+    .scout-report canvas { display: block; margin-inline: auto; width: 100%; max-width: 640px; image-rendering: pixelated; }
+    .scout-report #scout-frame { margin: 6px 0 0; text-align: center; color: #c8c9d7; font-size: 13px; }
+    .scout-report .sheets { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .scout-report .sheets figure { margin: 0; min-width: 0; }
+    .scout-report .sheets img { display: block; width: 100%; image-rendering: pixelated; background: #272a3b; }
+    .scout-report .sheets .fx-sheet { max-width: 320px; }
+    .scout-report .sheets figcaption { margin-top: 6px; }
+    @media (max-width: 630px) { .scout-report .sheets { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+<main class="scout-report">
+  <h1>먹결 정찰개미 모션</h1>
+  <p class="subtle">그림자 이자형 먹결 정찰개미의 청회색 안개 꼬리와 낮은 자세를 살렸습니다.</p>
+  <nav class="links" aria-label="애니메이션 파일">
+    <a href="media/income-motion/sh-e02/sh-e02-motion.zip" download>스프라이트 ZIP</a>
+    <a href="media/income-motion/sh-e02/preview.gif" download>애니메이션 GIF</a>
+    <a href="income-motion-plan.html#unit-motion">인컴 모션 제작표</a>
+  </nav>
+  <section aria-labelledby="viewer-title">
+    <h2 id="viewer-title">모션 재생</h2>
+    <div class="controls">
+      <label for="scout-mode">모션
+        <select id="scout-mode" disabled>
+          <option value="demo">특성 시연</option>
+          <option value="idle">대기</option>
+          <option value="move">질주</option>
+          <option value="attack">물기</option>
+          <option value="death">사망</option>
+        </select>
+      </label>
+      <label for="scout-speed">속도
+        <select id="scout-speed" disabled><option value="1">1배</option><option value="0.5">0.5배</option></select>
+      </label>
+      <button type="button" id="scout-play" disabled>일시정지</button>
+      <button type="button" id="scout-replay" disabled>처음부터</button>
+      <label class="check"><input type="checkbox" id="scout-effect" checked disabled> 이펙트</label>
+    </div>
+    <figure class="viewer">
+      <canvas id="scout-stage" width="160" height="78" aria-label="왼쪽을 향하는 먹결 정찰개미 애니메이션"></canvas>
+      <figcaption id="scout-frame">스프라이트를 불러오는 중입니다.</figcaption>
+    </figure>
+    <p class="subtle">특성 시연에서는 대기 후 왼쪽으로 질주하고, 첫 물기 뒤 같은 보행 프레임을 더 느리게 재생합니다. 감속 표현은 시연용입니다. 대기·질주는 반복하고 물기·사망은 한 번씩 재생합니다.</p>
+  </section>
+  <section aria-labelledby="sheet-title">
+    <h2 id="sheet-title">투명 스프라이트 시트</h2>
+    <div class="sheets">
+      <figure>
+        <img src="media/income-motion/sh-e02/sprite-sheet.png" width="320" height="256" loading="lazy"
+          alt="투명 본체 스프라이트 16장. 위에서 대기 3장, 질주 4장, 물기 4장, 사망 5장.">
+        <figcaption><a href="media/income-motion/sh-e02/sprite-sheet.png" download>본체 PNG · 64×64 셀</a></figcaption>
+      </figure>
+      <figure>
+        <img class="fx-sheet" src="media/income-motion/sh-e02/fx-sheet.png" width="120" height="48" loading="lazy"
+          alt="별도 이펙트 시트. 위쪽은 접촉 안개 4장, 아래쪽은 사망 안개 5장.">
+        <figcaption><a href="media/income-motion/sh-e02/fx-sheet.png" download>이펙트 PNG · 24×24 셀</a></figcaption>
+      </figure>
+    </div>
+    <p class="links"><a href="media/income-motion/sh-e02/manifest.json" download>좌표·재생 시간 JSON</a>
+      <a href="media/income-motion/sh-e02/source/prompts.md">이미지 원본과 프롬프트</a></p>
+  </section>
+</main>
+<script type="module">
+  const base = 'media/income-motion/sh-e02/';
+  const byId = id => document.getElementById(id);
+  const canvas = byId('scout-stage');
+  const context = canvas.getContext('2d');
+  const mode = byId('scout-mode');
+  const speed = byId('scout-speed');
+  const play = byId('scout-play');
+  const replay = byId('scout-replay');
+  const toggleEffects = byId('scout-effect');
+  const label = byId('scout-frame');
+
+  function loadImage(path) {
+    const image = new Image();
+    image.src = base + path;
+    return image.decode().then(() => image);
+  }
+
+  function frameAt(durations, time, loop) {
+    const duration = durations.reduce((sum, value) => sum + value, 0);
+    const local = loop ? time % duration : time;
+    let start = 0;
+    for (const [index, span] of durations.entries()) {
+      start += span;
+      if (local < start) return index;
+    }
+    return durations.length - 1;
+  }
+
+  function floor() {
+    context.fillStyle = '#1d202e';
+    context.fillRect(0, 0, 160, 78);
+    context.fillStyle = '#252938';
+    context.fillRect(0, 51, 160, 27);
+    context.fillStyle = '#394052';
+    context.fillRect(0, 53, 160, 1);
+    context.fillStyle = '#2d3142';
+    for (let x = 0; x < 160; x += 16) context.fillRect(x, 55, 1, 23);
+  }
+
+  try {
+    const response = await fetch(base + 'manifest.json');
+    if (!response.ok) throw new Error('Missing sprite metadata');
+    const data = await response.json();
+    const [body, effects] = await Promise.all([loadImage(data.sheet), loadImage(data.fxSheet)]);
+    const total = clip => clip.durationMs.reduce((sum, value) => sum + value, 0);
+    const contact = data.clips.attack.durationMs.slice(0, data.clips.attack.events.contact).reduce((a, b) => a + b, 0);
+    const dissolve = data.clips.death.durationMs.slice(0, data.clips.death.events.dissolve).reduce((a, b) => a + b, 0);
+    const durationFx = id => data.effects[id].durationMs * data.effects[id].frames.length;
+    const slow = data.playbackDemo.firstContactMoveRate;
+    const demo = [
+      { id: 'idle', length: 600, x: 125, finish: 125 },
+      { id: 'move', length: total(data.clips.move) * 2, x: 125, finish: 73 },
+      { id: 'attack', length: total(data.clips.attack), x: 73, finish: 73 },
+      { id: 'move', length: total(data.clips.move) * 2 / slow, x: 73, finish: 53, rate: slow },
+      { id: 'death', length: total(data.clips.death), x: 53, finish: 53 },
+      { id: 'empty', length: 390, x: 53, finish: 53 }
+    ];
+    let end = 0;
+    for (const segment of demo) {
+      segment.start = end;
+      end += segment.length;
+    }
+    const clamp = (value, max) => Math.min(value, max);
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let running = !reduced;
+    let time = 0;
+    let tick = performance.now();
+    let animation = 0;
+    function sprite(image, rect, x, y) {
+      const [sx, sy, width, height] = rect;
+      context.drawImage(image, sx, sy, width, height, Math.round(x), Math.round(y), width, height);
+    }
+    function drawEffect(id, timeSinceEvent, x, y) {
+      if (!toggleEffects.checked || timeSinceEvent < 0 || timeSinceEvent >= durationFx(id)) return;
+      const effect = data.effects[id];
+      sprite(effects, effect.frames[Math.floor(timeSinceEvent / effect.durationMs)], x, y);
+      canvas.dataset.effect = id;
+    }
+    function render() {
+      floor();
+      context.imageSmoothingEnabled = false;
+      canvas.dataset.effect = '';
+      let id = mode.value;
+      let local = time;
+      let clipTime = time;
+      let x = 82;
+      let rate = 1;
+      if (id === 'demo') {
+        local = time % end;
+        const segment = demo.find(piece => local < piece.start + piece.length);
+        id = segment.id;
+        clipTime = local - segment.start;
+        const fraction = clipTime / segment.length;
+        x = segment.x + (segment.finish - segment.x) * fraction;
+        rate = segment.rate ?? 1;
+      }
+      canvas.dataset.clip = id;
+      if (id === 'empty' || (id === 'death' && clipTime >= total(data.clips.death))) {
+        canvas.dataset.frame = '';
+        label.textContent = '사망 모션 종료';
+      } else {
+        const clip = data.clips[id];
+        const frame = frameAt(clip.durationMs, clipTime * rate, clip.loop);
+        canvas.dataset.frame = String(frame);
+        sprite(body, clip.frames[frame], x - data.pivot[0], 61 - data.pivot[1]);
+        label.textContent = (rate < 1 ? '접촉 후 감속' : clip.name) + ' · ' + (frame + 1) + ' / ' + clip.frames.length;
+      }
+      if (mode.value === 'demo') {
+        drawEffect('mist', local - demo[2].start - contact, demo[2].x - 27, 37);
+        drawEffect('fade', local - demo[4].start - dissolve, demo[4].x - 9, 45);
+      } else if (id === 'attack') {
+        drawEffect('mist', time - contact, x - 27, 37);
+      } else if (id === 'death') {
+        drawEffect('fade', time - dissolve, x - 9, 45);
+      }
+    }
+    function stopAt() {
+      if (mode.value === 'attack') return Math.max(total(data.clips.attack), contact + durationFx('mist'));
+      if (mode.value === 'death') return Math.max(total(data.clips.death), dissolve + durationFx('fade'));
+      return Infinity;
+    }
+    function updateButton() {
+      play.textContent = running ? '일시정지' : '재생';
+    }
+    function animate(now) {
+      animation = 0;
+      if (!running) return;
+      const stop = stopAt();
+      time = clamp(time + (now - tick) * Number(speed.value), stop);
+      tick = now;
+      render();
+      if (time < stop) animation = requestAnimationFrame(animate);
+      else { running = false; updateButton(); }
+    }
+    function start(reset) {
+      if (animation) cancelAnimationFrame(animation);
+      if (reset || time >= stopAt()) time = 0;
+      running = true;
+      updateButton();
+      render();
+      tick = performance.now();
+      animation = requestAnimationFrame(animate);
+    }
+    for (const control of [mode, speed, play, replay, toggleEffects]) control.disabled = false;
+    mode.addEventListener('change', () => start(true));
+    replay.addEventListener('click', () => start(true));
+    play.addEventListener('click', () => {
+      if (running) { running = false; cancelAnimationFrame(animation); animation = 0; updateButton(); }
+      else start(false);
+    });
+    toggleEffects.addEventListener('change', render);
+    render();
+    if (running) start(false);
+    else updateButton();
+  } catch {
+    label.textContent = '재생 파일을 불러오지 못했습니다. 위의 GIF와 PNG를 열 수 있습니다.';
+  }
+</script>
+</body>
+</html>

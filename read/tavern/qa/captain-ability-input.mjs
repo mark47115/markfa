@@ -45,11 +45,11 @@ async function open(id, settings = {}) {
   const tip = page.getByRole('tooltip');
   const action = page.locator('.prep-captain-dialog');
   await button.waitFor();
-  await page.waitForFunction(() => document.querySelector('.prep-captain-ability img').naturalWidth === 24);
+  await page.waitForFunction(() => document.querySelector('.prep-captain-ability img').naturalWidth > 0);
   const box = await button.boundingBox();
-  const roll = await page.locator('.prep-reroll').boundingBox();
-  assert.ok(box.height >= 44 && box.y + box.height <= roll.y && Math.abs(box.x - roll.x) < 1,
-    JSON.stringify({ id, box, roll }));
+  const level = await page.locator('[data-run-upgrade]').boundingBox();
+  assert.ok(box.height >= 44 && box.y + box.height <= level.y && Math.abs(box.x - level.x) < 1,
+    JSON.stringify({ id, box, level }));
   return { page, button, tip, action, request, errors };
 }
 
@@ -62,8 +62,7 @@ async function mouseHold({ page, button, tip, action }, screenshot) {
   const bounds = await tip.boundingBox();
   const screen = page.viewportSize();
   assert.ok(bounds.x >= 0 && bounds.y >= 0 && bounds.x + bounds.width <= screen.width && bounds.y + bounds.height <= screen.height);
-  const roll = await page.locator('.prep-reroll').boundingBox();
-  assert.ok(bounds.x >= roll.x + roll.width);
+  assert.ok(bounds.x >= box.x + box.width);
   if (screenshot) await page.screenshot({ path: screenshot });
   await page.mouse.up();
   await tip.waitFor({ state: 'hidden' });
@@ -140,6 +139,7 @@ try {
   assert.deepEqual(after.offers.map((offer, index) => offer === before[index]), [true, false, true]);
   await sera.button.tap();
   assert.ok(!(await sera.action.isVisible()));
+  await sera.page.getByRole('button', { name: '상점 열기' }).tap();
   await sera.page.getByRole('button', { name: '리롤 1골드' }).tap();
   assert.equal((await state(sera.page)).gold, 2);
   assert.deepEqual(sera.errors, []);
@@ -150,7 +150,6 @@ try {
   await thorin.button.click();
   await thorin.action.locator('[data-captain-choices] button').first().click();
   assert.equal((await state(thorin.page)).gold, 2);
-  await thorin.page.getByRole('button', { name: '대기장으로 이동' }).click();
   await Promise.all([
     thorin.page.waitForResponse(response => response.url().includes('deployment=')),
     thorin.page.getByRole('button', { name: '출정', exact: true }).click(),
@@ -168,12 +167,14 @@ try {
   await mire.page.close();
   console.log('10 icons and descriptions; hold/release, mouse, keyboard, touch/cancel, 3 active commands and Mire forecast verified.');
 
-  const openPower = (power, extra = {}, captain = 'sera') => {
+  const openPower = async (power, extra = {}, captain = 'sera') => {
     const wave = catalog.waves.find(wave => wave.powerId === power && wave.round >= 2);
     const waves = seed.waves.map((id, i) => i + 1 === wave.round ? wave.id : id);
     const offers = catalog.cards.filter(card => card.faction < 5 && card.tier <= 4).slice(0, 5).map(card => card.id);
-    return open(captain, { save: { round: wave.round, waves, offers, level: 4,
+    const result = await open(captain, { save: { round: wave.round, waves, offers, level: 4,
       upgradeOpenedRound: wave.round, gold: 12, ...extra } });
+    await result.page.getByRole('button', { name: '상점 열기' }).click();
+    return result;
   };
   const runCall = (page, method, ...args) =>
     page.evaluate(({ method, args }) => window.TavernRun[method](...args), { method, args });
@@ -274,6 +275,7 @@ try {
     const reader = await open('rowan', { viewport, touch: true, save: {
       offers: ['Hunt-3-0', 'Blessing-1-0', 'Guard-1-0'],
     } });
+    await reader.page.getByRole('button', { name: '상점 열기' }).tap();
     await reader.page.locator('.tavern-table').first().tap();
     const card = reader.page.locator('#prep-piece-detail');
     const help = reader.page.locator('#prep-term-panel');

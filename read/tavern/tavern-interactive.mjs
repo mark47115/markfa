@@ -34,7 +34,7 @@ async function loadRounds() {
   picker.addEventListener('change', () => {
     const round = rounds[picker.selectedIndex];
     const number = picker.selectedIndex + 1;
-    mapArt.src = 'media/battle-maps/v11/' + round.id + '.png';
+    mapArt.src = 'media/battle-maps/v12/' + round.id + '.png';
     mapArt.alt = number + '라운드 전장 ' + round.name;
     mapTitle.textContent = number + '라운드 ' + round.name;
     mapGold.textContent = (number + 2) + '골드';

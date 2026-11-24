@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 유닛 도트 스프라이트</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <link rel="stylesheet" href="media/unit-sprites/team-markers.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .sprite-report { --preview-size: 64px; }
+    .sprite-controls { display: flex; gap: 8px 16px; align-items: center; flex-wrap: wrap; }
+    .sprite-controls label { display: flex; align-items: center; gap: 7px; }
+    .sprite-controls :is(button, select) {
+      min-height: 44px;
+      padding: 5px 10px;
+      border: 1px solid var(--mak-border);
+      border-radius: 6px;
+      background: var(--mak-surface);
+      color: var(--mak-text);
+      font: inherit;
+    }
+    .sprite-controls button[aria-pressed="true"] { outline: 2px solid var(--mak-muted); outline-offset: -3px; }
+    .sprite-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 20px; }
+    .sprite-grid.enemies { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .sprite-grid figure { margin: 0; min-width: 0; padding: 0; overflow: hidden; border: 1px solid var(--mak-border); border-radius: 8px; }
+    .sprite-field {
+      display: grid;
+      position: relative;
+      min-height: 104px;
+      place-items: center;
+      background-color: #444963;
+      background-image: repeating-conic-gradient(#3a405a 0 25%, transparent 0 50%);
+      background-size: 20px 20px;
+    }
+    .sprite-field img {
+      width: var(--preview-size);
+      height: var(--preview-size);
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    .sprite-field img, .mak-lightbox-stage img { image-rendering: pixelated; }
+    .sprite-field[data-team]::after {
+      top: calc(50% + var(--preview-size) * 25 / 64 + 1px);
+      bottom: auto;
+    }
+    .sprite-report[data-display="silhouette"] {
+      --unit-team-ally: #fff;
+      --unit-team-enemy: #fff;
+    }
+    .sprite-report[data-display="silhouette"] .sprite-field img { filter: brightness(0) invert(1); }
+    .sprite-matchups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .sprite-grid.sprite-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sprite-pair .sprite-field { min-height: 76px; }
+    .sprite-grid figcaption { padding: 7px 8px; overflow-wrap: anywhere; word-break: keep-all; line-height: 1.45; }
+    .sprite-grid figcaption strong { display: block; color: var(--mak-text); font-size: 14px; }
+    .sprite-grid figcaption small { display: block; margin-top: 3px; color: var(--mak-muted); font-size: 11px; }
+    .sprite-downloads { display: flex; gap: 6px 16px; flex-wrap: wrap; }
+    .sprite-families { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .sprite-family { min-width: 0; }
+    .sprite-family h4 { margin: 12px 0 6px; font-size: 14px; }
+    .sprite-family h4 small { color: var(--mak-muted); font-weight: normal; }
+    .sprite-family .sprite-grid { margin-bottom: 8px; }
+    .sprite-roster-section details { margin-block: 8px 16px; }
+    .sprite-revision img { display: block; width: 100%; height: auto; }
+    .sprite-revision .commander-feature { width: min(100%,192px); image-rendering: pixelated; }
+    @media (max-width: 560px) {
+      .sprite-families { grid-template-columns: minmax(0, 1fr); }
+      .sprite-matchups { grid-template-columns: minmax(0, 1fr); gap: 0; }
+      .sprite-grid.enemies { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sprite-grid figcaption { padding-inline: 6px; }
+      .sprite-grid figcaption strong { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+<main class="sprite-report" id="sprite-report">
+  <h1>유닛 도트 스프라이트</h1>
+  <p>아군 타워 30계통, 외신 적 28종, 파견 30종과 일꾼 3종의 세 단계, 지휘관 15명의 도트를 모았습니다. 각 PNG는 64×64 픽셀이며, 한 캐릭터에 불투명 색상을 최대 10개 사용합니다. <a href="index.html#faction-rosters">편성과 원작 근거</a> · <a href="index.html#commanders">지휘관 설정</a></p>
+  <p>외신 적은 모두 화면 왼쪽을 향합니다. 신규 적 20종의 기본형·정예형·최종형은 몸의 기본 윤곽과 강조색을 공유하며, 뿔·턱·무기 등의 형태로 단계를 구별합니다.</p>
+  <nav class="sprite-downloads" aria-label="스프라이트 다운로드">
+    <a href="media/unit-sprites/unit-sprites-full-roster.zip" download>전체 PNG와 아틀라스 ZIP</a>
+    <a href="media/unit-sprites/allies-full-atlas.png" download>아군 아틀라스</a>
+    <a href="media/unit-sprites/enemies-full-atlas.png" download>외신 적 아틀라스</a>
+    <a href="media/unit-sprites/support-full-atlas.png" download>지휘관 아틀라스</a>
+    <a href="index.html#direction">아트 방향성</a>
+  </nav>
+  <nav class="sprite-downloads" aria-label="유닛 분류">
+    <a href="#readability-pass">전장 가독성 보정</a><a href="#iron-shield-only">아이언 계열</a><a href="#ally-review">아군 3회 보정</a><a href="#ally-sprites">아군 타워</a><a href="#enemy-sprites">외신 적</a><a href="#income-sprites">파견 유닛</a><a href="#worker-sprites">일꾼</a><a href="#support-sprites">지휘관</a>
+  </nav>
+  <div class="sprite-controls" aria-label="스프라이트 미리보기 설정">
+    <label>표시 크기
+      <select id="sprite-scale">
+        <option value="32">32px · 축소</option>
+        <option value="64" selected>64px · 원본</option>
+        <option value="96">96px · 확대</option>
+      </select>
+    </label>
+    <button type="button" id="sprite-silhouette" aria-pressed="false">단색 실루엣</button>
+  </div>
+  <p role="status" id="sprite-status">스프라이트를 불러오는 중…</p>
+  <section id="iron-shield-only">
+    <h2>아이언 계열 · 방패 전용</h2>
+    <p>그림자 방패병, 중장 그림자 방패병, 아이언이 모두 방패 한 개를 듭니다. 방패병은 빈 주먹을 들고, 중장 방패병과 아이언은 빈손을 방패 쪽에 두어 방어 자세를 잡습니다. 아이언 파견 유닛도 같은 도트를 씁니다.</p>
+    <p><a href="media/unit-sprites/sources/ally-review/prompts.md">생성 원본과 프롬프트</a></p>
+    <div id="iron-shield-comparison"></div>
+  </section>
+  <section id="ally-review">
+    <h2>아군 타워 · 3회 검수</h2>
+    <p>그림자·헌터·마수의 미진화체, 1차 진화체, 2차 진화체 총 90장을 확인했습니다. 정상 크기와 전장 축소 크기에서 오른쪽을 보는 ¾ 시점, 각진 명암 덩어리, 진화 단계의 실루엣을 비교했습니다.</p>
+    <p><a href="media/unit-sprites/sources/ally-review/prompts.md">검수 기록과 제작 원본</a> · <a href="#ally-sprites">전체 아군 타워</a></p>
+    <div id="ally-review-rounds"></div>
+  </section>
+  <section id="shadow-refinement">
+    <h2>그림자 1단계와 성진우 도트 보정</h2>
+    <p>10계통의 소환형을 비교해 갑주병·나가 창병·곰 병사·개미 병사·용족 그림자를 골랐습니다. 갑주병은 방패병과, 용족은 비룡과 실루엣을 구분했고 나가·곰·개미는 종족별 특징을 선명하게 그렸습니다. 성진우는 사선으로 뻗은 두 단검과 긴 코트, 비대칭 앞머리가 보이도록 다듬었습니다.</p>
+    <figure class="sprite-revision">
+      <img src="media/unit-sprites/shadow-refinement-comparison.png" loading="lazy" alt="그림자 소환형 다섯 기와 성진우의 이전·개선 스프라이트를 64px와 32px에서 나란히 비교합니다.">
+      <figcaption><a href="media/unit-sprites/shadow-refinement-comparison.png" download>보정 전후 PNG 다운로드</a> · <a href="media/unit-sprites/sources/full-roster/prompts.md#그림자-소환형과-성진우-보정">보정 기록</a></figcaption>
+    </figure>
+  </section>
+  <h2>아군과 적 비교</h2>
+  <div class="team-marker-legend" aria-label="유닛 발밑 표식">
+    <span data-team="ally">아군 · 청록 받침선</span>
+    <span data-team="enemy">적 · 주황 역삼각형</span>
+  </div>
+  <div class="sprite-matchups" id="sprite-matchups"></div>
+  <section class="sprite-roster-section" id="readability-pass">
+    <h2>전장 가독성과 독립 파견 도트</h2>
+    <p>아군과 픽셀을 공유하던 파견 11계통의 세 진화 단계를 모두 별도로 그렸습니다. 아이언은 무검 대방패와 육각 삽입판, 카이셀은 사각 결정 전송기로 구별합니다. 아군·파견 사이의 공유 경로와 동일 RGBA는 0건입니다.</p>
+    <figure class="sprite-revision">
+      <img src="media/unit-sprites/readability-income-comparison.png" alt="파견 11계통 33장의 34px 및 64px 보정 전후" loading="lazy">
+      <figcaption>파견 33장 · 새 장비와 좌향 실루엣</figcaption>
+    </figure>
+    <p>별가루 마창병은 창끝·손·발을 분리했습니다. 낮은 마수와 정찰병은 등·목·발 사이 간격을 살리고, 어두운 지휘관은 투구와 견갑의 중간 명암을 키웠습니다. 파견 유닛에는 푸른 마름모 표식을 붙입니다.</p>
+    <figure class="sprite-revision">
+      <img src="media/unit-sprites/readability-other-comparison.png" alt="별가루 마창병 등 외신 혼성 6장, 아군 3장, 웨이브 적 3장, 지휘관 3장의 가독성 보정 전후" loading="lazy">
+      <figcaption>가독성 보정 15장 · 34px 축소와 64px 원본</figcaption>
+    </figure>
+    <p><a href="media/unit-sprites/readability-match-portrait.png">W4 전투 화면 캡처</a> · <a href="media/unit-sprites/sources/readability-pass/prompts.md">생성 원본과 프롬프트</a> · <a href="sections/sprite-pixel-audit.md">보정 전 전수 측정</a></p>
+  </section>
+  <section class="sprite-roster-section" id="ally-sprites"><h2>아군 타워 · 30계통</h2><p><a href="ally-tower-animation.html">아군 타워 90형태 모션 재생</a></p></section>
+  <section class="sprite-roster-section" id="enemy-sprites"><h2>외신 웨이브 적 · 28종</h2></section>
+  <section class="sprite-roster-section" id="income-sprites"><h2>초기 파견 도트 · 30종</h2><p><a href="income-design.html#roster">외신 혼성 인컴 설계와 도트 60종</a> · <a href="combat-animation.html?group=income">인컴 애니메이션</a></p></section>
+  <section class="sprite-roster-section" id="worker-sprites"><h2>일꾼 · 3종</h2></section>
+  <section class="sprite-roster-section" id="support-sprites">
+    <h2>지휘관 · 15명</h2>
+    <h3 id="jinwoo-command-redesign">성진우 · 그림자 군주</h3>
+    <p>최종인·차해인·민병구와 안타레스·혹한의 군주의 인간형 비율을 참고했습니다. 성진우는 몸의 약 3분의 1을 차지하는 머리, 짧은 몸통, 한 발을 살짝 앞에 둔 자세로 설계했습니다. 높게 접힌 흑연색 칼라와 은청색 쌍단검으로 실루엣을 구분합니다. <a href="combat-animation.html?group=commanders&amp;unit=commander-sung-jinwoo">성진우 모션 보기</a></p>
+    <figure class="sprite-revision">
+      <img class="commander-feature" src="media/unit-sprites/sprites/full-roster/commander-sung-jinwoo-humanoid-roster.png" width="64" height="64" loading="lazy" alt="한 발을 앞에 두고 은청색 쌍단검을 든 새 성진우 지휘관 도트">
+      <figcaption><a href="media/unit-sprites/sprites/full-roster/commander-sung-jinwoo-humanoid-roster.png" download>성진우 최신 64×64 PNG</a> · <a href="media/unit-sprites/sources/full-roster/jinwoo-humanoid-references.png" download>참고 지휘관 도트</a> · <a href="media/unit-sprites/sources/full-roster/prompts.md#성진우-인간형-지휘관-디자인">제작 기록</a></figcaption>
+    </figure>
+  </section>
+  <details>
+    <summary>생성 원본과 편집 소스</summary>
+    <ul>
+      <li><a href="media/unit-sprites/sources/shadows-v4-generated.png" download>그림자 곰 수정 원본</a> · <a href="media/unit-sprites/team-markers.css" download>아군·적 표식 CSS</a></li>
+      <li><a href="media/unit-sprites/sources/shadow-support-generated.png" download>갑주병·나가·개미·성진우 시트</a></li>
+      <li><a href="media/unit-sprites/sources/allies-generated.png" download>아군 생성 원본</a></li>
+      <li><a href="media/unit-sprites/sources/enemies-itarim-generated.png" download>외신 적 생성 원본</a></li>
+      <li><a href="media/unit-sprites/sources/prompts.md">기존 시트 프롬프트</a> · <a href="media/unit-sprites/sources/export_sprites.py" download>기존 시트 변환 스크립트</a></li>
+      <li><a href="media/unit-sprites/sources/full-roster/prompts.md">전체 로스터 생성 프롬프트와 시트</a> · <a href="media/unit-sprites/sources/export_roster.py" download>전체 로스터 변환 스크립트</a></li>
+      <li><a href="media/unit-sprites/sources/enemy-expansion/prompts.md">신규 적과 좌향 보정 프롬프트 및 생성 원본</a></li>
+    </ul>
+  </details>
+</main>
+<script type="module">
+  const assetBase = 'media/unit-sprites/';
+  const report = document.getElementById('sprite-report');
+  const status = document.getElementById('sprite-status');
+  const scale = document.getElementById('sprite-scale');
+  const silhouette = document.getElementById('sprite-silhouette');
+  const roleLabels = { melee: '근접', runner: '빠른 선봉', guard: '전열 방어', ranged: '원거리' };
+  function updateScale() {
+    report.style.setProperty('--preview-size', scale.value + 'px');
+  }
+  updateScale();
+  scale.addEventListener('change', updateScale);
+  silhouette.addEventListener('click', () => {
+    const active = silhouette.getAttribute('aria-pressed') !== 'true';
+    silhouette.setAttribute('aria-pressed', String(active));
+    report.dataset.display = active ? 'silhouette' : 'color';
+  });
+
+  function spriteTile(sprite, team, showTeam = false) {
+    const tile = document.createElement('figure');
+    const field = document.createElement('div');
+    field.className = 'sprite-field';
+    if (team) field.dataset.team = team;
+    const image = document.createElement('img');
+    image.src = assetBase + sprite.file;
+    image.width = 64;
+    image.height = 64;
+    image.loading = 'lazy';
+    image.alt = sprite.name + ' · ' + sprite.silhouette;
+    field.append(image);
+    const caption = document.createElement('figcaption');
+    const name = document.createElement('strong');
+    name.textContent = sprite.stage ? sprite.stage + ' · ' + sprite.name : sprite.name;
+    const meta = document.createElement('small');
+    const teamLabel = team === 'ally' ? '아군' : '적';
+    meta.textContent = showTeam ? teamLabel : (sprite.stage ? '' : sprite.group + ' · ') + '색 ' + sprite.palette.length + '개';
+    caption.append(name, meta);
+    tile.append(field, caption);
+    return tile;
+  }
+
+  function familyGrid(sprites, team) {
+    const families = new Map();
+    for (const sprite of sprites) {
+      if (!families.has(sprite.family)) families.set(sprite.family, []);
+      families.get(sprite.family).push(sprite);
+    }
+    const list = document.createElement('div');
+    list.className = 'sprite-families';
+    for (const [id, sprites] of families) {
+      const family = document.createElement('section');
+      family.className = 'sprite-family';
+      family.dataset.family = id;
+      const title = document.createElement('h4');
+      title.textContent = sprites[0].waveRole ? sprites[0].name : sprites.at(-1).name;
+      const code = document.createElement('small');
+      code.textContent = ' · ' + (roleLabels[sprites[0].waveRole] ??
+        (sprites[0].group.startsWith('W') ? sprites[0].group : id));
+      title.append(code);
+      const grid = document.createElement('div');
+      grid.className = 'sprite-grid';
+      grid.append(...sprites.map(sprite => spriteTile(sprite, team)));
+      family.append(title, grid);
+      list.append(family);
+    }
+    return list;
+  }
+
+  function versionComparison(sprites) {
+    const compare = document.createElement('div');
+    compare.className = 'sprite-families';
+    for (const sprite of sprites) {
+      const step = document.createElement('section');
+      step.className = 'sprite-family';
+      const heading = document.createElement('h4');
+      heading.textContent = sprite.name + ' · ' + sprite.stage;
+      const pair = document.createElement('div');
+      pair.className = 'sprite-grid sprite-pair';
+      const before = spriteTile({ ...sprite, ...sprite.beforeReview, stage: '', name: '보정 전' }, 'ally');
+      const after = spriteTile({ ...sprite, stage: '', name: '보정 후' }, 'ally');
+      pair.append(before, after);
+      step.append(heading, pair);
+      compare.append(step);
+    }
+    return compare;
+  }
+
+  function showAllyReview(sprites) {
+    const roundLabels = ['정면 실루엣 보정', '계통별 장비와 진화 형태 정리', '축소 화면 대비와 우향 최종 확인'];
+    const rounds = document.getElementById('ally-review-rounds');
+    for (const [index, label] of roundLabels.entries()) {
+      const round = index + 1;
+      const changed = sprites.filter(sprite => sprite.reviewRound === round);
+      const detail = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = round + '차 · ' + label + ' · ' + changed.length + '장';
+      detail.append(summary, versionComparison(changed));
+      rounds.append(detail);
+    }
+  }
+
+  function factions(target, sprites, team, expanded = false, commanders = false) {
+    for (const faction of ['그림자', '헌터', '마수']) {
+      const group = document.createElement('details');
+      group.open = expanded;
+      const heading = document.createElement('summary');
+      const lineup = sprites.filter(sprite => sprite.group === faction);
+      heading.textContent = faction + ' · ' + new Set(lineup.map(sprite => sprite.family)).size + (commanders ? '명' : '종');
+      const grid = commanders ? document.createElement('div') : familyGrid(lineup, team);
+      if (commanders) {
+        grid.className = 'sprite-grid enemies';
+        grid.append(...lineup.map(sprite => spriteTile(sprite, team)));
+      }
+      group.append(heading, grid);
+      target.append(group);
+    }
+  }
+
+  try {
+    const response = await fetch(assetBase + 'manifest.json');
+    if (!response.ok) throw new Error('Sprite manifest unavailable');
+    const manifest = await response.json();
+    const ironSprites = manifest.allies.sprites.filter(sprite => sprite.revision === 'shield-only');
+    document.getElementById('iron-shield-comparison').append(versionComparison(ironSprites));
+    showAllyReview(manifest.allies.sprites);
+    const matchupGrid = document.getElementById('sprite-matchups');
+    for (const [allyId, enemyId] of [['st03-iii', 'brocky-controlled'], ['ht01-iii', 'minsung-vessel'], ['bt03-iii', 'tiel-projection']]) {
+      const pair = document.createElement('div');
+      pair.className = 'sprite-grid sprite-pair';
+      const ally = manifest.allies.sprites.find(sprite => sprite.id === allyId);
+      const enemy = manifest.enemies.sprites.find(sprite => sprite.id === enemyId);
+      pair.append(spriteTile(ally, 'ally', true), spriteTile(enemy, 'enemy', true));
+      matchupGrid.append(pair);
+    }
+    factions(document.getElementById('ally-sprites'), manifest.allies.sprites, 'ally', true);
+    const enemies = document.getElementById('enemy-sprites');
+    const groups = new Map();
+    for (const sprite of manifest.enemies.sprites) {
+      const label = sprite.waveRole ? sprite.group : 'W1–W6 · 기존 외신 침공';
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(sprite);
+    }
+    for (const [label, lineup] of groups) {
+      const heading = document.createElement('h3');
+      heading.textContent = label;
+      enemies.append(heading, familyGrid(lineup, 'enemy'));
+    }
+    factions(document.getElementById('income-sprites'), manifest.income.sprites, 'enemy');
+    factions(document.getElementById('worker-sprites'), manifest.workers.sprites);
+    factions(document.getElementById('support-sprites'), manifest.support.sprites, 'ally', true, true);
+    status.hidden = true;
+  } catch {
+    status.textContent = '스프라이트 목록을 불러오지 못했습니다. 위의 PNG와 ZIP은 직접 열 수 있습니다.';
+  }
+</script>
+</body>
+</html>

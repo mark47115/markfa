@@ -1,0 +1,72 @@
+html[data-mak-report=document] body > main.vfx-report {
+  max-width: 1110px;
+  font-family: var(--game-ui-font), sans-serif;
+  --fx-line: var(--mak-border);
+}
+.vfx-report header { margin-bottom: 1.35rem; }
+.vfx-report header p { color: var(--mak-muted); }
+.vfx-lab:not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 2.15fr) minmax(255px, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.vfx-view, .vfx-panel {
+  padding: clamp(.75rem, 2.2vw, 1.25rem);
+  border: 1px solid var(--fx-line);
+  border-radius: 8px;
+  background: var(--mak-surface);
+}
+html[data-mak-report=document] .vfx-view figure { margin: 0; }
+.vfx-view canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  border: 1px solid #494b48;
+  border-radius: 4px;
+}
+.vfx-view figcaption { margin-top: .5rem; color: var(--mak-muted); }
+.vfx-report :is(button, select) {
+  max-width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--fx-line);
+  border-radius: 5px;
+  color: var(--mak-text);
+  background: var(--mak-surface);
+  font: inherit;
+  padding: .4rem .55rem;
+}
+.vfx-report button:enabled { cursor: pointer; }
+.vfx-report :is(button, select, input):focus-visible { outline: 2px solid #ae8955; outline-offset: 3px; }
+.vfx-report [aria-pressed=true] { background:#534235;color:#f5e4bd;border-color:#ac8863; }
+.vfx-controls, .vfx-mode, .vfx-links { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; }
+.vfx-controls { margin-top: .8rem; }
+.vfx-options { padding-top: .7rem; border-top: 1px solid var(--fx-line); }
+.vfx-options label { display: inline-flex; align-items: center; gap: .3rem; min-height: 40px; }
+.vfx-report input { accent-color: #9c7b51; }
+#vfx-time { flex: 1 1 70px; min-width: 65px; }
+#vfx-clock { font-variant-numeric: tabular-nums; }
+.vfx-panel :is(select,label) { display:block; }
+.vfx-panel select { width:100%; }
+.vfx-panel label { margin-top:.8rem; color:var(--mak-muted); }
+html[data-mak-report=document] .vfx-panel h2 { margin:1.1rem 0 .38rem; font-size:1.3rem; }
+.vfx-panel p { margin:.35rem 0 .65rem; }
+.vfx-facts div { display:grid; grid-template-columns:3.1em 1fr; gap:.3rem; padding:.35rem 0; border-top:1px solid var(--fx-line); }
+.vfx-facts dt, .vfx-trait { color:var(--mak-muted); }
+.vfx-facts dd { margin:0; }
+.vfx-links { margin-top: 1rem; gap:1rem; }
+@media(max-width:760px) {
+  .vfx-lab:not([hidden]) { grid-template-columns:1fr; }
+  .vfx-panel { display:contents; }
+  .vfx-choose { grid-row:1; }
+  .vfx-view { grid-row:2; }
+  .vfx-details { grid-row:3; }
+  .vfx-choose, .vfx-details {
+    padding:.75rem;
+    border:1px solid var(--fx-line);
+    border-radius:8px;
+    background:var(--mak-surface);
+  }
+  html[data-mak-report=document] .vfx-details h2 { margin-top:.15rem; }
+}

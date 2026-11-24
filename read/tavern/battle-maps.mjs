@@ -89,7 +89,7 @@ try {
     nextDownload.hidden = !illustrated || !connected;
     if (illustrated) {
       const maps = connected ? [first, next] : [first];
-      const path = ({ round }) => `media/battle-maps/v11/${round.id}.png`;
+      const path = ({ round }) => `media/battle-maps/v12/${round.id}.png`;
       const key = maps.map(map => map.round.id).join('-');
       if (illustratedRounds !== key) {
         illustrations.replaceChildren(...maps.map((map, position) => {

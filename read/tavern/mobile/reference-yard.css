@@ -1,0 +1,125 @@
+/* shop-popup-v3's 960 × 444 stage, applied to the interactive expedition controls. */
+@font-face {
+  font-family: "Yard UI";
+  src: url('../media/fonts/pretendard-v1.3.9/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+}
+.prep-landscape .prep-stage[data-mobile-run][data-view] {
+  background: #b9a25d var(--reference-ground) center 32% / 100% auto no-repeat;
+}
+.prep-stage[data-mobile-run] .yard-exterior { display:none; }
+.reference-yard {
+  position:absolute; inset:0 auto auto 0; transform-origin:top left;
+  --wood:url('../media/ui-reference/shop-popup-v3/art/wood-label.png');
+  font-family:var(--game-ui-font); image-rendering:pixelated;
+}
+.reference-yard *, .reference-yard *::before { box-sizing:border-box; }
+.prep-stage[data-mobile-run] .reference-yard .prep-controls { inset:6px 0 auto; }
+.prep-stage[data-mobile-run] .reference-yard .prep-hud { gap:3px; justify-items:center; }
+.prep-stage[data-mobile-run] .reference-yard .prep-hud-clock {
+  margin:0; min-height:0; gap:3px; align-items:center; justify-items:center;
+}
+.prep-stage[data-mobile-run] .reference-yard .prep-hud-clock dt {
+  isolation:isolate; position:relative; width:330px; max-width:80vw; height:22px;
+  border:2px solid #513527; outline:1px solid #b28a50; background:#322e39; color:#fff1cf;
+  font:14px/18px var(--game-ui-font); padding:0; text-shadow:1px 1px #35232b;
+}
+.reference-yard .prep-hud-clock dt::before {
+  content:"";position:absolute;inset:2px auto 2px 2px;width:var(--erosion);
+  background:linear-gradient(#a887a6 25%,#755875 25%);z-index:-1;
+}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-hud-clock dd,.prep-enemy-button,.yard-tag,[data-captain-kind],.prep-reroll>.prep-gold-amount,.shop-company .piece-insignia) {
+  background:transparent; border:2px solid transparent; border-radius:0;
+  border-image:var(--wood) 4 9 fill / 3px 6px stretch; box-shadow:none;
+}
+.prep-stage[data-mobile-run] .reference-yard .prep-hud-clock dd,
+.prep-stage[data-mobile-run] .reference-yard .prep-enemy-button {
+  min-height:0; margin:0; padding:1px 12px; font:14px/1.45 var(--game-ui-font);
+}
+.prep-stage[data-mobile-run] .reference-yard .prep-enemy-hud {margin:0;min-height:0;}
+.prep-stage[data-mobile-run] .reference-yard .prep-enemy-button {gap:6px;}
+.prep-stage[data-mobile-run] .reference-yard .prep-enemy-button :is(small,strong) {font:inherit;color:inherit;margin:0;}
+.reference-yard .prep-enemy-button small::after {content:" · ";}
+.prep-stage[data-mobile-run] .reference-yard .prep-enemy-button img {width:25px;height:23px;object-fit:contain;}
+.prep-stage[data-mobile-run][data-view] .reference-yard .shop-company {
+  inset:41.44% 17.7083% 16.4414%; grid-template:repeat(2,minmax(0,1fr))/repeat(3,minmax(0,1fr));
+  gap:4px 20px;place-items:stretch;--yard-unit-height:58px;
+}
+.prep-stage[data-mobile-run] .reference-yard .shop-company .prep-piece {
+  width:100%;height:100%;padding:0;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;
+}
+.prep-stage[data-mobile-run] .reference-yard .shop-company .prep-piece::before {
+  inset:auto 4% 3px;height:19px;box-shadow:inset 0 -4px #98754c;
+}
+.prep-stage[data-mobile-run] .reference-yard .shop-company .prep-piece-name {
+  position:relative;line-height:20px;min-height:20px;
+}
+.prep-stage[data-mobile-run] .reference-yard .shop-company .empty .prep-piece-name {font:19px/24px var(--game-ui-font);}
+.prep-stage[data-mobile-run] .reference-yard .shop-company .piece-insignia {
+  padding:0 6px 0 0;gap:4px; font:15px/20px var(--game-ui-font);white-space:nowrap;
+}
+.reference-yard .shop-company .piece-insignia b {font:700 15px/20px "Yard UI",sans-serif;padding:0 5px;}
+.reference-yard .prep-sprites img.hire-pair {width:96px;height:61px;object-fit:contain;object-position:center bottom;image-rendering:pixelated;pointer-events:none;}
+.reference-yard .shop-company .prep-sprites:has(.hire-pair) {height:61px;}
+.yard-model-library {position:absolute; width:0; height:0; overflow:hidden; pointer-events:none;}
+.prep-stage .yard-squad {
+  display:block; width:100%; height:61px; min-height:0; flex:0 1 61px;
+  pointer-events:none; user-select:none;
+}
+.yard-squad > svg { display:block; width:100%; height:100%; overflow:visible; shape-rendering:crispEdges; }
+/* Leave headroom behind the front companies without changing the drawing scale. */
+.prep-stage[data-mobile-run][data-view] .reference-yard .shop-company:has(.yard-squad[data-ranked]) {
+  top:calc(41.44% - 13px); bottom:calc(16.4414% - 10px); row-gap:20px;
+}
+.prep-stage[data-mobile-run][data-view=deck] .reference-yard .shop-company:has(.prep-piece:nth-child(n+4) .yard-squad[data-ranked]) {
+  top:calc(41.44% - 50px);
+}
+
+.prep-landscape .prep-stage[data-mobile-run][data-view=tavern] .reference-yard .prep-slots {
+  inset:4px 11.77% auto; height:159px; padding:16px 34px 34px;box-shadow:none;
+}
+.prep-stage[data-mobile-run] .reference-yard .shop-offers {gap:6px;}
+.prep-stage[data-mobile-run] .reference-yard .shop-offers .tavern-table {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+  min-width:75px;max-width:none;padding:1px 3px 3px;--yard-unit-height:35px;
+}
+.reference-yard .shop-offers .prep-sprites {align-self:center;height:35px;}
+.reference-yard .shop-offers .prep-sprites .hire-pair {width:77px;height:35px;}
+.reference-yard .shop-offers .piece-insignia {padding:0;gap:3px;font:600 12px/1.45 "Yard UI",sans-serif;color:var(--crest-color);}
+.reference-yard .shop-offers .piece-insignia svg {width:11px;height:11px;}
+.reference-yard .shop-offers .tavern-name {padding:0;margin:0;font:16px/21px var(--game-ui-font);color:#ffedcc;}
+.prep-stage[data-mobile-run] .reference-yard .shop-terms {
+  font:650 13px/15px "Yard UI",sans-serif;gap:5px;background:#39261e;color:#ffe1a0;border-radius:2px;padding:0 5px;
+}
+.reference-yard .prep-gold-icon {
+  width:11px;height:12px;background:#eeb447;border:2px solid #9e692d;box-shadow:inset 2px 1px #ffe298;
+  clip-path:polygon(22% 0,77% 0,100% 24%,100% 76%,77% 100%,22% 100%,0 76%,0 24%);
+}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-mobile-switch,.prep-upgrade-button,.prep-reroll,.prep-captain-ability) {
+  display:flex; flex-direction:column;align-items:center;justify-content:flex-end;
+  width:91px;min-width:0;height:auto;min-height:44px;padding:0;gap:0;filter:drop-shadow(0 2px #50372b);
+}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-mobile-switch,.prep-upgrade-button) {bottom:max(6px,var(--safe-bottom));}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-upgrade-button,.prep-tavern-controls) {left:max(9px,var(--safe-left));}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-mobile-switch,.prep-reroll) {right:max(9px,var(--safe-right));}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-reroll,.prep-tavern-controls) {bottom:max(92px,calc(var(--safe-bottom) + 86px));}
+.prep-stage[data-mobile-run] .reference-yard .prep-tavern-controls {width:91px;min-width:0;right:auto;top:auto;}
+.prep-stage[data-mobile-run] .reference-yard :is(.prep-upgrade-button,.prep-mobile-switch)::before {width:63px;height:61px;}
+.prep-stage[data-mobile-run] .reference-yard .prep-reroll::before,
+.prep-stage[data-mobile-run] .reference-yard .prep-captain-ability img {width:54px;height:53px;object-fit:contain;}
+.prep-stage[data-mobile-run] .reference-yard :is(.yard-tag,[data-captain-kind],.prep-reroll>.prep-gold-amount) {
+  display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0 6px;margin-top:-7px;min-width:47px;
+  position:relative;z-index:1;white-space:nowrap;font:700 16px/22px "Yard UI",sans-serif;color:#fff1cf;
+}
+.prep-stage[data-mobile-run] .reference-yard [data-captain-kind] {font:12px/22px var(--game-ui-font);}
+.prep-stage[data-mobile-run] .reference-yard .prep-upgrade-button>span:first-child {
+  position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:25px;
+  padding:0 4px;border:0;background:#433129;color:#ffe3ab;font:11px/14px var(--game-ui-font);white-space:nowrap;
+}
+.prep-stage[data-mobile-run] .reference-yard .prep-upgrade-button .upgrade-price {
+  font:700 16px/22px "Yard UI",sans-serif;border-image:var(--wood) 4 9 fill / 3px 6px stretch;
+}
+.prep-stage[data-mobile-run] .reference-yard .prep-departure {bottom:max(0px,var(--safe-bottom));}
+.prep-stage[data-mobile-run] .reference-yard .prep-departure [data-run-deploy] {
+  width:180px;height:56px;min-width:0;padding:0;font:22px var(--game-ui-font);
+}

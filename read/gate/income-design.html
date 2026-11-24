@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 외신 혼성 인컴 유닛</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .income-report .intro, .income-report .note { color: var(--mak-muted); }
+    .income-report .links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    .filter-controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: end; }
+    .filter-controls label { display: grid; gap: 3px; }
+    .filter-controls select {
+      min-height: 44px;
+      padding: 4px 9px;
+      border: 1px solid var(--mak-border);
+      border-radius: 6px;
+      background: var(--mak-surface);
+      color: var(--mak-text);
+      font: inherit;
+    }
+    .income-roster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .income-roster article { min-width: 0; border: 1px solid var(--mak-border); border-radius: 8px; padding: 12px; }
+    .income-report .income-roster h4 { margin: 0; color: var(--mak-text); }
+    .income-roster .identity { display: grid; grid-template-columns: 80px minmax(0, 1fr); align-items: center; gap: 12px; }
+    .income-roster .silhouette { color: var(--mak-muted); font-size: .9em; }
+    .income-roster dl { margin: 10px 0 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 10px; }
+    .income-roster dt { color: var(--mak-muted); }
+    .income-roster dd { margin: 0; }
+    .income-report .unit-chip { display: block; margin-top: 3px; color: var(--mak-muted); font-size: .88em; }
+    .income-report .pixel { display: grid; place-items: center; border-radius: 6px; background: #25283a; }
+    .income-report .pixel img { margin: 0; width: 64px; height: 64px; image-rendering: pixelated; }
+    .income-report .sheet { margin: 10px 0 14px; max-width: 480px; }
+    .income-report .sheet img { display: block; margin: 0; width: 100%; background: #25283a; image-rendering: pixelated; }
+    .income-report .table-scroll { overflow-x: auto; }
+    .income-report .table-scroll table { min-width: 540px; }
+    @media (max-width: 680px) { .income-roster { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 420px) { .income-roster .identity { grid-template-columns: 70px minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+<main class="income-report">
+  <h1>외신 혼성 인컴 유닛</h1>
+  <p class="intro">그림자·헌터·마수 진영마다 이자형 10종, 전투형 10종을 구성했습니다. 한 진영의 20종 중 8종을 팀에 편성합니다.</p>
+  <nav class="links" aria-label="관련 파일">
+    <a href="#roster">유닛 60종 보기</a>
+    <a href="income-motion-plan.html">모션·이펙트 제작표</a>
+    <a href="combat-animation.html?group=income">인컴 60종 모션 재생</a>
+    <a href="income-roster.json" download>설계 데이터 JSON</a>
+    <a href="index.html#core-loop">광부와 인컴 규칙</a>
+    <a href="media/income-concepts/source/prompts.md">이미지 원본과 프롬프트</a>
+  </nav>
+
+  <section aria-labelledby="balance-title">
+    <h2 id="balance-title">비용, 이자, 전투력</h2>
+    <p>비용은 마력석입니다. 생산을 확정하면 누적 이자가 오르고, 내 웨이브 정산마다 배치 재화로 지급됩니다. 파견 유닛 한 기는 상대의 다음 웨이브에 기본 병력보다 1초 뒤 합류합니다. 도착 웨이브당 카드 2장, 마력석 합계 12가 한도입니다.</p>
+    <p>유형마다 비용별 카드 수는 3·3·2·2장입니다. 아래 체력과 기본 공격 배율은 <strong>3비용 전투형 기준값을 1.0으로 둔 플레이테스트 초안</strong>입니다. 소환과 전투 효과는 자동으로 처리합니다.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="비용별 수치 표">
+      <table>
+        <thead><tr><th scope="col">마력석</th><th scope="col">이자형<br>이자 · 체력/공격</th><th scope="col">전투형<br>이자 · 체력/공격</th><th scope="col">64px 셀에서 읽히는 형태</th></tr></thead>
+        <tbody id="tier-rows"></tbody>
+      </table>
+    </div>
+    <p class="note">이자형 3비용 한 장은 남은 정산이 5회라면 배치 재화 5를 추가합니다. 같은 비용의 전투형은 2.5를 추가합니다. 3+3 이자형은 6비용 이자형보다 이자를 0.5 더 주고, 6비용은 파견 한 칸만 써서 6+6 조합과 더 큰 개체를 만들 수 있습니다.</p>
+    <p class="note">타격 피해의 백분율은 시전자의 기본 공격 피해 기준입니다. 별도 기준이 없는 반복 주기는 입장 시부터 셉니다. 회복·보호막은 대상의 최대 체력을 기준으로 하고, ‘다른 인컴’ 효과는 같은 플레이어가 보낸 유닛에 적용합니다.</p>
+  </section>
+
+  <section id="roster" aria-labelledby="roster-title">
+    <h2 id="roster-title">진영별 인컴 도감</h2>
+    <div class="filter-controls">
+      <label for="income-faction">진영<select id="income-faction" disabled></select></label>
+      <label for="income-type">유형<select id="income-type" disabled></select></label>
+      <label for="income-cost">마력석<select id="income-cost" disabled></select></label>
+    </div>
+    <p id="filter-status" role="status">유닛을 불러오는 중입니다.</p>
+    <div id="income-cards"></div>
+  </section>
+  <section aria-labelledby="art-title">
+    <h2 id="art-title">도트 제작 기준</h2>
+    <p>상대 라인에서 등장하는 인컴은 모두 좌향 ¾ 시점으로 그립니다. 이자형은 둥근 화물과 장부·가방·봉인핵이 먼저 보이고, 전투형은 왼쪽으로 뻗은 발톱·무기·전면 장갑이 먼저 보입니다. 비용이 커질수록 외곽 폭과 대표 장비의 크기가 함께 커집니다.</p>
+    <p>64×64 투명 도트, 발 중심 (32, 57), 캐릭터당 최대 열 색상을 기준으로 삼았습니다. 32px에서도 비용은 몸집과 장비 덩어리로, 역할은 형태로 구분할 수 있게 합니다. 표시 크기와 게임의 충돌 반경은 각각 검증합니다.</p>
+  </section>
+</main>
+<script type="module">
+  const byId = id => document.getElementById(id);
+  const options = (select, entries) => select.replaceChildren(...entries.map(([value, name]) => new Option(name, value)));
+  const base = 'media/income-concepts/';
+  const selector = [byId('income-faction'), byId('income-type'), byId('income-cost')];
+  const catalog = byId('income-cards');
+  const status = byId('filter-status');
+  const node = (tag, text = '', css = '') => {
+    const element = document.createElement(tag);
+    if (text) element.textContent = text;
+    if (css) element.className = css;
+    return element;
+  };
+
+  function unitCard(unit, tier) {
+    const card = node('article');
+    card.dataset.incomeId = unit.id;
+    const identity = node('div', '', 'identity');
+    const frame = node('div', '', 'pixel');
+    const image = node('img');
+    image.src = base + unit.id.toLowerCase() + '.png';
+    image.alt = unit.name + ' · ' + unit.silhouette;
+    image.width = image.height = 64;
+    image.loading = 'lazy';
+    frame.append(image);
+    const heading = node('div');
+    heading.append(node('h4', unit.name), node('small', '마력석 ' + unit.cost + ' · 이자 +' + tier[unit.type].interest, 'unit-chip'),
+      node('small', unit.hybrid, 'unit-chip'));
+    identity.append(frame, heading);
+    const details = node('dl');
+    for (const [label, text] of [['역할', unit.role], ['효과', unit.ability], ['대응', unit.counter], ['실루엣', unit.silhouette]]) {
+      details.append(node('dt', label), node('dd', text, label === '실루엣' ? 'silhouette' : ''));
+    }
+    card.append(identity, details);
+    return card;
+  }
+
+  function overview(key, description) {
+    const figure = node('figure', '', 'sheet');
+    const image = node('img');
+    image.src = base + key + '.png';
+    image.alt = description + ' 10종. 윗줄은 왼쪽부터 3·3·3·6·6, 아랫줄은 6·9·9·12·12 마력석입니다.';
+    image.width = 320;
+    image.height = 128;
+    image.loading = 'lazy';
+    const link = node('a', '10종 도트 비교 PNG');
+    link.href = image.src;
+    link.download = key + '.png';
+    const caption = node('figcaption');
+    caption.append(link);
+    figure.append(image, caption);
+    return figure;
+  }
+
+  try {
+    const response = await fetch('income-roster.json');
+    if (!response.ok) throw new Error('Income roster unavailable');
+    const data = await response.json();
+    const tiers = new Map(data.tiers.map(tier => [tier.cost, tier]));
+    const [faction, type, cost] = selector;
+    const rates = profile => '+' + profile.interest + ' · ' + profile.hp.toFixed(2) + '/' + profile.attack.toFixed(2);
+    byId('tier-rows').append(...data.tiers.map(tier => {
+      const row = node('tr');
+      row.append(...[tier.cost, rates(tier.economy), rates(tier.combat), tier.silhouette].map(item => node('td', String(item))));
+      return row;
+    }));
+    options(faction, data.factions.map(row => [row.id, row.name]));
+    options(type, [['', '두 유형'], ...data.types.map(row => [row.id, row.name])]);
+    options(cost, [['', '전체 비용'], ...data.tiers.map(row => [row.cost, row.cost + ' 마력석'])]);
+    function render() {
+      catalog.replaceChildren();
+      const side = data.factions.find(row => row.id === faction.value);
+      catalog.append(node('p', side.identity, 'note'));
+      const visible = data.units.filter(unit => unit.faction === faction.value &&
+        (!type.value || unit.type === type.value) && (!cost.value || unit.cost === Number(cost.value)));
+      status.textContent = side.name + ' · ' + visible.length + '종';
+      for (const kind of data.types) {
+        const matches = visible.filter(unit => unit.type === kind.id);
+        if (!matches.length) continue;
+        const category = node('section');
+        category.append(node('h3', kind.name), node('p', kind.identity, 'note'));
+        if (!cost.value) category.append(overview(side.id + '-' + kind.id, side.name + ' ' + kind.name));
+        const grid = node('div', '', 'income-roster');
+        grid.append(...matches.map(unit => unitCard(unit, tiers.get(unit.cost))));
+        category.append(grid);
+        catalog.append(category);
+      }
+    }
+    for (const control of selector) {
+      control.disabled = false;
+      control.addEventListener('change', render);
+    }
+    render();
+  } catch {
+    status.textContent = '유닛 목록을 읽지 못했습니다. 위의 설계 데이터 JSON을 열 수 있습니다.';
+  }
+</script>
+</body>
+</html>

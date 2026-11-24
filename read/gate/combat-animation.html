@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 적군·인컴·지휘관 애니메이션</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .motion-report .actions { display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; }
+    .motion-report .roster { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:12px 0; }
+    .motion-report label { min-width:0; }
+    .motion-report .roster label, .motion-report .options label:not(.toggle) { display:grid; gap:4px; font-size:.9rem; color:var(--mak-muted); }
+    .motion-report :is(select,button) { min-height:44px; background:var(--mak-surface); color:var(--mak-text);
+      border:1px solid var(--mak-border); border-radius:6px; font:inherit; padding:6px 8px; min-width:0; max-width:100%; }
+    .motion-report .options { display:flex; flex-wrap:wrap; align-items:end; gap:8px; margin:12px 0; }
+    .motion-report .toggle { min-height:44px; display:inline-flex; align-items:center; gap:4px; }
+    .motion-report .stage { background:#171b27; color:#f6edf6; border:1px solid #474759; border-radius:10px; margin:0; padding:9px; }
+    .motion-report canvas { display:block; width:min(100%,690px); height:auto; margin:auto; image-rendering:pixelated; }
+    .motion-report .stage figcaption { text-align:center; margin:5px 0 0; }
+    .motion-report .scrub { display:grid; grid-template-columns:max-content minmax(0,1fr); gap:8px; align-items:center; margin:9px 0; color:var(--mak-muted); }
+    .motion-report input[type=range] { width:100%; min-height:30px; margin:0; }
+    .motion-report .sheets { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .motion-report .sheets figure { min-width:0; margin:0; }
+    .motion-report .sheets img { display:block; width:100%; max-height:210px; object-fit:contain; object-position:top left; height:auto;
+      image-rendering:pixelated; background:#272b3a; }
+    .motion-report #motion-note { color:var(--mak-muted); }
+    @media (max-width:700px) {
+      .motion-report .roster { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .motion-report .roster label:last-child { grid-column:1/-1; }
+      .motion-report .sheets { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+<main class="motion-report">
+  <h1>적군·인컴·지휘관 애니메이션</h1>
+  <p>외신 적 28계통의 세 형태, 외신 혼성 인컴 60종, 지휘관 15명입니다. 적과 인컴은 왼쪽으로 공격하고 지휘관은 라인 끝에서 자리를 지킵니다.</p>
+  <nav class="actions" aria-label="관련 파일">
+    <a id="motion-package" href="media/combat-motion/v9/combat-motions-v9.zip" download>전체 스프라이트 ZIP</a>
+    <a id="motion-manifest" href="media/combat-motion/v9/manifest.json" download>프레임 JSON</a>
+    <a id="motion-readme" href="media/combat-motion/v9/README.md">가져오기 규격</a>
+    <a id="motion-version" href="combat-animation.html?version=8">V8 비교</a>
+    <a href="combat-animation.html?group=commanders">지휘관 모션 바로 보기</a>
+    <a href="ally-tower-animation.html">아군 타워 모션</a>
+  </nav>
+  <section aria-labelledby="viewer-title">
+    <h2 id="viewer-title">모션 재생</h2>
+    <div class="roster">
+      <label>종류<select id="motion-group" disabled></select></label>
+      <label>진영·단계<select id="motion-filter" disabled></select></label>
+      <label>유닛<select id="motion-unit" disabled></select></label>
+    </div>
+    <figure class="stage">
+      <canvas id="motion-stage" width="172" height="101" aria-label="선택 유닛 애니메이션"></canvas>
+      <figcaption id="motion-state">모션을 불러오는 중입니다.</figcaption>
+    </figure>
+    <div class="options">
+      <label>동작<select id="motion-clip" disabled></select></label>
+      <label>속도<select id="motion-speed" disabled><option value="1">1배</option><option value="0.5">0.5배</option></select></label>
+      <button type="button" id="motion-play" disabled>재생</button>
+      <button type="button" id="motion-replay" disabled>처음부터</button>
+      <label class="toggle"><input id="motion-effects" type="checkbox" checked disabled> 이펙트</label>
+      <label class="toggle"><input id="motion-crowd" type="checkbox" disabled> 밀집 전투</label>
+    </div>
+    <label class="scrub" for="motion-time">재생 위치<input id="motion-time" type="range" min="0" max="1" value="0" step="1" disabled></label>
+    <p id="motion-note"></p>
+  </section>
+  <section aria-labelledby="sheet-title">
+    <h2 id="sheet-title">스프라이트 시트</h2>
+    <p id="motion-summary"></p>
+    <div class="sheets">
+      <figure>
+        <img id="motion-body-image" width="768" height="320" alt="선택 유닛의 본체 시트">
+        <figcaption><a id="motion-body-download" download>본체 PNG</a></figcaption>
+      </figure>
+      <figure>
+        <img id="motion-fx-image" width="1536" height="288" alt="선택 유닛의 이펙트 시트">
+        <figcaption><a id="motion-fx-download" download>이펙트 PNG</a> · <a id="motion-sources" href="media/combat-motion/v9/README.md">모션 제작 규칙</a></figcaption>
+      </figure>
+      <figure id="motion-ground-panel" hidden>
+        <img id="motion-ground-image" width="160" height="32" loading="lazy" alt="선택 유닛의 붉은 범위 표시 시트">
+        <figcaption><a id="motion-ground-download" download>범위 표시 PNG</a></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+<script type="module" src="media/combat-motion/preview.mjs"></script>
+</body>
+</html>

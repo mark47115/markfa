@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tavern Heros · 전투 결과</title>
-  <link rel="stylesheet" href="../_shared/report.css">
+  <link rel="stylesheet" href="../../_shared/report.css">
   <link rel="stylesheet" href="../game-font.css">
   <link rel="stylesheet" href="../game-screen.css">
   <link rel="stylesheet" href="run.css">
@@ -15,14 +15,13 @@
   <section class="run-report" aria-labelledby="result-title">
     <p id="result-round"></p>
     <h1 id="result-title">전투 결과</h1>
-    <dl class="run-tally">
-      <div><dt>생존 아군</dt><dd id="result-allies"></dd></div>
-      <div><dt>생존 공허군</dt><dd id="result-enemies"></dd></div>
-      <div><dt>침식도</dt><dd id="result-erosion"></dd></div>
-    </dl>
+    <div class="result-erosion">
+      <label for="result-erosion">침식도 <span id="erosion-percent"></span></label>
+      <progress id="result-erosion" max="100" value="0"></progress>
+    </div>
     <p id="result-pack" class="result-pack" role="status" hidden></p>
     <div class="run-report-actions">
-      <button id="result-next" class="run-button" type="button" hidden>다음 선술집</button>
+      <button id="result-next" class="run-button" type="button" hidden>다음 스테이지</button>
     </div>
   </section>
 </main>

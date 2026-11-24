@@ -1,13 +1,16 @@
-import { captains } from './captain-data.js';
+import { captains as originalCaptains } from './captain-data.js';
+import { commandNames } from '../mobile/company-captains.js';
 import {
   buyShopProduct, captainCollection, collectionChangeKey, initializeShopStock,
   openCaptainPack, selectCaptain, shopProducts,
 } from './captain-packs.js';
 import { mountSettings } from './settings.js';
-import { guardHomeDuringExpedition } from '../mobile/run.js';
+import { guardHomeDuringExpedition,nativeEdition } from '../mobile/run.js';
 import './lobby-icons.js';
 
 guardHomeDuringExpedition();
+const captains=nativeEdition?originalCaptains.map(c=>({...c,ability:commandNames[c.id][0],type:'원정 · '+commandNames[c.id][1],
+  description:commandNames[c.id][2]})):originalCaptains;
 
 const lobby = document.querySelector('.lobby');
 const homeMenu = lobby.querySelector('.home-menu');

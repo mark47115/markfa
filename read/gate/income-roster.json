@@ -1,0 +1,818 @@
+{
+  "factions": [
+    {
+      "id": "shadow",
+      "code": "SH",
+      "name": "그림자",
+      "identity": "흑연색 몸과 보라색 윤곽에 안개, 별가루, 외눈핵이 붙습니다. 천과 잔향은 오른쪽으로 흐르게 둡니다."
+    },
+    {
+      "id": "hunter",
+      "code": "HU",
+      "name": "헌터",
+      "identity": "협회 전술복과 공략대 장비에 외신 결정과 생체 센서가 결합합니다. 인간형 체형과 현장 장비의 기능이 읽혀야 합니다."
+    },
+    {
+      "id": "beast",
+      "code": "BE",
+      "name": "마수",
+      "identity": "발톱, 털, 갑각, 석재로 먼저 종족을 읽히게 합니다. 외신의 독, 빙갑, 포자, 별결정은 몸의 일부로 붙습니다."
+    }
+  ],
+  "types": [
+    {
+      "id": "economy",
+      "name": "이자형",
+      "identity": "등짐, 봉인핵, 구난 장비의 둥근 덩어리. 약한 기본 공격과 작은 보조 효과."
+    },
+    {
+      "id": "combat",
+      "name": "전투형",
+      "identity": "앞으로 뻗는 발톱·무기, 경사진 장갑. 높은 전투 배율과 예고가 읽히는 교전 효과."
+    }
+  ],
+  "tiers": [
+    {
+      "cost": 3,
+      "size": 30,
+      "economy": {
+        "interest": 1,
+        "hp": 0.42,
+        "attack": 0.35
+      },
+      "combat": {
+        "interest": 0.5,
+        "hp": 1,
+        "attack": 1
+      },
+      "silhouette": "작은 몸과 대표 부품 하나. 장식은 눈이나 장치 1곳."
+    },
+    {
+      "cost": 6,
+      "size": 38,
+      "economy": {
+        "interest": 1.5,
+        "hp": 0.7,
+        "attack": 0.52
+      },
+      "combat": {
+        "interest": 0.5,
+        "hp": 1.6,
+        "attack": 1.25
+      },
+      "silhouette": "견갑·장비로 몸통을 넓히고 대표 부품을 크게."
+    },
+    {
+      "cost": 9,
+      "size": 47,
+      "economy": {
+        "interest": 2,
+        "hp": 1.02,
+        "attack": 0.68
+      },
+      "combat": {
+        "interest": 1,
+        "hp": 2.2,
+        "attack": 1.55
+      },
+      "silhouette": "비대칭 대형 핵·화물·무기로 윤곽에 두 번째 덩어리."
+    },
+    {
+      "cost": 12,
+      "size": 56,
+      "economy": {
+        "interest": 2.5,
+        "hp": 1.35,
+        "attack": 0.82
+      },
+      "combat": {
+        "interest": 1,
+        "hp": 3.02,
+        "attack": 1.9
+      },
+      "silhouette": "넓은 바닥과 큰 구조물. 실루엣이 화면에서 먼저 읽히는 대형체."
+    }
+  ],
+  "units": [
+    {
+      "id": "SH-E01",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 3,
+      "name": "안개 장부병",
+      "hybrid": "그림자 보병 × 안개 잠식체",
+      "silhouette": "작은 두건, 납작한 등 장부, 왼손의 청회색 안개 도장",
+      "role": "근접",
+      "ability": "느린 타격으로 앞줄 한 기에 붙습니다.",
+      "counter": "빠른 재공격"
+    },
+    {
+      "id": "SH-E02",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 3,
+      "name": "먹결 정찰개미",
+      "hybrid": "그림자 개미 × 먹빛 도마뱀",
+      "silhouette": "구부러진 더듬이, 낮은 등, 가는 안개 꼬리",
+      "role": "속공",
+      "ability": "빠르게 앞으로 나가고 첫 접촉 이후 이동이 느려집니다.",
+      "counter": "선두 둔화"
+    },
+    {
+      "id": "SH-E03",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 3,
+      "name": "별재 운반병",
+      "hybrid": "그림자 보병 × 별가루 운반 악마",
+      "silhouette": "한쪽 등에 달린 작은 황동 통과 한쪽 견갑",
+      "role": "운반",
+      "ability": "쓰러지면 가까운 인컴 한 기를 0.5초 동안 빠르게 합니다.",
+      "counter": "호위와 거리 두기"
+    },
+    {
+      "id": "SH-E04",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 6,
+      "name": "안개 봉합술사",
+      "hybrid": "그림자 마법병 × 뼈가면 망령",
+      "silhouette": "짧은 두건과 실타래를 건 흰 반가면",
+      "role": "지원",
+      "ability": "첫 교전 때 가장 가까운 다른 인컴 한 기에 최대 체력의 6% 보호막을 2초 부여합니다.",
+      "counter": "초반에 시전자 정리"
+    },
+    {
+      "id": "SH-E05",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 6,
+      "name": "응집 방패수",
+      "hybrid": "그림자 방패병 × 응집 안개",
+      "silhouette": "검이 없는 세로 방패, 방패 테두리의 안개 한 겹",
+      "role": "방어",
+      "ability": "첫 피격 피해를 20% 줄입니다.",
+      "counter": "연속 타격"
+    },
+    {
+      "id": "SH-E06",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 6,
+      "name": "서리 짐꾼곰",
+      "hybrid": "그림자 곰 × 서리못 게",
+      "silhouette": "작은 곰의 등짐과 양쪽의 얼음 걸쇠",
+      "role": "운반",
+      "ability": "체력이 절반 이하가 되면 이동속도가 1초 동안 10% 증가합니다.",
+      "counter": "이동 제어"
+    },
+    {
+      "id": "SH-E07",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 9,
+      "name": "별가루 수금거인",
+      "hybrid": "그림자 거인 × 별가루 증폭핵",
+      "silhouette": "굵은 운반 팔, 등의 커다란 금빛 결정 상자",
+      "role": "방어",
+      "ability": "느리게 접근하고 첫 두 번의 피해를 각각 10% 줄입니다.",
+      "counter": "지속 화력"
+    },
+    {
+      "id": "SH-E08",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 9,
+      "name": "안개 실꾸리 여왕개미",
+      "hybrid": "그림자 여왕개미 × 안개 잠식체",
+      "silhouette": "겹갑 배와 등이 엮인 큰 청보라색 실꾸리",
+      "role": "지원",
+      "ability": "첫 피격 때 반경 1칸의 다른 인컴 한 기에 0.5초 이동속도 +10%를 줍니다.",
+      "counter": "한 기씩 요격"
+    },
+    {
+      "id": "SH-E09",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 12,
+      "name": "균열 운송비룡",
+      "hybrid": "그림자 비룡 × 균열 두더지",
+      "silhouette": "넓게 접힌 막날개, 무게추처럼 매달린 천공 상자",
+      "role": "운반",
+      "ability": "기본 합류 후 같은 라인에서 짧게 활공해 첫 적에 붙습니다.",
+      "counter": "전열 분산"
+    },
+    {
+      "id": "SH-E10",
+      "faction": "shadow",
+      "type": "economy",
+      "cost": 12,
+      "name": "심연 징수상",
+      "hybrid": "그림자 석상 갑주 × 심연 외눈",
+      "silhouette": "넓은 갑주, 한쪽에 달린 대형 외눈 인장과 금고",
+      "role": "방어",
+      "ability": "첫 교전에서 자신에게 최대 체력의 8% 보호막을 2초 부여합니다.",
+      "counter": "보호막 소진 후 집중"
+    },
+    {
+      "id": "SH-C01",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 3,
+      "name": "갈래턱 그림자개",
+      "hybrid": "그림자 짐승 × 갈래턱 사냥개",
+      "silhouette": "전진 자세, 붉은 금속 이빨과 뒤로 휘는 그림자",
+      "role": "속공",
+      "ability": "첫 물기가 기본 공격 피해의 130%를 줍니다.",
+      "counter": "전열 요격"
+    },
+    {
+      "id": "SH-C02",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 3,
+      "name": "투창 잔영",
+      "hybrid": "그림자 나가 × 별가루 투창 악마",
+      "silhouette": "낮은 꼬리와 앞쪽의 가느다란 황동 창",
+      "role": "원거리",
+      "ability": "첫 투창을 전방 2칸의 가장 가까운 적에게 던집니다.",
+      "counter": "빠른 전열 접근"
+    },
+    {
+      "id": "SH-C03",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 3,
+      "name": "균열 척후개미",
+      "hybrid": "그림자 개미 × 프리즘 사마귀",
+      "silhouette": "가벼운 배와 앞으로 뻗은 한 쌍의 수정 낫",
+      "role": "속공",
+      "ability": "첫 공격 후 같은 대상에 45% 피해로 한 번 더 긁습니다.",
+      "counter": "첫 접촉 차단"
+    },
+    {
+      "id": "SH-C04",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 6,
+      "name": "편암 방패병",
+      "hybrid": "아이언 방패병 × 편암 딱정벌레",
+      "silhouette": "팔을 다 덮는 각진 편암 방패, 검 없는 검은 갑주",
+      "role": "방어",
+      "ability": "첫 교전 0.7초 예고 뒤 반경 1칸의 가장 가까운 타워 한 기를 0.75초 도발합니다.",
+      "counter": "전열 간격 벌리기"
+    },
+    {
+      "id": "SH-C05",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 6,
+      "name": "서리발 추격곰",
+      "hybrid": "그림자 곰 × 서리못 게",
+      "silhouette": "큰 푸른 얼음 집게 앞발과 짧은 짐승 귀",
+      "role": "근접",
+      "ability": "첫 강타가 피해를 주고 표준 둔화를 겁니다.",
+      "counter": "앞줄로 둔화 받기"
+    },
+    {
+      "id": "SH-C06",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 6,
+      "name": "별가루 마창병",
+      "hybrid": "그림자 주술사 × 메아리 석궁수",
+      "silhouette": "비대칭 두건과 쏘아 올린 청동 마력 쇠뇌",
+      "role": "원거리",
+      "ability": "4초마다 예고 0.6초 뒤 가장 가까운 적을 125% 공격합니다.",
+      "counter": "조준 중 처치"
+    },
+    {
+      "id": "SH-C07",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 9,
+      "name": "증폭핵 뿔거인",
+      "hybrid": "그림자 거인 × 별가루 증폭핵",
+      "silhouette": "한 어깨를 덮는 금빛 핵과 거대한 한쪽 주먹",
+      "role": "근접",
+      "ability": "첫 강타가 정면 1칸 안 최대 두 기를 120% 피해로 가격합니다.",
+      "counter": "전후열 어긋나게 배치"
+    },
+    {
+      "id": "SH-C08",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 9,
+      "name": "안개 사도 비룡",
+      "hybrid": "그림자 비룡 × 안개 잠식체",
+      "silhouette": "가늘고 긴 목, 큰 갈라진 날개와 청회색 입",
+      "role": "돌진",
+      "ability": "첫 교전 0.8초 예고 뒤 전방 2칸으로 돌진해 처음 닿은 타워를 타격합니다.",
+      "counter": "돌진선 분리"
+    },
+    {
+      "id": "SH-C09",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 12,
+      "name": "식각 흑갑주",
+      "hybrid": "그림자 중갑 기사 × 깨진 서약 기사",
+      "silhouette": "한쪽으로 높게 솟은 투구와 앞쪽 대형 대검",
+      "role": "근접",
+      "ability": "6초마다 예고 0.9초 뒤 한 기에 기본 공격의 170% 피해를 줍니다.",
+      "counter": "예고를 끊기"
+    },
+    {
+      "id": "SH-C10",
+      "faction": "shadow",
+      "type": "combat",
+      "cost": 12,
+      "name": "낙성 흑룡",
+      "hybrid": "용족 그림자 × 낙성 파수체",
+      "silhouette": "거대한 톱니 날개, 어깨의 청동 별 파편과 넓은 네 발",
+      "role": "범위",
+      "ability": "6초마다 1초 예고 뒤 부채꼴에 최대 세 기를 각 110%로 공격합니다.",
+      "counter": "가로 간격 벌리기"
+    },
+    {
+      "id": "HU-E01",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 3,
+      "name": "균열 감식생",
+      "hybrid": "협회 정찰 헌터 × 안개 잠식체",
+      "silhouette": "단정한 작은 코트, 한 손에 안개가 샌 측정기",
+      "role": "정찰",
+      "ability": "약한 단발 공격 후 잠시 멈춥니다.",
+      "counter": "전열에서 빠르게 처치"
+    },
+    {
+      "id": "HU-E02",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 3,
+      "name": "별가루 회수생",
+      "hybrid": "공략대 짐꾼 × 별가루 운반 악마",
+      "silhouette": "등에 맨 둥근 구리 병 하나와 짧은 작업복",
+      "role": "운반",
+      "ability": "가벼운 달리기로 선두에 먼저 붙습니다.",
+      "counter": "선두 요격"
+    },
+    {
+      "id": "HU-E03",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 3,
+      "name": "서리 구급생",
+      "hybrid": "치유 헌터 × 설유리 토끼",
+      "silhouette": "작은 흰 구급 가방, 가방의 두 얼음 핀",
+      "role": "지원",
+      "ability": "첫 교전 때 가장 가까운 다른 인컴 한 기를 최대 체력의 4%만큼 회복합니다.",
+      "counter": "첫 교전에서 시전자 요격"
+    },
+    {
+      "id": "HU-E04",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 6,
+      "name": "편암 감식관",
+      "hybrid": "방패 헌터 × 편암 딱정벌레",
+      "silhouette": "한 팔을 덮는 작은 육각형 편암 시료 방패",
+      "role": "방어",
+      "ability": "첫 원거리 피해를 15% 줄입니다.",
+      "counter": "근접 또는 다단 공격"
+    },
+    {
+      "id": "HU-E05",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 6,
+      "name": "등불 전령",
+      "hybrid": "마력 궁수 × 등불 나방",
+      "silhouette": "접은 경량 날개, 청색 랜턴을 매단 짧은 외투",
+      "role": "정찰",
+      "ability": "한 번만 가장 가까운 타워를 1.5칸에서 약하게 공격합니다.",
+      "counter": "앞에 표적 두기"
+    },
+    {
+      "id": "HU-E06",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 6,
+      "name": "안개 진료관",
+      "hybrid": "해독 전문 헌터 × 뼈가면 망령",
+      "silhouette": "작은 상아색 반가면과 손목에 감긴 청회색 안개 붕대",
+      "role": "지원",
+      "ability": "부상한 가까운 인컴 한 기를 웨이브당 한 번 최대 체력의 6% 회복합니다.",
+      "counter": "집중 공격으로 우선 제거"
+    },
+    {
+      "id": "HU-E07",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 9,
+      "name": "증폭석 보급수",
+      "hybrid": "공략대 보급병 × 별가루 증폭핵",
+      "silhouette": "양어깨를 넘는 황동 결정 프레임과 방진 외투",
+      "role": "운반",
+      "ability": "첫 피격 후 이동속도가 1초 동안 12% 빨라집니다.",
+      "counter": "이동 제어"
+    },
+    {
+      "id": "HU-E08",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 9,
+      "name": "심연 현장감사",
+      "hybrid": "협회 감시 헌터 × 심연 외눈",
+      "silhouette": "넓은 외투와 한쪽에 솟은 외눈 관측경",
+      "role": "정찰",
+      "ability": "사거리 2칸에서 가장 가까운 타워에 낮은 단발 피해를 줍니다.",
+      "counter": "전열 접근"
+    },
+    {
+      "id": "HU-E09",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 12,
+      "name": "별가루 수송외골격",
+      "hybrid": "거대화 방어 헌터 × 별가루 운반 악마",
+      "silhouette": "커다란 철제 외골격과 사각형 별가루 상자",
+      "role": "운반",
+      "ability": "느리게 다가가고 첫 피해를 25% 줄입니다.",
+      "counter": "방어막 이후 지속 공격"
+    },
+    {
+      "id": "HU-E10",
+      "faction": "hunter",
+      "type": "economy",
+      "cost": 12,
+      "name": "극지 구난외골격",
+      "hybrid": "공략대 방어 헌터 × 빙관 집게괴수",
+      "silhouette": "앞을 덮는 둥근 얼음 집게판과 큰 구난 상자",
+      "role": "방어",
+      "ability": "첫 피격에서 받는 피해를 20% 줄이고 가장 가까운 인컴 한 기를 최대 체력의 5% 회복합니다.",
+      "counter": "옆 사거리로 접근"
+    },
+    {
+      "id": "HU-C01",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 3,
+      "name": "균열 추적수",
+      "hybrid": "협회 정찰 헌터 × 균열 두더지",
+      "silhouette": "장갑 끝 작은 굴착 발톱과 낮춘 달리기 자세",
+      "role": "속공",
+      "ability": "첫 근접 공격은 피해가 25% 증가합니다.",
+      "counter": "첫 접촉을 방어형으로 받기"
+    },
+    {
+      "id": "HU-C02",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 3,
+      "name": "별가루 속사수",
+      "hybrid": "마력 궁수 × 별가루 투창 악마",
+      "silhouette": "작은 황동 석궁과 뾰족한 부착식 카트리지",
+      "role": "원거리",
+      "ability": "첫 사격을 2칸에서 발사하고 0.35초 뒤 40% 피해의 짧은 후속탄을 쏩니다.",
+      "counter": "선두에서 투사체 받기"
+    },
+    {
+      "id": "HU-C03",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 3,
+      "name": "설유리 돌입대원",
+      "hybrid": "고속 검술 헌터 × 설유리 토끼",
+      "silhouette": "한쪽으로 솟은 얼음 귀판과 짧은 검",
+      "role": "근접",
+      "ability": "첫 공격 적중 시 이동속도가 1초 동안 25% 증가합니다.",
+      "counter": "초반 둔화"
+    },
+    {
+      "id": "HU-C04",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 6,
+      "name": "석궁 증폭사수",
+      "hybrid": "공략대 사수 × 메아리 석궁수",
+      "silhouette": "몸통 폭을 넘는 접이식 황동 석궁과 어깨 거치대",
+      "role": "원거리",
+      "ability": "4초마다 0.6초 조준 후 첫 타워 뒤 1칸 안의 추가 한 기에 60% 피해를 줍니다.",
+      "counter": "두 타워를 같은 줄에 두지 않기"
+    },
+    {
+      "id": "HU-C05",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 6,
+      "name": "편암 돌격방패",
+      "hybrid": "공략대 방패 헌터 × 편암 딱정벌레",
+      "silhouette": "겹판 쐐기 방패와 중량 보조 다리",
+      "role": "방어",
+      "ability": "첫 피격을 30% 줄이고, 다음 기본 공격이 피해와 함께 표준 둔화를 겁니다.",
+      "counter": "원거리 연속 타격"
+    },
+    {
+      "id": "HU-C06",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 6,
+      "name": "안개 침투검객",
+      "hybrid": "고속 검술 헌터 × 뼈가면 망령",
+      "silhouette": "한쪽 가면과 긴 안개 코트, 가느다란 검",
+      "role": "돌진",
+      "ability": "첫 교전 0.65초 예고 뒤 최대 1칸 옆으로 파고들어 가장 가까운 적을 135% 타격합니다.",
+      "counter": "후열 옆에 방어 배치"
+    },
+    {
+      "id": "HU-C07",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 9,
+      "name": "영점 관측저격수",
+      "hybrid": "조준표식 헌터 × 심연 외눈",
+      "silhouette": "한쪽에 돌출한 자주색 외눈 조준경과 장총",
+      "role": "원거리",
+      "ability": "5초마다 1초 조준 뒤 가장 가까운 3칸 안 타워 한 기에 160% 피해를 줍니다.",
+      "counter": "표식 앞줄로 받기"
+    },
+    {
+      "id": "HU-C08",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 9,
+      "name": "잿불 충각중갑",
+      "hybrid": "거대화 헌터 × 화철뿔 숫양",
+      "silhouette": "어깨의 갈라진 주황 철뿔과 큰 충각판",
+      "role": "돌진",
+      "ability": "첫 교전 0.8초 예고 뒤 1.5칸 돌진해 첫 타워를 0.5칸 밀어냅니다.",
+      "counter": "충돌선에 후열 겹치지 않기"
+    },
+    {
+      "id": "HU-C09",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 12,
+      "name": "증폭 외골격 공성수",
+      "hybrid": "중갑 헌터 × 낙성 파수체",
+      "silhouette": "육중한 외골격, 밝은 금빛 어깨 핵과 공성 팔",
+      "role": "범위",
+      "ability": "6초마다 1초 예고 뒤 타격점 0.8칸 안 최대 세 기를 각 105% 공격합니다.",
+      "counter": "기물 사이 간격 벌리기"
+    },
+    {
+      "id": "HU-C10",
+      "faction": "hunter",
+      "type": "combat",
+      "cost": 12,
+      "name": "혹한 제압사령",
+      "hybrid": "협회 제압 헌터 × 검은얼음 망자",
+      "silhouette": "뾰족한 검은 얼음 왕관, 긴 칼날 팔과 흰 털깃",
+      "role": "제어",
+      "ability": "6초마다 1초 예고 뒤 앞 2칸 안 최대 두 기를 공격하고 표준 둔화를 겁니다.",
+      "counter": "시전 전 집중 타격"
+    },
+    {
+      "id": "BE-E01",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 3,
+      "name": "등불 굴개미",
+      "hybrid": "제주도 일개미 × 등불 나방",
+      "silhouette": "작은 다리와 턱 앞에 매달린 푸른 등불",
+      "role": "운반",
+      "ability": "느린 근접으로 가장 가까운 앞줄에 붙습니다.",
+      "counter": "첫 교전에 정리"
+    },
+    {
+      "id": "BE-E02",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 3,
+      "name": "별가루 균류체",
+      "hybrid": "포자 마수 × 별가루 증폭핵",
+      "silhouette": "둥근 버섯갓의 작은 금빛 결정 한 알",
+      "role": "지원",
+      "ability": "쓰러질 때 가까운 다른 인컴 한 기를 최대 체력의 3% 회복합니다.",
+      "counter": "무리 바깥에서 제거"
+    },
+    {
+      "id": "BE-E03",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 3,
+      "name": "서리 먹발토끼",
+      "hybrid": "게이트 소형 마수 × 설유리 토끼",
+      "silhouette": "낮게 휜 등, 길쭉한 푸른 귀와 검은 발",
+      "role": "속공",
+      "ability": "짧고 빠르게 접근한 뒤 약한 물기를 한 번 합니다.",
+      "counter": "빠른 요격"
+    },
+    {
+      "id": "BE-E04",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 6,
+      "name": "편암 수레딱지",
+      "hybrid": "제주도 호위개미 × 편암 딱정벌레",
+      "silhouette": "넓은 암판 등, 갑각에 납작하게 얹은 짐 틀",
+      "role": "운반",
+      "ability": "첫 원거리 피해만 18% 줄입니다.",
+      "counter": "근접으로 갑각 상대"
+    },
+    {
+      "id": "BE-E05",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 6,
+      "name": "안개 채집오크",
+      "hybrid": "오크 전사 × 안개 종지기",
+      "silhouette": "한 손의 작은 청동 종과 허리의 안개 주머니",
+      "role": "근접",
+      "ability": "첫 타격의 사거리가 0.25칸 길어집니다.",
+      "counter": "긴 사거리로 대응"
+    },
+    {
+      "id": "BE-E06",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 6,
+      "name": "별가루 짐뱀",
+      "hybrid": "늪 독사 × 별가루 운반 악마",
+      "silhouette": "고리처럼 감긴 몸, 등에 작은 황동 통 두 개",
+      "role": "운반",
+      "ability": "쓰러지면 가까운 다른 인컴 한 기에 0.5초 이동속도 +10%를 줍니다.",
+      "counter": "호위가 떨어질 때 처치"
+    },
+    {
+      "id": "BE-E07",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 9,
+      "name": "빙태 짐승",
+      "hybrid": "아이스베어 × 서리깃 야크",
+      "silhouette": "큰 둥근 등, 얼음 고리가 걸린 옆 짐받이",
+      "role": "방어",
+      "ability": "첫 근접 피해를 20% 줄입니다.",
+      "counter": "원거리 지속 타격"
+    },
+    {
+      "id": "BE-E08",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 9,
+      "name": "심연 운반여왕",
+      "hybrid": "제주도 여왕개미 × 심연 외눈",
+      "silhouette": "넓은 겹갑 배와 등 위의 감시 눈 하나",
+      "role": "운반",
+      "ability": "첫 피격 후 1초간 움직임이 10% 빨라집니다.",
+      "counter": "이동을 느리게 하기"
+    },
+    {
+      "id": "BE-E09",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 12,
+      "name": "서리깃 순례수",
+      "hybrid": "아이스베어 × 삼기 설원 야크",
+      "silhouette": "넓은 네 발과 뿔 사이로 솟은 수송용 깃대",
+      "role": "방어",
+      "ability": "첫 피해를 22% 줄이고 느리게 전진합니다.",
+      "counter": "후열 지속 화력"
+    },
+    {
+      "id": "BE-E10",
+      "faction": "beast",
+      "type": "economy",
+      "cost": 12,
+      "name": "낙성 채집골렘",
+      "hybrid": "카르테논 석상 × 낙성 파수체",
+      "silhouette": "아치처럼 넓은 등짐과 팔에 붙은 금빛 결정",
+      "role": "방어",
+      "ability": "자신에게 최대 체력의 8% 보호막을 2초 한 번 부여합니다.",
+      "counter": "첫 보호막 소진 후 집중 타격"
+    },
+    {
+      "id": "BE-C01",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 3,
+      "name": "녹턱 라이칸",
+      "hybrid": "강철 이빨 라이칸 × 녹슨턱 사냥개",
+      "silhouette": "길쭉한 어깨와 녹슨 턱, 앞쪽으로 쏠린 자세",
+      "role": "속공",
+      "ability": "첫 공격에 30% 추가 피해를 줍니다.",
+      "counter": "전열 배치로 첫 물기 받기"
+    },
+    {
+      "id": "BE-C02",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 3,
+      "name": "갈고리 호위개미",
+      "hybrid": "제주도 호위개미 × 프리즘 사마귀",
+      "silhouette": "수정 갈고리가 뻗은 작은 앞다리와 납작 갑각",
+      "role": "근접",
+      "ability": "첫 타격 때 같은 적을 추가로 40% 피해로 긁습니다.",
+      "counter": "빠른 선두 처치"
+    },
+    {
+      "id": "BE-C03",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 3,
+      "name": "설유리 단검병",
+      "hybrid": "아이스 엘프 단검병 × 설유리 토끼",
+      "silhouette": "한쪽 빙정 귀와 반대편에 꽂힌 짧은 얼음 단검",
+      "role": "근접",
+      "ability": "첫 타격의 피해가 20% 증가하고 대상 이동속도를 1초간 15% 낮춥니다.",
+      "counter": "앞줄에서 받아내기"
+    },
+    {
+      "id": "BE-C04",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 6,
+      "name": "서리집게 마수",
+      "hybrid": "아이스베어 × 서리못 게",
+      "silhouette": "한쪽에만 큰 빙갑 집게와 하얀 곰 등",
+      "role": "제어",
+      "ability": "첫 강타로 가까운 타워 한 기를 0.5초 속박합니다.",
+      "counter": "방어형 배치로 접근 차단"
+    },
+    {
+      "id": "BE-C05",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 6,
+      "name": "별가루 뿔오크",
+      "hybrid": "오크 전사 × 화철뿔 숫양",
+      "silhouette": "나선 뿔과 넓은 주황빛 굽은 견갑",
+      "role": "근접",
+      "ability": "첫 교전 후 두 번째 공격이 145% 피해를 줍니다.",
+      "counter": "오래 교전하기 전에 제거"
+    },
+    {
+      "id": "BE-C06",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 6,
+      "name": "망자 석궁엘프",
+      "hybrid": "아이스 엘프 궁수 × 검은얼음 망자",
+      "silhouette": "긴 얼음 석궁과 대각선으로 솟은 갈비뼈 갑옷",
+      "role": "원거리",
+      "ability": "4초마다 0.7초 예고 후 단발 타격과 표준 둔화를 겁니다.",
+      "counter": "사수에 빠르게 접근"
+    },
+    {
+      "id": "BE-C07",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 9,
+      "name": "안개 삼두수",
+      "hybrid": "문지기 케르베로스 × 안개 종지기",
+      "silhouette": "세 머리 사이의 청동 종과 등 뒤 구름",
+      "role": "범위",
+      "ability": "5초마다 0.75초 예고 후 정면 1칸 안 최대 두 기를 120% 피해로 뭅니다.",
+      "counter": "전열 간격 벌리기"
+    },
+    {
+      "id": "BE-C08",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 9,
+      "name": "흑빙 외눈독사",
+      "hybrid": "푸른 독니 카사카 × 심연 외눈",
+      "silhouette": "갈라진 검은 얼음 목덮개와 커다란 외눈",
+      "role": "제어",
+      "ability": "첫 물기에 표준 독을 겁니다. 독이 있는 첫 대상에 후속 공격은 120% 피해를 줍니다.",
+      "counter": "해독이나 빠른 처치"
+    },
+    {
+      "id": "BE-C09",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 12,
+      "name": "낙성 석상장군",
+      "hybrid": "카르테논 무장 석상 × 낙성 파수체",
+      "silhouette": "세로로 솟은 대형 돌 날개와 별 모양 어깨돌",
+      "role": "방어",
+      "ability": "첫 피격 0.9초 뒤 자신에게 공통 보호막을 걸고 앞 1칸의 타워 한 기를 0.5초 기절시킵니다.",
+      "counter": "예고 중 시전 차단"
+    },
+    {
+      "id": "BE-C10",
+      "faction": "beast",
+      "type": "combat",
+      "cost": 12,
+      "name": "포자갑 군락여왕",
+      "hybrid": "제주도 여왕개미 × 삼관 포자괴수",
+      "silhouette": "세 겹 보랏빛 버섯 왕관과 여섯 굵은 갑각 다리",
+      "role": "범위",
+      "ability": "6초마다 1초 예고 후 반경 0.9칸 최대 세 기에 95% 피해와 표준 독을 줍니다.",
+      "counter": "기물을 분산하거나 해독"
+    }
+  ]
+}

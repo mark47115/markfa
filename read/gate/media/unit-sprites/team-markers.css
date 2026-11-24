@@ -1,0 +1,42 @@
+[data-team]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: auto auto var(--unit-team-offset, 3px) 50%;
+  translate: -50% 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+[data-team="ally"]::after {
+  width: 16px;
+  height: 5px;
+  border: 2px solid var(--unit-team-ally, #82F4DC);
+  border-top: 0;
+}
+
+[data-team="enemy"]::after {
+  width: 10px;
+  height: 7px;
+  background: var(--unit-team-enemy, #FFB362);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.team-marker-legend {
+  display: flex;
+  gap: 6px 16px;
+  flex-wrap: wrap;
+}
+
+.team-marker-legend [data-team] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.team-marker-legend [data-team]::after {
+  position: static;
+  order: -1;
+  translate: none;
+}

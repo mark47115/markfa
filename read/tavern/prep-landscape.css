@@ -1,0 +1,190 @@
+html[data-mak-report=document] body:has(> .prep-landscape) {
+  --mak-bg: #19151a;
+  --mak-text: #fff0db;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+  background: var(--mak-bg);
+  color: var(--mak-text);
+}
+
+html[data-mak-report=document] body > main.prep-landscape {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+.prep-landscape .prep-demo { margin: 0; max-width: none; }
+.prep-landscape .prep-stage {
+  --prep-world-height: max(
+    min(var(--screen-height), calc(var(--screen-width) * 2 / 3)),
+    calc(var(--screen-width) * 4 / 11),
+    calc(var(--screen-height) * 8 / 11)
+  );
+  --prep-world-width: calc(var(--prep-world-height) * 1.5);
+  --prep-world-top: calc((100% - var(--prep-world-height)) / 2);
+  height: var(--screen-height);
+  min-height: 0;
+  aspect-ratio: auto;
+}
+.prep-landscape .prep-stage[data-view] {
+  background-image: var(--prep-expanded-backdrop, var(--prep-backdrop));
+  background-size: calc(var(--prep-world-height) * 11 / 4) calc(var(--prep-world-height) * 11 / 8);
+}
+.prep-landscape button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.prep-landscape .prep-captain-ability { touch-action: none; }
+.prep-landscape .prep-views { display: var(--prep-upper-views, flex); }
+.prep-landscape .prep-settings { margin-inline-start: auto; }
+.prep-mobile-switch {
+  position: absolute;
+  z-index: 4;
+  right: calc(var(--safe-right) + 8px);
+  bottom: calc(var(--safe-bottom) + 8px);
+  display: var(--prep-mobile-switch, none);
+  place-items: center;
+  width: 60px;
+  height: 58px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  border-image: url('media/preparation/responsive-v1/panel-wood.png') 6 fill / 6px stretch;
+  background: transparent;
+  cursor: pointer;
+}
+.prep-mobile-switch canvas { width: 40px; height: 40px; image-rendering: pixelated; }
+.prep-mobile-switch:hover { border-image-source: url('media/preparation/responsive-v1/panel-teal.png'); }
+html[data-mak-report=document] .prep-mobile-switch:focus-visible { outline: 2px solid #ffe09a; outline-offset: 2px; }
+html:is([data-phone-preview], [data-mobile-edition]) .prep-landscape {
+  --prep-upper-views: none;
+  --prep-mobile-switch: grid;
+}
+@media (orientation: landscape) and (pointer: coarse),
+       (orientation: landscape) and (max-width: 1100px) and (max-height: 500px) {
+  .prep-landscape {
+    --prep-upper-views: none;
+    --prep-mobile-switch: grid;
+  }
+}
+.prep-landscape .tavern-table {
+  --anchor-x: var(--landscape-x);
+  --anchor-floor: var(--landscape-floor);
+  --anchor-depth: var(--landscape-depth);
+  --anchor-scale: var(--landscape-scale);
+  font-size: clamp(.44rem, 1.6cqw, .78rem);
+}
+.prep-landscape .tavern-name { gap: .35em; padding-inline: .55cqw; }
+.prep-landscape .prep-piece { font-size: clamp(.55rem, 1.8cqw, .8rem); }
+
+.prep-landscape .prep-controls {
+  top: calc(var(--safe-top) + clamp(6px, 1.3cqw, 11px));
+  left: calc(var(--safe-left) + clamp(6px, 1.3cqw, 11px));
+  right: calc(var(--safe-right) + clamp(6px, 1.3cqw, 11px));
+}
+.prep-landscape .prep-stage[data-view=deck] {
+  --yard-unit-height: clamp(15px, calc(9 * var(--screen-block-unit)), 41px);
+}
+.prep-landscape .prep-stage[data-view=deck] .prep-slots {
+  inset: calc(var(--prep-world-top) + max(var(--prep-world-height) * .38, 92px))
+    max(6%, calc(50% - var(--prep-world-width) * .44))
+    max(calc(var(--prep-world-top) + var(--prep-world-height) * .1),
+      calc(var(--safe-bottom) + var(--prep-departure-clearance, 12px)));
+  gap: 4px;
+}
+.prep-landscape .yard-exterior {
+  top: var(--prep-world-top);
+  left: 50%;
+  width: var(--prep-world-width);
+  height: var(--prep-world-height);
+  transform: translateX(-50%);
+}
+@container (max-width: 315px) {
+  .prep-landscape .prep-piece { --yard-unit-height: 15px; }
+}
+@media (orientation: portrait) {
+  html:not([data-phone-preview]) .prep-landscape.game-screen {
+    --screen-height: min(100dvh, calc(100vw * 2 / 3));
+  }
+  html:not([data-phone-preview]) .prep-landscape.game-screen:has(.prep-stage[data-view=tavern]) {
+    --screen-height: min(100dvh, max(320px, calc(100vw * 2 / 3)));
+  }
+}
+
+/* The innkeeper presents this visit's tables from the yard. */
+.prep-stage { --shop-height: clamp(123px, 35vh, 186px); --shop-side: clamp(76px, 9%, 170px); }
+.prep-stage[data-view=deck] :is(.shop-company, .shop-greeting) { display: none; }
+.prep-stage[data-view=tavern] .shop-greeting {
+  position: absolute; z-index: 1; top: 16%; left: 50%; transform: translateX(-50%);
+  width: max-content; max-width: 57%; box-sizing: border-box; margin: 0; padding: 8px 16px;
+  background: #ffebc0; color: #39271d; border: 2px solid #67462b; border-radius: 5px;
+  box-shadow: 0 3px #402a1b99; font: clamp(12px,1.55cqw,18px)/1.4 var(--game-ui-font);
+  text-align: center; overflow-wrap: anywhere; pointer-events: none;
+}
+.shop-greeting::after {
+  position: absolute; content: ''; bottom: -7px; left: 55%; width: 10px; height: 10px;
+  background: #ffebc0; border: solid #67462b; border-width: 0 2px 2px 0; transform: skewX(18deg) rotate(45deg);
+}
+.shop-company {
+  position: absolute; z-index: 1; bottom: calc(var(--shop-height) + var(--safe-bottom,0px) + 20px);
+  inset-inline: var(--shop-side); display: grid; grid-template-columns: repeat(6,minmax(0,1fr));
+  justify-items: center; align-items: end; gap: 3px; --yard-unit-height: clamp(18px,5.8vh,39px);
+}
+.shop-company .prep-piece { width: 100%; height: auto; min-height: 44px; grid-template-columns: minmax(0,1fr); }
+.shop-company .empty .prep-sprites { display: none; }
+.shop-company .empty { justify-content: center; align-content: end; }
+.shop-company .empty .prep-piece-name { background: #37291dd9; color: #e2cb9e; }
+.prep-piece .prep-piece-name:has(.piece-insignia) { padding: 0; background: none; max-width: 100%; }
+.prep-stage .prep-piece .prep-piece-name .piece-insignia {
+  position: static; transform: none; box-sizing: border-box; max-width: 100%; font-size: clamp(10px,1.42cqw,14px);
+}
+.prep-piece .piece-insignia span { white-space: normal; overflow-wrap: anywhere; }
+.shop-company .prep-piece .prep-piece-name .piece-insignia { font-size: clamp(10px,1.18cqw,13px); gap: 2px; }
+.prep-piece .piece-insignia :is(svg,b) { flex: none; }
+.prep-stage[data-view=tavern] .prep-slots {
+  inset: auto var(--shop-side) calc(var(--safe-bottom,0px) + 7px); width: auto;
+  height: var(--shop-height); transform: none; box-sizing: border-box; display: grid;
+  grid-template: minmax(0,1fr) / minmax(0,1fr); place-items: stretch; gap: 0;
+  padding: 11px 6px 4px; container-type: normal;
+  border: 3px solid #bf8b49; border-radius: 9px; background: #39271e;
+  box-shadow: inset 0 0 0 2px #69462d, 0 3px #3d2618;
+}
+.shop-sign {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%); z-index: 1;
+  padding: 0 18px; border: 1px solid #e1b473; border-radius: 4px;
+  background: #503622; color: #ffe3aa; font: 14px/1.4 var(--game-ui-font);
+}
+.shop-dismiss {
+  position: absolute; z-index: 1; top: -13px; right: 5px;
+  display: grid; place-items: center; width: 31px; height: 29px; padding: 0;
+  border: 1px solid #d1a36a; border-radius: 4px; background: #4c3223; color: #ffe5b1;
+  font: 19px/1 var(--game-ui-font); cursor: pointer;
+}
+.shop-dismiss:focus-visible { outline: 2px solid #ffe09a; }
+.shop-offers { display: flex; justify-content: safe center; overflow: auto hidden; min-width: 0; gap: 2px; }
+.shop-offers .tavern-table {
+  position: relative; inset: auto; transform: none; z-index: auto; flex: 1 1 0;
+  min-width: 86px; max-width: 195px; width: auto; height: 100%; padding: 2px;
+  display: grid; grid-template-rows: minmax(12px,1fr) auto auto auto; align-items: center; justify-items: center;
+  border: 1px solid #6b492e; border-radius: 3px;
+  background: linear-gradient(#493126, #36251e); color: #fff1d5; font: 12px/1.15 var(--game-ui-font);
+  --art-pixel: clamp(.48px, .16vh, 1.05px);
+}
+.shop-offers .tavern-table:is(:hover,:focus-visible,[aria-expanded=true]) { border-color: #ffce7b; background: #503727; }
+.shop-offers .tavern-table:disabled { opacity: .74; }
+.shop-offers .prep-table-art { position: relative; inset: auto; align-self: end; margin-bottom: 2px; }
+.shop-offers .tavern-name, .shop-offers .piece-insignia {
+  position: static; transform: none; white-space: normal; text-align: center; max-width: 100%; overflow-wrap: anywhere;
+}
+.shop-offers .piece-insignia {
+  padding: 1px 3px; color: var(--crest-color); background: transparent; border: 0; font-size: clamp(10px,1.28cqw,13px);
+}
+.shop-offers .tavern-name { font-size: clamp(11px,1.48cqw,16px); line-height: 1.22; border: 0; background: none; }
+.shop-terms { color: #f1d5a2; display: inline-flex; align-items: center; gap: 8px; padding: 2px 0; font-size: clamp(10px,1.25cqw,13px); }
+.shop-terms .prep-gold-amount { color: #ffcd70; }
+@media (max-height: 410px) {
+  .prep-stage[data-view=tavern] .shop-greeting { padding: 4px 12px; }
+}
+
+

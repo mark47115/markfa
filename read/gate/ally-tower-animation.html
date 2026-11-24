@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 아군 타워 모션</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .tower-report .muted { color: var(--mak-muted); }
+    .tower-report .links, .tower-report .controls { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 14px; }
+    .tower-report .controls label { display: grid; gap: 3px; min-width: 0; }
+    .tower-report .controls > * { max-width: 100%; }
+    .tower-report .controls :is(select, button) {
+      min-height: 44px; max-width: 100%; padding: 4px 8px;
+      color: var(--mak-text); background: var(--mak-surface);
+      border: 1px solid var(--mak-border); border-radius: 6px; font: inherit;
+    }
+    .tower-report .controls .check { min-height: 44px; display: flex; align-items: center; }
+    .tower-report .viewer {
+      padding: 10px; margin: 12px 0 16px;
+      border: 1px solid #45475d; border-radius: 10px; background: #191b26;
+    }
+    .tower-report canvas { display: block; width: min(100%, 640px); margin-inline: auto; image-rendering: pixelated; }
+    .tower-report .viewer figcaption { color: #e5dff4; text-align: center; min-height: 1.5em; }
+    .tower-report .sheets { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+    .tower-report .sheets figure { margin: 0; min-width: 0; }
+    .tower-report .sheets img { width: 100%; image-rendering: pixelated; background: #2c2f40; }
+    .tower-report .sheets .legacy-fx { max-width: 180px; }
+    .tower-report #tower-choreography:empty { display: none; }
+    .tower-report #clip-list { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 0; }
+    .tower-report #clip-list li { list-style: none; }
+    .tower-report .scrub { display:grid; grid-template-columns:max-content minmax(0,1fr); gap:8px; align-items:center; }
+    .tower-report .scrub input { width:100%; min-height:30px; margin:0; }
+    @media (max-width: 620px) { .tower-report .sheets { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+<main class="tower-report">
+  <h1>아군 타워 애니메이션</h1>
+  <p class="muted">그림자·헌터·마수 30계통의 미진화체·1차·2차 진화체를 고를 수 있습니다. <span id="tower-revision">방호 조각·화살비·불기둥에서 작게 보이던 부분을 키웠습니다.</span></p>
+  <nav class="links" aria-label="내보내기">
+    <a id="tower-package" href="media/tower-motion/v8/ally-tower-motions-v8.zip" download>전체 스프라이트 ZIP</a>
+    <a id="tower-manifest" href="media/tower-motion/v8/manifest.json" download>프레임 메타데이터 JSON</a>
+    <a id="tower-readme" href="media/tower-motion/v8/README.md">가져오기 규격</a>
+    <a href="unit-sprites.html#ally-sprites">기준 도트</a>
+    <a href="combat-animation.html">적군·인컴·지휘관 모션</a>
+    <a id="tower-version-link" href="ally-tower-animation.html?version=6&amp;unit=st01-iii&amp;motion=skill">크기 조정 전 보기</a>
+  </nav>
+  <section aria-labelledby="preview-title">
+    <h2 id="preview-title">모션 재생</h2>
+    <div class="controls">
+      <label for="tower-faction">진영<select id="tower-faction" disabled></select></label>
+      <label for="tower-family">계통<select id="tower-family" disabled></select></label>
+      <label for="tower-stage">형태<select id="tower-stage" disabled></select></label>
+      <label for="tower-clip">모션<select id="tower-clip" disabled></select></label>
+      <label for="tower-speed">속도<select id="tower-speed" disabled><option value="1">1배</option><option value="0.5">0.5배</option></select></label>
+      <button type="button" id="tower-play" disabled>재생</button>
+      <button type="button" id="tower-replay" disabled>처음부터</button>
+      <label class="check"><input type="checkbox" id="tower-effects" checked disabled> 이펙트</label>
+      <label class="check"><input type="checkbox" id="tower-crowd" disabled> 밀집 전투</label>
+    </div>
+    <figure class="viewer">
+      <canvas id="tower-stage-view" width="160" height="98" aria-label="선택한 아군 타워의 우향 도트 애니메이션"></canvas>
+      <figcaption id="tower-frame">모션을 불러오는 중입니다.</figcaption>
+    </figure>
+    <label class="scrub" for="tower-time">재생 위치<input id="tower-time" type="range" min="0" max="1" step="1" value="0" disabled></label>
+    <p id="tower-ability" class="muted"></p>
+    <p id="tower-choreography" class="muted"></p>
+    <ul id="clip-list" aria-label="선택한 형태의 프레임 목록"></ul>
+  </section>
+  <section aria-labelledby="sheets-title">
+    <h2 id="sheets-title">스프라이트 시트</h2>
+    <p class="muted" id="body-summary"></p>
+    <div class="sheets">
+      <figure>
+        <img id="tower-sheet" alt="선택한 타워의 대기·이동·공격·스킬·사망 시트" width="512" height="320">
+        <figcaption><a id="tower-sheet-download" download>선택 유닛 PNG</a></figcaption>
+      </figure>
+      <figure>
+        <img id="tower-fx-sheet" width="2048" height="288" loading="lazy" alt="선택한 타워의 공격·스킬·사망 이펙트 시트">
+        <figcaption><a id="tower-fx-download" download>선택 유닛 이펙트 PNG</a> · <a id="tower-sources" href="media/guard-motion/source/README.md">방호 모션 제작 규칙</a></figcaption>
+      </figure>
+      <figure id="tower-ground-panel" hidden>
+        <img id="tower-ground-sheet" width="160" height="32" loading="lazy" alt="선택한 타워의 붉은 범위 표시 시트">
+        <figcaption><a id="tower-ground-download" download>범위 표시 PNG</a></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+<script type="module" src="media/tower-motion/preview.mjs"></script>
+</body>
+</html>

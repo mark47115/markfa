@@ -1,7 +1,7 @@
 const catalog = window.TavernDesignCards;
 const section = { captains: 'captains-and-units', pieces: 'pieces', units: 'art' };
 const browse = new Map();
-const captainStatus = item => item.planned ? '원정 연동 예정' : '원정 적용';
+const captainStatus = item => item.type;
 
 export function node(tag, text, className) {
   const element = document.createElement(tag);
@@ -11,8 +11,8 @@ export function node(tag, text, className) {
 }
 
 function information(item, type) {
-  if (type === 'captains') return item.type;
-  if (type === 'pieces') return [item.faction, item.tier + '등급'].join(' · ');
+  if (type === 'captains') return item.faction;
+  if (type === 'pieces') return [item.faction, item.tier + '단계'].join(' · ');
   return [item.side === 'enemy' ? '공허군' : '아군', item.mode].filter(Boolean).join(' · ');
 }
 
@@ -88,27 +88,27 @@ function detail(root, type, item) {
   back.href = '#' + section[type];
   const hero = node('div', null, 'catalog-detail');
   const picture = node('figure', null, 'catalog-portrait');
-  const download = node('a', 'GIF 저장');
+  const download = node('a', item.art.endsWith('.gif') ? 'GIF 저장' : '이미지 저장');
   download.href = item.art + '?download=1';
   download.download = item.art.split('/').at(-1);
-  const caption = node('figcaption', type === 'captains' ? '문서용 초상 모션' : type === 'pieces' ? '대표 유닛 모션' : '유닛 모션');
+  const caption = node('figcaption', type === 'captains' ? '대장 초상 모션' : type === 'pieces' ? '고용 병사 두 명' : '병종 그림');
   caption.append(download);
   picture.append(image(item), caption);
   const copy = node('div', null, 'catalog-copy');
-  const meta = [information(item, type), type === 'captains' ? captainStatus(item) : item.planned && '설계',
-    item.training && '훈련 전용', type === 'captains' && item.faction];
-  if (type === 'pieces') meta.push(item.mechanic, item.price + '골드');
+  const meta = [information(item, type), type === 'captains' && item.type];
+  if (type === 'pieces') meta.push(item.group, item.mechanic, item.price + '골드');
   copy.append(node('p', meta.filter(Boolean).join(' · '), 'catalog-meta'));
   const [intro, ...story] = item.concept.split(/(?<=\.)\s/);
   block(copy, '콘셉트', intro);
   if (type === 'units') {
-    const stats = [item.equipment, item.attack != null && '공격력 ' + item.attack,
+    const stats = [item.equipment, item.attack != null && '공격·지원력 ' + item.attack,
       item.health != null && '체력 ' + item.health, item.guard > 0 && '시작 보호막 ' + item.guard];
     block(copy, '전투 정보', stats.filter(Boolean).join(' · '));
   }
   if (type === 'captains') block(copy, item.ability, item.description);
   else if (item.abilities.length) copy.append(effectTable(item.abilities));
   else if (type === 'units' && item.mode) block(copy, '기본 공격', item.mode);
+  if (type === 'pieces') block(copy, '고용 시 합류', item.hireText);
   if (item.condition) block(copy, item.side === 'enemy' ? '출전 편성' : '합류 조건', item.condition);
   hero.append(picture, copy);
   root.append(back, hero);
@@ -118,17 +118,15 @@ function detail(root, type, item) {
     root.append(details);
   }
   if (type === 'pieces') {
-    for (const [name, ids] of item.forms) root.append(node('h4', name + ' 편성'), related('units', ids));
+    for (const [, ids] of item.forms) root.append(node('h4', '고용 병종'), related('units', ids));
     if (item.owner) root.append(node('h4', '소속 대장'), related('captains', [item.owner]));
   } else if (item.pieces.length) {
     root.append(node('h4', type === 'captains' ? '전용 기물' : '소속 기물'), related('pieces', item.pieces));
   }
   if (type === 'units') {
-    const frames = node('details');
-    frames.dataset.reference = 'ally-animation.html';
-    frames.dataset.unitId = item.id;
-    frames.append(node('summary', '동작별 재생·프레임 조작'));
-    root.append(frames);
+    const motion = node('a', '모션과 스킬 이펙트 재생 →', 'document-link');
+    motion.href = 'media/unit-sprites/battle-actions/index.html';
+    root.append(motion);
   }
 }
 
@@ -149,10 +147,10 @@ export function mountCatalog(root, id, onPage) {
   select.append(new Option('전체', ''));
   if (type === 'units') select.append(new Option('아군', 'ally'), new Option('공허군', 'enemy'));
   if (type === 'pieces') {
-    for (const [label, planned] of [['일반 계열', false], ['대장 전용 계열 · 설계', true]]) {
+    for (const [label, owned] of [['일반 계열', false], ['대장 전용', true]]) {
       const group = node('optgroup');
       group.label = label;
-      const factions = new Set(items.filter(item => Boolean(item.planned) === planned).map(item => item.faction));
+      const factions = new Set(items.filter(item => Boolean(item.owner) === owned).map(item => item.faction));
       group.append(...Array.from(factions, faction => new Option(faction, faction)));
       select.append(group);
     }

@@ -1,4 +1,7 @@
 import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js';
+import { exampleWave, factionOf, mountEnemyPreview, pieceInsignia } from './prep-intel.js';
+import { mountAbilityTargeting } from './mobile/ability-targeting.js';
+import { createYardActors } from './mobile/yard-actors.js';
 
 (() => {
   const preview = document.querySelector('.prep-demo');
@@ -44,6 +47,11 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
             <button class="prep-clock" type="button" aria-label="30초 카운트다운 시연 재생">시연</button>
           </dd>
         </div>
+        <div class="prep-enemy-hud"><dt hidden>다음 적</dt><dd>
+          <button type="button" class="prep-enemy-button" aria-haspopup="dialog" aria-controls="prep-enemy-dialog">
+            <span><small>다음 적</small><strong></strong></span>
+          </button>
+        </dd></div>
       </dl>
       <div class="prep-tools">
         <div class="prep-views" role="group" aria-label="준비 화면 전환">
@@ -61,6 +69,8 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
         </div>
       </div>
     </div>
+    <p class="shop-greeting"></p>
+    <div class="shop-company" role="group" aria-label="내 덱 · 출전 순서"></div>
     <div class="prep-slots" id="prep-slots" data-prep-slots aria-label="고용 테이블"></div>
     <div class="prep-tavern-controls">
       <button class="prep-captain-ability" type="button" aria-describedby="prep-captain-tooltip" hidden>
@@ -85,6 +95,13 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       </p>
       <button class="run-button" type="button" data-run-deploy>출정</button>
     </div>
+    <dialog class="prep-run-preview prep-enemy-dialog" id="prep-enemy-dialog" aria-labelledby="prep-enemy-title">
+      <header><div><small>다음 적</small><h2 id="prep-enemy-title"></h2></div>
+        <form method="dialog"><button class="run-button" autofocus>닫기</button></form>
+      </header>
+      <p class="prep-enemy-power"></p>
+      <ul aria-label="적 출전 편성"></ul>
+    </dialog>
     <dialog class="prep-run-preview prep-captain-dialog" aria-labelledby="prep-captain-action-title">
       <h2 id="prep-captain-action-title"></h2>
       <div data-captain-choices></div>
@@ -109,7 +126,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
         <dd class="prep-detail-roster">
           <span data-detail-members></span>
           <select data-run-replace aria-label="대신 판매할 기물" hidden></select>
-          <button class="run-button" type="button" data-run-ability hidden>능력 사용</button>
+           <span class="piece-abilities" data-piece-abilities hidden></span>
           <button class="run-button" type="button" data-run-sell hidden>판매 1</button>
           <button class="prep-detail-recruit" type="button" hidden><span></span></button>
         </dd>
@@ -124,16 +141,13 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       <p data-term-definition aria-live="polite"></p>
     </aside>
     </div>
-    <dialog class="prep-run-preview prep-ability-dialog" aria-labelledby="prep-ability-title">
-      <h2 id="prep-ability-title"></h2>
-      <div data-run-ability-list></div>
-      <form method="dialog"><button class="run-button">닫기</button></form>
-    </dialog>
     </div>
   `);
   const stage = preview.querySelector('.prep-stage');
   const controls = stage.querySelector('.prep-controls');
   const slots = preview.querySelector('[data-prep-slots]');
+  const board = run ? stage.querySelector('.shop-company') : slots;
+  const yardActors=run?createYardActors(stage,()=>run.state.phase==='prep'):null;
   const status = preview.querySelector('[data-prep-status]');
   const level = preview.querySelector('#prep-level');
   const formation = preview.querySelector('.prep-formation');
@@ -169,9 +183,9 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   const detailEffect = detail.querySelector('[data-detail-effect]');
   const detailMembers = detail.querySelector('[data-detail-members]');
   const sellButton = detail.querySelector('[data-run-sell]');
-  const abilityButton = detail.querySelector('[data-run-ability]');
+  const abilityList = detail.querySelector('[data-piece-abilities]');
   const abilitySummary = detail.querySelector('[data-run-piece-status]');
-  const abilityDialog = stage.querySelector('.prep-ability-dialog');
+  let targeting;
   const replacement = detail.querySelector('[data-run-replace]');
   const departure = stage.querySelector('.prep-departure');
   const departureGuide = stage.querySelector('#prep-deploy-guide');
@@ -220,40 +234,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       units: [member('citadel-captain', '성루 방패대장', 29, 34, true), member('citadel-archer', '성무 궁수', 26, 33, true), member('lantern-priest', '등불 사제', 34, 33, true), member('belltower-sentry', '종탑 파수병', 36, 33, true)],
     },
   ];
-  // Anchors are in native background pixels, in the same order as the offers.
-  const tavernLayouts = {
-    wide: {
-      width: 768, height: 512,
-      levels: [
-        { rear: 272, points: [[210, 389], [558, 389], [384, 303]] },
-        { rear: 326, points: [[165, 449], [605, 461], [289, 342], [474, 342]] },
-        { rear: 325, points: [[177, 460], [593, 460], [302, 351], [465, 351]] },
-        { rear: 302, points: [[223, 466], [141, 325], [385, 330], [627, 325], [545, 466]] },
-        { rear: 300, points: [[156, 463], [238, 318], [383, 310], [508, 318], [384, 464], [602, 459]] },
-      ],
-    },
-    narrow: {
-      width: 384, height: 420,
-      levels: [
-        { rear: 191, points: [[108, 331], [276, 331], [189, 212]] },
-        { rear: 226, points: [[87, 368], [286, 372], [128, 232], [259, 239]] },
-        { rear: 216, points: [[91, 362], [287, 358], [144, 230], [258, 234]] },
-        { rear: 218, points: [[98, 373], [90, 238], [195, 246], [289, 241], [285, 373]] },
-        { rear: 205, points: [[77, 365], [81, 229], [192, 217], [304, 229], [191, 358], [301, 365]] },
-      ],
-    },
-    landscape: {
-      width: 768, height: 512,
-      levels: [
-        { rear: 272, points: [[210, 389], [558, 389], [384, 303]] },
-        { rear: 287, points: [[165, 449], [605, 461], [296, 315], [469, 319]] },
-        { rear: 274, points: [[177, 460], [593, 460], [299, 322], [469, 324]] },
-        { rear: 264, points: [[223, 466], [137, 301], [385, 301], [631, 301], [545, 466]] },
-        { rear: 253, points: [[156, 463], [218, 298], [383, 281], [548, 298], [384, 464], [602, 459]] },
-      ],
-    },
-  };
-  // Facade contours use the 768×512 yard art coordinates.
+  const demoTables = [3, 4, 4, 5, 6];
   const yardAnchor = { x: 384, y: 162 };
   const yardFootprint = [
     [376,-8],[393,-8],[415,8],[439,15],[439,4],[449,-4],[485,-4],[495,6],[494,32],[499,36],
@@ -339,7 +320,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   const deck = [groups[1], groups[3], groups[0], groups[2], null, null];
   const offers = groups.map(group => ({ group, hired: false }));
   let gold = startingGold;
-  let view = 'tavern';
+  let view = run ? 'deck' : 'tavern';
   let currentFormation = run?.state.formation ?? 'column';
   let pickedSlot = null;
   let deckPointer = null;
@@ -351,10 +332,10 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   const captainControl = window.TavernCaptainControl?.(stage,
     run?.state.captain ?? new URLSearchParams(location.search).get('captain'),
     captain => run ? run.captainReason() : captain.type.endsWith('액티브') ? '원정을 시작하면 사용할 수 있습니다.' : '',
-    openCaptainAction);
+    openCaptainAction,run?.captainInfo);
 
   function openCaptainAction(captain) {
-    if (view !== 'tavern' || !run || captainDialog.open) return;
+    if (!run || captainDialog.open) return;
     const reason = run.captainReason();
     if (reason) {
       status.textContent = reason;
@@ -368,7 +349,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       const forecasts = document.createElement('ul');
       forecasts.className = 'prep-captain-forecasts';
       forecasts.setAttribute('data-run-enemies', '');
-      for (const forecast of run.previewWaves) {
+      for (const forecast of run.captainInfo?[run.wave]:run.previewWaves) {
         const group = document.createElement('li');
         const label = document.createElement('strong');
         label.textContent = `${forecast.round}라운드 · ${forecast.title}`;
@@ -378,7 +359,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
         if (power.textContent) details.append(power);
         for (const enemy of forecast.enemies) {
           const line = document.createElement('li');
-          line.textContent = [enemy.slot < 3 ? '전열' : '후열', enemy.name, enemy.role,
+          line.textContent = [enemy.slot < 3 ? '전열' : '후열', enemy.name+(enemy.count?` ${enemy.count}명`:''), enemy.role,
             enemy.description].filter(Boolean).join(' · ');
           details.append(line);
         }
@@ -386,8 +367,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
         forecasts.append(group);
       }
       choices.append(forecasts);
-      captainDialog.showModal();
-      return;
+      if(!run.captainInfo){captainDialog.showModal();return;}
     }
     for (const choice of run.captainChoices()) {
       const button = document.createElement('button');
@@ -401,7 +381,8 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
         captainDialog.close();
         readRun();
         drawHud();
-        drawTavern();
+        if (view === 'tavern') drawTavern();
+        else drawDeck();
         status.textContent = message;
       });
       choices.append(button);
@@ -448,6 +429,8 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     if (run) {
       preview.querySelector('[data-hud-max]').textContent = `/ ${run.state.round + 2}`;
       drawDeparture();
+      viewSwitch.querySelector('[data-purse-balance]').textContent = gold;
+      upgradeButton.querySelector('[data-building-level]').textContent = hudLevel.textContent;
       upgradeButton.disabled = cost == null || gold < cost;
       upgradeButton.querySelector('[data-run-upgrade-cost]').innerHTML = cost == null ? '최고 레벨' : goldAmount(cost);
       upgradeButton.setAttribute('aria-label', cost == null ? '선술집 최고 레벨' : `선술집 레벨업 · ${cost}골드`);
@@ -470,7 +453,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     if (!detailTrigger) return;
     detailTrigger.setAttribute('aria-expanded', 'false');
     detailTrigger.setAttribute('aria-pressed', 'false');
-    if (view === 'deck') pickedSlot = null;
+    pickedSlot = null;
     detailTrigger.style.removeProperty('translate');
     detailTrigger.removeAttribute('data-pinned-detail-piece');
     preview.removeAttribute('data-detail-docked');
@@ -570,7 +553,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       return;
     }
 
-    if (termTrigger && preview.closest('.prep-landscape')) {
+    if ((run || termTrigger) && preview.closest('.prep-landscape')) {
       preview.removeAttribute('data-detail-docked');
       preview.style.removeProperty('--detail-dock-height');
       detailCluster.style.maxWidth = `${roomWidth}px`;
@@ -609,15 +592,15 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     detailTrigger.removeAttribute('data-pinned-detail-piece');
     const rect = localRect(detailTrigger);
     const board = { left: 0, top: 0, right: stage.clientWidth, bottom: stage.clientHeight };
-    const hud = localRect(controls);
+    const hud = controls.getClientRects().length ? localRect(controls) : { left: 0, right: board.right, bottom: 0 };
     const gap = 6;
     const left = Math.max(board.left + gap, hud.left);
     const right = Math.min(board.right - gap, hud.right);
     const top = Math.max(board.top + gap, hud.bottom + 2);
     const bottom = board.bottom - gap;
-    const footer = [tavernControls, viewSwitch, departure, departureGuide]
+    const footer = [tavernControls, viewSwitch, departure, departureGuide, ...(run ? [upgradeButton, reroll] : [])]
       .filter(item => item?.getClientRects().length).map(localRect);
-    const fixedBottom = Math.min(bottom, ...footer.map(item => item.bottom));
+    const fixedBottom = run ? bottom : Math.min(bottom, ...footer.map(item => item.bottom));
     const selected = [...detailTrigger.querySelectorAll('.prep-furniture-layer, .tavern-name, .prep-sprites, .prep-piece-name')]
       .map(localRect)
       .reduce((bounds, part) => ({
@@ -668,7 +651,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     closeTerm();
     goldenToggle.setAttribute('aria-pressed', String(golden));
     detail.dataset.effectMode = golden ? 'golden' : 'base';
-    effectLabel.textContent = view === 'tavern' ? (golden ? '황금 기물 효과' : '기본 기물 효과') : '기물 효과';
+    effectLabel.textContent = detailOffer ? (golden ? '황금 기물 효과' : '기본 기물 효과') : '기물 효과';
     const copy = cardEffectCopy(detailGroup.id, golden) || (golden ? detailGroup.goldenEffect : detailGroup.effect) || '';
     detailEffect.replaceChildren(...effectParts(copy).map(({ term, text }) => term && cardGlossary[term]
       ? termButton(text, term, cardGlossary[term]) : document.createTextNode(text)));
@@ -686,25 +669,45 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     trigger.setAttribute('aria-expanded', 'true');
     trigger.setAttribute('aria-pressed', 'true');
     detailName.textContent = group.name;
-    detailMeta.textContent = `${group.tier}등급`;
+    detailMeta.textContent = `${group.tier}단계 · ${factionOf(group).name}`;
     detailMembers.replaceChildren();
     for (const [index, unit] of group.units.entries()) {
       if (index) detailMembers.append(' / ');
-      detailMembers.append(unit.name);
+      detailMembers.append(unit.name + (unit.count ? ` ×${unit.count}` : ''));
       if (unit.skillName && unit.skillDescription)
         detailMembers.append(' · ', termButton(unit.skillName, unit.skillName, unit.skillDescription));
       else if (unit.skillName) detailMembers.append(' · ' + unit.skillName);
     }
-    goldenToggle.hidden = view !== 'tavern' && !group.golden;
-    recruitButton.hidden = view !== 'tavern';
-    sellButton.hidden = !run || view !== 'deck';
+    goldenToggle.hidden = !offer && !group.golden;
+    recruitButton.hidden = !offer;
+    sellButton.hidden = !run || Boolean(offer);
     const deckSlot = Number(trigger.dataset.slot) - 1;
-    const abilities = run && view === 'deck' ? run.abilities(deckSlot) : [];
-    abilityButton.hidden = abilities.length === 0;
-    abilitySummary.hidden = !run || view !== 'deck';
+    const abilities = run && !offer ? run.abilities(deckSlot) : [];
+    abilityList.hidden = abilities.length === 0;
+    abilityList.replaceChildren();
+    for (const action of abilities) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'run-button';
+      button.dataset.runAbility = action.kind;
+      button.textContent = (abilities.length === 1 ? '능력 사용' : action.label) + (action.cost ? ` · ${action.cost}` : '');
+      button.setAttribute('aria-label', action.label);
+      button.disabled = !!action.reason;
+      if (action.reason) button.title = action.reason;
+      button.addEventListener('click', () => targeting.begin(deckSlot, action));
+      abilityList.append(button);
+      if (action.active) {
+        const undo = document.createElement('button');
+        undo.type = 'button'; undo.className = 'run-button'; undo.dataset.undoAbility = action.kind;
+        undo.textContent = '예약 해제'; undo.setAttribute('aria-label', `${action.label} 예약 해제`);
+        undo.addEventListener('click', () => {run.cancelAbility(deckSlot, action.kind);refreshAbilityBoard();});
+        abilityList.append(undo);
+      }
+    }
+    abilitySummary.hidden = !run || Boolean(offer);
     abilitySummary.textContent = abilitySummary.hidden ? '' : run.pieceStatus(deckSlot);
     replacement.hidden = true;
-    if (view === 'tavern') {
+    if (offer) {
       const affected = run?.affectedTables(offers.indexOf(offer)) ?? [];
       abilitySummary.hidden = affected.length === 0;
       abilitySummary.textContent = affected.length ?
@@ -735,14 +738,6 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     button.setAttribute('aria-expanded', 'false');
   }
 
-  function anchorsFor(layout, tier) {
-    const { rear, points } = layout.levels[tier];
-    const front = Math.max(...points.map(([, floorY]) => floorY));
-    return points.map(([x, floorY]) => ({
-      x, floorY, scale: .75 + .25 * (floorY - rear) / (front - rear),
-    }));
-  }
-
   function placeLayer(className, source, x, floor, size, depth, mirror, side) {
     const layer = document.createElement('span');
     layer.className = `prep-furniture-layer ${className}`;
@@ -767,7 +762,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     const artWidth = tableSilhouetteWidths[Number(level.value) - 1];
     const tableSize = { ...propSize.table, width: propSize.table.width * tableSilhouetteWidths[0] / artWidth };
     scene.append(shadow, placeLayer('prep-table', `${furniture}/table-${level.value}.png`, 0, 0, tableSize, 3));
-    for (const [index, seat] of (closeSeats ? [seats.backLeft, seats.backRight] : seatLayouts[group?.units.length ?? 2]).entries()) {
+    for (const [index, seat] of (closeSeats ? [seats.backLeft, seats.backRight] : seatLayouts[group?.units.length] ?? seatLayouts[2]).entries()) {
       const unit = group?.units[index];
       const { floor, facing, rear } = seat;
       const x = seat.side ? seat.side * sideSeatOffset : seat.x;
@@ -799,30 +794,49 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     return button;
   }
 
-  function makeDeckPiece(group, label) {
+  function makeDeckPiece(group, number) {
+    const label = group ? `${number}칸, ${factionOf(group).name}, ${group.name}${run?`, ${group.yardMembers.length}명`:''}` : `${number}칸, 빈칸`;
     const button = pieceButton('prep-piece', label);
-    const sprites = document.createElement('span');
-    sprites.setAttribute('aria-hidden', 'true');
-    sprites.className = 'prep-sprites';
-    for (const unit of group?.units ?? []) {
-      const sprite = document.createElement('span');
-      const directory = `${paletteArt}/${unit.isNew ? 'png' : 'yard'}`;
-      sprite.style.backgroundImage = `url("${directory}/${unit.id}.png")`;
-      sprite.style.setProperty('--unit-width', unit.width);
-      sprite.style.setProperty('--unit-height', unit.height);
-      sprite.style.setProperty('--unit-left', Math.floor((64 - unit.width) / 2));
-      sprite.dataset.unit = unit.id;
-      sprites.append(sprite);
-    }
+    const sprites = yardActors && group ? yardActors.squad(group.owner,group.yardMembers) : partySprites(group);
     const name = document.createElement('span');
     name.className = 'prep-piece-name';
-    name.textContent = group?.name ?? '빈칸';
+    if (group) name.append(pieceInsignia(group, number));
+    else name.textContent = run ? '+' : `${number} · 빈칸`;
     button.append(sprites, name);
     return button;
   }
 
+  function partySprites(group) {
+    const sprites = document.createElement('span');
+    sprites.setAttribute('aria-hidden', 'true');
+    sprites.className = 'prep-sprites';
+    if (run && group?.pairImage) {
+      const pair = document.createElement('img');
+      pair.className = 'hire-pair';
+      pair.alt = '';
+      pair.tabIndex = -1;
+      pair.draggable = false;
+      pair.src = group.pairImage;
+      sprites.append(pair);
+      return sprites;
+    }
+    const faces = group?.total ? group.units.flatMap(u=>Array(Math.min(2,u.count)).fill(u)).slice(0,3) : group?.units ?? [];
+    for (const unit of faces) {
+      const sprite = document.createElement('span');
+      const directory = `${paletteArt}/${unit.isNew ? 'png' : 'yard'}`;
+      sprite.style.backgroundImage = `url("${unit.sprite ?? `${directory}/${unit.id}.png`}")`;
+      sprite.style.setProperty('--unit-width', unit.width);
+      sprite.style.setProperty('--unit-height', unit.height);
+      sprite.style.setProperty('--unit-left', Math.floor((64 - unit.width) / 2));
+      sprite.dataset.unit = unit.id;
+      if(unit.sprite)sprite.classList.add('company-portrait');
+      sprites.append(sprite);
+    }
+    return sprites;
+  }
+
   function describeGroup(group) {
-    return `${group.name} · ${group.units.length}명 (${group.units.map(unit => unit.name).join(' · ')})`;
+    return `${group.name} · ${group.total ?? group.units.length}명 (${group.units.map(unit => unit.name).join(' · ')})`;
   }
 
   function yardClip(points) {
@@ -836,7 +850,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   }
 
   function drawYardExterior() {
-    const building = view === 'deck' ? yardBuildings[level.value] : null;
+    const building = yardBuildings[level.value];
     yardExterior.hidden = !building;
     if (!building) return;
 
@@ -847,52 +861,73 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   }
 
   function drawBackdrop() {
-    const inTavern = view === 'tavern';
-    const artDirectory = inTavern ? `${tavernArt}/rendered` : upgradeArt;
-    const file = inTavern ? `tavern-${level.value}.png` : 'yard-1.png';
+    const artDirectory = upgradeArt;
+    const file = 'yard-1.png';
     const source = `${artDirectory}/${file}`;
     stage.style.setProperty('--prep-backdrop', `url("${source}")`);
     stage.style.setProperty('--prep-narrow-backdrop', `url("${artDirectory}/mobile/${file}")`);
     stage.style.setProperty('--prep-expanded-backdrop', `url("${expandedArt}/${file}")`);
     stage.dataset.level = level.value;
+    if(run)stage.style.setProperty('--reference-ground',`url("${new URL(`${upgradeArt}/yard-${level.value}.png`, document.baseURI).href}")`);
     drawYardExterior();
     if (artLink) {
       artLink.href = source;
-      artLink.textContent = inTavern ? `Lv. ${level.value} 선술집 PNG` : '대기장 공통 배경 PNG';
+      artLink.textContent = '선술집 앞마당 PNG';
     }
   }
 
   function drawTavern() {
     const tier = Number(level.value) - 1;
-    const anchorSets = Object.entries(tavernLayouts).map(([format, layout]) => ({
-      format, layout, anchors: anchorsFor(layout, tier),
+    const tableCount = run ? offers.length : demoTables[tier];
+    const available = offers.slice(0, tableCount).filter(offer => offer.group && !offer.hired);
+    const greeting = stage.querySelector('.shop-greeting');
+    greeting.textContent = available.length > 1 ? `마침 ${available[0].group.name}도 왔다네. 어느 팀과 함께하겠나?`
+      : available.length ? `${available[0].group.name} 팀이 자네를 기다린다네.` : '지금은 빈 탁자뿐이군. 다른 용병들을 불러 볼까?';
+    const company = stage.querySelector('.shop-company');
+    if (run) drawDeck();
+    else company.replaceChildren(...deck.map((group, index) => {
+      const button = makeDeckPiece(group, index + 1);
+      button.disabled = !group;
+      button.classList.toggle('empty', !group);
+      button.addEventListener('click', () => {
+        changeView('deck');
+        const target = slots.querySelector(`[data-slot="${index + 1}"]`);
+        target.focus({ preventScroll: true });
+        openDetail(group, target, false);
+      });
+      return button;
     }));
-    const tableCount = anchorSets[0].anchors.length;
     const buttons = offers.slice(0, tableCount).map((offer, i) => {
       const { group, hired, blocked } = offer;
       const button = pieceButton('tavern-table', blocked || (hired ? '고용이 끝난 빈 테이블' : `${group.name}, 고용 ${recruitCost}골드`));
       if (hired) {
         button.disabled = true;
         button.dataset.hired = '';
-      } else setDetailControl(button);
+      } else {
+        setDetailControl(button);
+        button.setAttribute('aria-label', `${group.name}, ${group.tier}단계 ${factionOf(group).name}, 고용 ${recruitCost}골드`);
+      }
       const closeSeats = (group?.units.length ?? 2) === 2 &&
         ((tier === 3 && i === 2) || (tier === 4 && (i === 2 || i === 3)));
       button.dataset.seatLayout = closeSeats ? 'rear' : 'mixed';
       button.style.setProperty('--set-width', closeSeats ? 81 : 2 * (sideSeatOffset + 17));
-      for (const { format, layout, anchors } of anchorSets) {
-        const { x, floorY, scale } = anchors[i];
-        button.style.setProperty(`--${format}-x`, `${100 * x / layout.width}%`);
-        button.style.setProperty(`--${format}-floor`, `${100 * floorY / layout.height}%`);
-        button.style.setProperty(`--${format}-depth`, floorY);
-        button.style.setProperty(`--${format}-scale`, scale);
-      }
-      const art = drawSeatedParty(blocked ? null : group, closeSeats, hired);
+      const art = run && group && !hired
+        ? partySprites(group)
+        : drawSeatedParty(blocked ? null : group, closeSeats, hired);
       art.setAttribute('aria-hidden', 'true');
       const label = document.createElement('span');
       label.className = 'tavern-name';
       label.textContent = blocked || (hired ? '고용 완료' : group.name);
-      if (!hired) label.insertAdjacentHTML('beforeend', goldAmount(recruitCost));
-      button.append(art, label);
+      if (!run || !hired) button.append(art);
+      if (!hired) button.append(pieceInsignia(group));
+      button.append(label);
+      if (!hired) {
+        const terms = document.createElement('span');
+        terms.className = 'shop-terms';
+        terms.textContent = `${group.tier}${run ? '단계' : '등급'}`;
+        terms.insertAdjacentHTML('beforeend', goldAmount(recruitCost));
+        button.append(terms);
+      }
       button.addEventListener('click', event => {
         if (detailTrigger === button) {
           closeDetail();
@@ -904,7 +939,20 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       return button;
     });
     slots.setAttribute('aria-label', '고용 테이블');
-    slots.replaceChildren(...buttons);
+    const heading = document.createElement('strong');
+    heading.className = 'shop-sign';
+    heading.textContent = '선술집';
+    const dismiss = pieceButton('shop-dismiss', '선술집 닫고 내 덱 보기');
+    dismiss.removeAttribute('aria-pressed');
+    dismiss.textContent = '×';
+    dismiss.addEventListener('click', () => {
+      changeView('deck');
+      formation.focus({ preventScroll: true });
+    });
+    const row = document.createElement('div');
+    row.className = 'shop-offers';
+    row.append(...buttons);
+    slots.replaceChildren(heading, dismiss, row);
     status.textContent = `테이블 ${tableCount}개 · 등장 등급 ${level.value === '1' ? '1' : `1–${level.value}`} · 기물 구매 ${recruitCost}골드`;
   }
 
@@ -919,7 +967,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       return;
     }
     const tier = Number(level.value);
-    const tableCount = tavernLayouts.wide.levels[tier - 1].points.length;
+    const tableCount = demoTables[tier - 1];
     const currentOffers = offers.slice(0, tableCount);
     const pool = groups.filter(group => group.tier <= tier);
     for (let i = pool.length - 1; i > 0; i -= 1) {
@@ -995,13 +1043,13 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
 
   function deckButtonAt(x, y) {
     const target = document.elementFromPoint(x, y)?.closest('.prep-piece[data-slot]');
-    return target?.parentElement === slots ? target : null;
+    return target?.parentElement === board ? target : null;
   }
 
   function beginDeckPress(event) {
-    if (view !== 'deck' || deckPointer || !event.isPrimary || event.button !== 0) return;
+    if ((!run && view !== 'deck') || deckPointer || !event.isPrimary || event.button !== 0) return;
     const button = event.target.closest('.prep-piece[data-slot]');
-    if (!button || button.parentElement !== slots) return;
+    if (!button || button.parentElement !== board) return;
     const from = Number(button.dataset.slot) - 1;
     const wasOpen = detailTrigger === button;
     closeDetail();
@@ -1018,7 +1066,9 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       const ghost = document.createElement('div');
       ghost.className = 'prep-piece prep-drag-ghost';
       ghost.setAttribute('aria-hidden', 'true');
-      ghost.append(...Array.from(press.button.children, child => child.cloneNode(true)));
+      const group=deck[press.from];
+      ghost.append(...Array.from(press.button.children, child => child.classList.contains('yard-squad') ?
+        yardActors.squad(group.owner,group.yardMembers,true) : child.cloneNode(true)));
       stage.append(ghost);
       press.ghost = ghost;
       press.button.setAttribute('data-drag-source', '');
@@ -1053,28 +1103,36 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     clearDeckPress();
     if (press.ghost) {
       if (target && target !== press.button) moveDeckPiece(press.from, Number(target.dataset.slot) - 1);
-    } else if (target === press.button && !press.wasOpen) {
+    } else if (target === press.button && !press.wasOpen && event.pointerType !== 'touch') {
       openDetail(deck[press.from], press.button, false);
+    } else if (!press.ghost && target === press.button && !press.wasOpen) {
+      // Open only after the tap's click is dispatched to the piece. Opening on
+      // pointerup can send WebView's synthesized click to Sell under the finger.
+      press.button.dataset.openOnTap = '';
     }
   }
 
   function drawDeck(focusSlot = null, message = '') {
-    const buttons = formationOrder[currentFormation].map(number => {
+    const buttons = (run ? [1,2,3,4,5,6] : formationOrder[currentFormation]).map(number => {
       const slot = number - 1;
       const group = deck[slot];
-      const button = makeDeckPiece(group, `${number}칸, ${group?.name ?? '빈칸'}`);
+      const button = makeDeckPiece(group, number);
       button.dataset.slot = number;
       if (group) setDetailControl(button);
       else button.classList.add('empty');
       button.addEventListener('click', event => {
-        if (event.detail === 0) activateDeckSlot(slot, button);
+        if(button.hasAttribute('data-open-on-tap')){
+          button.removeAttribute('data-open-on-tap');
+          openDetail(deck[slot],button,false);
+        } else if (event.detail === 0) activateDeckSlot(slot, button);
       });
       return button;
     });
     stage.dataset.formation = currentFormation;
-    slots.setAttribute('aria-label', '대기장 기물 슬롯');
-    slots.replaceChildren(...buttons);
-    const focused = focusSlot === null ? null : slots.querySelector(`[data-slot="${focusSlot + 1}"]`);
+    board.setAttribute('aria-label', '대기장 기물 슬롯');
+    board.replaceChildren(...buttons);
+    yardActors?.wake();
+    const focused = focusSlot === null ? null : board.querySelector(`[data-slot="${focusSlot + 1}"]`);
     focused?.focus({ preventScroll: true });
     status.textContent = message || deckHelp;
   }
@@ -1086,13 +1144,19 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     stage.dataset.view = view;
     drawDeparture();
     captainControl?.cancel();
-    tavernControls.hidden = view !== 'tavern';
+    tavernControls.hidden = !run && view !== 'tavern';
+    if (run) {
+      reroll.hidden = view !== 'tavern';
+      slots.hidden = view !== 'tavern';
+      viewSwitch.setAttribute('aria-expanded', String(!slots.hidden));
+    }
     pickedSlot = null;
     for (const button of views) button.setAttribute('aria-pressed', String(button.dataset.prepView === view));
     if (viewSwitch) {
       const nextView = view === 'tavern' ? 'deck' : 'tavern';
       viewSwitch.dataset.destination = nextView;
-      viewSwitch.setAttribute('aria-label', nextView === 'deck' ? '대기장으로 이동' : '선술집으로 이동');
+      viewSwitch.setAttribute('aria-label', run ? (nextView === 'deck' ? '상점 닫기' : '상점 열기') :
+        (nextView === 'deck' ? '대기장으로 이동' : '선술집으로 이동'));
       for (const icon of destinationIcons) icon.hidden = icon.dataset.prepDestinationIcon !== nextView;
     }
     for (const setting of settings) setting.hidden = setting.dataset.prepSetting !== view;
@@ -1129,15 +1193,15 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     drawFormationToggle();
     drawDeck(null, `${formationNames[currentFormation]}로 변경했습니다.`);
   });
-  slots.addEventListener('pointerdown', beginDeckPress);
-  slots.addEventListener('pointermove', updateDeckPress);
-  slots.addEventListener('pointerup', endDeckPress);
+  board.addEventListener('pointerdown', beginDeckPress);
+  board.addEventListener('pointermove', updateDeckPress);
+  board.addEventListener('pointerup', endDeckPress);
   for (const type of ['pointercancel', 'lostpointercapture']) {
-    slots.addEventListener(type, event => {
+    board.addEventListener(type, event => {
       if (deckPointer?.id === event.pointerId) clearDeckPress();
     });
   }
-  slots.addEventListener('contextmenu', event => {
+  board.addEventListener('contextmenu', event => {
     if (deckPointer) event.preventDefault();
   });
   window.addEventListener('blur', clearDeckPress);
@@ -1150,6 +1214,38 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
   recruitButton.addEventListener('click', hireSelectedPiece);
   if (run) {
     stage.setAttribute('data-mobile-run', '');
+    stage.append(upgradeButton, reroll);
+    board.id = 'prep-deck-slots';
+    formation.setAttribute('aria-controls', board.id);
+    viewSwitch.insertAdjacentHTML('beforeend', `<span class="yard-tag">${goldIcon}<b data-purse-balance></b></span>`);
+    upgradeButton.insertAdjacentHTML('beforeend', '<span class="yard-tag upgrade-price"><b data-building-level></b></span>');
+    upgradeButton.lastElementChild.append(upgradeButton.querySelector('[data-run-upgrade-cost]'));
+    const yard = document.createElement('div');
+    yard.className = 'reference-yard';
+    stage.prepend(yard);
+    yard.append(controls,board,slots,tavernControls,upgradeButton,reroll,viewSwitch,departure);
+    // The reference has a 960×444 drawing surface. Keep its proportions at every
+    // landscape resolution and anchor the HUD against the available safe area.
+    function sizeReference() {
+      const s=Math.min(stage.clientWidth/960,stage.clientHeight/444);
+      if (!s) return;
+      yard.style.width=`${stage.clientWidth/s}px`;
+      yard.style.height=`${stage.clientHeight/s}px`;
+      yard.style.transform=`scale(${s})`;
+    }
+    new ResizeObserver(sizeReference).observe(stage);
+    sizeReference();
+    const intelDialog=stage.querySelector('.prep-enemy-dialog');
+    intelDialog.append(formation);
+    formation.classList.add('run-button');
+    formation.querySelectorAll('[data-formation-icon]').forEach(icon=>icon.remove());
+    deploy.textContent='출전';
+    const captainButton = stage.querySelector('.prep-captain-ability');
+    captainButton.querySelector('[data-captain-kind]').textContent = captainButton.getAttribute('aria-label').split(' · ')[0];
+    if (stage.dataset.captain === 'rowan') captainButton.querySelector('img').src = 'media/ui-reference/shop-popup-v3/art/captain.png';
+    const intel = stage.querySelector('.prep-hud-clock');
+    intel.querySelector('dt').textContent = `침식도 ${run.state.erosion}%`;
+    intel.style.setProperty('--erosion', Math.min(100, Math.max(0, run.state.erosion)) + '%');
     level.hidden = true;
     upgradeButton.hidden = false;
     upgradeButton.addEventListener('click', () => {
@@ -1190,79 +1286,19 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
       closeDetail();
       readRun();
       drawHud();
-      drawDeck();
+      if (view === 'tavern') drawTavern();
+      else drawDeck();
     });
-    const actionList = abilityDialog.querySelector('[data-run-ability-list]');
-    let abilitySlot = -1;
-    function refreshAbilityDialog() {
-      abilityDialog.querySelector('h2').textContent = `${deck[abilitySlot].name} · 능력 사용`;
-      actionList.replaceChildren();
-      for (const action of run.abilities(abilitySlot)) {
-        const form = document.createElement('form');
-        const title = document.createElement('strong');
-        title.textContent = action.cost ? `${action.label} · ${action.cost}` : action.label;
-        form.append(title);
-        const pick = (label, choices, current, optional = false) => {
-          const menu = document.createElement('select');
-          menu.setAttribute('aria-label', label);
-          if (optional) menu.append(new Option('두 번째 대상 없음', ''));
-          for (const option of choices) menu.append(new Option(option.label, option.value));
-          if (current != null && choices.some(option => option.value === current)) menu.value = current;
-          form.append(menu);
-          return menu;
-        };
-        const targetLabel = action.kind === 'target' || action.kind === 'hunt' ? action.label : `${action.label} 대상`;
-        const target = action.choices && pick(targetLabel, action.choices, action.selected);
-        const second = action.second && pick('두 번째 대상', action.second, action.selectedSecond, true);
-        const confirm = document.createElement('button');
-        confirm.className = 'run-button';
-        confirm.textContent = action.active ? '변경' : '적용';
-        confirm.setAttribute('aria-label', `${action.label} ${confirm.textContent}`);
-        confirm.disabled = Boolean(action.reason);
-        form.append(confirm);
-        if (action.active) {
-          const cancel = document.createElement('button');
-          cancel.type = 'button';
-          cancel.className = 'run-button';
-          cancel.textContent = '취소';
-          cancel.setAttribute('aria-label', `${action.label} 취소`);
-          cancel.addEventListener('click', () => {
-            run.cancelAbility(abilitySlot, action.kind);
-            refreshSelectedAbility();
-          });
-          form.append(cancel);
-        }
-        const message = document.createElement('small');
-        message.role = 'status';
-        message.textContent = action.reason || (action.active ? '출정 시 적용' : '');
-        form.append(message);
-        form.addEventListener('submit', event => {
-          event.preventDefault();
-          if (!run.applyAbility(abilitySlot, action.kind, target?.value, second?.value)) return;
-          refreshSelectedAbility();
-        });
-        actionList.append(form);
-      }
-    }
-    function refreshSelectedAbility() {
-      closeDetail();
-      readRun();
-      drawHud();
-      drawDeck(abilitySlot);
-      refreshAbilityDialog();
-    }
-    abilityButton.addEventListener('click', () => {
-      abilitySlot = Number(detailTrigger?.dataset.slot) - 1;
-      if (!deck[abilitySlot]) return;
-      refreshAbilityDialog();
-      abilityDialog.showModal();
-    });
+    targeting = mountAbilityTargeting({stage,board,run,closeDetail,refresh:refreshAbilityBoard});
     clock.hidden = true;
-    hudTime.closest('.prep-hud-clock').querySelector('dt').textContent = '라운드 · 침식도';
     hudTime.removeAttribute('role');
     hudTime.removeAttribute('aria-label');
-    hudTime.textContent = `${run.state.round}/15 · ${run.state.erosion}%`;
+    hudTime.textContent = `라운드 ${run.state.round} / 15`;
     readRun();
+  }
+  function refreshAbilityBoard() {
+    closeDetail();readRun();drawHud();
+    if(view==='tavern')drawTavern();else drawDeck();
   }
   detail.querySelector('.prep-detail-close').addEventListener('click', () => closeDetail(true));
   termPanel.querySelector('.prep-term-close').addEventListener('click', () => {
@@ -1270,7 +1306,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     positionDetail();
   });
   document.addEventListener('pointerdown', event => {
-    if (detailTrigger && !detailCluster.contains(event.target) && !abilityDialog.contains(event.target) &&
+    if (detailTrigger && !detailCluster.contains(event.target) &&
         !event.target.closest('.tavern-table, .prep-piece')) closeDetail();
   });
   document.addEventListener('keydown', event => {
@@ -1285,6 +1321,9 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     } else if (event.key === 'Escape' && detailTrigger && !stage.querySelector('dialog[open]')) {
       event.preventDefault();
       closeDetail(true);
+    } else if (event.key === 'Escape' && run && view === 'tavern' && !stage.querySelector('dialog[open]')) {
+      changeView('deck');
+      viewSwitch.focus({ preventScroll: true });
     }
   });
   const detailLayout = new ResizeObserver(positionDetail);
@@ -1297,6 +1336,7 @@ import { cardEffectCopy, cardGlossary, effectParts } from './card-effect-copy.js
     tickClock();
   });
   yardPatch.style.maskImage = yardPatchMask();
+  mountEnemyPreview(stage, run?.wave ?? exampleWave, () => closeDetail());
   drawHud();
   drawFormationToggle();
   if (!run) drawClock(demoRoundSeconds);

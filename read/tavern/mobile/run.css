@@ -1,0 +1,157 @@
+[hidden] { display: none !important; }
+.prep-departure {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  left: 50%;
+  bottom: calc(var(--safe-bottom) + 8px);
+  transform: translateX(-50%);
+}
+.prep-stage[data-mobile-run] { --prep-departure-clearance: 67px; }
+.prep-stage[data-deploy-guide] { --prep-departure-clearance: 125px; }
+.prep-deploy-guide {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px 10px 6px;
+  color: #ffedc5;
+  background: #30251e;
+  border: 1px solid #c9a160;
+  box-shadow: 0 2px #211713;
+  text-align: center;
+  font: .75rem/1.35 var(--game-ui-font);
+  white-space: nowrap;
+}
+.prep-deploy-guide::after {
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 6px;
+  height: 6px;
+  transform: translateX(-50%) rotate(45deg);
+  background: #30251e;
+  border: solid #c9a160;
+  border-width: 0 1px 1px 0;
+  content: '';
+}
+.prep-deploy-guide strong, .prep-deploy-guide span { display: block; }
+.prep-deploy-guide strong { color: #ffe0a0; }
+.prep-stage:has([data-drag-source]) .prep-deploy-guide { visibility: hidden; }
+@media (min-width: 600px) {
+  .prep-stage[data-deploy-guide] { --prep-departure-clearance: 67px; }
+  .prep-deploy-guide {
+    position: absolute;
+    right: calc(100% + 12px);
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  .prep-deploy-guide::after {
+    left: auto;
+    right: -4px;
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+}
+.run-button {
+  display: inline-grid;
+  place-items: center;
+  padding: 6px 12px;
+  min-height: 44px;
+  font: inherit;
+  font-size: .82rem;
+  color: #ffedc5;
+  background: #30251e;
+  border: 1px solid #ac854c;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.run-button:disabled { opacity: .64; cursor: default; }
+.run-button:focus-visible { outline: 2px solid #ffe19a; outline-offset: 2px; }
+[data-run-deploy], #result-next { color: #392019; background: #efbf73; }
+.prep-departure [data-run-deploy] {
+  min-width: clamp(134px, 20cqw, 188px);
+  min-height: 52px;
+  border-color: #ffdb95;
+  box-shadow: inset 0 0 0 2px #c69457, 0 3px #412916;
+  font: 1.04rem/1.15 var(--game-ui-font);
+}
+.prep-departure [data-run-deploy]:enabled:hover { background: #ffcf83; }
+.prep-departure [data-run-deploy]:disabled {
+  opacity: 1;
+  color: #e5c59a;
+  background: #564031;
+  border-color: #9e7851;
+  box-shadow: inset 0 0 0 2px #493226;
+}
+.prep-stage[data-deploy-guide] [data-run-deploy]:enabled {
+  outline: 2px solid #fff1b4;
+  outline-offset: 2px;
+}
+.prep-stage[data-deploy-guide] [data-run-deploy]:focus-visible { outline-color: #9ee4b4; }
+.prep-captain-forecasts { margin: 0; padding-left: 1.2em; }
+.prep-captain-forecasts > li + li { margin-top: 8px; }
+.prep-stage[data-mobile-run] .prep-level-badge::after { content: none; }
+.prep-stage[data-mobile-run] .prep-level-badge dd { padding-right: 0; }
+.prep-stage[data-mobile-run] .prep-upgrade-control { padding: 0; border: 0; }
+.prep-stage[data-mobile-run] .prep-upgrade-control > :is(dt, dd) { display: none; }
+.prep-upgrade-button {
+  min-width: 66px;
+  padding: 4px 8px;
+  align-content: center;
+  gap: 1px;
+  color: #392219;
+  background: #efbf73;
+  border-color: #ffe3a6;
+  font-size: .72rem;
+  line-height: 1.1;
+  pointer-events: auto;
+}
+.prep-upgrade-button:disabled {
+  opacity: 1;
+  color: #f0d2a1;
+  background: #473524;
+  border-color: #ac854c;
+}
+.prep-ability-summary { margin: 5px 0 0; font-size: .74rem; color: #e9c995; }
+.prep-captain-dialog h2 { margin: 0 0 10px; font-size: 1.05rem; }
+.prep-captain-dialog [data-captain-choices] { display: grid; gap: 6px; margin: 0 0 12px; }
+.prep-run-preview, .run-report {
+  width: min(420px, 85vw);
+  max-height: 90dvh;
+  padding: 16px;
+  overflow: auto;
+  color: #fff0d8;
+  border: 2px solid #a27a52;
+  border-radius: 10px;
+  background: #282029;
+  box-sizing: border-box;
+  font-family: var(--game-ui-font);
+}
+.prep-run-preview::backdrop { background: #19141bb8; }
+html[data-mak-report=document] body:has(.run-result) { margin: 0; padding: 0; background: #18151a; }
+html[data-mak-report=document] body > .run-result {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  background: linear-gradient(#201b2996, #1b1827c9),
+    url('../media/lobby/frontier-tavern-landscape.png') center / cover;
+}
+.run-report { text-align: center; }
+.run-report h1 { margin: .2em 0 .55em; }
+.run-report p { margin: 0; color: #e9b974; }
+.run-report .result-pack { margin: 0 0 12px; }
+.run-report-actions { display: flex; justify-content: center; gap: 14px; margin: 0; }
+.result-erosion { width: min(15rem,90%); margin: 0 auto 1.15rem; }
+.result-erosion label { display:flex; justify-content:space-between; margin-bottom:4px; color:#fff0d8; }
+.result-erosion progress {
+  appearance:none; display:block; width:100%; height:14px; border:2px solid #ae8958;
+  border-radius:2px; overflow:hidden; background:#322e39; color:#a07ca4;
+}
+.result-erosion progress::-webkit-progress-bar { background:#322e39; }
+.result-erosion progress::-webkit-progress-value { background:linear-gradient(#c5a0ba 30%,#936d95 30%); }
+.result-erosion progress::-moz-progress-bar { background:#936d95; }

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>공허군 도감 · Tavern Heros</title>
+<style>
+@font-face{font-family:Cavern;src:url(../../fonts/v1/text/cavern-text.woff2)}
+@font-face{font-family:Pretendard;src:url(../../fonts/pretendard-v1.3.9/PretendardVariable.woff2);font-weight:100 900}
+*{box-sizing:border-box}body{margin:0;background:#221e26;color:#f0ded2;font:16px/1.55 Pretendard,sans-serif}
+main{max-width:1100px;margin:auto;padding:50px clamp(16px,4vw,48px) 80px}h1,h2,h3,p{margin:0}h1,h2{font-family:Cavern,Pretendard,sans-serif}h1{font-size:clamp(32px,6vw,58px)}h2{font-size:clamp(24px,3vw,36px)}
+header small{font-weight:750;letter-spacing:.12em;color:#9ac9bc}header{margin-bottom:26px}
+.boss{display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,1.5fr);align-items:center;background:#3a303a;border-block:2px solid #786271;margin-bottom:44px}
+.boss-copy{padding:22px 26px 22px 0}.boss-copy p{margin:12px 0}.boss img{width:min(100%,290px);justify-self:center;image-rendering:pixelated}
+a{color:#b1dacf;text-underline-offset:4px}nav{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 22px}button{font:inherit;font-weight:700;border:1px solid #77646c;color:#f0ded2;background:#342b33;padding:6px 16px;cursor:pointer}button[aria-pressed=true]{color:#211d23;background:#abccc0;border-color:#abccc0}a:focus-visible,button:focus-visible{outline:3px solid #ffda9a;outline-offset:3px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(177px,1fr));gap:14px}.unit{display:flex;flex-direction:column;overflow:hidden;background:#372e37;border:1px solid #655461;color:inherit;text-decoration:none}
+.figure{height:158px;display:grid;place-items:end center;background:#63555d;border-bottom:1px solid #796774}.figure img{height:94%;width:100%;object-fit:contain;image-rendering:pixelated}
+.unit h3{font-size:18px;margin:10px 12px 0}.unit p{margin:2px 12px 12px;color:#e4cec1;font-size:14px}.unit:hover h3{text-decoration:underline}
+@media(max-width:550px){main{padding-top:24px}.boss{grid-template-columns:1fr;margin-bottom:28px}.boss img{width:200px}.boss-copy{padding:0 16px 18px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.figure{height:120px}button{padding:5px 12px}.unit h3{font-size:16px}}
+</style>
+<main>
+<header><small>TAVERN HEROS</small><h1>공허군 도감</h1></header>
+<section class="boss" aria-labelledby="boss-name">
+<img src="devourer-transformation.gif" alt="삼키는 자가 웅크렸다가 네 다리를 펴고 두 겹의 턱을 여는 다섯 자세">
+<div class="boss-copy"><h2 id="boss-name">삼키는 자</h2><p>첫 격파에 네 발이 땅을 짚고, 봉인된 입이 세로로 열립니다. 두 번째 형태는 바깥턱으로 붙잡은 상대를 안턱으로 뭅니다.</p><a href="bases/the-devourer.png">봉인체 원화</a> · <a href="bases/the-devourer-awakened.png">거대화 원화</a> · <a href="devourer-transformation.gif">변신 GIF</a> · <a href="motions/the-devourer-awakened/preview/death.gif">최종 격파 GIF</a></div>
+</section>
+<section><h2>유닛별 모션</h2><nav aria-label="도감에 표시할 동작"></nav><div class="gallery"></div></section>
+</main>
+<script src="roster.js"></script>
+<script>
+const labels={base:'원화',idle:'대기',walk:'이동',attack:'공격',skill:'스킬',hit:'피격'};
+const nav=document.querySelector('nav'), gallery=document.querySelector('.gallery');
+function show(state){
+  for(const b of nav.children)b.setAttribute('aria-pressed',String(b.dataset.state===state));
+  gallery.replaceChildren();
+  for(const u of roster){
+    const card=document.createElement('a'); card.className='unit';
+    const figure=document.createElement('div');figure.className='figure';
+    const art=document.createElement('img');art.loading='lazy';
+    const dir='motions/'+u.id+'/';
+    art.src=u.states.includes(state)?dir+'preview/'+state+'.gif':'bases/'+u.id+'.png';
+    art.alt=u.name+' '+(u.states.includes(state)?labels[state]:'원화');
+    card.href=u.states.includes(state)?dir+'sprite-sheet-alpha.png':art.src;
+    const name=document.createElement('h3');name.textContent=u.tier+'등급 · '+u.name;
+    const caption=document.createElement('p');caption.textContent=state==='base'?u.actions.idle:u.states.includes(state)?u.actions[state]:'원화 보기';
+    figure.append(art);card.append(figure,name,caption);gallery.append(card);
+  }
+}
+for(const [state,label] of Object.entries(labels)){
+  const b=document.createElement('button');b.dataset.state=state;b.textContent=label;b.onclick=()=>show(state);nav.append(b);
+}
+show('idle');
+</script>
+</html>

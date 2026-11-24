@@ -1,0 +1,64 @@
+{
+  "controls": {
+    "provider": "openai",
+    "endpoint": "/images/edits",
+    "model": "gpt-image-2.5-flare",
+    "usage": {
+      "input_tokens": 355,
+      "input_tokens_details": {
+        "image_tokens": 96,
+        "text_tokens": 259
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 794
+    },
+    "sourceSha256": "a0d9d545e20392573b45a580ef1cb985ab12907b353a7b9122554f2de693234f"
+  },
+  "shop-frame": {
+    "provider": "openai",
+    "endpoint": "/images/edits",
+    "model": "gpt-image-2.5-flare",
+    "usage": {
+      "input_tokens": 368,
+      "input_tokens_details": {
+        "image_tokens": 96,
+        "text_tokens": 272
+      },
+      "output_tokens": 343,
+      "output_tokens_details": {
+        "image_tokens": 343,
+        "text_tokens": 0
+      },
+      "total_tokens": 711
+    },
+    "sourceSha256": "9bfe608b679b6b911947ed40dd5a2cd000e141955865187260d401854e089dba"
+  },
+  "counter-inlays": {
+    "provider": "openai",
+    "model": "gpt-image-2.5-flare",
+    "usage": {
+      "input_tokens": 945,
+      "input_tokens_details": {
+        "image_tokens": 702,
+        "text_tokens": 243
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 1384
+    },
+    "source": "counter-inlays-source.png",
+    "reference": "image-145920-f4049987.png",
+    "prompt": "Create a transparent UI texture sheet of EXACTLY TWO BLANK flat game assets based on the dark warm wood and muted brass pixel-art tavern counter in the reference. Do not redraw the screenshot. One isolated asset per row, fully separated on transparent background, align at center. TOP half: one landscape-shaped blank mercenary hire card (3:2 width:height). A warm russet-walnut inset that sits naturally inside the dark mahogany tavern shop, thin caramel bevel, tiny understated brass registration corners, deliberate broad pixel planes, center QUIET empty with plenty of room for a portrait and dynamic writing. BOTTOM half: one simple blank horizontal dark walnut nameplate, width at least 5 times its height, with subtle warm edge highlight and square-cut pixel ends, for headings and labels. Clear outlines in two or three value steps, no elaborate buckles, nails, dangling tags, curls, raised crest, icons, units, decorative writing, numbers, gradients, letters, examples or scene. Succinct chunky game sprite scale, sharp hard pixel clusters. Only these two completely empty assets, true transparent negative space.",
+    "assets": [
+      "art/hire-inlay.png",
+      "art/wood-label.png"
+    ]
+  }
+}

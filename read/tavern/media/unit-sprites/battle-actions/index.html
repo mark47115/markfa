@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" data-mak-report="document"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>병종 모션과 스킬 이펙트 · Tavern Heros</title>
+<link rel="stylesheet" href="../../../../_shared/report.css">
+<style>
+@font-face{font-family:Body;src:url('../../fonts/pretendard-v1.3.9/PretendardVariable.woff2')}*{box-sizing:border-box}body{margin:0;background:Canvas;color:CanvasText;font:16px/1.5 Body,system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:28px clamp(14px,4vw,44px) 45px}h1{font-size:clamp(26px,4vw,38px);margin:12px 0}h2{margin:16px 0 1px}p{margin:4px 0 10px}a{color:inherit}label{display:flex;flex-flow:column;gap:3px;font-size:14px}.controls,.actions{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin:12px 0}.controls label{flex:1 0 130px}select,button{font:inherit;color:inherit;background:Canvas;border:1px solid #968572;border-radius:5px;padding:6px 9px;min-height:36px}button{cursor:pointer}.actions button[aria-pressed=true]{background:#704834;color:#fff3d9}.arena{display:block;width:100%;image-rendering:pixelated;background:#494338;border:1px solid #786853}#options{align-items:center}.check{flex-flow:row;align-items:center;gap:5px}input{accent-color:#955d38}small{display:block;margin-top:5px}summary{cursor:pointer}.links{margin-top:18px}[hidden]{display:none!important}
+</style><main><a href="../../../index.html#art">← 게임 기획서</a>
+<h1>병종 모션과 스킬 이펙트</h1><p>병종과 기술을 고르면 시전 동작, 효과가 향하는 대상, 적중 순서를 한 장면에서 볼 수 있다.</p>
+<div class="controls"><label>소속<select id="group"></select></label><label>병종<select id="unit"></select></label><label id="phase-label" hidden>보스 형태<select id="phase"><option value="0">1페이즈</option><option value="1">2페이즈</option></select></label></div>
+<canvas class="arena" id="arena" width="400" height="180" aria-label="선택한 병종과 기술을 반복 재생하는 전장"></canvas>
+<div id="actions" class="actions" aria-label="재생할 모션"></div>
+<div class="actions" id="options"><label id="branch-label" hidden>발동 상황<select id="branch"></select></label><button id="play">일시정지</button><label class="check"><input id="slow" type="checkbox">느리게</label><label class="check"><input id="fx" type="checkbox" checked>이펙트</label></div>
+<h2 id="title"></h2><p id="rule"></p><p id="variant"></p><small id="legend"></small>
+<div class="links"><a id="sheet" download>모션 시트 PNG</a> · <a id="fxsheet" download>선택한 기술의 이펙트 시트 PNG</a> · <a href="attack-forms.json" download>기본 공격 형태</a> · <a href="manifest.json" download>프레임·발동 데이터</a> · <a href="skill-preview.gif">스킬 3종 비교 GIF</a> · <a href="boss-transitions.gif">최종보스 4종 변신·격파 GIF</a></div>
+</main><script src="library.js"></script><script type="module" src="player.js"></script><script src="../../../../_shared/report.js"></script></html>

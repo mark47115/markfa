@@ -1,0 +1,1320 @@
+{
+  "version": 1,
+  "cell": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    57
+  ],
+  "facing": "left",
+  "profiles": {
+    "3": {
+      "idle": 3,
+      "move": 4,
+      "attack": 4,
+      "death": 5
+    },
+    "6": {
+      "idle": 4,
+      "move": 6,
+      "attack": 5,
+      "death": 6
+    },
+    "9": {
+      "idle": 4,
+      "move": 6,
+      "attack": 6,
+      "death": 7
+    },
+    "12": {
+      "idle": 5,
+      "move": 8,
+      "attack": 7,
+      "death": 8
+    }
+  },
+  "states": {
+    "idle": {
+      "name": "대기",
+      "fps": 8,
+      "loop": true
+    },
+    "move": {
+      "name": "이동",
+      "fps": 12,
+      "loop": true
+    },
+    "attack": {
+      "name": "기본 공격",
+      "fps": 12,
+      "loop": false
+    },
+    "skill": {
+      "name": "스킬",
+      "fps": 12,
+      "loop": false
+    },
+    "death": {
+      "name": "사망",
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "skillModes": {
+    "base": "기본 모션 사용",
+    "reuse": "기존 클립 재사용",
+    "extend": "기존 클립에 자세 추가",
+    "react": "반응 자세 추가",
+    "new": "전용 클립",
+    "death": "사망 클립과 효과 공유"
+  },
+  "fx": {
+    "mist": {
+      "name": "안개 접촉",
+      "frames": "4장 · 12fps",
+      "anchor": "접촉점",
+      "lifecycle": "확정 접촉 직후 작은 청회색 갈래가 바깥으로 짧게 흩어집니다."
+    },
+    "stardust": {
+      "name": "별가루 가루튐",
+      "frames": "4장 · 12fps",
+      "anchor": "손·핵 또는 접촉점",
+      "lifecycle": "확정 발동 위치에서 황동색 2–3픽셀이 튀고 한 번 재생 후 사라집니다."
+    },
+    "guard": {
+      "name": "방어 파편",
+      "frames": "3장 · 12fps",
+      "anchor": "방패·갑각",
+      "lifecycle": "피해 경감이 실제로 발동했을 때 방패·갑각 등 맞닿은 방어 부위에 짧은 파편을 붙입니다."
+    },
+    "link": {
+      "name": "전달선",
+      "frames": "시작·유지·종료 3장",
+      "anchor": "시전자 장비 → 지정 수혜자의 몸통",
+      "lifecycle": "효과 확정 시 한 번 짧게 연결합니다. 수혜자 변경 시 이전 선을 닫습니다."
+    },
+    "mend": {
+      "name": "회복 조각",
+      "frames": "4장 · 12fps",
+      "anchor": "수혜자 몸통",
+      "lifecycle": "실제 회복량이 확정될 때 민트색 작은 조각이 올라갑니다."
+    },
+    "shield": {
+      "name": "보호막 테두리",
+      "frames": "시작·유지·종료 3장",
+      "anchor": "보호막 대상 몸통",
+      "lifecycle": "적용부터 해제까지 붙습니다. 갱신은 기존 테두리의 수명만 갱신합니다."
+    },
+    "sprint": {
+      "name": "가속 잔향",
+      "frames": "4장 · 12fps",
+      "anchor": "수혜자 발 또는 꼬리",
+      "lifecycle": "가속 활성 동안 발자국마다 작은 잔향을 남깁니다. 종료 시 새 잔향 생성이 끝납니다."
+    },
+    "frost": {
+      "name": "서리 파편",
+      "frames": "4장 · 12fps",
+      "anchor": "접촉점 또는 제어 대상 발",
+      "lifecycle": "서리 타격에 파편이 튀고, 둔화·속박이 적용되는 동안 대상 발에 작은 서리 표식을 붙입니다."
+    },
+    "slash": {
+      "name": "찌르기·긁기 호",
+      "frames": "4장 · 12fps",
+      "anchor": "무기·발톱 끝",
+      "lifecycle": "유효 공격 때 휘두르는 방향으로 얇은 한 줄을 한 번 긋습니다."
+    },
+    "shot": {
+      "name": "투사체와 충돌",
+      "frames": "투사체 2장 · 충돌 4장",
+      "anchor": "발사 소켓 → 실제 접촉점",
+      "lifecycle": "발사체를 이동시키고 적중 또는 소멸 시 효과를 닫습니다. 대상이 없거나 빗나간 탄은 접촉 위치에 피해 이펙트를 남기지 않습니다."
+    },
+    "aim": {
+      "name": "조준선",
+      "frames": "시작·유지·종료 3장",
+      "anchor": "공격자 소켓 → 조준 궤도",
+      "lifecycle": "예고 시 좁고 낮은 밝기의 선을 표시합니다. 발사·취소 시 닫습니다."
+    },
+    "area": {
+      "name": "바닥 예고와 충격",
+      "frames": "예고 시작·유지 2장 · 충격 5장",
+      "anchor": "월드의 확정 범위",
+      "lifecycle": "게임 범위와 같은 모양을 사용합니다. 실제 발동 시에만 충격으로 전환합니다."
+    },
+    "charge": {
+      "name": "돌진 잔상",
+      "frames": "4장 · 12fps",
+      "anchor": "등·날개 뒤의 월드 궤적",
+      "lifecycle": "돌진이 실제 시작한 뒤에만 남깁니다. 종료 시 생성 중단 후 기존 잔상이 감쇠합니다."
+    },
+    "venom": {
+      "name": "독·포자",
+      "frames": "분사 4장 · 상태 2장",
+      "anchor": "입·포자갓, 적중 대상",
+      "lifecycle": "분사는 순간 재생이며 독 표식은 독 상태가 이어지는 동안 목표에 붙습니다. 회복 포자는 분사 레이어만 공유합니다."
+    },
+    "fragments": {
+      "name": "낙하 파편",
+      "frames": "5장 · 12fps",
+      "anchor": "부서진 갑주·화물의 월드 위치",
+      "lifecycle": "사망 이후 소량을 한 번 남깁니다. 조각의 크기와 색은 재질에 맞춥니다."
+    },
+    "fade": {
+      "name": "그림자 해체",
+      "frames": "5장 · 12fps",
+      "anchor": "사망 위치",
+      "lifecycle": "몸 본체가 내려앉은 뒤 어두운 덩어리 두세 개가 사라집니다. 발광 범위는 체구 안에 둡니다."
+    }
+  },
+  "units": {
+    "SH-E01": {
+      "poses": {
+        "idle": "장부를 받치고 두건이 호흡으로 흔들림",
+        "move": "장부를 닫아 몸 쪽에 붙이고 작게 걷기",
+        "attack": "빈손을 접었다가 짧게 후려침",
+        "skill": "첫 느린 타격은 기본 공격 클립에서 준비 자세를 길게 잡기",
+        "death": "한쪽 무릎, 장부가 떨어짐, 옷자락과 본체 해체"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "mist",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E02": {
+      "poses": {
+        "idle": "더듬이 좌우 미세 탐색과 꼬리 흔들림",
+        "move": "낮은 여섯 다리 교대 질주와 첫 접촉 후 빠르기 축소",
+        "attack": "앞다리 들고 턱을 한 번 닫기",
+        "skill": "첫 접촉 뒤 같은 달리기 클립의 재생률을 낮추기",
+        "death": "앞다리 접힘, 배 낮아짐, 안개 꼬리 분해"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "mist",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E03": {
+      "poses": {
+        "idle": "황동 통이 등에 붙은 채 작게 출렁임",
+        "move": "통을 손으로 잡고 짧은 보폭",
+        "attack": "빈손 등으로 한 번 누르며 상체 내밂",
+        "skill": "사망 이벤트에서 통의 별재를 수혜자 발목으로 전송",
+        "death": "몸을 한쪽으로 기울이고 통이 먼저 바닥에 닿은 뒤 사라짐"
+      },
+      "skill": {
+        "mode": "death",
+        "frames": 0
+      },
+      "fx": [
+        "stardust",
+        "link",
+        "sprint",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E04": {
+      "poses": {
+        "idle": "반가면과 안개 실이 좁게 흔들림",
+        "move": "실타래를 감싼 채 옷자락을 끌며 미끄러지듯 전진",
+        "attack": "손바닥으로 실 한 줄을 짧게 튕김",
+        "skill": "첫 교전에서 실타래 열기 → 실 뽑기 → 수혜자에게 밀기 → 손 복귀",
+        "death": "반가면이 기울고 실이 풀린 뒤 로브가 내려앉음"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 5
+      },
+      "fx": [
+        "mist",
+        "link",
+        "shield",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E05": {
+      "poses": {
+        "idle": "세로 방패를 발 옆에 세우고 빈 주먹을 올림",
+        "move": "방패를 앞으로 든 채 짧게 끌고 걷기",
+        "attack": "한 발 내딛으며 방패 면으로 밀어침",
+        "skill": "첫 피해 경감 때 방패를 안으로 당겨 받치고 제자리 복귀",
+        "death": "방패가 몸 앞에 먼저 엎어지고 갑주가 안개로 빠짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "mist",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E06": {
+      "poses": {
+        "idle": "짐을 진 등과 양쪽 얼음걸쇠가 호흡에 맞춰 움직임",
+        "move": "네발 보행과 짐의 작은 관성",
+        "attack": "앞발 하나로 낮게 긁고 착지",
+        "skill": "체력이 절반에 도달하면 등짐을 낮추며 체중을 앞발에 싣고 빠른 보행으로 연결",
+        "death": "앞발 접힘, 등짐이 기울고 얼음걸쇠가 떨어짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "frost",
+        "sprint",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E07": {
+      "poses": {
+        "idle": "결정 상자를 짊어진 팔과 견갑이 천천히 호흡",
+        "move": "넓은 보폭과 무거운 두 발 디딤",
+        "attack": "빈 팔을 내려 눌러 한 기를 타격",
+        "skill": "피해 경감 두 번에서 상자 고정끈을 당겨 몸을 버티는 같은 자세 사용",
+        "death": "옆으로 무릎 꿇고 결정 상자가 빠지며 꺼짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E08": {
+      "poses": {
+        "idle": "넓은 배와 실꾸리가 작게 진동",
+        "move": "여섯 다리 교대, 무거운 실꾸리 지연",
+        "attack": "앞다리로 버티고 좌우 턱을 벌렸다가 짧게 닫고 몸을 되돌림",
+        "skill": "첫 피격 때 배를 세우고 실 한 줄을 가까운 인컴에게 넘김",
+        "death": "다리를 차례로 접고 실꾸리가 풀리며 본체 해체"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 3
+      },
+      "fx": [
+        "mist",
+        "link",
+        "sprint",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E09": {
+      "poses": {
+        "idle": "접힌 날개와 천공 화물 고리가 가볍게 움직임",
+        "move": "접힌 날개로 지상 보행, 활공 착지와 연결",
+        "attack": "부리를 낮췄다 짧게 쪼기",
+        "skill": "합류 뒤 날개 펼침 → 떠오름 → 낮은 활공 자세 → 첫 적 앞 착지",
+        "death": "앞발이 접히고 접힌 날개 아래로 화물이 먼저 떨어짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 6
+      },
+      "fx": [
+        "charge",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-E10": {
+      "poses": {
+        "idle": "갑주 안 외눈 인장만 느리게 열림",
+        "move": "육중한 양발 교대와 금고의 한 박자 지연",
+        "attack": "빈 팔꿈치를 앞으로 내딛어 한 번 타격",
+        "skill": "첫 교전에서 인장을 몸 앞에 가져오고 보호막 발동 뒤 금고를 다시 받침",
+        "death": "인장 꺼짐, 한쪽 견갑부터 무너지고 돌조각 낙하"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 5
+      },
+      "fx": [
+        "shield",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C01": {
+      "poses": {
+        "idle": "갈래턱이 한 번 벌어지고 목덜미가 긴장",
+        "move": "네발 달리기, 몸통을 낮춰 물기 자세로 진입",
+        "attack": "고개를 당겼다가 금속 턱을 앞으로 물기",
+        "skill": "첫 물기의 같은 접촉에서 턱 파편을 강하게 강조",
+        "death": "앞다리가 주저앉고 금속 턱이 먼저 바닥에 닿음"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C02": {
+      "poses": {
+        "idle": "꼬리를 웅크리고 황동 창을 겨눔",
+        "move": "꼬리 앞부분 S자 교대, 창의 위치 고정",
+        "attack": "꼬리로 버티고 팔을 당겨 투창, 팔 회수",
+        "skill": "첫 투창도 기본 발사 클립 사용, 전방 2칸의 실제 투사체를 발사",
+        "death": "뱀 꼬리가 풀리고 황동 창이 손에서 놓임"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "shot",
+        "stardust",
+        "fade"
+      ],
+      "attackCue": "release"
+    },
+    "SH-C03": {
+      "poses": {
+        "idle": "앞 수정 낫을 들었다 느슨하게 푸는 간격",
+        "move": "가벼운 배와 더듬이를 흔들며 속공",
+        "attack": "가까운 낫으로 사선 긁고 짧은 수습",
+        "skill": "첫 공격 뒤 반대 낫이 되돌아와 같은 대상을 한 번 더 긁는 두 자세",
+        "death": "수정 낫이 꺾이고 배가 낮아지면서 흩어짐"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "slash",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C04": {
+      "poses": {
+        "idle": "편암 방패를 몸보다 앞으로 기울임",
+        "move": "편암 방패로 앞을 덮고 무거운 짧은 걸음",
+        "attack": "앞발 지지와 방패 면을 내미는 단타",
+        "skill": "첫 교전 0.7초 예고에 방패 세우기 → 방패 내리찍기 → 위압 자세 종료",
+        "death": "방패가 앞쪽으로 넘어지고 갑주가 흩어짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 6
+      },
+      "fx": [
+        "aim",
+        "area",
+        "guard",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C05": {
+      "poses": {
+        "idle": "큰 얼음 앞발이 처졌다 들리고 귀가 미세하게 움직임",
+        "move": "네발 달리기, 앞발을 무겁게 교대",
+        "attack": "앞발을 크게 들고 짧게 내려치기",
+        "skill": "첫 강타 적중에만 서리 파편과 실제 둔화 목표의 발 표식",
+        "death": "목과 앞발이 동시에 내려앉고 얼음 발톱이 깨짐"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "frost",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C06": {
+      "poses": {
+        "idle": "쇠뇌를 몸에 기대고 두건 끝이 보폭 없이 흔들림",
+        "move": "두 손으로 쇠뇌를 지탱하고 옆걸음",
+        "attack": "쇠뇌 올림 → 발사 → 반동 → 자세 복귀",
+        "skill": "0.6초 조준에서 어깨 받침·은근한 장전핵·발사 준비를 추가하고 기본 발사 재사용",
+        "death": "앞부분이 무너지고 쇠뇌가 바닥에 남았다 사라짐"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "aim",
+        "shot",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "SH-C07": {
+      "poses": {
+        "idle": "한 어깨의 금빛 핵과 큰 주먹이 낮게 호흡",
+        "move": "큰 주먹 쪽으로 체중을 옮기며 묵직하게 보행",
+        "attack": "몸을 비틀고 앞주먹을 바닥 쪽으로 가격",
+        "skill": "첫 강타에만 핵 점등·넓은 몸통 회전·두 기 범위 타격용 마무리 자세",
+        "death": "핵이 꺼지고 큰 주먹부터 바닥에 닿아 돌조각 낙하"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "area",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C08": {
+      "poses": {
+        "idle": "길게 갈라진 날개와 가는 목이 낮게 호흡",
+        "move": "날개를 반쯤 접고 허공에서 수평 이동",
+        "attack": "주둥이를 짧게 내밀며 날개로 버팀",
+        "skill": "0.8초 예고에 날개 접기 → 몸 낮춤 → 수평 돌진 포즈 → 첫 접촉 후 회복",
+        "death": "목이 아래로 떨어지고 날개 끝 안개가 뒤로 풀림"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 7
+      },
+      "fx": [
+        "aim",
+        "charge",
+        "mist",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C09": {
+      "poses": {
+        "idle": "거대한 대검을 어깨 아래에서 버티며 고정",
+        "move": "대검의 끝을 끌지 않고 상체가 먼저 무거운 걸음",
+        "attack": "대검 들어 올려 짧게 사선 베기",
+        "skill": "0.9초 예고 동안 대검을 세워 멈춘 뒤 큰 단일 가르기와 칼끝 제동",
+        "death": "대검이 손에서 떨어지고 투구와 갑주가 한쪽으로 무너짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "aim",
+        "slash",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "SH-C10": {
+      "poses": {
+        "idle": "별 파편 어깨와 넓은 네 발, 큰 날개 끝의 느린 호흡",
+        "move": "무거운 네발 보행과 날개 끝 지연",
+        "attack": "앞발 또는 머리를 왼쪽으로 짧게 후려침",
+        "skill": "1초 예고에 목 뒤로 당기기 → 대형 날개 펴기 → 전방 부채꼴 타격 → 자세 되돌리기",
+        "death": "날개부터 접혀 바닥에 닿고 청동 파편이 분리됨"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "area",
+        "stardust",
+        "fragments",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E01": {
+      "poses": {
+        "idle": "측정기 수치를 읽으며 화면이 낮게 깜박임",
+        "move": "측정기를 몸 앞에 낮춰 두고 작은 보폭",
+        "attack": "측정기 단발 신호를 손으로 밀어 발사",
+        "skill": "약한 단발 뒤 멈춤은 공격 클립 수습 자세를 유지",
+        "death": "측정기가 기울고 꺼지며 앞으로 주저앉음"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "shot",
+        "mist",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-E02": {
+      "poses": {
+        "idle": "등의 구리 병과 걸쇠에 작은 진동",
+        "move": "몸을 앞에 기울인 가벼운 달리기",
+        "attack": "팔꿈치를 앞으로 한번 밀치고 제자리",
+        "skill": "선두 합류는 달리기 루프의 초기 재생률로 표현",
+        "death": "등짐을 놓치고 한쪽 무릎으로 쓰러짐"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E03": {
+      "poses": {
+        "idle": "가방을 끌어안고 얼음 핀을 한 번 고침",
+        "move": "구급 가방을 붙들고 조심스레 걷기",
+        "attack": "빈 손을 짧게 뻗는 한 손 밀기",
+        "skill": "첫 교전에 가방 열기 → 핀 집기 → 수혜자 쪽으로 던지기",
+        "death": "가방을 놓고 어깨가 낮아지며 핀이 떨어짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 4
+      },
+      "fx": [
+        "link",
+        "mend",
+        "frost"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E04": {
+      "poses": {
+        "idle": "편암 시료 방패를 모서리 쪽으로 조금 움직임",
+        "move": "작은 방패를 몸 앞에 두고 짧은 보폭",
+        "attack": "방패 모서리로 전방 찌르듯 가격",
+        "skill": "첫 원거리 경감에 방패를 들어 세웠다 다시 낮춤",
+        "death": "시료 방패를 떨어뜨리고 옆으로 내려앉음"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E05": {
+      "poses": {
+        "idle": "접은 날개가 움찔하고 랜턴이 낮게 흔들림",
+        "move": "날개를 접고 랜턴을 흔들며 일정 보폭",
+        "attack": "랜턴을 전방에 밀어 청색 단발을 방출",
+        "skill": "한 번의 1.5칸 약한 사격 클립 사용 후 전령 자세 복귀",
+        "death": "랜턴을 놓고 접힌 날개가 한쪽으로 기울어짐"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "shot",
+        "mist",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-E06": {
+      "poses": {
+        "idle": "반가면 고정, 손목 붕대가 약하게 들썩임",
+        "move": "붕대를 한쪽 손에 감은 채 현장 보행",
+        "attack": "손목을 튕겨 가까운 한 기를 건드림",
+        "skill": "붕대를 풀어 부상 인컴을 감싸는 한 번의 치유 동작",
+        "death": "가면이 비스듬해지고 붕대가 풀리며 한쪽으로 쓰러짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 5
+      },
+      "fx": [
+        "link",
+        "mend",
+        "mist"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E07": {
+      "poses": {
+        "idle": "황동 프레임을 고정하려 어깨를 낮춤",
+        "move": "양쪽 어깨의 프레임 탄성까지 보이는 보행",
+        "attack": "빈 손을 앞쪽에서 짧게 휘두름",
+        "skill": "첫 피격에서 프레임을 고정한 뒤 빠른 보행으로 진입",
+        "death": "등 프레임이 바닥에 먼저 닿고 결정이 흩어짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "sprint",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E08": {
+      "poses": {
+        "idle": "외눈 관측경을 아주 좁게 위아래 회전",
+        "move": "긴 외투를 뒤로 보내고 장비를 몸 가까이",
+        "attack": "관측경이 전방을 향해 작은 단발 발사",
+        "skill": "2칸 단발의 조준·발사·수습이 기본 공격에 포함됨",
+        "death": "외눈 관측경이 꺼지고 코트가 바닥에 내려앉음"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "shot",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-E09": {
+      "poses": {
+        "idle": "외골격 관절과 사각 상자 고정 걸쇠가 맞물림",
+        "move": "좌우 보조 다리가 무겁게 한 번씩 디딤",
+        "attack": "공구 없는 팔을 짧게 들어 가격",
+        "skill": "첫 피해 경감 순간 외골격 발을 벌리고 짐틀을 받침",
+        "death": "한 무릎과 상자가 차례로 내려앉고 걸쇠가 빠짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-E10": {
+      "poses": {
+        "idle": "얼음 집게판을 낮게 두고 의료 상자가 약하게 움직임",
+        "move": "집게판을 앞에 세우고 외골격으로 짧게 전진",
+        "attack": "둥근 집게판으로 가까운 대상 한 번 밀어침",
+        "skill": "첫 피격에서 집게판 받침 → 구난 상자 개폐 → 가까운 인컴 쪽으로 신호 방출",
+        "death": "앞 집게판이 바닥에 닿아 깨지고 보조 다리가 무너짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 3
+      },
+      "fx": [
+        "guard",
+        "link",
+        "mend",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C01": {
+      "poses": {
+        "idle": "굴착 발톱을 닫고 낮게 숨을 고름",
+        "move": "몸을 왼쪽 앞으로 낮춘 가벼운 달리기",
+        "attack": "굴착 발톱을 앞쪽으로 쓸어냄",
+        "skill": "첫 근접 적중에 굴착날 접촉 파편을 짧게 더함",
+        "death": "발톱을 놓치고 상체가 앞으로 넘어짐"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C02": {
+      "poses": {
+        "idle": "석궁을 겨드랑이에 대고 탄창을 미세하게 고침",
+        "move": "석궁을 몸 가까이 들고 짧은 달리기",
+        "attack": "어깨로 받쳐 발사한 뒤 작은 반동",
+        "skill": "첫 발사 뒤 반동 재장전·두 번째 방출 자세, 0.35초 차이는 게임 시계 사용",
+        "death": "작은 석궁을 놓치고 앉듯 앞으로 주저앉음"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "shot",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-C03": {
+      "poses": {
+        "idle": "짧은 검을 낮게 들고 귀판에 작은 흔들림",
+        "move": "한 발 앞선 달리기와 얼음 귀판 지연",
+        "attack": "몸 앞쪽으로 짧고 빠르게 가름",
+        "skill": "첫 공격 확정 후 속도 상태에 맞춰 달리기 루프를 빠르게 전환",
+        "death": "검을 놓고 귀판이 깨지며 옆으로 무너짐"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "frost",
+        "sprint",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C04": {
+      "poses": {
+        "idle": "접이식 석궁의 곡면을 몸 양쪽에 지탱",
+        "move": "석궁을 접거나 낮춘 채 일정한 걸음",
+        "attack": "양팔로 석궁 열고 단발 후 반동",
+        "skill": "0.6초 조준용 열린 고정 자세와 긴 반동을 추가, 추가 타격 위치에만 접촉 이펙트",
+        "death": "석궁 날개가 접히고 어깨 거치대가 바닥에 닿음"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "aim",
+        "shot",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-C05": {
+      "poses": {
+        "idle": "전면 쐐기 방패와 보조 다리 고정",
+        "move": "쐐기를 앞에 둔 낮은 걸음",
+        "attack": "쐐기 끝으로 앞에 있는 적 가격",
+        "skill": "첫 피격에는 발 고정과 방패 받침, 후속 둔화 공격은 기존 방패 타격 재사용",
+        "death": "방패가 내려앉고 보조 다리 고정이 풀려 옆으로 넘어짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C06": {
+      "poses": {
+        "idle": "가면과 안개 외투를 고정한 유연한 검 자세",
+        "move": "외투를 끌며 낮게 달리기",
+        "attack": "가는 검을 앞에서 빠르게 베고 되돌림",
+        "skill": "0.65초 예고 → 몸을 낮춤 → 옆으로 진입하는 포즈 → 비껴베기 → 자세 회복",
+        "death": "검을 떨어뜨리고 안개가 코트 뒤로 빠지며 주저앉음"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 6
+      },
+      "fx": [
+        "aim",
+        "charge",
+        "slash",
+        "mist",
+        "fade"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C07": {
+      "poses": {
+        "idle": "외눈 조준경을 받쳐 총구를 약간 아래로 둠",
+        "move": "장총을 몸 가까이 붙여 조심스럽게 보행",
+        "attack": "장총을 어깨에 대고 단발 사격 후 반동",
+        "skill": "1초 조준 중 고정 포즈, 숨 멈춤, 강한 단발 반동을 더함",
+        "death": "외눈이 닫히고 총부터 바닥에 닿아 유닛이 내려앉음"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "aim",
+        "shot",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "HU-C08": {
+      "poses": {
+        "idle": "충각판과 주황 철뿔이 몸 쪽에 붙고 어깨가 낮음",
+        "move": "중장갑 보행과 가벼운 어깨 관성",
+        "attack": "충각판을 짧게 전진시켜 앞을 가격",
+        "skill": "0.8초 예고에 철뿔 아래로 → 충돌 포즈 → 브레이크 및 어깨 복귀",
+        "death": "충각판이 기울고 보조 다리부터 꺾이며 철뿔 낙하"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 7
+      },
+      "fx": [
+        "aim",
+        "charge",
+        "guard",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C09": {
+      "poses": {
+        "idle": "어깨핵과 공성 팔을 긴장 낮은 자세에서 유지",
+        "move": "큰 공성 팔의 관성을 받은 외골격 보행",
+        "attack": "공성 팔을 작게 수평 가격",
+        "skill": "1초 예고에 어깨핵 점등 → 공성 팔 세움 → 확정 지점에 내려찍기 → 감압",
+        "death": "공성 팔 바닥 충돌 뒤 핵이 꺼지고 몸통이 무너짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "area",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "HU-C10": {
+      "poses": {
+        "idle": "검은 얼음 갈비뼈 갑주와 칼날 팔이 낮게 움직임",
+        "move": "칼날에 끌리지 않게 팔을 몸 앞으로 두고 걷기",
+        "attack": "얼음 팔을 짧게 눕혀 한 기 타격",
+        "skill": "1초 예고에 팔을 들어 세움 → 앞 2칸 타격 자세 → 칼날 팔 회수",
+        "death": "얼음 관이 깨지고 한쪽 무릎으로 주저앉아 팔이 부서짐"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "area",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E01": {
+      "poses": {
+        "idle": "턱 아래 등불이 작게 흔들림",
+        "move": "여섯 다리 교대와 낮은 등불 진동",
+        "attack": "작은 턱을 낮게 열고 가볍게 물기",
+        "skill": "느린 기본 근접 타격의 턱 접촉을 사용",
+        "death": "앞다리 접힘과 함께 등불이 꺼짐"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E02": {
+      "poses": {
+        "idle": "버섯갓이 낮게 수축하고 금빛 결정이 움직임",
+        "move": "네발로 이동하며 버섯갓이 늦게 흔들림",
+        "attack": "버섯 몸통을 앞쪽으로 짧게 부딪침",
+        "skill": "사망 이벤트부터 이웃 인컴 한 기에 회복 포자 전달, 외형은 갓 파열 클립 사용",
+        "death": "다리를 접고 갓이 기울며 낮은 포자가 한 번 흩어짐"
+      },
+      "skill": {
+        "mode": "death",
+        "frames": 0
+      },
+      "fx": [
+        "link",
+        "mend",
+        "venom"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E03": {
+      "poses": {
+        "idle": "긴 푸른 귀가 한번 올라가고 검은 발을 몸에 접음",
+        "move": "짧은 두발 도약 뒤 네발 착지",
+        "attack": "턱을 내밀어 작은 한 번 물기",
+        "skill": "첫 접근은 도약 클립, 약한 물기는 기본 공격 접촉",
+        "death": "귀가 내려앉고 몸을 둥글게 말며 쓰러짐"
+      },
+      "skill": {
+        "mode": "base",
+        "frames": 0
+      },
+      "fx": [
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E04": {
+      "poses": {
+        "idle": "넓은 암판 등짐이 좌우로 조금 흔들림",
+        "move": "여섯 발 교대와 암판의 묵직한 무게",
+        "attack": "낮은 암판 앞을 살짝 들어 밀기",
+        "skill": "첫 원거리 경감 때 갑각을 올려 탄을 받치고 다시 닫기",
+        "death": "갑각이 갈라지고 다리를 안으로 접음"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E05": {
+      "poses": {
+        "idle": "청동 종과 허리 주머니가 작은 진폭으로 흔들림",
+        "move": "무거운 주머니를 받치고 짧은 보폭",
+        "attack": "한 손의 청동 종으로 전방 가격",
+        "skill": "첫 타격에서 종을 조금 더 뻗는 준비·접촉 자세 추가",
+        "death": "종을 놓치고 주머니 쪽으로 한쪽 무릎 쓰러짐"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "mist",
+        "slash",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E06": {
+      "poses": {
+        "idle": "등의 두 통이 느슨하고 몸통이 고리로 호흡",
+        "move": "고리 풀림과 좌우 S자 기어가기",
+        "attack": "목을 낮게 내밀어 한 번 물기",
+        "skill": "사망 이벤트에서 터진 통의 가루가 이웃 인컴 가속으로 이어짐",
+        "death": "고리가 바닥에 길어지고 통 하나가 열리며 쓰러짐"
+      },
+      "skill": {
+        "mode": "death",
+        "frames": 0
+      },
+      "fx": [
+        "stardust",
+        "link",
+        "sprint",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E07": {
+      "poses": {
+        "idle": "큰 등과 하역 고리가 느린 호흡으로 울렁임",
+        "move": "네 발이 묵직하게 교대하고 짐받이가 흔들림",
+        "attack": "작은 앞발 휘두르기 뒤 제자리 착지",
+        "skill": "첫 근접 경감에서 앞다리를 모아 머리를 낮춰 버티기",
+        "death": "옆 짐받이가 떨어지며 스스로 네 다리를 접음"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E08": {
+      "poses": {
+        "idle": "등의 감시 눈과 겹갑 배가 작게 반응",
+        "move": "여섯 다리 교대와 상자 들썩임",
+        "attack": "턱으로 한 기를 짧게 집기",
+        "skill": "첫 피격에 감시 눈 빛이 켜지고 낮은 가속 포즈로 전환",
+        "death": "외눈이 닫히고 갑각 다리가 순서대로 접힘"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "sprint",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E09": {
+      "poses": {
+        "idle": "큰 뿔과 세 깃발이 약하게 출렁임",
+        "move": "넓게 벌린 네 발로 느리게 걸으며 깃발 지연",
+        "attack": "뿔을 앞쪽으로 살짝 들이밀기",
+        "skill": "첫 피해 경감에서 넓은 네 발을 벌리고 뿔을 낮춰 받음",
+        "death": "깃대가 먼저 넘어지고 뒷다리부터 내려앉음"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 2
+      },
+      "fx": [
+        "guard",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-E10": {
+      "poses": {
+        "idle": "아치형 등짐과 결정을 든 팔을 고정",
+        "move": "두 돌발이 큰 폭 없이 느린 교대",
+        "attack": "큰 주먹을 낮게 들어 짧게 타격",
+        "skill": "보호막 발동과 동시에 양팔을 모으고 금빛 결정을 짧게 점등",
+        "death": "금빛 결정을 놓치고 어깨·팔·몸통순으로 무너짐"
+      },
+      "skill": {
+        "mode": "react",
+        "frames": 3
+      },
+      "fx": [
+        "shield",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C01": {
+      "poses": {
+        "idle": "녹슨 턱이 벌어졌다 닫히고 목을 낮춤",
+        "move": "앞발을 뻗고 뒷발이 몸 아래를 지나가는 낮은 네발 질주",
+        "attack": "녹슨 턱을 크게 당겼다가 한 번 물기",
+        "skill": "첫 물기 피해 확정에 앞턱 파편과 기준 타격 강조",
+        "death": "턱이 떨어지고 앞다리가 먼저 내려앉음"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C02": {
+      "poses": {
+        "idle": "수정 갈고리를 교대로 벌리며 몸을 낮춤",
+        "move": "몸을 앞으로 낮춘 여섯 발 달리기",
+        "attack": "앞 갈고리로 첫 긁기를 하고 반대편 다리로 지탱",
+        "skill": "반대 갈고리 준비·접촉 두 자세 추가, 같은 대상 확정 시에만 두 번째 효과",
+        "death": "갈고리가 깨지고 갑각 다리가 접히며 누움"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "slash",
+        "stardust",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C03": {
+      "poses": {
+        "idle": "빙정 귀와 단검이 서로 다른 각도에서 흔들림",
+        "move": "단검을 몸 옆에 둔 짧은 달리기",
+        "attack": "앞발이 바닥에 닿고 짧은 단검 찌르기",
+        "skill": "첫 타격에서만 칼끝 파편과 실제 감속 표식 표시",
+        "death": "빙정 귀가 깨지고 단검을 놓은 뒤 옆으로 기울음"
+      },
+      "skill": {
+        "mode": "reuse",
+        "frames": 0
+      },
+      "fx": [
+        "slash",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C04": {
+      "poses": {
+        "idle": "큰 한쪽 집게가 열렸다 닫힘",
+        "move": "큰 집게 쪽으로 몸이 기울며 네발 보행",
+        "attack": "집게 앞부분을 크게 열어 강타",
+        "skill": "첫 강타에서 집게를 고정하는 닫힘·해제 두 자세 추가, 속박 표식은 피격자 발에 유지",
+        "death": "집게가 몸보다 먼저 떨어져 얼음 파편이 튐"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C05": {
+      "poses": {
+        "idle": "굽은 견갑과 뿔이 몸 앞으로 움직임",
+        "move": "나선뿔을 낮추며 무거운 걸음",
+        "attack": "어깨를 젖혔다 뿔 견갑으로 짧은 올려치기",
+        "skill": "두 번째 강타에서 뿔을 더 낮춘 준비와 더 크게 올려치는 접촉 자세",
+        "death": "나선뿔이 꺾이고 어깨를 바닥에 대며 넘어짐"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 2
+      },
+      "fx": [
+        "stardust",
+        "slash",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C06": {
+      "poses": {
+        "idle": "검은 얼음 갈비가 낮게 움직이고 석궁을 겨눔",
+        "move": "얼음 석궁을 낮춰 들고 천천히 옆걸음",
+        "attack": "석궁을 올려 단발 발사와 반동",
+        "skill": "0.7초 예고에 석궁 팽팽하게 당기기·정지 조준·강한 냉기 반동을 더함",
+        "death": "석궁이 부러지고 갈비뼈 갑옷이 한쪽으로 내려앉음"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "aim",
+        "shot",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "release"
+    },
+    "BE-C07": {
+      "poses": {
+        "idle": "세 목이 서로 조금 다른 시차로 움직이고 종이 흔들림",
+        "move": "네발 이동과 세 목의 약한 지연",
+        "attack": "가운데 머리로 한 대상에게 짧은 물기",
+        "skill": "0.75초 예고에 세 목을 뒤로 빼고, 양옆 머리로 전방을 넓게 물고 복귀",
+        "death": "세 목이 차례로 낮아지고 청동 종이 풀림"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 7
+      },
+      "fx": [
+        "area",
+        "mist",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C08": {
+      "poses": {
+        "idle": "외눈이 열리고 검은 얼음 목덮개가 호흡",
+        "move": "지면에서 큰 고리를 당겨 S자 이동",
+        "attack": "목을 접었다 앞으로 던져 한 번 물기",
+        "skill": "첫 독 물기 때 턱 두 자세와 독 대상 후속 단타 대비 접촉 자세를 추가",
+        "death": "목덮개 얼음이 갈라지고 몸 고리가 길게 풀림"
+      },
+      "skill": {
+        "mode": "extend",
+        "frames": 3
+      },
+      "fx": [
+        "venom",
+        "frost",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C09": {
+      "poses": {
+        "idle": "높은 돌 날개와 별 어깨돌이 박자 느리게 들썩임",
+        "move": "돌날개를 몸 뒤로 둔 무거운 양발 보행",
+        "attack": "한 팔을 앞으로 쓰는 낮은 돌 강타",
+        "skill": "첫 피격 뒤 0.9초 예고에 석판 세우기 → 보호막 점등과 전방 짧은 충격 → 팔 복귀",
+        "death": "돌날개부터 부러져 흩어지고 어깨돌이 분리됨"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "area",
+        "shield",
+        "guard",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    },
+    "BE-C10": {
+      "poses": {
+        "idle": "세 겹 버섯 왕관이 차례로 들썩이고 갑각 유지",
+        "move": "여섯 굵은 갑각 다리에 보폭 차이",
+        "attack": "턱을 내밀어 근거리 한 기 집기",
+        "skill": "1초 예고에 포자갓 수축 → 갓을 열어 지정 반경에 분사 → 갓을 닫기",
+        "death": "왕관이 층별로 주저앉고 다리가 접히며 낮은 포자가 잦아듦"
+      },
+      "skill": {
+        "mode": "new",
+        "frames": 8
+      },
+      "fx": [
+        "area",
+        "venom",
+        "fragments"
+      ],
+      "attackCue": "contact"
+    }
+  }
+}

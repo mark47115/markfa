@@ -1,0 +1,386 @@
+{
+  "sourceJobs": [
+    {
+      "id": "oak-icons",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1342,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 318
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1781
+      },
+      "reference": "sources/controls-reference.png",
+      "source": "sources/oak-icons.png",
+      "sha256": "7f2a7d41b36b50e0e2844e1db5a1389d3c5ade2fcf12a2cf3ca2a6d568265a2b",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. honey-oak tavern joinery, thick dark walnut wood faces with one simple broad grain line, cut square corners and black iron corner straps; pale wheat-gold icons. Shape language of a carved horizontal inn sign; the red deploy plate is painted wood. Exactly FOUR equally sized independent nearly-square icon buttons in precisely 2 columns x 2 rows on a square transparent canvas. Centers at 25%,75% of width and height, broad empty gutters. All four share same button backing, same scale and outline. Distinct large centered pictograms: TOP LEFT a golden coin purse with drawstring, TOP RIGHT two clear thick opposing curved arrows forming a reroll loop, BOTTOM LEFT a captain's war horn with red ribbon, BOTTOM RIGHT an upward gold chevron above a small simple tavern roof. Preserve icon identity and legibility; one complete silhouette per quadrant. No extra things anywhere."
+    },
+    {
+      "id": "oak-plates",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1025,
+        "input_tokens_details": {
+          "image_tokens": 640,
+          "text_tokens": 385
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1464
+      },
+      "reference": "sources/style.png",
+      "source": "sources/oak-plates.png",
+      "sha256": "c1600d7d06a631cb5e2e1cc3ba1af65b3fa74be025ec9e4024f6000fa6411fa1",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. honey-oak tavern joinery, thick dark walnut wood faces with one simple broad grain line, cut square corners and black iron corner straps; pale wheat-gold icons. Shape language of a carved horizontal inn sign; the red deploy plate is painted wood. Exactly TWO separate wide blank UI plates on DIFFERENT ROWS of a square transparent asset sheet. Align both horizontally at x50%. Top shape is a single empty full-width horizontal shop speech balloon (width 88% of canvas, height about 22%, centered y28%). Rectangular low-profile popup body, ONE visibly pointed small downward triangle tail at bottom center, high-contrast restrained themed corners only, completely clear dark empty center for four cards to be placed later. Bottom shape is a single narrower, long horizontal DEPLOY command button (width 61%, height 17%, centered y75%): strong deep brick-red face, contrasting themed edge, empty centered label area for live Korean text. Keep both silhouettes separate with a very large transparent gutter. Full-bleed material inside plates, no icons in the middle, no title ribbon, no X, no contents, no knobs for closing, no other assets. Transparent outside. The deploy plate does not need a tail."
+    },
+    {
+      "id": "saddle-icons",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1340,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 316
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1779
+      },
+      "reference": "sources/controls-reference.png",
+      "source": "sources/saddle-icons.png",
+      "sha256": "4c36ba761c9edb97de649afba633c828928afed81beae19ab05501d6a94d5bc1",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. saddle leather of a peddler wagon: russet saddlebag flap curves, a short row of broad golden stitches along the rim, single brass buckle, warm cream bold inlaid symbols; oxblood leather deploy strap. Rounded saddlebag-tab silhouettes. Exactly FOUR equally sized independent nearly-square icon buttons in precisely 2 columns x 2 rows on a square transparent canvas. Centers at 25%,75% of width and height, broad empty gutters. All four share same button backing, same scale and outline. Distinct large centered pictograms: TOP LEFT a golden coin purse with drawstring, TOP RIGHT two clear thick opposing curved arrows forming a reroll loop, BOTTOM LEFT a captain's war horn with red ribbon, BOTTOM RIGHT an upward gold chevron above a small simple tavern roof. Preserve icon identity and legibility; one complete silhouette per quadrant. No extra things anywhere."
+    },
+    {
+      "id": "saddle-plates",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1023,
+        "input_tokens_details": {
+          "image_tokens": 640,
+          "text_tokens": 383
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1462
+      },
+      "reference": "sources/style.png",
+      "source": "sources/saddle-plates.png",
+      "sha256": "ff5bd140f500ea333eca9ae5a5c44360862a65b92e638f6d147112e38e41910e",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. saddle leather of a peddler wagon: russet saddlebag flap curves, a short row of broad golden stitches along the rim, single brass buckle, warm cream bold inlaid symbols; oxblood leather deploy strap. Rounded saddlebag-tab silhouettes. Exactly TWO separate wide blank UI plates on DIFFERENT ROWS of a square transparent asset sheet. Align both horizontally at x50%. Top shape is a single empty full-width horizontal shop speech balloon (width 88% of canvas, height about 22%, centered y28%). Rectangular low-profile popup body, ONE visibly pointed small downward triangle tail at bottom center, high-contrast restrained themed corners only, completely clear dark empty center for four cards to be placed later. Bottom shape is a single narrower, long horizontal DEPLOY command button (width 61%, height 17%, centered y75%): strong deep brick-red face, contrasting themed edge, empty centered label area for live Korean text. Keep both silhouettes separate with a very large transparent gutter. Full-bleed material inside plates, no icons in the middle, no title ribbon, no X, no contents, no knobs for closing, no other assets. Transparent outside. The deploy plate does not need a tail."
+    },
+    {
+      "id": "seal-icons",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1339,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 315
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1778
+      },
+      "reference": "sources/controls-reference.png",
+      "source": "sources/seal-icons.png",
+      "sha256": "f21da1ae689f4247d98414192cd4ec5ce44bcb774cfc68661339969b7e95b8a6",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. heraldry of the dusk knights: deep wine-red painted shield-shaped button plates taper to one point below, narrow antique gold piping, ivory heraldic icons; dark plum empty popup field and gold rim on wine-red deploy badge, restrained pointed shoulders. Exactly FOUR equally sized independent nearly-square icon buttons in precisely 2 columns x 2 rows on a square transparent canvas. Centers at 25%,75% of width and height, broad empty gutters. All four share same button backing, same scale and outline. Distinct large centered pictograms: TOP LEFT a golden coin purse with drawstring, TOP RIGHT two clear thick opposing curved arrows forming a reroll loop, BOTTOM LEFT a captain's war horn with red ribbon, BOTTOM RIGHT an upward gold chevron above a small simple tavern roof. Preserve icon identity and legibility; one complete silhouette per quadrant. No extra things anywhere."
+    },
+    {
+      "id": "seal-plates",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1022,
+        "input_tokens_details": {
+          "image_tokens": 640,
+          "text_tokens": 382
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1461
+      },
+      "reference": "sources/style.png",
+      "source": "sources/seal-plates.png",
+      "sha256": "17f8cca9f44e6fc31adc53668fb0a3abc63bc6464776a1c12762f4bf6141aee8",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. heraldry of the dusk knights: deep wine-red painted shield-shaped button plates taper to one point below, narrow antique gold piping, ivory heraldic icons; dark plum empty popup field and gold rim on wine-red deploy badge, restrained pointed shoulders. Exactly TWO separate wide blank UI plates on DIFFERENT ROWS of a square transparent asset sheet. Align both horizontally at x50%. Top shape is a single empty full-width horizontal shop speech balloon (width 88% of canvas, height about 22%, centered y28%). Rectangular low-profile popup body, ONE visibly pointed small downward triangle tail at bottom center, high-contrast restrained themed corners only, completely clear dark empty center for four cards to be placed later. Bottom shape is a single narrower, long horizontal DEPLOY command button (width 61%, height 17%, centered y75%): strong deep brick-red face, contrasting themed edge, empty centered label area for live Korean text. Keep both silhouettes separate with a very large transparent gutter. Full-bleed material inside plates, no icons in the middle, no title ribbon, no X, no contents, no knobs for closing, no other assets. Transparent outside. The deploy plate does not need a tail."
+    },
+    {
+      "id": "grove-icons",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1350,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 326
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1789
+      },
+      "reference": "sources/controls-reference.png",
+      "source": "sources/grove-icons.png",
+      "sha256": "7996089265ffb5a24a9574a66a61ba21291b89fb8ac5c9ecdd1cf1dc25f6ed91",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. woodland waystation: moss-olive lacquer, pale birch bark rim, one muted sage leaf fastener in a corner; softly stepped octagonal wayside markers with small organic notches. Warm ivory symbols, dark olive empty center, brick-red painted deploy trail marker. Absolutely no bright green glow. Exactly FOUR equally sized independent nearly-square icon buttons in precisely 2 columns x 2 rows on a square transparent canvas. Centers at 25%,75% of width and height, broad empty gutters. All four share same button backing, same scale and outline. Distinct large centered pictograms: TOP LEFT a golden coin purse with drawstring, TOP RIGHT two clear thick opposing curved arrows forming a reroll loop, BOTTOM LEFT a captain's war horn with red ribbon, BOTTOM RIGHT an upward gold chevron above a small simple tavern roof. Preserve icon identity and legibility; one complete silhouette per quadrant. No extra things anywhere."
+    },
+    {
+      "id": "grove-plates",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1033,
+        "input_tokens_details": {
+          "image_tokens": 640,
+          "text_tokens": 393
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1472
+      },
+      "reference": "sources/style.png",
+      "source": "sources/grove-plates.png",
+      "sha256": "61e57b4b1dc8918373951d0e6af7cd6dbdad060c046847670e143d5a01a198a5",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. woodland waystation: moss-olive lacquer, pale birch bark rim, one muted sage leaf fastener in a corner; softly stepped octagonal wayside markers with small organic notches. Warm ivory symbols, dark olive empty center, brick-red painted deploy trail marker. Absolutely no bright green glow. Exactly TWO separate wide blank UI plates on DIFFERENT ROWS of a square transparent asset sheet. Align both horizontally at x50%. Top shape is a single empty full-width horizontal shop speech balloon (width 88% of canvas, height about 22%, centered y28%). Rectangular low-profile popup body, ONE visibly pointed small downward triangle tail at bottom center, high-contrast restrained themed corners only, completely clear dark empty center for four cards to be placed later. Bottom shape is a single narrower, long horizontal DEPLOY command button (width 61%, height 17%, centered y75%): strong deep brick-red face, contrasting themed edge, empty centered label area for live Korean text. Keep both silhouettes separate with a very large transparent gutter. Full-bleed material inside plates, no icons in the middle, no title ribbon, no X, no contents, no knobs for closing, no other assets. Transparent outside. The deploy plate does not need a tail."
+    },
+    {
+      "id": "foundry-icons",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1343,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 319
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1782
+      },
+      "reference": "sources/controls-reference.png",
+      "source": "sources/foundry-icons.png",
+      "sha256": "da43961446daa98697e1d64753207ff3769fe532231c2b484e236ada12536f80",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. travelling dwarf foundry: soot-blue iron hexagonal plates with broad chamfered corners, patinated copper rivets, broad pale brass stamped symbols, visible bevel only upper left. Dark slate empty center, brick red enamel face on deploy plate. No futuristic lighting. Exactly FOUR equally sized independent nearly-square icon buttons in precisely 2 columns x 2 rows on a square transparent canvas. Centers at 25%,75% of width and height, broad empty gutters. All four share same button backing, same scale and outline. Distinct large centered pictograms: TOP LEFT a golden coin purse with drawstring, TOP RIGHT two clear thick opposing curved arrows forming a reroll loop, BOTTOM LEFT a captain's war horn with red ribbon, BOTTOM RIGHT an upward gold chevron above a small simple tavern roof. Preserve icon identity and legibility; one complete silhouette per quadrant. No extra things anywhere."
+    },
+    {
+      "id": "foundry-plates",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1026,
+        "input_tokens_details": {
+          "image_tokens": 640,
+          "text_tokens": 386
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1465
+      },
+      "reference": "sources/style.png",
+      "source": "sources/foundry-plates.png",
+      "sha256": "5abb5bcbd2d985f6324d68ba2af87ce640a00933b531ba5d2eab0df7f9f5e4c8",
+      "prompt": "Design UI assets for Tavern Heros, a cozy frontier fantasy pixel-art autobattler. Keep identical rendering language across the pack: deliberate chunky square pixel clusters, crisp dark-warm external silhouette, upper-left lit 3-step ramps, graphic readability at 48px, broad flat faces. Use attached visual reference solely for visual grammar and functional meaning. Explore this particular material language, give it a distinctly new silhouette and surface treatment. On truly transparent canvas; no outlines or shadows outside the individual controls; no gradients, scene, type, letters, numbers, labels, fake lettering, or mockup page. travelling dwarf foundry: soot-blue iron hexagonal plates with broad chamfered corners, patinated copper rivets, broad pale brass stamped symbols, visible bevel only upper left. Dark slate empty center, brick red enamel face on deploy plate. No futuristic lighting. Exactly TWO separate wide blank UI plates on DIFFERENT ROWS of a square transparent asset sheet. Align both horizontally at x50%. Top shape is a single empty full-width horizontal shop speech balloon (width 88% of canvas, height about 22%, centered y28%). Rectangular low-profile popup body, ONE visibly pointed small downward triangle tail at bottom center, high-contrast restrained themed corners only, completely clear dark empty center for four cards to be placed later. Bottom shape is a single narrower, long horizontal DEPLOY command button (width 61%, height 17%, centered y75%): strong deep brick-red face, contrasting themed edge, empty centered label area for live Korean text. Keep both silhouettes separate with a very large transparent gutter. Full-bleed material inside plates, no icons in the middle, no title ribbon, no X, no contents, no knobs for closing, no other assets. Transparent outside. The deploy plate does not need a tail."
+    },
+    {
+      "id": "oak-unframed",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1252,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 228
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1691
+      },
+      "reference": "sources/oak-icons.png",
+      "source": "sources/oak-unframed.png",
+      "sha256": "4123ed6c4d1e33bf2ecf64004c923e355784caa65015f8281ab01634d2bdfd5b",
+      "prompt": "Repaint only the FOUR CENTER SYMBOLS from this Tavern Heros game HUD reference as FREE-STANDING PIXEL OBJECTS on real transparency. Remove the complete backing tile and perimeter decoration from EVERY icon. Exact four symbols, 2x2 evenly spaced layout on square canvas with centers at x25/75 and y25/75. Upper left a compact closed gold coin purse, upper right a matched pair of curved clockwise reroll arrows in a circle, bottom left a simple brass captain's horn with one red cloth wrap, bottom right a single upward chevron directly atop a little blue tiled inn roof. Big unmistakable silhouettes that will be only 30 native pixels tall. Minimal interior marks, 3-value ramp, dark one-pixel object outlines, golden afternoon light, cozy old-school strategy RPG, precisely stepped pixels. Each floats alone with generous transparent gaps and no backing shapes, tiles, frames, panels, borders around icons, shadows, text or digits. Background alpha transparent. Family treatment: honey ochre and dark walnut grain, hand-carved oak"
+    },
+    {
+      "id": "saddle-unframed",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1249,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 225
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1688
+      },
+      "reference": "sources/saddle-icons.png",
+      "source": "sources/saddle-unframed.png",
+      "sha256": "dbc0412f3aaf1392bec7b593cfbfdcbfe041850311f299d71495214718ca5843",
+      "prompt": "Repaint only the FOUR CENTER SYMBOLS from this Tavern Heros game HUD reference as FREE-STANDING PIXEL OBJECTS on real transparency. Remove the complete backing tile and perimeter decoration from EVERY icon. Exact four symbols, 2x2 evenly spaced layout on square canvas with centers at x25/75 and y25/75. Upper left a compact closed gold coin purse, upper right a matched pair of curved clockwise reroll arrows in a circle, bottom left a simple brass captain's horn with one red cloth wrap, bottom right a single upward chevron directly atop a little blue tiled inn roof. Big unmistakable silhouettes that will be only 30 native pixels tall. Minimal interior marks, 3-value ramp, dark one-pixel object outlines, golden afternoon light, cozy old-school strategy RPG, precisely stepped pixels. Each floats alone with generous transparent gaps and no backing shapes, tiles, frames, panels, borders around icons, shadows, text or digits. Background alpha transparent. Family treatment: russet leather, simple honey brass and oatmeal"
+    },
+    {
+      "id": "seal-unframed",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1252,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 228
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1691
+      },
+      "reference": "sources/seal-icons.png",
+      "source": "sources/seal-unframed.png",
+      "sha256": "7b2ce7cd4e2213b75bfc33ddb159cc16a1b0d32a918b3b2e0be30ccb66b9b590",
+      "prompt": "Repaint only the FOUR CENTER SYMBOLS from this Tavern Heros game HUD reference as FREE-STANDING PIXEL OBJECTS on real transparency. Remove the complete backing tile and perimeter decoration from EVERY icon. Exact four symbols, 2x2 evenly spaced layout on square canvas with centers at x25/75 and y25/75. Upper left a compact closed gold coin purse, upper right a matched pair of curved clockwise reroll arrows in a circle, bottom left a simple brass captain's horn with one red cloth wrap, bottom right a single upward chevron directly atop a little blue tiled inn roof. Big unmistakable silhouettes that will be only 30 native pixels tall. Minimal interior marks, 3-value ramp, dark one-pixel object outlines, golden afternoon light, cozy old-school strategy RPG, precisely stepped pixels. Each floats alone with generous transparent gaps and no backing shapes, tiles, frames, panels, borders around icons, shadows, text or digits. Background alpha transparent. Family treatment: matte ivory emblems with touches of dark red heraldic cloth"
+    },
+    {
+      "id": "grove-unframed",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1249,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 225
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1688
+      },
+      "reference": "sources/grove-icons.png",
+      "source": "sources/grove-unframed.png",
+      "sha256": "3152ef063213e83de194e191dee5e9a3f9130249a8e3f0542aff0387920e84f1",
+      "prompt": "Repaint only the FOUR CENTER SYMBOLS from this Tavern Heros game HUD reference as FREE-STANDING PIXEL OBJECTS on real transparency. Remove the complete backing tile and perimeter decoration from EVERY icon. Exact four symbols, 2x2 evenly spaced layout on square canvas with centers at x25/75 and y25/75. Upper left a compact closed gold coin purse, upper right a matched pair of curved clockwise reroll arrows in a circle, bottom left a simple brass captain's horn with one red cloth wrap, bottom right a single upward chevron directly atop a little blue tiled inn roof. Big unmistakable silhouettes that will be only 30 native pixels tall. Minimal interior marks, 3-value ramp, dark one-pixel object outlines, golden afternoon light, cozy old-school strategy RPG, precisely stepped pixels. Each floats alone with generous transparent gaps and no backing shapes, tiles, frames, panels, borders around icons, shadows, text or digits. Background alpha transparent. Family treatment: birch cream, moss olive and honey light"
+    },
+    {
+      "id": "foundry-unframed",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1248,
+        "input_tokens_details": {
+          "image_tokens": 1024,
+          "text_tokens": 224
+        },
+        "output_tokens": 439,
+        "output_tokens_details": {
+          "image_tokens": 439,
+          "text_tokens": 0
+        },
+        "total_tokens": 1687
+      },
+      "reference": "sources/foundry-icons.png",
+      "source": "sources/foundry-unframed.png",
+      "sha256": "e3b8454195676811307aa06b81d7321b6d54643a3efc8fa51d3097b42e075693",
+      "prompt": "Repaint only the FOUR CENTER SYMBOLS from this Tavern Heros game HUD reference as FREE-STANDING PIXEL OBJECTS on real transparency. Remove the complete backing tile and perimeter decoration from EVERY icon. Exact four symbols, 2x2 evenly spaced layout on square canvas with centers at x25/75 and y25/75. Upper left a compact closed gold coin purse, upper right a matched pair of curved clockwise reroll arrows in a circle, bottom left a simple brass captain's horn with one red cloth wrap, bottom right a single upward chevron directly atop a little blue tiled inn roof. Big unmistakable silhouettes that will be only 30 native pixels tall. Minimal interior marks, 3-value ramp, dark one-pixel object outlines, golden afternoon light, cozy old-school strategy RPG, precisely stepped pixels. Each floats alone with generous transparent gaps and no backing shapes, tiles, frames, panels, borders around icons, shadows, text or digits. Background alpha transparent. Family treatment: matte copper, slate iron and pale brass"
+    }
+  ],
+  "designs": [
+    {
+      "id": "oak",
+      "name": "참나무 간판",
+      "description": "참나무색 바탕에 금빛 표식을 얹고 가장자리만 한 줄로 둘렀습니다.",
+      "face": "#614531",
+      "edge": "#3e3028",
+      "light": "#f0deba"
+    },
+    {
+      "id": "saddle",
+      "name": "마차 가죽",
+      "description": "붉은 가죽색과 둥근 모서리로 마차 장비의 인상을 살렸습니다.",
+      "face": "#764633",
+      "edge": "#4d302c",
+      "light": "#f2debf"
+    },
+    {
+      "id": "seal",
+      "name": "기사단 인장",
+      "description": "기사단의 자주색과 아래가 뾰족한 방패 실루엣을 살렸습니다.",
+      "face": "#743948",
+      "edge": "#482d36",
+      "light": "#f4e1d1"
+    },
+    {
+      "id": "grove",
+      "name": "숲길 역참",
+      "description": "올리브색 바탕과 자작나무빛 말풍선을 짝지었습니다.",
+      "face": "#51583d",
+      "edge": "#353c30",
+      "light": "#e9e3c4"
+    },
+    {
+      "id": "foundry",
+      "name": "주조소 명판",
+      "description": "청회색 철판의 모서리를 짧게 잘라낸 명판입니다.",
+      "face": "#48545a",
+      "edge": "#303b41",
+      "light": "#e8ded0"
+    }
+  ],
+  "assets": [
+    "gold",
+    "reroll",
+    "captain",
+    "level",
+    "deploy",
+    "shop-wide",
+    "shop-tall"
+  ],
+  "revision": "단선 버튼과 위쪽 꼬리 말풍선. 새 표식은 투명 원화에서 추출했다. 버튼 바탕과 출전판, 두 말풍선은 논리 픽셀로 그렸다."
+}

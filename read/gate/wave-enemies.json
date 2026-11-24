@@ -1,0 +1,145 @@
+{
+  "waves": [
+    {
+      "number": 1,
+      "threat": "푸른 안개",
+      "lineup": [{"unit": "mist-taken", "count": 6}],
+      "tip": "가장 가까운 한 기에 팔을 휘두릅니다. 첫 전열에서 무리를 모아 처리하세요."
+    },
+    {
+      "number": 2,
+      "threat": "안개의 증식",
+      "lineup": [{"unit": "condensed-mist", "count": 2}, {"unit": "mist-taken", "count": 4}],
+      "tip": "응집 안개는 처음 쓰러질 때 작은 안개 둘로 갈라집니다. 범위 공격으로 함께 정리하세요."
+    },
+    {
+      "number": 3,
+      "threat": "별가루 수송",
+      "lineup": [{"unit": "stardust-brute", "count": 2}, {"unit": "stardust-courier", "count": 2}, {"unit": "mist-taken", "count": 3}],
+      "tip": "강화 악마가 전열을 막는 동안 운반 악마가 뒤에서 별가루 탄을 쏩니다. 후열에 닿는 공격을 준비하세요."
+    },
+    {
+      "number": 4,
+      "threat": "브로키의 돌진",
+      "lineup": [{"unit": "brocky-controlled", "count": 1}, {"unit": "stardust-brute", "count": 2}, {"unit": "mist-taken", "count": 3}],
+      "tip": "브로키가 직선 돌진을 예고합니다. 전열과 후열을 같은 열에 겹쳐 배치하지 않도록 주의하세요."
+    },
+    {
+      "number": 5,
+      "threat": "별가루 증폭",
+      "lineup": [{"unit": "minsung-vessel", "count": 1}, {"unit": "stardust-courier", "count": 2}, {"unit": "stardust-core", "count": 1}],
+      "tip": "증폭핵이 살아 있는 동안 빙의된 이민성의 공격이 강해집니다. 고정된 증폭핵부터 파괴하세요."
+    },
+    {
+      "number": 6,
+      "threat": "티엘의 투영",
+      "lineup": [{"unit": "tiel-projection", "count": 1}, {"unit": "stardust-brute", "count": 2}, {"unit": "mist-taken", "count": 4}],
+      "tip": "티엘이 빛으로 연결한 병력을 강화하고 표시된 구역을 타격합니다. 연결된 병력을 끊고 진형을 분산하세요."
+    },
+    {
+      "number": 7,
+      "threat": "녹슨 발자국",
+      "lineup": [{"unit": "rustjaw-hound", "count": 1}, {"unit": "shale-shell-beetle", "count": 1}, {"unit": "lantern-moth", "count": 1}, {"unit": "rift-mole", "count": 1}],
+      "previewLimit": 4,
+      "tip": "사냥개의 빠른 접근을 전열에서 받아내고 등불 나방의 원거리 공격을 살피세요."
+    },
+    {
+      "number": 8,
+      "threat": "균열 굴착",
+      "lineup": [{"unit": "rustjaw-hound-ii", "count": 1}, {"unit": "shale-shell-beetle-ii", "count": 1}, {"unit": "lantern-moth-ii", "count": 1}, {"unit": "rift-mole-ii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "방어형 겹갑 편암벌레가 앞을 막습니다. 빠른 갈래턱 사냥개도 함께 달려듭니다."
+    },
+    {
+      "number": 9,
+      "threat": "균열 선발대 대장",
+      "lineup": [{"unit": "rustjaw-hound-iii", "count": 1}, {"unit": "shale-shell-beetle-iii", "count": 1}, {"unit": "lantern-moth-iii", "count": 1}, {"unit": "rift-mole-iii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "칼등 사냥개가 먼저 닿고 암봉 편암벌레가 뒤따릅니다. 전열과 후열의 거리를 확보하세요."
+    },
+    {
+      "number": 10,
+      "threat": "먹안개 행렬",
+      "lineup": [{"unit": "ink-lizard", "count": 1}, {"unit": "bone-mask-wraith", "count": 1}, {"unit": "mist-bell-keeper", "count": 1}, {"unit": "spore-carrier", "count": 1}],
+      "previewLimit": 4,
+      "tip": "먹빛 도마뱀이 앞서고 뼈가면 망령이 거리를 두고 공격합니다."
+    },
+    {
+      "number": 11,
+      "threat": "가면과 종",
+      "lineup": [{"unit": "ink-lizard-ii", "count": 1}, {"unit": "bone-mask-wraith-ii", "count": 1}, {"unit": "mist-bell-keeper-ii", "count": 1}, {"unit": "spore-carrier-ii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "함정종 지기가 버티는 동안 겹가면 망령이 뒤에서 공격합니다."
+    },
+    {
+      "number": 12,
+      "threat": "포자 안개",
+      "lineup": [{"unit": "ink-lizard-iii", "count": 1}, {"unit": "bone-mask-wraith-iii", "count": 1}, {"unit": "mist-bell-keeper-iii", "count": 1}, {"unit": "spore-carrier-iii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "삼면 망령의 원거리 공격과 톱등 먹빛 도마뱀의 빠른 접근에 대비하세요."
+    },
+    {
+      "number": 13,
+      "threat": "별가루 무장대",
+      "lineup": [{"unit": "stardust-dart-imp", "count": 1}, {"unit": "prism-mantis", "count": 1}, {"unit": "cinder-ram", "count": 1}, {"unit": "echo-crossbow-guard", "count": 1}],
+      "previewLimit": 4,
+      "tip": "프리즘 사마귀가 빠르게 들어오고 투창 악마와 석궁수가 뒤에서 공격합니다."
+    },
+    {
+      "number": 14,
+      "threat": "수정과 화철",
+      "lineup": [{"unit": "stardust-dart-imp-ii", "count": 1}, {"unit": "prism-mantis-ii", "count": 1}, {"unit": "cinder-ram-ii", "count": 1}, {"unit": "echo-crossbow-guard-ii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "화철뿔 숫양이 전열을 버팁니다. 갈래창 악마와 접이날 석궁수의 공격이 겹칩니다."
+    },
+    {
+      "number": 15,
+      "threat": "공성 병기대",
+      "lineup": [{"unit": "stardust-dart-imp-iii", "count": 1}, {"unit": "prism-mantis-iii", "count": 1}, {"unit": "cinder-ram-iii", "count": 1}, {"unit": "echo-crossbow-guard-iii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "쌍나선 화철수가 공격을 버티는 동안 두 원거리 진화체가 사격합니다."
+    },
+    {
+      "number": 16,
+      "threat": "서리 선봉",
+      "lineup": [{"unit": "frost-spike-crab", "count": 1}, {"unit": "snowglass-hare", "count": 1}, {"unit": "black-ice-revenant", "count": 1}, {"unit": "hoarfrost-banner-yak", "count": 1}],
+      "previewLimit": 4,
+      "tip": "설유리 토끼가 먼저 달려들고, 서리못 게와 서리깃 야크가 천천히 압박합니다."
+    },
+    {
+      "number": 17,
+      "threat": "검은 얼음 부대",
+      "lineup": [{"unit": "frost-spike-crab-ii", "count": 1}, {"unit": "snowglass-hare-ii", "count": 1}, {"unit": "black-ice-revenant-ii", "count": 1}, {"unit": "hoarfrost-banner-yak-ii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "갈래귀 설유리 토끼의 빠른 접근과 빙골 망자의 근접 공격에 대비하세요."
+    },
+    {
+      "number": 18,
+      "threat": "설원 군기대",
+      "lineup": [{"unit": "frost-spike-crab-iii", "count": 1}, {"unit": "snowglass-hare-iii", "count": 1}, {"unit": "black-ice-revenant-iii", "count": 1}, {"unit": "hoarfrost-banner-yak-iii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "빙관 집게괴수와 삼기 설원 야크가 긴 교전을 유도합니다. 근접 공격을 오래 버틸 전열을 두세요."
+    },
+    {
+      "number": 19,
+      "threat": "심연 경계",
+      "lineup": [{"unit": "hollow-shield-leech", "count": 1}, {"unit": "broken-oath-knight", "count": 1}, {"unit": "abyss-eye-watcher", "count": 1}, {"unit": "falling-star-keeper", "count": 1}],
+      "previewLimit": 4,
+      "tip": "방패거머리와 낙성 파수체가 버티는 동안 심연 외눈이 먼 거리에서 공격합니다."
+    },
+    {
+      "number": 20,
+      "threat": "깨진 서약",
+      "lineup": [{"unit": "hollow-shield-leech-ii", "count": 1}, {"unit": "broken-oath-knight-ii", "count": 1}, {"unit": "abyss-eye-watcher-ii", "count": 1}, {"unit": "falling-star-keeper-ii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "쌍뿔 서약 기사가 전열에서 싸우고 겹눈꺼풀 감시체가 후방에서 공격합니다."
+    },
+    {
+      "number": 21,
+      "threat": "추락성의 수호자",
+      "lineup": [{"unit": "hollow-shield-leech-iii", "count": 1}, {"unit": "broken-oath-knight-iii", "count": 1}, {"unit": "abyss-eye-watcher-iii", "count": 1}, {"unit": "falling-star-keeper-iii", "count": 1}],
+      "previewLimit": 4,
+      "tip": "성관 낙성수와 겹부채 방패거머리가 버티는 동안 톱테 심연눈이 원거리에서 공격합니다."
+    }
+  ]
+}

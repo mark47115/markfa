@@ -1,0 +1,35 @@
+{
+  "round-overview.gif": {
+    "capture": "852×393 브라우저 시연의 선술집·대기장·정산과 Unity 전투 카메라를 편집",
+    "round": 1,
+    "wave": "R01A",
+    "stages": ["round-hire.gif", "round-deploy.gif", "round-one-battle.gif", "round-result.gif"],
+    "actions": ["개울 정찰대 고용", "2번 칸에 배치", "출정", "승리", "다음 선술집"]
+  },
+  "tavern-upgrade.gif": {
+    "capture": "852×393 브라우저 시연의 선술집 조작",
+    "round": 3,
+    "actions": ["3골드를 써서 선술집 1 → 2레벨", "탁자 3 → 4개"]
+  },
+  "recruit-and-deploy.gif": {
+    "capture": "Android APK와 일치하는 선술집·대기장 화면을 852×393에서 조작해 캡처",
+    "round": 1,
+    "wave": "R01A",
+    "actions": ["개울 정찰대 고용", "대기장 이동", "2번 칸으로 배치", "출정"]
+  },
+  "first-battle.gif": {
+    "capture": "Unity 모바일 원정 씬의 전투 카메라를 852×393 렌더 텍스처로 캡처",
+    "round": 8,
+    "wave": "R08D",
+    "pieces": ["Guard-4-0", "Blessing-4-0", "Hunt-3-0"],
+    "ticksPerSecond": 20,
+    "capturedEveryTicks": 2,
+    "endTick": 86
+  },
+  "motions": {
+    "source": "../unit-sprites/unit-motion-v10/manifest.json",
+    "allies": 276,
+    "enemies": 32,
+    "rasterScale": 2
+  }
+}

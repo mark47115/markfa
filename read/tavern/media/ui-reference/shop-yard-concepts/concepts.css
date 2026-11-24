@@ -1,0 +1,62 @@
+body{background:#211c20;color:#f6e8d2}main{max-width:1064px;padding:30px 32px 23px;margin:auto}.intro{margin:0 0 20px}.intro h1{font-size:clamp(21px,3vw,31px)}.intro a,.downloads a{font-weight:650;text-underline-offset:4px}#styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}#styles button,.tools button{color:#ddcbb1;background:#332c2c;border:1px solid #645248;border-radius:3px}#styles button{display:flex;align-items:center;justify-content:center;gap:9px;padding:9px 6px;font-weight:750;min-height:46px}#styles img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}#styles button[aria-pressed=true]{color:#fff0cc;background:#534133;border-color:#d6ab70;box-shadow:inset 0 -2px #d6ab70}.selection{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px}.selection p{color:#decebd;font-size:15px;line-height:1.5}.tools{display:flex;gap:6px;flex-shrink:0}.tools button{min-height:38px;padding:5px 12px}.viewport{outline:1px solid #76624e}.yard #deploy{background-image:var(--deploy)}.yard #shop{background-image:var(--shop-wide)}.yard.portrait #shop{background-image:var(--shop-tall)}.yard .offer,.yard #detail{background:var(--face);border-color:var(--edge);box-shadow:inset 0 1px var(--light),0 2px #362826}.yard .offer:hover:enabled{background:var(--face);border-color:var(--light);box-shadow:inset 0 0 0 1px var(--light)}.yard .action span,.yard .action small{background:var(--face);border-color:var(--edge);box-shadow:inset 0 1px var(--light)}.yard .action:focus-visible,.yard .offer:focus-visible{outline:3px solid #fff3c6;outline-offset:1px}.yard .action:hover:enabled img,.yard #deploy:hover:enabled{filter:brightness(1.12)}.yard .price{color:#ffe6aa}.yard .offer .family{color:var(--tint)}footer{align-items:baseline;justify-content:space-between;gap:8px 16px;margin-top:15px}.downloads{display:flex;flex-wrap:wrap;gap:16px}
+@media(max-width:760px){main{padding:14px 10px}.intro{padding:0}.intro h1{font-size:22px}#styles button{font-size:13px;gap:4px}.selection{padding:7px 0}footer{padding:0}}
+@media(max-width:550px){#styles{grid-template-columns:repeat(3,1fr)}#styles button{min-height:41px;padding:3px 2px}#styles img{width:25px;height:25px}.intro{gap:8px}.selection{align-items:start;flex-direction:column;gap:6px;padding:10px 0}.selection p{font-size:14px}.tools button{min-height:36px}.viewport{overflow:hidden}footer{font-size:13px}}
+.yard:not(.portrait) #deck{top:177px;bottom:80px;grid-template-rows:repeat(2,minmax(0,1fr))}.yard:not(.portrait) .slot{min-height:0}.yard:not(.portrait) .slot .troop img{width:68px;height:68px;margin:0 -12px}.yard #level .level-tag{margin-top:0;gap:2px;padding:0 3px;font-size:14px;white-space:nowrap}.yard #level .level-tag small{position:static;transform:none;background:none;box-shadow:none;padding:0 1px;font-size:10px}
+.yard #shop {
+  left:188px; top:212px; width:584px; height:106px;
+  color:#342921;
+}
+.yard #stock-status {
+  position:absolute; top:19px; left:12px; right:12px; text-align:center;
+  font:700 13px/17px Body,sans-serif; color:#504034;
+}
+.yard #offers {
+  inset:36px 10px 5px; grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-rows:1fr; gap:0;
+}
+.yard #offers .offer {
+  display:grid; grid-template-columns:44px minmax(0,1fr);
+  grid-template-rows:auto auto auto; align-content:center; align-items:center;
+  justify-items:start; column-gap:2px; padding:1px 4px;
+  border:0; border-radius:0; box-shadow:none; background:transparent; color:#30241e;
+}
+.yard #offers .offer + .offer {border-left:1px solid #79614955}
+.yard #offers .offer:hover:enabled,.yard #offers .offer:focus-visible {background:#754d2920}
+.yard #offers .offer:focus-visible {outline:2px solid #6e492e;outline-offset:-2px}
+.yard #offers .troop {grid-row:1 / 4; width:44px; height:48px;align-items:center;justify-content:center}
+.yard #offers .troop:not(:has(.table)) img {width:37px;height:41px;margin:0 -10px}
+.yard #offers .troop img.table {width:47px;height:36px;margin:0}
+.yard #offers .family {grid-column:2;color:#584735;font:650 11px/15px Body,sans-serif;gap:2px}
+.yard #offers .family .crest {width:12px;height:12px;background:#493a34;border-radius:2px;padding:1px}
+.yard #offers strong {grid-column:2;font:13px/18px Cavern,monospace;white-space:nowrap}
+.yard #offers .price {grid-column:2;color:#584129;font:650 12px/15px Body,sans-serif;gap:3px}
+.yard #offers .price .coin {margin-left:3px}
+.yard #offers .offer:disabled {filter:none}
+.yard #offers .sold .troop {opacity:.42}
+.yard .action {filter:none}
+.yard .action span,.yard .tag,.yard .round,.yard .enemy {border-width:1px;box-shadow:none}
+.yard .erosion {outline:0;border-width:1px;box-shadow:none}
+.yard #detail {border:1px solid var(--edge);box-shadow:none}
+.yard:not(.portrait):has(#shop:not([hidden])) #deck {
+  top:320px;bottom:6px;grid-template-rows:repeat(2,minmax(0,1fr));row-gap:1px;
+}
+.yard:not(.portrait):has(#shop:not([hidden])) .slot .troop img {width:48px;height:48px;margin:0 -10px}
+.yard.portrait #shop {left:11px;top:232px;width:408px;height:154px}
+.yard.portrait #stock-status {top:23px}
+.yard.portrait #offers {inset:42px 10px 7px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.yard.portrait #offers .offer {grid-template-columns:57px minmax(0,1fr);padding-inline:7px}
+.yard.portrait #offers .offer + .offer {border-left:0}
+.yard.portrait #offers .offer:nth-child(even) {border-left:1px solid #79614955}
+.yard.portrait #offers .offer:nth-child(n+3) {border-top:1px solid #79614955}
+.yard.portrait #offers .troop {width:54px}
+.yard.portrait #offers strong {font-size:14px}
+.yard.portrait:has(#shop:not([hidden])) #deck {top:390px;bottom:169px;grid-template-rows:repeat(2,minmax(0,1fr));row-gap:2px}
+.yard.portrait:has(#shop:not([hidden])) .slot {min-height:0}
+.yard.portrait:has(#shop:not([hidden])) .slot .troop img {width:48px;height:48px;margin:0 -9px}
+.yard:has(#shop:not([hidden])) #feedback {bottom:2px}
+.yard:not(.portrait) {background-position:center 10%}
+
+.yard #offers .offer .troop img.pair {width:44px;height:36px}
+.yard #offers .offer .member-names {display:none}
+.yard:has(#shop:not([hidden])) #deck .slot .troop img.pair {width:68px;height:38px}
+.yard.portrait #offers .offer .troop img.pair {width:52px;height:39px}

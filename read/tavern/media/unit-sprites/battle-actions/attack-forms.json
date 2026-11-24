@@ -1,0 +1,851 @@
+{
+ "steel-1a": {
+  "name": "창팔 보행기",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "steel-1b": {
+  "name": "덧판 경비기",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "steel-2a": {
+  "name": "코일 못사수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "steel-2b": {
+  "name": "접지 돌격기",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "steel-3a": {
+  "name": "셔터 방벽기",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "steel-3b": {
+  "name": "탄띠 장전기",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "steel-4a": {
+  "name": "교정 압착기",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "steel-4b": {
+  "name": "이동 차폐기",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "steel-5a": {
+  "name": "성문 견인기",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "steel-5b": {
+  "name": "공성 압연기",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-1a": {
+  "name": "불씨 종자",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-1b": {
+  "name": "등불 방패수",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "dusk-2a": {
+  "name": "등화 쇠뇌수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "dusk-2b": {
+  "name": "등잔 호위기사",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-3a": {
+  "name": "화로 창기사",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-3b": {
+  "name": "점화 나팔수",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "dusk-4a": {
+  "name": "성루 불시위꾼",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "dusk-4b": {
+  "name": "횃불 망루병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-5a": {
+  "name": "끝불 성문기사",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "dusk-5b": {
+  "name": "황혼 집결기사",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "grove-1a": {
+  "name": "새눈 활잡이",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "grove-1b": {
+  "name": "묘목 방패지기",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "grove-2a": {
+  "name": "씨앗 물매꾼",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "grove-2b": {
+  "name": "접가지 찌름병",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "grove-3a": {
+  "name": "이슬 수액지기",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "grove-3b": {
+  "name": "달숲 활지기",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "grove-4a": {
+  "name": "나이테 방패지기",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "grove-4b": {
+  "name": "수관 가시창병",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "grove-5a": {
+  "name": "들숲 뿌리수호자",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "grove-5b": {
+  "name": "황금눈 대궁수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "guild-1a": {
+  "name": "영수증 심부름꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "guild-1b": {
+  "name": "잔돈 물매꾼",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "guild-2a": {
+  "name": "계약패 호위꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "guild-2b": {
+  "name": "황동전 쇠뇌꾼",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "guild-3a": {
+  "name": "외상 약제사",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "guild-3b": {
+  "name": "금고 호송꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "guild-4a": {
+  "name": "교역 짐기수",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "guild-4b": {
+  "name": "금고 감정사수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "guild-5a": {
+  "name": "상회 금고수호자",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "guild-5b": {
+  "name": "경매 호위포차",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "forge-1a": {
+  "name": "첫불 망치꾼",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "forge-1b": {
+  "name": "쇳못 사수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "forge-2a": {
+  "name": "철편 방패수",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "forge-2b": {
+  "name": "숫돌 쐐기꾼",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "forge-3a": {
+  "name": "모루받이 파수병",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "forge-3b": {
+  "name": "잉걸 집게병",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "forge-4a": {
+  "name": "강철 큰메잡이",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "forge-4b": {
+  "name": "금형 방벽장",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "forge-5a": {
+  "name": "결투 절단장",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "forge-5b": {
+  "name": "병기창 쇠뇌장",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "horde-1a": {
+  "name": "돌갑 신병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "horde-1b": {
+  "name": "북채 돌투수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "horde-2a": {
+  "name": "붉은끈 도끼병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "horde-2b": {
+  "name": "붉은매듭 창병",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "horde-3a": {
+  "name": "집결 큰북수",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "horde-3b": {
+  "name": "돌문 방패병",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "horde-4a": {
+  "name": "시련 투창수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "horde-4b": {
+  "name": "붉은모래 결투사",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "horde-5a": {
+  "name": "맹세비 방패장",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "horde-5b": {
+  "name": "핏매듭 도끼장",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "fang-1a": {
+  "name": "여울 자국꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "fang-1b": {
+  "name": "물길 투창수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "fang-2a": {
+  "name": "갈대 가죽지기",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "fang-2b": {
+  "name": "덫발톱 습격꾼",
+  "cast": "claw",
+  "melee": true,
+  "hit": null
+ },
+ "fang-3a": {
+  "name": "고갯길 가시궁수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "fang-3b": {
+  "name": "핏자국 약손",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "fang-4a": {
+  "name": "여울 큰뿔지기",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "fang-4b": {
+  "name": "무리 추격발톱",
+  "cast": "claw",
+  "melee": true,
+  "hit": null
+ },
+ "fang-5a": {
+  "name": "고갯길 뿔투척수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "fang-5b": {
+  "name": "흰갈기 몰이창수",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "rowan-1": {
+  "name": "계약패 방패수",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "rowan-3": {
+  "name": "두루마리 연락병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "rowan-5": {
+  "name": "쌍인장 군기수",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "mire-1": {
+  "name": "탁본 견습생",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "mire-3": {
+  "name": "관측륜 사수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "mire-5": {
+  "name": "일곱봉인 서고지기",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "thorin-1": {
+  "name": "황동 집게손",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "thorin-3": {
+  "name": "도르래 정비병",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "thorin-5": {
+  "name": "전환노심 기사",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "sera-1": {
+  "name": "길패 심부름꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "sera-3": {
+  "name": "측량줄 투석수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "sera-5": {
+  "name": "삼거리 역참장",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "bryn-1": {
+  "name": "말뚝 망치꾼",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "bryn-3": {
+  "name": "가새 방패수",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "bryn-5": {
+  "name": "대들보 기립장",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "edda-1": {
+  "name": "걸쇠 초병",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "edda-3": {
+  "name": "맞물림 방패병",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "edda-5": {
+  "name": "성쇄 방벽장",
+  "cast": "bash",
+  "melee": true,
+  "hit": null
+ },
+ "lark-1": {
+  "name": "쌍깃 척후병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "lark-3": {
+  "name": "부싯돌 궁수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "lark-5": {
+  "name": "짝깃 대궁장",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "narin-1": {
+  "name": "붕대 배달병",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "narin-3": {
+  "name": "들것 호위병",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "narin-5": {
+  "name": "왕진 수석의",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "orr-1": {
+  "name": "등잔 순라꾼",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "orr-3": {
+  "name": "쌍종 시보수",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "orr-5": {
+  "name": "대종 망치장",
+  "cast": "slam",
+  "melee": true,
+  "hit": "hit"
+ },
+ "lume-1": {
+  "name": "안개 길등수",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "lume-3": {
+  "name": "길줄 투척수",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ },
+ "lume-5": {
+  "name": "높은불 도선장",
+  "cast": "mend",
+  "melee": false,
+  "hit": "heal"
+ },
+ "rift-tick": {
+  "name": "균열 진드기",
+  "cast": "jaws",
+  "melee": true,
+  "role": "근접",
+  "hit": null
+ },
+ "ruin-shell": {
+  "name": "폐허 등껍질",
+  "cast": "bash",
+  "melee": true,
+  "role": "도발",
+  "hit": null
+ },
+ "imperfect-hybrid": {
+  "name": "불완전한 혼종",
+  "cast": "sweep",
+  "melee": true,
+  "role": "근접",
+  "hit": "hit"
+ },
+ "veil-wraith": {
+  "name": "장막 유령",
+  "cast": "sweep",
+  "melee": true,
+  "role": "부활",
+  "hit": "hit"
+ },
+ "broken-crown": {
+  "name": "깨진 왕관",
+  "cast": "sweep",
+  "melee": true,
+  "role": "도발",
+  "hit": "hit"
+ },
+ "abyssal-choir": {
+  "name": "심연 합창단",
+  "cast": "sweep",
+  "melee": true,
+  "role": "부활",
+  "hit": "hit"
+ },
+ "the-devourer": {
+  "name": "삼키는 자",
+  "cast": "sweep",
+  "melee": true,
+  "role": "도발·분열",
+  "hit": "hit"
+ },
+ "devourer-split": {
+  "name": "분열체",
+  "cast": "sweep",
+  "melee": true,
+  "role": "근접",
+  "hit": "hit"
+ },
+ "dim-spore": {
+  "name": "미광 포자",
+  "cast": "shot",
+  "melee": false,
+  "role": "원거리",
+  "hit": "hit"
+ },
+ "hook-young": {
+  "name": "갈고리 새끼",
+  "cast": "claw",
+  "melee": true,
+  "role": "측면",
+  "hit": null
+ },
+ "shell-carrier": {
+  "name": "조개 등짐꾼",
+  "cast": "mend",
+  "melee": false,
+  "role": "지원",
+  "hit": "heal"
+ },
+ "echo-worm": {
+  "name": "메아리 갯지렁이",
+  "cast": "sweep",
+  "melee": true,
+  "role": "측면",
+  "hit": "hit"
+ },
+ "mirror-watcher": {
+  "name": "거울 감시자",
+  "cast": "shot",
+  "melee": false,
+  "role": "원거리·제어",
+  "hit": "hit"
+ },
+ "blue-gatekeeper": {
+  "name": "청람 문지기",
+  "cast": "bash",
+  "melee": true,
+  "role": "도발·보호막",
+  "hit": null
+ },
+ "warped-turret": {
+  "name": "기형 망루",
+  "cast": "shot",
+  "melee": false,
+  "role": "원거리",
+  "hit": "hit"
+ },
+ "split-prophet": {
+  "name": "갈라진 예언자",
+  "cast": "shot",
+  "melee": false,
+  "role": "원거리",
+  "hit": "hit"
+ },
+ "void-274": {
+  "name": "틈새 추적자",
+  "cast": "sweep",
+  "melee": true,
+  "role": "근접",
+  "hit": "hit"
+ },
+ "void-277": {
+  "name": "공허 송곳니",
+  "cast": "jaws",
+  "melee": true,
+  "role": "근접",
+  "hit": null
+ },
+ "void-280": {
+  "name": "뒤틀린 창",
+  "cast": "thrust",
+  "melee": true,
+  "role": "성장",
+  "hit": "hit"
+ },
+ "void-281": {
+  "name": "먹빛 장막",
+  "cast": "sweep",
+  "melee": true,
+  "role": "보호막",
+  "hit": "hit"
+ },
+ "void-282": {
+  "name": "균열 거신",
+  "cast": "slam",
+  "melee": true,
+  "role": "도발",
+  "hit": "hit"
+ },
+ "void-284": {
+  "name": "고난의 성벽",
+  "cast": "bash",
+  "melee": true,
+  "role": "도발·보호막",
+  "hit": null
+ },
+ "void-285": {
+  "name": "황폐 집행자",
+  "cast": "sweep",
+  "melee": true,
+  "role": "성장",
+  "hit": "hit"
+ },
+ "void-286": {
+  "name": "공허 대장군",
+  "cast": "sweep",
+  "melee": true,
+  "role": "도발",
+  "hit": "hit"
+ },
+ "void-287": {
+  "name": "심연 대장군",
+  "cast": "sweep",
+  "melee": true,
+  "role": "보호막",
+  "hit": "hit"
+ },
+ "void-291": {
+  "name": "실금 알껍질",
+  "cast": "sweep",
+  "melee": true,
+  "role": "근접",
+  "hit": "hit"
+ },
+ "void-293": {
+  "name": "속빈 미아",
+  "cast": "sweep",
+  "melee": true,
+  "role": "제어",
+  "hit": "hit"
+ },
+ "void-294": {
+  "name": "유리 촉수",
+  "cast": "shot",
+  "melee": false,
+  "role": "원거리",
+  "hit": "hit"
+ },
+ "void-295": {
+  "name": "모래 잠복자",
+  "cast": "sweep",
+  "melee": true,
+  "role": "측면",
+  "hit": "hit"
+ },
+ "void-298": {
+  "name": "빈껍질 집전관",
+  "cast": "mend",
+  "melee": false,
+  "role": "지원",
+  "hit": "heal"
+ },
+ "void-302": {
+  "name": "검푸른 금식자",
+  "cast": "jaws",
+  "melee": true,
+  "role": "근접",
+  "hit": null
+ },
+ "void-304": {
+  "name": "먹구름 순례자",
+  "cast": "mend",
+  "melee": false,
+  "role": "지원",
+  "hit": "heal"
+ },
+ "undertow-bell": {
+  "name": "역류의 종지기",
+  "cast": "thrust",
+  "melee": true,
+  "hit": "hit"
+ },
+ "shattered-regent": {
+  "name": "파관의 섭정",
+  "cast": "sweep",
+  "melee": true,
+  "hit": "hit"
+ },
+ "mute-precentor": {
+  "name": "무언의 선창자",
+  "cast": "shot",
+  "melee": false,
+  "material": "sound",
+  "hit": "hit"
+ },
+ "eclipse-loom": {
+  "name": "밤을 짜는 눈",
+  "cast": "shot",
+  "melee": false,
+  "hit": "hit"
+ }
+}

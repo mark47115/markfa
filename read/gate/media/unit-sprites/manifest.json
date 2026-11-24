@@ -1,0 +1,8620 @@
+{
+  "cellSize": 64,
+  "anchor": [
+    32,
+    57
+  ],
+  "allies": {
+    "sprites": [
+      {
+        "id": "st01-i",
+        "family": "ST01",
+        "name": "그림자 갑주병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st01-i-refined.png",
+        "silhouette": "앞으로 뻗은 사선 검과 안쪽으로 붙인 작은 방패",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#92765D",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st01-ii",
+        "family": "ST01",
+        "name": "정예 그림자 갑주병",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/st01-ii.png",
+        "silhouette": "방패병에서 비대칭 골면과 큰 견갑으로 변화",
+        "palette": [
+          "#09070E",
+          "#0D0B12",
+          "#100E16",
+          "#1A1721",
+          "#282231",
+          "#343240",
+          "#464253",
+          "#655F73",
+          "#A492A1",
+          "#D6C7CF"
+        ],
+        "frame": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st01-iii",
+        "family": "ST01",
+        "name": "그리드",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st01-iii-r2.png",
+        "silhouette": "오른쪽으로 돌린 잿빛 뿔뼈 가면과 작은 방패",
+        "palette": [
+          "#0A0A10",
+          "#16151E",
+          "#252430",
+          "#353241",
+          "#4B4359",
+          "#625374",
+          "#8B75A2",
+          "#BBA6CA",
+          "#DFD0E9"
+        ],
+        "frame": [
+          128,
+          0,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st01-iii.png",
+          "silhouette": "방패병에서 비대칭 골면과 큰 견갑으로 변화",
+          "palette": [
+            "#09070E",
+            "#0D0B12",
+            "#100E16",
+            "#1A1721",
+            "#282231",
+            "#343240",
+            "#464253",
+            "#655F73",
+            "#A492A1",
+            "#D6C7CF"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "st02-i",
+        "family": "ST02",
+        "name": "나가 그림자 창병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st02-i-refined.png",
+        "silhouette": "드러난 파충류 머리와 감긴 꼬리, 사선으로 솟은 창",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          192,
+          0,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st02-ii",
+        "family": "ST02",
+        "name": "정예 나가 그림자",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/st02-ii.png",
+        "silhouette": "감긴 꼬리와 긴 창",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          256,
+          0,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st02-iii",
+        "family": "ST02",
+        "name": "지마",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/st02-iii.png",
+        "silhouette": "감긴 꼬리와 긴 창",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          320,
+          0,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st03-i",
+        "family": "ST03",
+        "name": "그림자 곰 병사",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/ally-review/st03-i-r1.png",
+        "silhouette": "오른쪽으로 내민 작은 주둥이와 둥근 귀",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          384,
+          0,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st03-i-refined.png",
+          "silhouette": "낮은 몸과 둥근 곰 귀, 앞쪽에 내민 두꺼운 앞발",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st03-ii",
+        "family": "ST03",
+        "name": "정예 그림자 곰",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st03-ii-r1.png",
+        "silhouette": "오른쪽 앞발과 등 뒤로 흐르는 그림자",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          448,
+          0,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/st03-ii-v4.png",
+          "silhouette": "한쪽 어깨에서 높이 말리는 그림자",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st03-iii",
+        "family": "ST03",
+        "name": "탱크",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st03-iii-r1.png",
+        "silhouette": "오른쪽 주둥이·큰 앞발과 가슴의 X자 흉터",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          512,
+          0,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/st03-iii-v4.png",
+          "silhouette": "넓게 휘는 등 불꽃과 두 앞발, 가슴의 X자 흉터",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st04-i",
+        "family": "ST04",
+        "name": "가면 쓴 그림자 전사",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st04-i.png",
+        "silhouette": "가면과 층이 커지는 칼날",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          0,
+          64,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st04-ii",
+        "family": "ST04",
+        "name": "정예 가면 그림자",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/st04-ii.png",
+        "silhouette": "가면과 층이 커지는 칼날",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st04-iii",
+        "family": "ST04",
+        "name": "서해안 레드 게이트의 족장",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/st04-iii.png",
+        "silhouette": "가면과 층이 커지는 칼날",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          128,
+          64,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st05-i",
+        "family": "ST05",
+        "name": "그림자 방패병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/ally-review/st05-i-shield-only.png",
+        "silhouette": "오른쪽의 작은 방패와 허리 앞에 둔 빈 주먹",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          192,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st05-i.png",
+          "silhouette": "큰 방패와 뿔 투구",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "revision": "shield-only"
+      },
+      {
+        "id": "st05-ii",
+        "family": "ST05",
+        "name": "중장 그림자 방패병",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st05-ii-shield-only.png",
+        "silhouette": "오른쪽의 긴 방패와 아래 테두리를 받치는 장갑 손",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          256,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st05-ii.png",
+          "silhouette": "큰 방패와 뿔 투구",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "revision": "shield-only"
+      },
+      {
+        "id": "st05-iii",
+        "family": "ST05",
+        "name": "아이언",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st05-iii-shield-only.png",
+        "silhouette": "양뿔 투구·오른쪽 대형 방패와 흉갑 앞에 들어 올린 빈 주먹",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          320,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st05-iii.png",
+          "silhouette": "큰 방패와 뿔 투구",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "revision": "shield-only"
+      },
+      {
+        "id": "st06-i",
+        "family": "ST06",
+        "name": "그림자 거인병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/ally-review/st06-i-r1.png",
+        "silhouette": "오른쪽을 보는 낮은 투구와 작은 돌주먹",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          384,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st06-i.png",
+          "silhouette": "둔중한 팔과 큰 주먹",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st06-ii",
+        "family": "ST06",
+        "name": "정예 그림자 거인",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st06-ii-r1.png",
+        "silhouette": "한쪽 보랏빛 견갑과 오른쪽 앞주먹",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          448,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st06-ii.png",
+          "silhouette": "둔중한 팔과 큰 주먹",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st06-iii",
+        "family": "ST06",
+        "name": "거인 6호",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st06-iii-r1.png",
+        "silhouette": "뿔 투구의 오른쪽 눈과 두꺼운 자수정 주먹",
+        "palette": [
+          "#0A0A10",
+          "#15151C",
+          "#23242E",
+          "#343645",
+          "#4B4B5B",
+          "#66517E",
+          "#9F75BC",
+          "#E7D4F2"
+        ],
+        "frame": [
+          512,
+          64,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st06-iii.png",
+          "silhouette": "둔중한 팔과 큰 주먹",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#A67BCC",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "st07-i",
+        "family": "ST07",
+        "name": "그림자 비룡",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st07-i.png",
+        "silhouette": "굽은 목과 막날개",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          0,
+          128,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st07-ii",
+        "family": "ST07",
+        "name": "정예 그림자 비룡",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/st07-ii.png",
+        "silhouette": "굽은 목과 막날개",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          64,
+          128,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st07-iii",
+        "family": "ST07",
+        "name": "카이셀",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/st07-iii.png",
+        "silhouette": "굽은 목과 막날개",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          128,
+          128,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "st08-i",
+        "family": "ST08",
+        "name": "그림자 개미 병사",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/readability-pass/st08-i.png",
+        "silhouette": "오른쪽 눈과 더듬이, 왼쪽에 놓인 타원형 배",
+        "palette": [
+          "#09070D",
+          "#0B0A0F",
+          "#0D0B11",
+          "#100E15",
+          "#1A1722",
+          "#262130",
+          "#373044",
+          "#3D364B",
+          "#5C4A6B",
+          "#866B96"
+        ],
+        "frame": [
+          192,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st08-i-refined.png",
+          "silhouette": "굽은 더듬이 두 개와 분리된 복부, 낮은 곤충 다리",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#50515B",
+            "#6C477F",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 3,
+        "beforeReadability": "sprites/ally-review/st08-i-r3.png"
+      },
+      {
+        "id": "st08-ii",
+        "family": "ST08",
+        "name": "그림자 호위개미",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st08-ii-r3.png",
+        "silhouette": "오른쪽 턱과 길고 은보라색인 앞다리 장갑",
+        "palette": [
+          "#0D0C13",
+          "#191923",
+          "#272735",
+          "#38394A",
+          "#4D4D60",
+          "#6B587F",
+          "#8B76A4",
+          "#BA9CCB",
+          "#EAD9EE"
+        ],
+        "frame": [
+          256,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st08-ii.png",
+          "silhouette": "더듬이와 겹친 외골격",
+          "palette": [
+            "#08060D",
+            "#0D0C13",
+            "#110F18",
+            "#16141D",
+            "#1F1D29",
+            "#2C2938",
+            "#403C4F",
+            "#534D65",
+            "#766D8B",
+            "#C3B0D4"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "st08-iii",
+        "family": "ST08",
+        "name": "그림자 여왕개미",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st08-iii-r3.png",
+        "silhouette": "오른쪽 갈고리 턱과 겹갑·뿔판의 여왕개미",
+        "palette": [
+          "#0D0C13",
+          "#191923",
+          "#272735",
+          "#38394A",
+          "#4D4D60",
+          "#6B587F",
+          "#8B76A4",
+          "#BA9CCB",
+          "#EAD9EE"
+        ],
+        "frame": [
+          320,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st08-iii.png",
+          "silhouette": "더듬이와 겹친 외골격",
+          "palette": [
+            "#08060D",
+            "#0D0C13",
+            "#110F18",
+            "#16141D",
+            "#1F1D29",
+            "#2C2938",
+            "#403C4F",
+            "#534D65",
+            "#766D8B",
+            "#C3B0D4"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "st09-i",
+        "family": "ST09",
+        "name": "용족 그림자",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/readability-pass/st09-i.png",
+        "silhouette": "오른쪽의 긴 주둥이와 낮은 네 발, 어두운 적갈색 막날개",
+        "palette": [
+          "#09080D",
+          "#0C0A10",
+          "#0E0D13",
+          "#14111A",
+          "#1F1A27",
+          "#2B2434",
+          "#362F42",
+          "#3C3346",
+          "#483B50",
+          "#80546C"
+        ],
+        "frame": [
+          384,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st09-i-refined.png",
+          "silhouette": "낮은 사족 몸통과 긴 턱, 한쪽에 낮게 접은 막날개",
+          "palette": [
+            "#08080C",
+            "#121218",
+            "#20212A",
+            "#353742",
+            "#493043",
+            "#50515B",
+            "#70414F",
+            "#F0DDF7"
+          ]
+        },
+        "reviewRound": 3,
+        "beforeReadability": "sprites/ally-review/st09-i-r3.png"
+      },
+      {
+        "id": "st09-ii",
+        "family": "ST09",
+        "name": "정예 용족 그림자",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st09-ii-r3.png",
+        "silhouette": "오른쪽으로 돌린 높은 목과 뒤 세로 날개",
+        "palette": [
+          "#0C0B13",
+          "#181723",
+          "#252534",
+          "#373746",
+          "#49495C",
+          "#5F526E",
+          "#78536A",
+          "#9681AA",
+          "#9B6177",
+          "#D7C3E5"
+        ],
+        "frame": [
+          448,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st09-ii.png",
+          "silhouette": "긴 턱과 넓은 용 날개",
+          "palette": [
+            "#09080F",
+            "#0E0C14",
+            "#111018",
+            "#17141E",
+            "#1C1A25",
+            "#24202E",
+            "#2C2939",
+            "#3C3346",
+            "#4D4259",
+            "#665A78"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "st09-iii",
+        "family": "ST09",
+        "name": "카미쉬",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st09-iii-r3.png",
+        "silhouette": "오른쪽 쐐기형 주둥이, 크게 솟은 두 뿔과 톱니 날개, 세 겹 목 능선",
+        "palette": [
+          "#0C0B13",
+          "#181723",
+          "#252534",
+          "#373746",
+          "#49495C",
+          "#5F526E",
+          "#78536A",
+          "#9681AA",
+          "#9B6177",
+          "#D7C3E5"
+        ],
+        "frame": [
+          512,
+          128,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st09-iii.png",
+          "silhouette": "긴 턱과 넓은 용 날개",
+          "palette": [
+            "#09080F",
+            "#0E0C14",
+            "#111018",
+            "#17141E",
+            "#1C1A25",
+            "#24202E",
+            "#2C2939",
+            "#3C3346",
+            "#4D4259",
+            "#665A78"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "st10-i",
+        "family": "ST10",
+        "name": "하이오크 그림자 마법병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/ally-review/st10-i-r2.png",
+        "silhouette": "오른쪽 눈과 송곳니·작은 굽은 지팡이",
+        "palette": [
+          "#111019",
+          "#211C28",
+          "#30283A",
+          "#45374F",
+          "#5E486B",
+          "#80638B",
+          "#A178B1",
+          "#D2BCE0"
+        ],
+        "frame": [
+          0,
+          192,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st10-i.png",
+          "silhouette": "후드와 엄니, 구슬 지팡이",
+          "palette": [
+            "#09080E",
+            "#0E0C14",
+            "#14121C",
+            "#1E1C27",
+            "#25212F",
+            "#312D3E",
+            "#473E56",
+            "#574E66",
+            "#73627E",
+            "#B6A2B6"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "st10-ii",
+        "family": "ST10",
+        "name": "하이오크 그림자 주술사",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/ally-review/st10-ii-r2.png",
+        "silhouette": "넓어진 자주색 깃과 오른쪽 고리 지팡이",
+        "palette": [
+          "#111019",
+          "#211C28",
+          "#30283A",
+          "#45374F",
+          "#5E486B",
+          "#80638B",
+          "#A178B1",
+          "#D2BCE0"
+        ],
+        "frame": [
+          64,
+          192,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st10-ii.png",
+          "silhouette": "후드와 엄니, 구슬 지팡이",
+          "palette": [
+            "#09080E",
+            "#0E0C14",
+            "#14121C",
+            "#1E1C27",
+            "#25212F",
+            "#312D3E",
+            "#473E56",
+            "#574E66",
+            "#73627E",
+            "#B6A2B6"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "st10-iii",
+        "family": "ST10",
+        "name": "어금니",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/ally-review/st10-iii-r2.png",
+        "silhouette": "오른쪽 눈·뼈 목걸이와 손 위의 보랏빛 불씨",
+        "palette": [
+          "#111019",
+          "#211C28",
+          "#30283A",
+          "#45374F",
+          "#5E486B",
+          "#80638B",
+          "#A178B1",
+          "#B47AD9",
+          "#D2BCE0"
+        ],
+        "frame": [
+          128,
+          192,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/st10-iii.png",
+          "silhouette": "후드와 엄니, 구슬 지팡이",
+          "palette": [
+            "#09080E",
+            "#0E0C14",
+            "#14121C",
+            "#1E1C27",
+            "#25212F",
+            "#312D3E",
+            "#473E56",
+            "#574E66",
+            "#73627E",
+            "#B6A2B6"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "ht01-i",
+        "family": "HT01",
+        "name": "초급 방패 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/ht01-i.png",
+        "silhouette": "좁은 세로 방패와 짧은 검",
+        "palette": [
+          "#131522",
+          "#232438",
+          "#3A3957",
+          "#5B5D80",
+          "#8A8DB2",
+          "#AA8169",
+          "#CFD5EE",
+          "#F0C1A6"
+        ],
+        "frame": [
+          192,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht01-ii",
+        "family": "HT01",
+        "name": "장비를 갖춘 방패 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/ht01-ii.png",
+        "silhouette": "반듯한 직사각 방패와 한쪽 견갑",
+        "palette": [
+          "#131522",
+          "#232438",
+          "#3A3957",
+          "#5B5D80",
+          "#8A8DB2",
+          "#AA8169",
+          "#B49865",
+          "#CFD5EE",
+          "#F0C1A6"
+        ],
+        "frame": [
+          256,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht01-iii",
+        "family": "HT01",
+        "name": "유진호",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/ht01-iii.png",
+        "silhouette": "윗부분이 파인 넓은 방패와 망토",
+        "palette": [
+          "#131522",
+          "#232438",
+          "#3A3957",
+          "#5B5D80",
+          "#8A8DB2",
+          "#AA8169",
+          "#B49865",
+          "#CFD5EE",
+          "#F0C1A6"
+        ],
+        "frame": [
+          320,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht02-i",
+        "family": "HT02",
+        "name": "협회 정찰 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht02-i.png",
+        "silhouette": "짧은 머리와 권갑",
+        "palette": [
+          "#0B0912",
+          "#15131C",
+          "#25242F",
+          "#37303C",
+          "#3D3B49",
+          "#5A444A",
+          "#7B5A59",
+          "#B16A50",
+          "#C6A191",
+          "#F5D0B9"
+        ],
+        "frame": [
+          384,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht02-ii",
+        "family": "HT02",
+        "name": "정예 감시 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht02-ii.png",
+        "silhouette": "짧은 머리와 권갑",
+        "palette": [
+          "#0B0912",
+          "#15131C",
+          "#25242F",
+          "#37303C",
+          "#3D3B49",
+          "#5A444A",
+          "#7B5A59",
+          "#B16A50",
+          "#C6A191",
+          "#F5D0B9"
+        ],
+        "frame": [
+          448,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht02-iii",
+        "family": "HT02",
+        "name": "우진철",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht02-iii.png",
+        "silhouette": "짧은 머리와 권갑",
+        "palette": [
+          "#0B0912",
+          "#15131C",
+          "#25242F",
+          "#37303C",
+          "#3D3B49",
+          "#5A444A",
+          "#7B5A59",
+          "#B16A50",
+          "#C6A191",
+          "#F5D0B9"
+        ],
+        "frame": [
+          512,
+          192,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht03-i",
+        "family": "HT03",
+        "name": "마력 궁수",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/ally-review/ht03-i-r2.png",
+        "silhouette": "옆얼굴과 앞쪽에 분리된 작은 활",
+        "palette": [
+          "#15141F",
+          "#181721",
+          "#191822",
+          "#1B1A25",
+          "#221F2B",
+          "#322D3A",
+          "#3F3847",
+          "#554954",
+          "#926E5C",
+          "#CDA688"
+        ],
+        "frame": [
+          0,
+          256,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/ht03-i.png",
+          "silhouette": "몸 옆으로 펼친 활",
+          "palette": [
+            "#0B0A12",
+            "#16141C",
+            "#27242F",
+            "#312E3A",
+            "#3B333D",
+            "#403E4D",
+            "#53474E",
+            "#9D6E56",
+            "#D39C66",
+            "#EEC9A3"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "ht03-ii",
+        "family": "HT03",
+        "name": "정예 마력 궁수",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht03-ii.png",
+        "silhouette": "몸 옆으로 펼친 활",
+        "palette": [
+          "#0B0A12",
+          "#16141C",
+          "#27242F",
+          "#312E3A",
+          "#3B333D",
+          "#403E4D",
+          "#53474E",
+          "#9D6E56",
+          "#D39C66",
+          "#EEC9A3"
+        ],
+        "frame": [
+          64,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht03-iii",
+        "family": "HT03",
+        "name": "임태규",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht03-iii.png",
+        "silhouette": "몸 옆으로 펼친 활",
+        "palette": [
+          "#0B0A12",
+          "#16141C",
+          "#27242F",
+          "#312E3A",
+          "#3B333D",
+          "#403E4D",
+          "#53474E",
+          "#9D6E56",
+          "#D39C66",
+          "#EEC9A3"
+        ],
+        "frame": [
+          128,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht04-i",
+        "family": "HT04",
+        "name": "검술 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht04-i.png",
+        "silhouette": "길게 빼 든 검",
+        "palette": [
+          "#0A0810",
+          "#16131C",
+          "#28232D",
+          "#3A333D",
+          "#4C3940",
+          "#5C444A",
+          "#665155",
+          "#80605D",
+          "#AF9996",
+          "#E7D4CE"
+        ],
+        "frame": [
+          192,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht04-ii",
+        "family": "HT04",
+        "name": "정예 검술 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht04-ii.png",
+        "silhouette": "길게 빼 든 검",
+        "palette": [
+          "#0A0810",
+          "#16131C",
+          "#28232D",
+          "#3A333D",
+          "#4C3940",
+          "#5C444A",
+          "#665155",
+          "#80605D",
+          "#AF9996",
+          "#E7D4CE"
+        ],
+        "frame": [
+          256,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht04-iii",
+        "family": "HT04",
+        "name": "송치열",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht04-iii.png",
+        "silhouette": "길게 빼 든 검",
+        "palette": [
+          "#0A0810",
+          "#16131C",
+          "#28232D",
+          "#3A333D",
+          "#4C3940",
+          "#5C444A",
+          "#665155",
+          "#80605D",
+          "#AF9996",
+          "#E7D4CE"
+        ],
+        "frame": [
+          320,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht05-i",
+        "family": "HT05",
+        "name": "치유 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht05-i.png",
+        "silhouette": "치유 도구와 가벼운 옷자락",
+        "palette": [
+          "#0A0910",
+          "#1C161D",
+          "#3F3239",
+          "#603D43",
+          "#744F4E",
+          "#89655F",
+          "#A56357",
+          "#AF7464",
+          "#BCAA91",
+          "#EAD9C8"
+        ],
+        "frame": [
+          384,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht05-ii",
+        "family": "HT05",
+        "name": "전담 치유 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht05-ii.png",
+        "silhouette": "치유 도구와 가벼운 옷자락",
+        "palette": [
+          "#0A0910",
+          "#1C161D",
+          "#3F3239",
+          "#603D43",
+          "#744F4E",
+          "#89655F",
+          "#A56357",
+          "#AF7464",
+          "#BCAA91",
+          "#EAD9C8"
+        ],
+        "frame": [
+          448,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht05-iii",
+        "family": "HT05",
+        "name": "이주희",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht05-iii.png",
+        "silhouette": "치유 도구와 가벼운 옷자락",
+        "palette": [
+          "#0A0910",
+          "#1C161D",
+          "#3F3239",
+          "#603D43",
+          "#744F4E",
+          "#89655F",
+          "#A56357",
+          "#AF7464",
+          "#BCAA91",
+          "#EAD9C8"
+        ],
+        "frame": [
+          512,
+          256,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht06-i",
+        "family": "HT06",
+        "name": "전위 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht06-i.png",
+        "silhouette": "큰 검과 한쪽 견갑",
+        "palette": [
+          "#0B0912",
+          "#12111B",
+          "#1B1923",
+          "#2A2734",
+          "#423C4A",
+          "#595161",
+          "#767288",
+          "#AEA0A7",
+          "#E0C8C1",
+          "#EBE3E2"
+        ],
+        "frame": [
+          0,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht06-ii",
+        "family": "HT06",
+        "name": "공략대 전위 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht06-ii.png",
+        "silhouette": "큰 검과 한쪽 견갑",
+        "palette": [
+          "#0B0912",
+          "#12111B",
+          "#1B1923",
+          "#2A2734",
+          "#423C4A",
+          "#595161",
+          "#767288",
+          "#AEA0A7",
+          "#E0C8C1",
+          "#EBE3E2"
+        ],
+        "frame": [
+          64,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht06-iii",
+        "family": "HT06",
+        "name": "손기훈",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht06-iii.png",
+        "silhouette": "큰 검과 한쪽 견갑",
+        "palette": [
+          "#0B0912",
+          "#12111B",
+          "#1B1923",
+          "#2A2734",
+          "#423C4A",
+          "#595161",
+          "#767288",
+          "#AEA0A7",
+          "#E0C8C1",
+          "#EBE3E2"
+        ],
+        "frame": [
+          128,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht07-i",
+        "family": "HT07",
+        "name": "지원 치유 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht07-i.png",
+        "silhouette": "치유 도구와 약품 가방",
+        "palette": [
+          "#0C0912",
+          "#15121C",
+          "#221E28",
+          "#3B333F",
+          "#5D4248",
+          "#6B575F",
+          "#8F615C",
+          "#B49996",
+          "#EDD0C0",
+          "#EEE6E4"
+        ],
+        "frame": [
+          192,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht07-ii",
+        "family": "HT07",
+        "name": "해독 전문 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht07-ii.png",
+        "silhouette": "치유 도구와 약품 가방",
+        "palette": [
+          "#0C0912",
+          "#15121C",
+          "#221E28",
+          "#3B333F",
+          "#5D4248",
+          "#6B575F",
+          "#8F615C",
+          "#B49996",
+          "#EDD0C0",
+          "#EEE6E4"
+        ],
+        "frame": [
+          256,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht07-iii",
+        "family": "HT07",
+        "name": "시미즈 아카리",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht07-iii.png",
+        "silhouette": "치유 도구와 약품 가방",
+        "palette": [
+          "#0C0912",
+          "#15121C",
+          "#221E28",
+          "#3B333F",
+          "#5D4248",
+          "#6B575F",
+          "#8F615C",
+          "#B49996",
+          "#EDD0C0",
+          "#EEE6E4"
+        ],
+        "frame": [
+          320,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht08-i",
+        "family": "HT08",
+        "name": "화염 마법 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht08-i.png",
+        "silhouette": "양팔을 감싸는 화염",
+        "palette": [
+          "#0C0A11",
+          "#141119",
+          "#1E1B23",
+          "#2F2B34",
+          "#46353E",
+          "#58464C",
+          "#AF6444",
+          "#DBA56E",
+          "#F1C58F",
+          "#F9D5A3"
+        ],
+        "frame": [
+          384,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht08-ii",
+        "family": "HT08",
+        "name": "정예 화염 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht08-ii.png",
+        "silhouette": "양팔을 감싸는 화염",
+        "palette": [
+          "#0C0A11",
+          "#141119",
+          "#1E1B23",
+          "#2F2B34",
+          "#46353E",
+          "#58464C",
+          "#AF6444",
+          "#DBA56E",
+          "#F1C58F",
+          "#F9D5A3"
+        ],
+        "frame": [
+          448,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht08-iii",
+        "family": "HT08",
+        "name": "크리스토퍼 리드",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht08-iii.png",
+        "silhouette": "양팔을 감싸는 화염",
+        "palette": [
+          "#0C0A11",
+          "#141119",
+          "#1E1B23",
+          "#2F2B34",
+          "#46353E",
+          "#58464C",
+          "#AF6444",
+          "#DBA56E",
+          "#F1C58F",
+          "#F9D5A3"
+        ],
+        "frame": [
+          512,
+          320,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht09-i",
+        "family": "HT09",
+        "name": "고속 검술 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/ally-review/ht09-i-r2.png",
+        "silhouette": "가느다란 칼날을 오른쪽으로 향하고 뒤로 흐르는 외투",
+        "palette": [
+          "#13121C",
+          "#181721",
+          "#181822",
+          "#1A1823",
+          "#1C1B27",
+          "#2D2938",
+          "#3A3645",
+          "#494252",
+          "#5B515F",
+          "#DFCAC1"
+        ],
+        "frame": [
+          0,
+          384,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/ht09-i.png",
+          "silhouette": "긴 칼과 날렵한 옷자락",
+          "palette": [
+            "#0A0911",
+            "#101018",
+            "#17151E",
+            "#21202B",
+            "#2D2B37",
+            "#363442",
+            "#403D4A",
+            "#5F565F",
+            "#C5ACA0",
+            "#EFD5C5"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "ht09-ii",
+        "family": "HT09",
+        "name": "정예 검술 추격자",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht09-ii.png",
+        "silhouette": "긴 칼과 날렵한 옷자락",
+        "palette": [
+          "#0A0911",
+          "#101018",
+          "#17151E",
+          "#21202B",
+          "#2D2B37",
+          "#363442",
+          "#403D4A",
+          "#5F565F",
+          "#C5ACA0",
+          "#EFD5C5"
+        ],
+        "frame": [
+          64,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht09-iii",
+        "family": "HT09",
+        "name": "고토 류지",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/ht09-iii.png",
+        "silhouette": "긴 칼과 날렵한 옷자락",
+        "palette": [
+          "#0A0911",
+          "#101018",
+          "#17151E",
+          "#21202B",
+          "#2D2B37",
+          "#363442",
+          "#403D4A",
+          "#5F565F",
+          "#C5ACA0",
+          "#EFD5C5"
+        ],
+        "frame": [
+          128,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht10-i",
+        "family": "HT10",
+        "name": "방어형 헌터",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/ht10-i.png",
+        "silhouette": "넓은 어깨와 굵은 두 팔",
+        "palette": [
+          "#0C0B13",
+          "#13121C",
+          "#1C1A24",
+          "#272532",
+          "#34313E",
+          "#3F3D4D",
+          "#484452",
+          "#4F4C5E",
+          "#7F7176",
+          "#DFC3B1"
+        ],
+        "frame": [
+          192,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht10-ii",
+        "family": "HT10",
+        "name": "거대화 방어 헌터",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/ht10-ii.png",
+        "silhouette": "넓은 어깨와 굵은 두 팔",
+        "palette": [
+          "#0C0B13",
+          "#13121C",
+          "#1C1A24",
+          "#272532",
+          "#34313E",
+          "#3F3D4D",
+          "#484452",
+          "#4F4C5E",
+          "#7F7176",
+          "#DFC3B1"
+        ],
+        "frame": [
+          256,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "ht10-iii",
+        "family": "HT10",
+        "name": "마동욱",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/ally-review/ht10-iii-r2.png",
+        "silhouette": "오른쪽 옆얼굴과 앞을 향해 올린 중갑 주먹",
+        "palette": [
+          "#15141F",
+          "#181722",
+          "#1D1C27",
+          "#2D2A3A",
+          "#353242",
+          "#3B3747",
+          "#4E4757",
+          "#998686",
+          "#E1C8BA",
+          "#E4CCBD"
+        ],
+        "frame": [
+          320,
+          384,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/ht10-iii.png",
+          "silhouette": "넓은 어깨와 굵은 두 팔",
+          "palette": [
+            "#0C0B13",
+            "#13121C",
+            "#1C1A24",
+            "#272532",
+            "#34313E",
+            "#3F3D4D",
+            "#484452",
+            "#4F4C5E",
+            "#7F7176",
+            "#DFC3B1"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt01-i",
+        "family": "BT01",
+        "name": "오크 전사",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt01-i.png",
+        "silhouette": "돌출 엄니와 넓은 도끼",
+        "palette": [
+          "#0E0B17",
+          "#1C1824",
+          "#2B2732",
+          "#36313B",
+          "#413640",
+          "#454347",
+          "#504B52",
+          "#5E4D52",
+          "#6F6C61",
+          "#A6A19B"
+        ],
+        "frame": [
+          384,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt01-ii",
+        "family": "BT01",
+        "name": "정예 오크 전사",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt01-ii.png",
+        "silhouette": "돌출 엄니와 넓은 도끼",
+        "palette": [
+          "#0E0B17",
+          "#1C1824",
+          "#2B2732",
+          "#36313B",
+          "#413640",
+          "#454347",
+          "#504B52",
+          "#5E4D52",
+          "#6F6C61",
+          "#A6A19B"
+        ],
+        "frame": [
+          448,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt01-iii",
+        "family": "BT01",
+        "name": "그록타르",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt01-iii.png",
+        "silhouette": "돌출 엄니와 넓은 도끼",
+        "palette": [
+          "#0E0B17",
+          "#1C1824",
+          "#2B2732",
+          "#36313B",
+          "#413640",
+          "#454347",
+          "#504B52",
+          "#5E4D52",
+          "#6F6C61",
+          "#A6A19B"
+        ],
+        "frame": [
+          512,
+          384,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt02-i",
+        "family": "BT02",
+        "name": "검은 표범 마수",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/readability-pass/bt02-i.png",
+        "silhouette": "낮게 웅크린 몸과 휘는 꼬리",
+        "palette": [
+          "#09080E",
+          "#0B0A10",
+          "#0D0B12",
+          "#14111A",
+          "#251E2E",
+          "#32293B",
+          "#41354C",
+          "#453850",
+          "#473B53",
+          "#655173"
+        ],
+        "frame": [
+          0,
+          448,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReadability": "sprites/full-roster/bt02-i.png"
+      },
+      {
+        "id": "bt02-ii",
+        "family": "BT02",
+        "name": "정예 검은 표범",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt02-ii.png",
+        "silhouette": "낮게 웅크린 몸과 휘는 꼬리",
+        "palette": [
+          "#0E0A19",
+          "#171222",
+          "#1F1B2B",
+          "#241F30",
+          "#292336",
+          "#2C2938",
+          "#2F2C3C",
+          "#342E41",
+          "#383445",
+          "#6C5978"
+        ],
+        "frame": [
+          64,
+          448,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt02-iii",
+        "family": "BT02",
+        "name": "검은 그림자 라잔",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt02-iii.png",
+        "silhouette": "낮게 웅크린 몸과 휘는 꼬리",
+        "palette": [
+          "#0E0A19",
+          "#171222",
+          "#1F1B2B",
+          "#241F30",
+          "#292336",
+          "#2C2938",
+          "#2F2C3C",
+          "#342E41",
+          "#383445",
+          "#6C5978"
+        ],
+        "frame": [
+          128,
+          448,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt03-i",
+        "family": "BT03",
+        "name": "언데드 마법사",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/ally-review/bt03-i-r1.png",
+        "silhouette": "오른쪽 후드 틈의 한쪽 눈과 굽은 지팡이",
+        "palette": [
+          "#0A0D14",
+          "#181828",
+          "#242539",
+          "#36344C",
+          "#43ACAD",
+          "#493D5C",
+          "#63547A",
+          "#8A739E",
+          "#9BE3DA"
+        ],
+        "frame": [
+          192,
+          448,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/bt03-i.png",
+          "silhouette": "작은 삼각 후드와 고리 지팡이",
+          "palette": [
+            "#121322",
+            "#22213A",
+            "#383052",
+            "#50B8A9",
+            "#51456E",
+            "#777199",
+            "#A0A0BD",
+            "#A0F1D8"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt03-ii",
+        "family": "BT03",
+        "name": "정예 리치",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/ally-review/bt03-ii-r1.png",
+        "silhouette": "벌어진 어깨 로브와 오른쪽으로 올린 지팡이",
+        "palette": [
+          "#0A0D14",
+          "#181828",
+          "#242539",
+          "#36344C",
+          "#493D5C",
+          "#63547A",
+          "#8A739E",
+          "#9BE3DA"
+        ],
+        "frame": [
+          256,
+          448,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/bt03-ii.png",
+          "silhouette": "갈라진 옷자락과 비스듬히 솟은 지팡이",
+          "palette": [
+            "#121322",
+            "#22213A",
+            "#236D6E",
+            "#383052",
+            "#51456E",
+            "#777199",
+            "#A0A0BD",
+            "#A0F1D8"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt03-iii",
+        "family": "BT03",
+        "name": "아크 리치",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/ally-review/bt03-iii-r1.png",
+        "silhouette": "삼각 관·청록 결정과 왼쪽으로 흐르는 로브",
+        "palette": [
+          "#0A0D14",
+          "#181828",
+          "#242539",
+          "#36344C",
+          "#43ACAD",
+          "#493D5C",
+          "#63547A",
+          "#8A739E",
+          "#9BE3DA"
+        ],
+        "frame": [
+          320,
+          448,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/bt03-iii.png",
+          "silhouette": "세 갈래 후드와 열린 초승달 지팡이",
+          "palette": [
+            "#121322",
+            "#22213A",
+            "#236D6E",
+            "#383052",
+            "#50B8A9",
+            "#51456E",
+            "#777199",
+            "#A0A0BD",
+            "#A0F1D8"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt04-i",
+        "family": "BT04",
+        "name": "늪 독사",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt04-i.png",
+        "silhouette": "감긴 비늘 몸과 독니",
+        "palette": [
+          "#0F0C1A",
+          "#1E1A2C",
+          "#2B293F",
+          "#383346",
+          "#3D3A50",
+          "#48455B",
+          "#58576E",
+          "#6A6A7B",
+          "#858286",
+          "#BEB8A0"
+        ],
+        "frame": [
+          384,
+          448,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt04-ii",
+        "family": "BT04",
+        "name": "정예 늪 독사",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt04-ii.png",
+        "silhouette": "감긴 비늘 몸과 독니",
+        "palette": [
+          "#0F0C1A",
+          "#1E1A2C",
+          "#2B293F",
+          "#383346",
+          "#3D3A50",
+          "#48455B",
+          "#58576E",
+          "#6A6A7B",
+          "#858286",
+          "#BEB8A0"
+        ],
+        "frame": [
+          448,
+          448,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt04-iii",
+        "family": "BT04",
+        "name": "푸른 독니 카사카",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt04-iii.png",
+        "silhouette": "감긴 비늘 몸과 독니",
+        "palette": [
+          "#0F0C1A",
+          "#1E1A2C",
+          "#2B293F",
+          "#383346",
+          "#3D3A50",
+          "#48455B",
+          "#58576E",
+          "#6A6A7B",
+          "#858286",
+          "#BEB8A0"
+        ],
+        "frame": [
+          512,
+          448,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt05-i",
+        "family": "BT05",
+        "name": "제주도 일개미",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt05-i.png",
+        "silhouette": "굽은 더듬이와 큰 복부",
+        "palette": [
+          "#0F091A",
+          "#1B1527",
+          "#2C2034",
+          "#302A3D",
+          "#3E2D41",
+          "#48384D",
+          "#5F5266",
+          "#AD9FA8",
+          "#D5C8C7",
+          "#E4DBD7"
+        ],
+        "frame": [
+          0,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt05-ii",
+        "family": "BT05",
+        "name": "제주도 호위개미",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt05-ii.png",
+        "silhouette": "굽은 더듬이와 큰 복부",
+        "palette": [
+          "#0F091A",
+          "#1B1527",
+          "#2C2034",
+          "#302A3D",
+          "#3E2D41",
+          "#48384D",
+          "#5F5266",
+          "#AD9FA8",
+          "#D5C8C7",
+          "#E4DBD7"
+        ],
+        "frame": [
+          64,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt05-iii",
+        "family": "BT05",
+        "name": "제주도 여왕개미",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt05-iii.png",
+        "silhouette": "굽은 더듬이와 큰 복부",
+        "palette": [
+          "#0F091A",
+          "#1B1527",
+          "#2C2034",
+          "#302A3D",
+          "#3E2D41",
+          "#48384D",
+          "#5F5266",
+          "#AD9FA8",
+          "#D5C8C7",
+          "#E4DBD7"
+        ],
+        "frame": [
+          128,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt06-i",
+        "family": "BT06",
+        "name": "악마성 경비 마수",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt06-i.png",
+        "silhouette": "넓어지는 머리와 사족 체형",
+        "palette": [
+          "#110C1A",
+          "#1C1625",
+          "#28202E",
+          "#2F2431",
+          "#3E2530",
+          "#41323E",
+          "#5C383E",
+          "#694449",
+          "#784C4E",
+          "#B07F63"
+        ],
+        "frame": [
+          192,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt06-ii",
+        "family": "BT06",
+        "name": "악마성 정예 문지기",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt06-ii.png",
+        "silhouette": "넓어지는 머리와 사족 체형",
+        "palette": [
+          "#110C1A",
+          "#1C1625",
+          "#28202E",
+          "#2F2431",
+          "#3E2530",
+          "#41323E",
+          "#5C383E",
+          "#694449",
+          "#784C4E",
+          "#B07F63"
+        ],
+        "frame": [
+          256,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt06-iii",
+        "family": "BT06",
+        "name": "지옥의 문지기 케르베로스",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt06-iii.png",
+        "silhouette": "넓어지는 머리와 사족 체형",
+        "palette": [
+          "#110C1A",
+          "#1C1625",
+          "#28202E",
+          "#2F2431",
+          "#3E2530",
+          "#41323E",
+          "#5C383E",
+          "#694449",
+          "#784C4E",
+          "#B07F63"
+        ],
+        "frame": [
+          320,
+          512,
+          64,
+          64
+        ],
+        "facing": "right"
+      },
+      {
+        "id": "bt07-i",
+        "family": "BT07",
+        "name": "아이스 엘프 단검병",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/ally-review/bt07-i-r2.png",
+        "silhouette": "오른쪽 푸른 얼굴과 짧은 얼음 단검",
+        "palette": [
+          "#15131C",
+          "#191721",
+          "#1B1924",
+          "#1F1C28",
+          "#252233",
+          "#2E2B3F",
+          "#3F3C54",
+          "#585772",
+          "#9BA0BB",
+          "#E0DCE3"
+        ],
+        "frame": [
+          384,
+          512,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt07-i.png",
+          "silhouette": "긴 귀와 쌍단검",
+          "palette": [
+            "#0E0B1B",
+            "#1C182A",
+            "#2C293D",
+            "#3E3A50",
+            "#565169",
+            "#83839C",
+            "#9CABD0",
+            "#C0BAC4",
+            "#D9D4D9",
+            "#E6E4EA"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt07-ii",
+        "family": "BT07",
+        "name": "정예 아이스 엘프 척후병",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/ally-review/bt07-ii-r2.png",
+        "silhouette": "오른쪽 얼굴·털후드와 긴 단검",
+        "palette": [
+          "#16141D",
+          "#18161F",
+          "#1A1721",
+          "#1D1B26",
+          "#292739",
+          "#39364D",
+          "#47435C",
+          "#4C4963",
+          "#9496AE",
+          "#D7D3DA"
+        ],
+        "frame": [
+          448,
+          512,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt07-ii.png",
+          "silhouette": "긴 귀와 쌍단검",
+          "palette": [
+            "#0E0B1B",
+            "#1C182A",
+            "#2C293D",
+            "#3E3A50",
+            "#565169",
+            "#83839C",
+            "#9CABD0",
+            "#C0BAC4",
+            "#D9D4D9",
+            "#E6E4EA"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt07-iii",
+        "family": "BT07",
+        "name": "바루카",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/ally-review/bt07-iii-r2.png",
+        "silhouette": "오른쪽 옆얼굴·뒤로 넘긴 백발과 쌍단검",
+        "palette": [
+          "#15131D",
+          "#191721",
+          "#1B1923",
+          "#211E2C",
+          "#2C293D",
+          "#39364C",
+          "#5B5A73",
+          "#9799B2",
+          "#C5C1CD",
+          "#E5E1E7"
+        ],
+        "frame": [
+          512,
+          512,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt07-iii.png",
+          "silhouette": "긴 귀와 쌍단검",
+          "palette": [
+            "#0E0B1B",
+            "#1C182A",
+            "#2C293D",
+            "#3E3A50",
+            "#565169",
+            "#83839C",
+            "#9CABD0",
+            "#C0BAC4",
+            "#D9D4D9",
+            "#E6E4EA"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt08-i",
+        "family": "BT08",
+        "name": "악마 창병",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/ally-review/bt08-i-r3.png",
+        "silhouette": "오른쪽의 짧은 걸쇠창과 낮은 뿔 투구",
+        "palette": [
+          "#16141C",
+          "#18161E",
+          "#19161E",
+          "#1B171F",
+          "#1B1821",
+          "#251E28",
+          "#3E2B39",
+          "#573743",
+          "#6F444B",
+          "#956B67"
+        ],
+        "frame": [
+          0,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt08-i.png",
+          "silhouette": "길게 뻗은 창과 뿔",
+          "palette": [
+            "#120B19",
+            "#1E1625",
+            "#2C2031",
+            "#3D283D",
+            "#493649",
+            "#5B3B53",
+            "#713F4B",
+            "#7C5059",
+            "#967572",
+            "#CCB7A8"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "bt08-ii",
+        "family": "BT08",
+        "name": "라디르 정예 창병",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/ally-review/bt08-ii-r3.png",
+        "silhouette": "오른쪽 눈과 뼈 견갑, 길어진 청동 창",
+        "palette": [
+          "#16131C",
+          "#19161F",
+          "#1A171F",
+          "#1C1921",
+          "#201B25",
+          "#2C222E",
+          "#3B2A37",
+          "#503442",
+          "#6E444A",
+          "#A9867C"
+        ],
+        "frame": [
+          64,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt08-ii.png",
+          "silhouette": "길게 뻗은 창과 뿔",
+          "palette": [
+            "#120B19",
+            "#1E1625",
+            "#2C2031",
+            "#3D283D",
+            "#493649",
+            "#5B3B53",
+            "#713F4B",
+            "#7C5059",
+            "#967572",
+            "#CCB7A8"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "bt08-iii",
+        "family": "BT08",
+        "name": "에실 라디르",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/ally-review/bt08-iii-r3.png",
+        "silhouette": "오른쪽을 보는 얼굴·기울어진 창과 뒤로 펼쳐진 와인색 머리카락",
+        "palette": [
+          "#17141D",
+          "#19161E",
+          "#1A171F",
+          "#1C1921",
+          "#211C25",
+          "#332532",
+          "#442E3C",
+          "#563645",
+          "#6C4149",
+          "#A07972"
+        ],
+        "frame": [
+          128,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt08-iii.png",
+          "silhouette": "길게 뻗은 창과 뿔",
+          "palette": [
+            "#120B19",
+            "#1E1625",
+            "#2C2031",
+            "#3D283D",
+            "#493649",
+            "#5B3B53",
+            "#713F4B",
+            "#7C5059",
+            "#967572",
+            "#CCB7A8"
+          ]
+        },
+        "reviewRound": 3
+      },
+      {
+        "id": "bt09-i",
+        "family": "BT09",
+        "name": "카르테논 무장 석상",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/ally-review/bt09-i-r1.png",
+        "silhouette": "오른쪽을 향한 돌투구와 짧은 무기",
+        "palette": [
+          "#11131B",
+          "#20212B",
+          "#31333F",
+          "#414553",
+          "#565968",
+          "#77798A",
+          "#9494A6",
+          "#B3B0BF",
+          "#D4D4DD"
+        ],
+        "frame": [
+          192,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt09-i.png",
+          "silhouette": "각진 석재 몸과 돌 날개",
+          "palette": [
+            "#100C1B",
+            "#1F1B2B",
+            "#343041",
+            "#474254",
+            "#544E60",
+            "#656072",
+            "#7E7989",
+            "#96909E",
+            "#A9A4AE",
+            "#C4BFC6"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt09-ii",
+        "family": "BT09",
+        "name": "카르테논 정예 석상",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/ally-review/bt09-ii-r1.png",
+        "silhouette": "두꺼운 석재 견갑과 오른쪽 석판",
+        "palette": [
+          "#11131B",
+          "#20212B",
+          "#31333F",
+          "#414553",
+          "#565968",
+          "#77798A",
+          "#9494A6",
+          "#B3B0BF"
+        ],
+        "frame": [
+          256,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt09-ii.png",
+          "silhouette": "각진 석재 몸과 돌 날개",
+          "palette": [
+            "#100C1B",
+            "#1F1B2B",
+            "#343041",
+            "#474254",
+            "#544E60",
+            "#656072",
+            "#7E7989",
+            "#96909E",
+            "#A9A4AE",
+            "#C4BFC6"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt09-iii",
+        "family": "BT09",
+        "name": "설계자",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/ally-review/bt09-iii-r1.png",
+        "silhouette": "오른쪽에 든 석판·왕관형 머리와 뒤쪽 돌날개",
+        "palette": [
+          "#11131B",
+          "#20212B",
+          "#31333F",
+          "#414553",
+          "#565968",
+          "#77798A",
+          "#9494A6",
+          "#B3B0BF",
+          "#D4D4DD"
+        ],
+        "frame": [
+          320,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt09-iii.png",
+          "silhouette": "각진 석재 몸과 돌 날개",
+          "palette": [
+            "#100C1B",
+            "#1F1B2B",
+            "#343041",
+            "#474254",
+            "#544E60",
+            "#656072",
+            "#7E7989",
+            "#96909E",
+            "#A9A4AE",
+            "#C4BFC6"
+          ]
+        },
+        "reviewRound": 1
+      },
+      {
+        "id": "bt10-i",
+        "family": "BT10",
+        "name": "하이오크 마법병",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/ally-review/bt10-i-r2.png",
+        "silhouette": "오른쪽 주둥이의 작은 엄니와 나무 지팡이",
+        "palette": [
+          "#16121A",
+          "#19161D",
+          "#1B1820",
+          "#211C25",
+          "#2E2530",
+          "#3B2F39",
+          "#543A41",
+          "#6E494A",
+          "#795552",
+          "#A18478"
+        ],
+        "frame": [
+          384,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt10-i.png",
+          "silhouette": "엄니와 둥근 주술 구체",
+          "palette": [
+            "#110C19",
+            "#191421",
+            "#201B28",
+            "#2B2330",
+            "#362A36",
+            "#483A44",
+            "#562534",
+            "#6E4349",
+            "#86615A",
+            "#C4AF9C"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt10-ii",
+        "family": "BT10",
+        "name": "하이오크 정예 주술사",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/ally-review/bt10-ii-r2.png",
+        "silhouette": "두꺼운 뼈 견갑·오른쪽 엄니와 붉은 조각",
+        "palette": [
+          "#141118",
+          "#18151D",
+          "#19161E",
+          "#1B1820",
+          "#1F1A23",
+          "#2B232E",
+          "#3A2D38",
+          "#563C43",
+          "#8B6963",
+          "#CAB09E"
+        ],
+        "frame": [
+          448,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt10-ii.png",
+          "silhouette": "엄니와 둥근 주술 구체",
+          "palette": [
+            "#110C19",
+            "#191421",
+            "#201B28",
+            "#2B2330",
+            "#362A36",
+            "#483A44",
+            "#562534",
+            "#6E4349",
+            "#86615A",
+            "#C4AF9C"
+          ]
+        },
+        "reviewRound": 2
+      },
+      {
+        "id": "bt10-iii",
+        "family": "BT10",
+        "name": "카르갈간",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/ally-review/bt10-iii-r2.png",
+        "silhouette": "두꺼운 뼈 장식·오른쪽 엄니와 암적색 구슬 지팡이",
+        "palette": [
+          "#15121A",
+          "#18151D",
+          "#19171E",
+          "#1D1922",
+          "#29202C",
+          "#3B2633",
+          "#3E2F3A",
+          "#543840",
+          "#704B4C",
+          "#B99E8F"
+        ],
+        "frame": [
+          512,
+          576,
+          64,
+          64
+        ],
+        "facing": "right",
+        "beforeReview": {
+          "file": "sprites/full-roster/bt10-iii.png",
+          "silhouette": "엄니와 둥근 주술 구체",
+          "palette": [
+            "#110C19",
+            "#191421",
+            "#201B28",
+            "#2B2330",
+            "#362A36",
+            "#483A44",
+            "#562534",
+            "#6E4349",
+            "#86615A",
+            "#C4AF9C"
+          ]
+        },
+        "reviewRound": 2
+      }
+    ],
+    "atlas": "allies-full-atlas.png"
+  },
+  "enemies": {
+    "sprites": [
+      {
+        "id": "mist-taken",
+        "family": "mist-taken",
+        "name": "안개 잠식체",
+        "group": "W1–W4 · W6",
+        "stage": "I",
+        "file": "sprites/mist-taken.png",
+        "silhouette": "옆으로 길게 뻗은 팔과 굽은 두 다리",
+        "palette": [
+          "#181821",
+          "#30303C",
+          "#494957",
+          "#4C6482",
+          "#655C60",
+          "#82B8E0",
+          "#988483",
+          "#C4A5A1",
+          "#D5E8EE"
+        ],
+        "frame": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "mist-taken-ii",
+        "family": "mist-taken",
+        "name": "안개 잠식체",
+        "group": "W1–W4 · W6",
+        "stage": "II",
+        "file": "sprites/enemy-expansion/mist-taken-ii.png",
+        "silhouette": "왼쪽으로 뻗은 손과 뒤로 흐르는 두 갈래 안개",
+        "palette": [
+          "#0C0913",
+          "#191521",
+          "#2A2633",
+          "#313446",
+          "#403742",
+          "#474A5C",
+          "#60535F",
+          "#787280",
+          "#ACADB7",
+          "#B9CAD8"
+        ],
+        "frame": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "mist-taken-iii",
+        "family": "mist-taken",
+        "name": "안개 잠식체",
+        "group": "W1–W4 · W6",
+        "stage": "III",
+        "file": "sprites/enemy-expansion/mist-taken-iii.png",
+        "silhouette": "왼쪽으로 내민 큰 손과 등 뒤의 안개",
+        "palette": [
+          "#0C0913",
+          "#191521",
+          "#2A2633",
+          "#313446",
+          "#403742",
+          "#474A5C",
+          "#60535F",
+          "#787280",
+          "#ACADB7",
+          "#B9CAD8"
+        ],
+        "frame": [
+          128,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "condensed-mist",
+        "family": "condensed-mist",
+        "name": "응집 안개",
+        "group": "W2",
+        "stage": "I",
+        "file": "sprites/readability-pass/condensed-mist.png",
+        "silhouette": "왼쪽에 맺힌 푸른 안개와 오른쪽으로 흐르는 꼬리",
+        "palette": [
+          "#0F1D2D",
+          "#152638",
+          "#192A3D",
+          "#1A2C41",
+          "#20354D",
+          "#2E4763",
+          "#304B68",
+          "#365371",
+          "#466786",
+          "#94BAD5"
+        ],
+        "frame": [
+          192,
+          0,
+          64,
+          64
+        ],
+        "facing": "left",
+        "beforeReadability": "sprites/enemy-expansion/condensed-mist.png"
+      },
+      {
+        "id": "condensed-mist-ii",
+        "family": "condensed-mist",
+        "name": "응집 안개",
+        "group": "W2",
+        "stage": "II",
+        "file": "sprites/enemy-expansion/condensed-mist-ii.png",
+        "silhouette": "왼쪽의 안개 덩어리와 오른쪽으로 향하는 두 갈래 꼬리",
+        "palette": [
+          "#172536",
+          "#1D2E42",
+          "#253952",
+          "#2B415D",
+          "#304864",
+          "#385572",
+          "#3E637F",
+          "#507091",
+          "#5D80A1",
+          "#A6C9DF"
+        ],
+        "frame": [
+          256,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "condensed-mist-iii",
+        "family": "condensed-mist",
+        "name": "응집 안개",
+        "group": "W2",
+        "stage": "III",
+        "file": "sprites/enemy-expansion/condensed-mist-iii.png",
+        "silhouette": "왼쪽의 큰 초승달 안개와 세 갈래 꼬리",
+        "palette": [
+          "#172536",
+          "#1D2E42",
+          "#253952",
+          "#2B415D",
+          "#304864",
+          "#385572",
+          "#3E637F",
+          "#507091",
+          "#5D80A1",
+          "#A6C9DF"
+        ],
+        "frame": [
+          320,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-brute",
+        "family": "stardust-brute",
+        "name": "별가루 강화 악마",
+        "group": "W3–W4 · W6",
+        "stage": "I",
+        "file": "sprites/stardust-brute.png",
+        "silhouette": "낮은 몸과 각진 두 앞팔",
+        "palette": [
+          "#1B1720",
+          "#3E282C",
+          "#5B3433",
+          "#7C6458",
+          "#834742",
+          "#A76053",
+          "#B59A83",
+          "#DCBC99",
+          "#F7CA70"
+        ],
+        "frame": [
+          384,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-brute-ii",
+        "family": "stardust-brute",
+        "name": "별가루 강화 악마",
+        "group": "W3–W4 · W6",
+        "stage": "II",
+        "file": "sprites/full-roster/stardust-brute-ii.png",
+        "silhouette": "두꺼운 두 팔과 각진 어깨",
+        "palette": [
+          "#0C0A12",
+          "#1B161E",
+          "#3A2A30",
+          "#4D3238",
+          "#5F383C",
+          "#6B4943",
+          "#925D4D",
+          "#BE9669",
+          "#EBC587",
+          "#F6E1B3"
+        ],
+        "frame": [
+          448,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-brute-iii",
+        "family": "stardust-brute",
+        "name": "별가루 강화 악마",
+        "group": "W3–W4 · W6",
+        "stage": "III",
+        "file": "sprites/full-roster/stardust-brute-iii.png",
+        "silhouette": "두꺼운 두 팔과 각진 어깨",
+        "palette": [
+          "#0C0A12",
+          "#1B161E",
+          "#3A2A30",
+          "#4D3238",
+          "#5F383C",
+          "#6B4943",
+          "#925D4D",
+          "#BE9669",
+          "#EBC587",
+          "#F6E1B3"
+        ],
+        "frame": [
+          512,
+          0,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-courier",
+        "family": "stardust-courier",
+        "name": "별가루 운반 악마",
+        "group": "W3 · W5",
+        "stage": "I",
+        "file": "sprites/stardust-courier.png",
+        "silhouette": "등에 얹은 큰 사각 함",
+        "palette": [
+          "#1B1720",
+          "#382A2B",
+          "#53483D",
+          "#563633",
+          "#784640",
+          "#836342",
+          "#A36D5B",
+          "#C49049",
+          "#F6CA74"
+        ],
+        "frame": [
+          0,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-courier-ii",
+        "family": "stardust-courier",
+        "name": "별가루 운반 악마",
+        "group": "W3 · W5",
+        "stage": "II",
+        "file": "sprites/full-roster/stardust-courier-ii.png",
+        "silhouette": "뒤로 솟은 사각 상자",
+        "palette": [
+          "#0C0911",
+          "#1B161E",
+          "#342D34",
+          "#4E3436",
+          "#59433F",
+          "#65544E",
+          "#855746",
+          "#8F6248",
+          "#9D785A",
+          "#E1C591"
+        ],
+        "frame": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-courier-iii",
+        "family": "stardust-courier",
+        "name": "별가루 운반 악마",
+        "group": "W3 · W5",
+        "stage": "III",
+        "file": "sprites/full-roster/stardust-courier-iii.png",
+        "silhouette": "뒤로 솟은 사각 상자",
+        "palette": [
+          "#0C0911",
+          "#1B161E",
+          "#342D34",
+          "#4E3436",
+          "#59433F",
+          "#65544E",
+          "#855746",
+          "#8F6248",
+          "#9D785A",
+          "#E1C591"
+        ],
+        "frame": [
+          128,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "brocky-controlled",
+        "family": "brocky-controlled",
+        "name": "세뇌된 브로키",
+        "group": "W4",
+        "stage": "I",
+        "file": "sprites/brocky-controlled.png",
+        "silhouette": "길게 쓸린 갈기와 위로 휜 굵은 꼬리",
+        "palette": [
+          "#191720",
+          "#34282E",
+          "#59353A",
+          "#6A5A5D",
+          "#874843",
+          "#948384",
+          "#AC6459",
+          "#C4AFA7",
+          "#F0BC72"
+        ],
+        "frame": [
+          192,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "brocky-controlled-ii",
+        "family": "brocky-controlled",
+        "name": "세뇌된 브로키",
+        "group": "W4",
+        "stage": "II",
+        "file": "sprites/full-roster/brocky-controlled-ii.png",
+        "silhouette": "휘어진 꼬리와 쓸린 갈기",
+        "palette": [
+          "#0B0A13",
+          "#16111B",
+          "#1E1821",
+          "#3C2C32",
+          "#5A363B",
+          "#6D4746",
+          "#945D51",
+          "#A5806A",
+          "#D4B79C",
+          "#F3DFC8"
+        ],
+        "frame": [
+          256,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "brocky-controlled-iii",
+        "family": "brocky-controlled",
+        "name": "세뇌된 브로키",
+        "group": "W4",
+        "stage": "III",
+        "file": "sprites/full-roster/brocky-controlled-iii.png",
+        "silhouette": "휘어진 꼬리와 쓸린 갈기",
+        "palette": [
+          "#0B0A13",
+          "#16111B",
+          "#1E1821",
+          "#3C2C32",
+          "#5A363B",
+          "#6D4746",
+          "#945D51",
+          "#A5806A",
+          "#D4B79C",
+          "#F3DFC8"
+        ],
+        "frame": [
+          320,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-core",
+        "family": "stardust-core",
+        "name": "별가루 증폭핵",
+        "group": "W5",
+        "stage": "I",
+        "file": "sprites/enemy-expansion/stardust-core.png",
+        "silhouette": "왼쪽으로 내민 결정 촉",
+        "palette": [
+          "#0D0A12",
+          "#1B151C",
+          "#262026",
+          "#392F33",
+          "#574136",
+          "#7F5D42",
+          "#9F7548",
+          "#CFA262",
+          "#F6D796",
+          "#FCF4DB"
+        ],
+        "frame": [
+          384,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-core-ii",
+        "family": "stardust-core",
+        "name": "별가루 증폭핵",
+        "group": "W5",
+        "stage": "II",
+        "file": "sprites/enemy-expansion/stardust-core-ii.png",
+        "silhouette": "왼쪽 주결정과 오른쪽 보조 결정",
+        "palette": [
+          "#0D0A12",
+          "#1B151C",
+          "#262026",
+          "#392F33",
+          "#574136",
+          "#7F5D42",
+          "#9F7548",
+          "#CFA262",
+          "#F6D796",
+          "#FCF4DB"
+        ],
+        "frame": [
+          448,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "stardust-core-iii",
+        "family": "stardust-core",
+        "name": "별가루 증폭핵",
+        "group": "W5",
+        "stage": "III",
+        "file": "sprites/enemy-expansion/stardust-core-iii.png",
+        "silhouette": "왼쪽을 향한 긴 결정창과 겹결정",
+        "palette": [
+          "#0D0A12",
+          "#1B151C",
+          "#262026",
+          "#392F33",
+          "#574136",
+          "#7F5D42",
+          "#9F7548",
+          "#CFA262",
+          "#F6D796",
+          "#FCF4DB"
+        ],
+        "frame": [
+          512,
+          64,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "minsung-vessel",
+        "family": "minsung-vessel",
+        "name": "사도에 빙의된 이민성",
+        "group": "W5",
+        "stage": "I",
+        "file": "sprites/minsung-vessel.png",
+        "silhouette": "갈라진 코트와 칼날처럼 뻗은 한쪽 팔",
+        "palette": [
+          "#171721",
+          "#34282C",
+          "#55363A",
+          "#685352",
+          "#7F4448",
+          "#A37D57",
+          "#D0B3A4",
+          "#F9C868",
+          "#FFEAD1"
+        ],
+        "frame": [
+          0,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "minsung-vessel-ii",
+        "family": "minsung-vessel",
+        "name": "사도에 빙의된 이민성",
+        "group": "W5",
+        "stage": "II",
+        "file": "sprites/full-roster/minsung-vessel-ii.png",
+        "silhouette": "갈라진 코트와 비대칭 팔",
+        "palette": [
+          "#0C0911",
+          "#18141C",
+          "#2A242A",
+          "#3E2E35",
+          "#46373C",
+          "#594446",
+          "#8C6A52",
+          "#D6AD76",
+          "#ECCEA3",
+          "#F8E5C6"
+        ],
+        "frame": [
+          64,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "minsung-vessel-iii",
+        "family": "minsung-vessel",
+        "name": "사도에 빙의된 이민성",
+        "group": "W5",
+        "stage": "III",
+        "file": "sprites/full-roster/minsung-vessel-iii.png",
+        "silhouette": "갈라진 코트와 비대칭 팔",
+        "palette": [
+          "#0C0911",
+          "#18141C",
+          "#2A242A",
+          "#3E2E35",
+          "#46373C",
+          "#594446",
+          "#8C6A52",
+          "#D6AD76",
+          "#ECCEA3",
+          "#F8E5C6"
+        ],
+        "frame": [
+          128,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "tiel-projection",
+        "family": "tiel-projection",
+        "name": "티엘의 투영",
+        "group": "W6",
+        "stage": "I",
+        "file": "sprites/enemy-expansion/tiel-projection.png",
+        "silhouette": "왼쪽을 보는 가면과 뒤쪽으로 뻗은 날개",
+        "palette": [
+          "#100B14",
+          "#231B24",
+          "#392D34",
+          "#514044",
+          "#69514D",
+          "#886A5E",
+          "#BF9C7C",
+          "#E8CBA3",
+          "#F7E2C3",
+          "#FAEBCC"
+        ],
+        "frame": [
+          192,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "tiel-projection-ii",
+        "family": "tiel-projection",
+        "name": "티엘의 투영",
+        "group": "W6",
+        "stage": "II",
+        "file": "sprites/enemy-expansion/tiel-projection-ii.png",
+        "silhouette": "왼쪽 창과 오른쪽으로 겹치는 날개",
+        "palette": [
+          "#100B14",
+          "#231B24",
+          "#392D34",
+          "#514044",
+          "#69514D",
+          "#886A5E",
+          "#BF9C7C",
+          "#E8CBA3",
+          "#F7E2C3",
+          "#FAEBCC"
+        ],
+        "frame": [
+          256,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "tiel-projection-iii",
+        "family": "tiel-projection",
+        "name": "티엘의 투영",
+        "group": "W6",
+        "stage": "III",
+        "file": "sprites/enemy-expansion/tiel-projection-iii.png",
+        "silhouette": "왼쪽 가면과 뒤로 펼쳐진 큰 날개",
+        "palette": [
+          "#100B14",
+          "#231B24",
+          "#392D34",
+          "#514044",
+          "#69514D",
+          "#886A5E",
+          "#BF9C7C",
+          "#E8CBA3",
+          "#F7E2C3",
+          "#FAEBCC"
+        ],
+        "frame": [
+          320,
+          128,
+          64,
+          64
+        ],
+        "facing": "left"
+      },
+      {
+        "id": "rustjaw-hound",
+        "family": "rustjaw-hound",
+        "name": "녹슨턱 사냥개",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "I",
+        "silhouette": "앞으로 내민 금속 턱과 낮게 달리는 네 다리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/rustjaw-hound.png",
+        "palette": [
+          "#130E13",
+          "#161116",
+          "#181318",
+          "#20191F",
+          "#41292F",
+          "#413A43",
+          "#69545A",
+          "#705F67",
+          "#713C41",
+          "#83686C"
+        ],
+        "frame": [
+          384,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "rustjaw-hound-ii",
+        "family": "rustjaw-hound",
+        "name": "갈래턱 사냥개",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "II",
+        "silhouette": "앞으로 내민 금속 턱과 낮게 달리는 네 다리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/readability-pass/rustjaw-hound-ii.png",
+        "palette": [
+          "#0B090E",
+          "#100D13",
+          "#191117",
+          "#2A1920",
+          "#413039",
+          "#493742",
+          "#693137",
+          "#724D56",
+          "#87636D",
+          "#9F7279"
+        ],
+        "frame": [
+          448,
+          128,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/enemy-expansion/rustjaw-hound-ii.png"
+      },
+      {
+        "id": "rustjaw-hound-iii",
+        "family": "rustjaw-hound",
+        "name": "칼등 사냥개",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "III",
+        "silhouette": "앞으로 내민 금속 턱과 낮게 달리는 네 다리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/rustjaw-hound-iii.png",
+        "palette": [
+          "#130E13",
+          "#161116",
+          "#181318",
+          "#20191F",
+          "#41292F",
+          "#413A43",
+          "#69545A",
+          "#705F67",
+          "#713C41",
+          "#83686C"
+        ],
+        "frame": [
+          512,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "shale-shell-beetle",
+        "family": "shale-shell-beetle",
+        "name": "편암 딱정벌레",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "I",
+        "silhouette": "층층이 쌓인 암판과 넓은 앞집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/shale-shell-beetle.png",
+        "palette": [
+          "#130F17",
+          "#1D1922",
+          "#322B35",
+          "#403944",
+          "#4C404B",
+          "#5D4F58",
+          "#78676D",
+          "#947E7C",
+          "#B4998C",
+          "#DBBC9E"
+        ],
+        "frame": [
+          0,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "shale-shell-beetle-ii",
+        "family": "shale-shell-beetle",
+        "name": "겹갑 편암벌레",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "II",
+        "silhouette": "층층이 쌓인 암판과 넓은 앞집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/shale-shell-beetle-ii.png",
+        "palette": [
+          "#130F17",
+          "#1D1922",
+          "#322B35",
+          "#403944",
+          "#4C404B",
+          "#5D4F58",
+          "#78676D",
+          "#947E7C",
+          "#B4998C",
+          "#DBBC9E"
+        ],
+        "frame": [
+          64,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "shale-shell-beetle-iii",
+        "family": "shale-shell-beetle",
+        "name": "암봉 편암벌레",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "III",
+        "silhouette": "층층이 쌓인 암판과 넓은 앞집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/shale-shell-beetle-iii.png",
+        "palette": [
+          "#130F17",
+          "#1D1922",
+          "#322B35",
+          "#403944",
+          "#4C404B",
+          "#5D4F58",
+          "#78676D",
+          "#947E7C",
+          "#B4998C",
+          "#DBBC9E"
+        ],
+        "frame": [
+          128,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "lantern-moth",
+        "family": "lantern-moth",
+        "name": "등불 나방",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "I",
+        "silhouette": "가느다란 날개 아래 달린 푸른 등불",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/lantern-moth.png",
+        "palette": [
+          "#141019",
+          "#251E27",
+          "#3B323C",
+          "#4D3D44",
+          "#58474E",
+          "#67545A",
+          "#857170",
+          "#C2AB9C",
+          "#CFC8BA",
+          "#E6D0BB"
+        ],
+        "frame": [
+          192,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "lantern-moth-ii",
+        "family": "lantern-moth",
+        "name": "쌍등 나방",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "II",
+        "silhouette": "가느다란 날개 아래 달린 푸른 등불",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/lantern-moth-ii.png",
+        "palette": [
+          "#141019",
+          "#251E27",
+          "#3B323C",
+          "#4D3D44",
+          "#58474E",
+          "#67545A",
+          "#857170",
+          "#C2AB9C",
+          "#CFC8BA",
+          "#E6D0BB"
+        ],
+        "frame": [
+          256,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "lantern-moth-iii",
+        "family": "lantern-moth",
+        "name": "삼등 나방",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "III",
+        "silhouette": "가느다란 날개 아래 달린 푸른 등불",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/lantern-moth-iii.png",
+        "palette": [
+          "#141019",
+          "#251E27",
+          "#3B323C",
+          "#4D3D44",
+          "#58474E",
+          "#67545A",
+          "#857170",
+          "#C2AB9C",
+          "#CFC8BA",
+          "#E6D0BB"
+        ],
+        "frame": [
+          320,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "rift-mole",
+        "family": "rift-mole",
+        "name": "균열 두더지",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "I",
+        "silhouette": "몸 앞으로 내민 굴착 발톱",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/rift-mole.png",
+        "palette": [
+          "#130F18",
+          "#1C1820",
+          "#2B2128",
+          "#3D2F36",
+          "#513C3E",
+          "#674D49",
+          "#7F5D55",
+          "#9A7564",
+          "#CFA37F",
+          "#ECCAA1"
+        ],
+        "frame": [
+          384,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "rift-mole-ii",
+        "family": "rift-mole",
+        "name": "삽발 두더지",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "II",
+        "silhouette": "몸 앞으로 내민 굴착 발톱",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/rift-mole-ii.png",
+        "palette": [
+          "#130F18",
+          "#1C1820",
+          "#2B2128",
+          "#3D2F36",
+          "#513C3E",
+          "#674D49",
+          "#7F5D55",
+          "#9A7564",
+          "#CFA37F",
+          "#ECCAA1"
+        ],
+        "frame": [
+          448,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "rift-mole-iii",
+        "family": "rift-mole",
+        "name": "쌍굴착 두더지",
+        "group": "W7–W9 · 균열 선발대",
+        "stage": "III",
+        "silhouette": "몸 앞으로 내민 굴착 발톱",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/rift-mole-iii.png",
+        "palette": [
+          "#130F18",
+          "#1C1820",
+          "#2B2128",
+          "#3D2F36",
+          "#513C3E",
+          "#674D49",
+          "#7F5D55",
+          "#9A7564",
+          "#CFA37F",
+          "#ECCAA1"
+        ],
+        "frame": [
+          512,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "ink-lizard",
+        "family": "ink-lizard",
+        "name": "먹빛 도마뱀",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "I",
+        "silhouette": "납작한 도마뱀 몸과 길게 갈라진 꼬리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/readability-pass/ink-lizard.png",
+        "palette": [
+          "#0C0B11",
+          "#100E15",
+          "#17151E",
+          "#201D28",
+          "#272531",
+          "#343140",
+          "#3B3849",
+          "#464455",
+          "#656479",
+          "#7A7B90"
+        ],
+        "frame": [
+          0,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/enemy-expansion/ink-lizard.png"
+      },
+      {
+        "id": "ink-lizard-ii",
+        "family": "ink-lizard",
+        "name": "갈래꼬리 도마뱀",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "II",
+        "silhouette": "납작한 도마뱀 몸과 길게 갈라진 꼬리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/ink-lizard-ii.png",
+        "palette": [
+          "#0F0D13",
+          "#1C1A20",
+          "#28262D",
+          "#35333C",
+          "#41424E",
+          "#4C4756",
+          "#535260",
+          "#636473",
+          "#7C808E",
+          "#9AABAE"
+        ],
+        "frame": [
+          64,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "ink-lizard-iii",
+        "family": "ink-lizard",
+        "name": "톱등 먹빛 도마뱀",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "III",
+        "silhouette": "납작한 도마뱀 몸과 길게 갈라진 꼬리",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/ink-lizard-iii.png",
+        "palette": [
+          "#0F0D13",
+          "#1C1A20",
+          "#28262D",
+          "#35333C",
+          "#41424E",
+          "#4C4756",
+          "#535260",
+          "#636473",
+          "#7C808E",
+          "#9AABAE"
+        ],
+        "frame": [
+          128,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bone-mask-wraith",
+        "family": "bone-mask-wraith",
+        "name": "뼈가면 망령",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "I",
+        "silhouette": "창백한 가면과 뒤로 늘어진 천",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/bone-mask-wraith.png",
+        "palette": [
+          "#0F0D11",
+          "#18171B",
+          "#1D1B1F",
+          "#242228",
+          "#2D2A33",
+          "#32313C",
+          "#3C3B49",
+          "#4C4C5F",
+          "#67677E",
+          "#B1A7A6"
+        ],
+        "frame": [
+          192,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bone-mask-wraith-ii",
+        "family": "bone-mask-wraith",
+        "name": "겹가면 망령",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "II",
+        "silhouette": "창백한 가면과 뒤로 늘어진 천",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/bone-mask-wraith-ii.png",
+        "palette": [
+          "#0F0D11",
+          "#18171B",
+          "#1D1B1F",
+          "#242228",
+          "#2D2A33",
+          "#32313C",
+          "#3C3B49",
+          "#4C4C5F",
+          "#67677E",
+          "#B1A7A6"
+        ],
+        "frame": [
+          256,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bone-mask-wraith-iii",
+        "family": "bone-mask-wraith",
+        "name": "삼면 망령",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "III",
+        "silhouette": "창백한 가면과 뒤로 늘어진 천",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/bone-mask-wraith-iii.png",
+        "palette": [
+          "#0F0D11",
+          "#18171B",
+          "#1D1B1F",
+          "#242228",
+          "#2D2A33",
+          "#32313C",
+          "#3C3B49",
+          "#4C4C5F",
+          "#67677E",
+          "#B1A7A6"
+        ],
+        "frame": [
+          320,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "mist-bell-keeper",
+        "family": "mist-bell-keeper",
+        "name": "안개 종지기",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "I",
+        "silhouette": "한쪽으로 기운 등과 청동 종",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/mist-bell-keeper.png",
+        "palette": [
+          "#0F0C15",
+          "#1C1922",
+          "#2B2731",
+          "#3A363E",
+          "#493E47",
+          "#5B5156",
+          "#726166",
+          "#8F7D74",
+          "#B69D8D",
+          "#D0BBA8"
+        ],
+        "frame": [
+          384,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "mist-bell-keeper-ii",
+        "family": "mist-bell-keeper",
+        "name": "함정종 지기",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "II",
+        "silhouette": "한쪽으로 기운 등과 청동 종",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/mist-bell-keeper-ii.png",
+        "palette": [
+          "#0F0C15",
+          "#1C1922",
+          "#2B2731",
+          "#3A363E",
+          "#493E47",
+          "#5B5156",
+          "#726166",
+          "#8F7D74",
+          "#B69D8D",
+          "#D0BBA8"
+        ],
+        "frame": [
+          448,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "mist-bell-keeper-iii",
+        "family": "mist-bell-keeper",
+        "name": "대종 수문장",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "III",
+        "silhouette": "한쪽으로 기운 등과 청동 종",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/mist-bell-keeper-iii.png",
+        "palette": [
+          "#0F0C15",
+          "#1C1922",
+          "#2B2731",
+          "#3A363E",
+          "#493E47",
+          "#5B5156",
+          "#726166",
+          "#8F7D74",
+          "#B69D8D",
+          "#D0BBA8"
+        ],
+        "frame": [
+          512,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "spore-carrier",
+        "family": "spore-carrier",
+        "name": "포자 운반체",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "I",
+        "silhouette": "낮은 네발 몸 위로 자라는 보라 버섯",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/spore-carrier.png",
+        "palette": [
+          "#140E19",
+          "#211C26",
+          "#2E2231",
+          "#3C303F",
+          "#524253",
+          "#665365",
+          "#80697A",
+          "#9F8592",
+          "#BEA4AD",
+          "#DBC7CC"
+        ],
+        "frame": [
+          0,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "spore-carrier-ii",
+        "family": "spore-carrier",
+        "name": "쌍뿔 포자체",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "II",
+        "silhouette": "낮은 네발 몸 위로 자라는 보라 버섯",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/spore-carrier-ii.png",
+        "palette": [
+          "#140E19",
+          "#211C26",
+          "#2E2231",
+          "#3C303F",
+          "#524253",
+          "#665365",
+          "#80697A",
+          "#9F8592",
+          "#BEA4AD",
+          "#DBC7CC"
+        ],
+        "frame": [
+          64,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "spore-carrier-iii",
+        "family": "spore-carrier",
+        "name": "삼관 포자괴수",
+        "group": "W10–W12 · 안개 잠식종",
+        "stage": "III",
+        "silhouette": "낮은 네발 몸 위로 자라는 보라 버섯",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/spore-carrier-iii.png",
+        "palette": [
+          "#140E19",
+          "#211C26",
+          "#2E2231",
+          "#3C303F",
+          "#524253",
+          "#665365",
+          "#80697A",
+          "#9F8592",
+          "#BEA4AD",
+          "#DBC7CC"
+        ],
+        "frame": [
+          128,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "stardust-dart-imp",
+        "family": "stardust-dart-imp",
+        "name": "별가루 투창 악마",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "I",
+        "silhouette": "앞으로 겨눈 밝은 투창과 굽은 몸",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/stardust-dart-imp.png",
+        "palette": [
+          "#120D14",
+          "#1E171D",
+          "#292024",
+          "#34282C",
+          "#432F33",
+          "#50393B",
+          "#644948",
+          "#835B56",
+          "#A27766",
+          "#D3B59B"
+        ],
+        "frame": [
+          192,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "stardust-dart-imp-ii",
+        "family": "stardust-dart-imp",
+        "name": "갈래창 악마",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "II",
+        "silhouette": "앞으로 겨눈 밝은 투창과 굽은 몸",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/stardust-dart-imp-ii.png",
+        "palette": [
+          "#120D14",
+          "#1E171D",
+          "#292024",
+          "#34282C",
+          "#432F33",
+          "#50393B",
+          "#644948",
+          "#835B56",
+          "#A27766",
+          "#D3B59B"
+        ],
+        "frame": [
+          256,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "stardust-dart-imp-iii",
+        "family": "stardust-dart-imp",
+        "name": "삼날창 악마",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "III",
+        "silhouette": "앞으로 겨눈 밝은 투창과 굽은 몸",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/stardust-dart-imp-iii.png",
+        "palette": [
+          "#120D14",
+          "#1E171D",
+          "#292024",
+          "#34282C",
+          "#432F33",
+          "#50393B",
+          "#644948",
+          "#835B56",
+          "#A27766",
+          "#D3B59B"
+        ],
+        "frame": [
+          320,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "prism-mantis",
+        "family": "prism-mantis",
+        "name": "프리즘 사마귀",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "I",
+        "silhouette": "수정 낫 앞다리와 뾰족한 등",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/prism-mantis.png",
+        "palette": [
+          "#120E12",
+          "#211A1E",
+          "#352A2C",
+          "#4A3636",
+          "#56403E",
+          "#6C5147",
+          "#A67C5D",
+          "#D7A976",
+          "#F1CB91",
+          "#F9EBC6"
+        ],
+        "frame": [
+          384,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "prism-mantis-ii",
+        "family": "prism-mantis",
+        "name": "초승낫 사마귀",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "II",
+        "silhouette": "수정 낫 앞다리와 뾰족한 등",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/prism-mantis-ii.png",
+        "palette": [
+          "#120E12",
+          "#211A1E",
+          "#352A2C",
+          "#4A3636",
+          "#56403E",
+          "#6C5147",
+          "#A67C5D",
+          "#D7A976",
+          "#F1CB91",
+          "#F9EBC6"
+        ],
+        "frame": [
+          448,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "prism-mantis-iii",
+        "family": "prism-mantis",
+        "name": "왕관낫 사마귀",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "III",
+        "silhouette": "수정 낫 앞다리와 뾰족한 등",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/prism-mantis-iii.png",
+        "palette": [
+          "#120E12",
+          "#211A1E",
+          "#352A2C",
+          "#4A3636",
+          "#56403E",
+          "#6C5147",
+          "#A67C5D",
+          "#D7A976",
+          "#F1CB91",
+          "#F9EBC6"
+        ],
+        "frame": [
+          512,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "cinder-ram",
+        "family": "cinder-ram",
+        "name": "잿불 숫양",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "I",
+        "silhouette": "머리 앞을 채운 구리빛 나선뿔",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/cinder-ram.png",
+        "palette": [
+          "#151117",
+          "#221C21",
+          "#31282D",
+          "#413136",
+          "#49393C",
+          "#5A4749",
+          "#715550",
+          "#795F5E",
+          "#8D6E65",
+          "#D6AB81"
+        ],
+        "frame": [
+          0,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "cinder-ram-ii",
+        "family": "cinder-ram",
+        "name": "화철뿔 숫양",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "II",
+        "silhouette": "머리 앞을 채운 구리빛 나선뿔",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/cinder-ram-ii.png",
+        "palette": [
+          "#151117",
+          "#221C21",
+          "#31282D",
+          "#413136",
+          "#49393C",
+          "#5A4749",
+          "#715550",
+          "#795F5E",
+          "#8D6E65",
+          "#D6AB81"
+        ],
+        "frame": [
+          64,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "cinder-ram-iii",
+        "family": "cinder-ram",
+        "name": "쌍나선 화철수",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "III",
+        "silhouette": "머리 앞을 채운 구리빛 나선뿔",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/cinder-ram-iii.png",
+        "palette": [
+          "#151117",
+          "#221C21",
+          "#31282D",
+          "#413136",
+          "#49393C",
+          "#5A4749",
+          "#715550",
+          "#795F5E",
+          "#8D6E65",
+          "#D6AB81"
+        ],
+        "frame": [
+          128,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "echo-crossbow-guard",
+        "family": "echo-crossbow-guard",
+        "name": "메아리 석궁수",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "I",
+        "silhouette": "짧은 두건과 몸 앞에 놓인 넓은 석궁",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/echo-crossbow-guard.png",
+        "palette": [
+          "#151117",
+          "#201B20",
+          "#282125",
+          "#32282C",
+          "#3F3134",
+          "#4C3839",
+          "#5E4746",
+          "#785953",
+          "#A07963",
+          "#D8B290"
+        ],
+        "frame": [
+          192,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "echo-crossbow-guard-ii",
+        "family": "echo-crossbow-guard",
+        "name": "접이날 석궁수",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "II",
+        "silhouette": "짧은 두건과 몸 앞에 놓인 넓은 석궁",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/echo-crossbow-guard-ii.png",
+        "palette": [
+          "#151117",
+          "#201B20",
+          "#282125",
+          "#32282C",
+          "#3F3134",
+          "#4C3839",
+          "#5E4746",
+          "#785953",
+          "#A07963",
+          "#D8B290"
+        ],
+        "frame": [
+          256,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "echo-crossbow-guard-iii",
+        "family": "echo-crossbow-guard",
+        "name": "쌍궁 석궁장",
+        "group": "W13–W15 · 별가루 병기",
+        "stage": "III",
+        "silhouette": "짧은 두건과 몸 앞에 놓인 넓은 석궁",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/echo-crossbow-guard-iii.png",
+        "palette": [
+          "#151117",
+          "#201B20",
+          "#282125",
+          "#32282C",
+          "#3F3134",
+          "#4C3839",
+          "#5E4746",
+          "#785953",
+          "#A07963",
+          "#D8B290"
+        ],
+        "frame": [
+          320,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "frost-spike-crab",
+        "family": "frost-spike-crab",
+        "name": "서리못 게",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "I",
+        "silhouette": "낮은 얼음 등판과 앞쪽 큰 집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/frost-spike-crab.png",
+        "palette": [
+          "#0C0B11",
+          "#1C1C24",
+          "#2D2D37",
+          "#3A3947",
+          "#424353",
+          "#535668",
+          "#636980",
+          "#71798F",
+          "#899BB4",
+          "#CEDBE8"
+        ],
+        "frame": [
+          384,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "frost-spike-crab-ii",
+        "family": "frost-spike-crab",
+        "name": "쌍빙갑 게",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "II",
+        "silhouette": "낮은 얼음 등판과 앞쪽 큰 집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/frost-spike-crab-ii.png",
+        "palette": [
+          "#0C0B11",
+          "#1C1C24",
+          "#2D2D37",
+          "#3A3947",
+          "#424353",
+          "#535668",
+          "#636980",
+          "#71798F",
+          "#899BB4",
+          "#CEDBE8"
+        ],
+        "frame": [
+          448,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "frost-spike-crab-iii",
+        "family": "frost-spike-crab",
+        "name": "빙관 집게괴수",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "III",
+        "silhouette": "낮은 얼음 등판과 앞쪽 큰 집게",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/frost-spike-crab-iii.png",
+        "palette": [
+          "#0C0B11",
+          "#1C1C24",
+          "#2D2D37",
+          "#3A3947",
+          "#424353",
+          "#535668",
+          "#636980",
+          "#71798F",
+          "#899BB4",
+          "#CEDBE8"
+        ],
+        "frame": [
+          512,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "snowglass-hare",
+        "family": "snowglass-hare",
+        "name": "설유리 토끼",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "I",
+        "silhouette": "날카롭고 긴 푸른 귀와 낮은 몸",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/snowglass-hare.png",
+        "palette": [
+          "#191827",
+          "#30303E",
+          "#434354",
+          "#545467",
+          "#626479",
+          "#787E95",
+          "#9DA8BB",
+          "#BFC7D3",
+          "#CED6DF",
+          "#E0E9EE"
+        ],
+        "frame": [
+          0,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "snowglass-hare-ii",
+        "family": "snowglass-hare",
+        "name": "갈래귀 설유리 토끼",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "II",
+        "silhouette": "날카롭고 긴 푸른 귀와 낮은 몸",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/snowglass-hare-ii.png",
+        "palette": [
+          "#191827",
+          "#30303E",
+          "#434354",
+          "#545467",
+          "#626479",
+          "#787E95",
+          "#9DA8BB",
+          "#BFC7D3",
+          "#CED6DF",
+          "#E0E9EE"
+        ],
+        "frame": [
+          64,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "snowglass-hare-iii",
+        "family": "snowglass-hare",
+        "name": "빙정귀 설유리 토끼",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "III",
+        "silhouette": "날카롭고 긴 푸른 귀와 낮은 몸",
+        "facing": "left",
+        "waveRole": "runner",
+        "file": "sprites/enemy-expansion/snowglass-hare-iii.png",
+        "palette": [
+          "#191827",
+          "#30303E",
+          "#434354",
+          "#545467",
+          "#626479",
+          "#787E95",
+          "#9DA8BB",
+          "#BFC7D3",
+          "#CED6DF",
+          "#E0E9EE"
+        ],
+        "frame": [
+          128,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "black-ice-revenant",
+        "family": "black-ice-revenant",
+        "name": "검은얼음 망자",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "I",
+        "silhouette": "갈비뼈 갑옷과 앞쪽으로 휜 얼음칼 팔",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/black-ice-revenant.png",
+        "palette": [
+          "#110F18",
+          "#1B1B26",
+          "#222028",
+          "#282732",
+          "#31313E",
+          "#3A3845",
+          "#454453",
+          "#58596A",
+          "#81889A",
+          "#C7CED8"
+        ],
+        "frame": [
+          192,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "black-ice-revenant-ii",
+        "family": "black-ice-revenant",
+        "name": "빙골 망자",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "II",
+        "silhouette": "갈비뼈 갑옷과 앞쪽으로 휜 얼음칼 팔",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/black-ice-revenant-ii.png",
+        "palette": [
+          "#110F18",
+          "#1B1B26",
+          "#222028",
+          "#282732",
+          "#31313E",
+          "#3A3845",
+          "#454453",
+          "#58596A",
+          "#81889A",
+          "#C7CED8"
+        ],
+        "frame": [
+          256,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "black-ice-revenant-iii",
+        "family": "black-ice-revenant",
+        "name": "빙창 망자",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "III",
+        "silhouette": "갈비뼈 갑옷과 앞쪽으로 휜 얼음칼 팔",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/black-ice-revenant-iii.png",
+        "palette": [
+          "#110F18",
+          "#1B1B26",
+          "#222028",
+          "#282732",
+          "#31313E",
+          "#3A3845",
+          "#454453",
+          "#58596A",
+          "#81889A",
+          "#C7CED8"
+        ],
+        "frame": [
+          320,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hoarfrost-banner-yak",
+        "family": "hoarfrost-banner-yak",
+        "name": "서리깃 야크",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "I",
+        "silhouette": "긴 털과 뒤로 날리는 붉은 깃발",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hoarfrost-banner-yak.png",
+        "palette": [
+          "#15121A",
+          "#2B242D",
+          "#3B3741",
+          "#4B4149",
+          "#61555B",
+          "#6D4044",
+          "#80767B",
+          "#ADA2A2",
+          "#C7BCB9",
+          "#D8CFCB"
+        ],
+        "frame": [
+          384,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hoarfrost-banner-yak-ii",
+        "family": "hoarfrost-banner-yak",
+        "name": "쌍깃 야크",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "II",
+        "silhouette": "긴 털과 뒤로 날리는 붉은 깃발",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hoarfrost-banner-yak-ii.png",
+        "palette": [
+          "#15121A",
+          "#2B242D",
+          "#3B3741",
+          "#4B4149",
+          "#61555B",
+          "#6D4044",
+          "#80767B",
+          "#ADA2A2",
+          "#C7BCB9",
+          "#D8CFCB"
+        ],
+        "frame": [
+          448,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hoarfrost-banner-yak-iii",
+        "family": "hoarfrost-banner-yak",
+        "name": "삼기 설원 야크",
+        "group": "W16–W18 · 혹한 게이트",
+        "stage": "III",
+        "silhouette": "긴 털과 뒤로 날리는 붉은 깃발",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hoarfrost-banner-yak-iii.png",
+        "palette": [
+          "#15121A",
+          "#2B242D",
+          "#3B3741",
+          "#4B4149",
+          "#61555B",
+          "#6D4044",
+          "#80767B",
+          "#ADA2A2",
+          "#C7BCB9",
+          "#D8CFCB"
+        ],
+        "frame": [
+          512,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hollow-shield-leech",
+        "family": "hollow-shield-leech",
+        "name": "속빈 방패거머리",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "I",
+        "silhouette": "앞으로 펼쳐지는 부채형 갑각과 구부러진 꼬리",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hollow-shield-leech.png",
+        "palette": [
+          "#160F16",
+          "#241C23",
+          "#382731",
+          "#452D3A",
+          "#52313F",
+          "#573E4C",
+          "#734D5A",
+          "#926C78",
+          "#B6949D",
+          "#DAC0BE"
+        ],
+        "frame": [
+          0,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hollow-shield-leech-ii",
+        "family": "hollow-shield-leech",
+        "name": "쌍갑 방패거머리",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "II",
+        "silhouette": "앞으로 펼쳐지는 부채형 갑각과 구부러진 꼬리",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hollow-shield-leech-ii.png",
+        "palette": [
+          "#160F16",
+          "#241C23",
+          "#382731",
+          "#452D3A",
+          "#52313F",
+          "#573E4C",
+          "#734D5A",
+          "#926C78",
+          "#B6949D",
+          "#DAC0BE"
+        ],
+        "frame": [
+          64,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hollow-shield-leech-iii",
+        "family": "hollow-shield-leech",
+        "name": "겹부채 방패거머리",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "III",
+        "silhouette": "앞으로 펼쳐지는 부채형 갑각과 구부러진 꼬리",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/hollow-shield-leech-iii.png",
+        "palette": [
+          "#160F16",
+          "#241C23",
+          "#382731",
+          "#452D3A",
+          "#52313F",
+          "#573E4C",
+          "#734D5A",
+          "#926C78",
+          "#B6949D",
+          "#DAC0BE"
+        ],
+        "frame": [
+          128,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "broken-oath-knight",
+        "family": "broken-oath-knight",
+        "name": "깨진 서약 기사",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "I",
+        "silhouette": "갈라진 대검과 뒤로 펼쳐지는 외투",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/broken-oath-knight.png",
+        "palette": [
+          "#120D14",
+          "#1B161C",
+          "#241B22",
+          "#2F252C",
+          "#452E39",
+          "#4D3B45",
+          "#664750",
+          "#826769",
+          "#B4958D",
+          "#E0C9B9"
+        ],
+        "frame": [
+          192,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "broken-oath-knight-ii",
+        "family": "broken-oath-knight",
+        "name": "쌍뿔 서약 기사",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "II",
+        "silhouette": "갈라진 대검과 뒤로 펼쳐지는 외투",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/broken-oath-knight-ii.png",
+        "palette": [
+          "#120D14",
+          "#1B161C",
+          "#241B22",
+          "#2F252C",
+          "#452E39",
+          "#4D3B45",
+          "#664750",
+          "#826769",
+          "#B4958D",
+          "#E0C9B9"
+        ],
+        "frame": [
+          256,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "broken-oath-knight-iii",
+        "family": "broken-oath-knight",
+        "name": "파문 대검장",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "III",
+        "silhouette": "갈라진 대검과 뒤로 펼쳐지는 외투",
+        "facing": "left",
+        "waveRole": "melee",
+        "file": "sprites/enemy-expansion/broken-oath-knight-iii.png",
+        "palette": [
+          "#120D14",
+          "#1B161C",
+          "#241B22",
+          "#2F252C",
+          "#452E39",
+          "#4D3B45",
+          "#664750",
+          "#826769",
+          "#B4958D",
+          "#E0C9B9"
+        ],
+        "frame": [
+          320,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "abyss-eye-watcher",
+        "family": "abyss-eye-watcher",
+        "name": "심연 외눈",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "I",
+        "silhouette": "앞쪽의 큰 눈과 뒤로 뻗은 비대칭 가시",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/abyss-eye-watcher.png",
+        "palette": [
+          "#130D14",
+          "#211920",
+          "#2D222A",
+          "#3B2732",
+          "#492C3A",
+          "#523741",
+          "#6E4350",
+          "#8B5E65",
+          "#BD9592",
+          "#E8D1C5"
+        ],
+        "frame": [
+          384,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "abyss-eye-watcher-ii",
+        "family": "abyss-eye-watcher",
+        "name": "겹눈꺼풀 감시체",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "II",
+        "silhouette": "앞쪽의 큰 눈과 뒤로 뻗은 비대칭 가시",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/abyss-eye-watcher-ii.png",
+        "palette": [
+          "#130D14",
+          "#211920",
+          "#2D222A",
+          "#3B2732",
+          "#492C3A",
+          "#523741",
+          "#6E4350",
+          "#8B5E65",
+          "#BD9592",
+          "#E8D1C5"
+        ],
+        "frame": [
+          448,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "abyss-eye-watcher-iii",
+        "family": "abyss-eye-watcher",
+        "name": "톱테 심연눈",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "III",
+        "silhouette": "앞쪽의 큰 눈과 뒤로 뻗은 비대칭 가시",
+        "facing": "left",
+        "waveRole": "ranged",
+        "file": "sprites/enemy-expansion/abyss-eye-watcher-iii.png",
+        "palette": [
+          "#130D14",
+          "#211920",
+          "#2D222A",
+          "#3B2732",
+          "#492C3A",
+          "#523741",
+          "#6E4350",
+          "#8B5E65",
+          "#BD9592",
+          "#E8D1C5"
+        ],
+        "frame": [
+          512,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "falling-star-keeper",
+        "family": "falling-star-keeper",
+        "name": "낙성 파수체",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "I",
+        "silhouette": "낮고 묵직한 몸과 청동 별 장식",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/falling-star-keeper.png",
+        "palette": [
+          "#140F15",
+          "#201B20",
+          "#2A232A",
+          "#382C34",
+          "#473941",
+          "#5B454D",
+          "#715152",
+          "#916D66",
+          "#C29881",
+          "#EACFB6"
+        ],
+        "frame": [
+          0,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "falling-star-keeper-ii",
+        "family": "falling-star-keeper",
+        "name": "동륜 낙성수",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "II",
+        "silhouette": "낮고 묵직한 몸과 청동 별 장식",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/falling-star-keeper-ii.png",
+        "palette": [
+          "#140F15",
+          "#201B20",
+          "#2A232A",
+          "#382C34",
+          "#473941",
+          "#5B454D",
+          "#715152",
+          "#916D66",
+          "#C29881",
+          "#EACFB6"
+        ],
+        "frame": [
+          64,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "falling-star-keeper-iii",
+        "family": "falling-star-keeper",
+        "name": "성관 낙성수",
+        "group": "W19–W21 · 심연 잔당",
+        "stage": "III",
+        "silhouette": "낮고 묵직한 몸과 청동 별 장식",
+        "facing": "left",
+        "waveRole": "guard",
+        "file": "sprites/enemy-expansion/falling-star-keeper-iii.png",
+        "palette": [
+          "#140F15",
+          "#201B20",
+          "#2A232A",
+          "#382C34",
+          "#473941",
+          "#5B454D",
+          "#715152",
+          "#916D66",
+          "#C29881",
+          "#EACFB6"
+        ],
+        "frame": [
+          128,
+          576,
+          64,
+          64
+        ]
+      }
+    ],
+    "atlas": "enemies-full-atlas.png"
+  },
+  "support": {
+    "sprites": [
+      {
+        "id": "commander-sung-jinwoo",
+        "family": "SC01",
+        "name": "성진우",
+        "group": "그림자",
+        "stage": "",
+        "file": "sprites/full-roster/commander-sung-jinwoo-humanoid-roster.png",
+        "silhouette": "큰 앞머리와 간결한 인간형 실루엣, 높게 접힌 코트 칼라, 앞뒤로 나뉜 은청색 쌍단검",
+        "palette": [
+          "#0B0B13",
+          "#171622",
+          "#2B293C",
+          "#433F59",
+          "#488BB1",
+          "#777091",
+          "#8A6252",
+          "#BCDAF5",
+          "#D8A07F",
+          "#FCD0A7"
+        ],
+        "frame": [
+          0,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "sc02",
+        "family": "SC02",
+        "name": "아스본",
+        "group": "그림자",
+        "stage": "",
+        "file": "sprites/readability-pass/sc02.png",
+        "silhouette": "위로 선 뿔 투구와 어깨 망토",
+        "palette": [
+          "#08070D",
+          "#0C0B11",
+          "#0E0C14",
+          "#15121C",
+          "#241D2E",
+          "#2F263C",
+          "#483858",
+          "#5A456B",
+          "#604B71",
+          "#8E769E"
+        ],
+        "frame": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/sc02.png"
+      },
+      {
+        "id": "sc03",
+        "family": "SC03",
+        "name": "벨리온",
+        "group": "그림자",
+        "stage": "",
+        "file": "sprites/full-roster/sc03.png",
+        "silhouette": "큰 날개와 마디가 갈라진 검",
+        "palette": [
+          "#0A0911",
+          "#14121C",
+          "#1F1E2A",
+          "#292637",
+          "#332D43",
+          "#3A384A",
+          "#54456B",
+          "#867285",
+          "#CDB2E4",
+          "#EEDAF9"
+        ],
+        "frame": [
+          128,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "sc04",
+        "family": "SC04",
+        "name": "이그리트",
+        "group": "그림자",
+        "stage": "",
+        "file": "sprites/readability-pass/sc04.png",
+        "silhouette": "붉은 깃과 긴 대검",
+        "palette": [
+          "#0B0A10",
+          "#1D111A",
+          "#371D2A",
+          "#3D1421",
+          "#501725",
+          "#592D3B",
+          "#663D4B",
+          "#7B2131",
+          "#972A3A",
+          "#A68E9B"
+        ],
+        "frame": [
+          192,
+          0,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/sc04.png"
+      },
+      {
+        "id": "sc05",
+        "family": "SC05",
+        "name": "베르",
+        "group": "그림자",
+        "stage": "",
+        "file": "sprites/full-roster/sc05.png",
+        "silhouette": "가늘게 뻗은 더듬이와 칼날 팔",
+        "palette": [
+          "#090810",
+          "#0E0D15",
+          "#180E31",
+          "#1A1925",
+          "#282439",
+          "#363148",
+          "#494160",
+          "#9581B6",
+          "#E2CDF8",
+          "#F0E0FB"
+        ],
+        "frame": [
+          256,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hc01",
+        "family": "HC01",
+        "name": "고건희",
+        "group": "헌터",
+        "stage": "",
+        "file": "sprites/full-roster/hc01.png",
+        "silhouette": "희끗한 머리와 한 팔의 금빛",
+        "palette": [
+          "#0A0A0E",
+          "#121117",
+          "#1A181D",
+          "#242328",
+          "#353031",
+          "#403B3C",
+          "#474349",
+          "#654E37",
+          "#A98E6E",
+          "#E8D1B3"
+        ],
+        "frame": [
+          0,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hc02",
+        "family": "HC02",
+        "name": "최종인",
+        "group": "헌터",
+        "stage": "",
+        "file": "sprites/full-roster/hc02.png",
+        "silhouette": "안경과 불꽃",
+        "palette": [
+          "#0B090C",
+          "#121115",
+          "#1F1C21",
+          "#333138",
+          "#38353C",
+          "#39252A",
+          "#66363B",
+          "#984936",
+          "#D27E42",
+          "#EFCFAB"
+        ],
+        "frame": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hc03",
+        "family": "HC03",
+        "name": "백윤호",
+        "group": "헌터",
+        "stage": "",
+        "file": "sprites/full-roster/hc03.png",
+        "silhouette": "주황 머리와 짐승의 발톱",
+        "palette": [
+          "#08060A",
+          "#0F0F14",
+          "#191619",
+          "#242329",
+          "#362D2F",
+          "#3A353B",
+          "#684F42",
+          "#B8875F",
+          "#DDC6B4",
+          "#EDE6E8"
+        ],
+        "frame": [
+          128,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hc04",
+        "family": "HC04",
+        "name": "차해인",
+        "group": "헌터",
+        "stage": "",
+        "file": "sprites/full-roster/hc04.png",
+        "silhouette": "밝은 머리와 긴 검",
+        "palette": [
+          "#08070A",
+          "#110F14",
+          "#181921",
+          "#28283A",
+          "#635967",
+          "#64343B",
+          "#AA9276",
+          "#ECD19A",
+          "#F8DEA6",
+          "#F9F4E7"
+        ],
+        "frame": [
+          192,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hc05",
+        "family": "HC05",
+        "name": "민병구",
+        "group": "헌터",
+        "stage": "",
+        "file": "sprites/full-roster/hc05.png",
+        "silhouette": "회복 도구와 옅은 옷",
+        "palette": [
+          "#07070A",
+          "#0E1012",
+          "#161619",
+          "#252628",
+          "#34343B",
+          "#4D4D45",
+          "#968C6E",
+          "#DCC79E",
+          "#EEDABD",
+          "#F3E2C7"
+        ],
+        "frame": [
+          256,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bc01",
+        "family": "BC01",
+        "name": "안타레스",
+        "group": "마수",
+        "stage": "",
+        "file": "sprites/full-roster/bc01.png",
+        "silhouette": "붉은 머리와 용 갑옷",
+        "palette": [
+          "#120D14",
+          "#1F1921",
+          "#351D26",
+          "#542430",
+          "#543038",
+          "#724045",
+          "#885F53",
+          "#9B383E",
+          "#AC4043",
+          "#D8AC83"
+        ],
+        "frame": [
+          0,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bc02",
+        "family": "BC02",
+        "name": "혹한의 군주",
+        "group": "마수",
+        "stage": "",
+        "file": "sprites/full-roster/bc02.png",
+        "silhouette": "옅은 털 망토와 얼음 왕관",
+        "palette": [
+          "#0D0E18",
+          "#1F2337",
+          "#3C4462",
+          "#555F85",
+          "#687298",
+          "#8D96BB",
+          "#B3BEDE",
+          "#E1E1F5",
+          "#EDEAF9",
+          "#F2F1FA"
+        ],
+        "frame": [
+          64,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bc03",
+        "family": "BC03",
+        "name": "송곳니의 군주",
+        "group": "마수",
+        "stage": "",
+        "file": "sprites/full-roster/bc03.png",
+        "silhouette": "크게 뻗은 갈기와 발톱",
+        "palette": [
+          "#0C0B10",
+          "#1C1A21",
+          "#2F242A",
+          "#45212C",
+          "#62393D",
+          "#662935",
+          "#79645A",
+          "#BA9D86",
+          "#D4B9A0",
+          "#E6D1BD"
+        ],
+        "frame": [
+          128,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bc04",
+        "family": "BC04",
+        "name": "퀘레샤",
+        "group": "마수",
+        "stage": "",
+        "file": "sprites/readability-pass/bc04.png",
+        "silhouette": "길게 늘어진 머리와 곤충 갑각",
+        "palette": [
+          "#0B0C0E",
+          "#0D1011",
+          "#101114",
+          "#151819",
+          "#1E2121",
+          "#242726",
+          "#2C302E",
+          "#383D35",
+          "#4A4F3F",
+          "#84924E"
+        ],
+        "frame": [
+          192,
+          128,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bc04.png"
+      },
+      {
+        "id": "bc05",
+        "family": "BC05",
+        "name": "바란",
+        "group": "마수",
+        "stage": "",
+        "file": "sprites/full-roster/bc05.png",
+        "silhouette": "뿔 투구와 흰 번개",
+        "palette": [
+          "#0C0B15",
+          "#181625",
+          "#232036",
+          "#312B47",
+          "#473963",
+          "#584878",
+          "#7F5DA8",
+          "#B6A3D3",
+          "#EDE5FB",
+          "#F5F0FC"
+        ],
+        "frame": [
+          256,
+          128,
+          64,
+          64
+        ]
+      }
+    ],
+    "atlas": "support-full-atlas.png"
+  },
+  "income": {
+    "sprites": [
+      {
+        "id": "si01-i",
+        "family": "SI01",
+        "name": "그림자 보병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/readability-pass/si01-i.png",
+        "silhouette": "좌향 두건, 짧은 곡도, 등 뒤 각진 파견 등불",
+        "palette": [
+          "#030305",
+          "#06070A",
+          "#09090C",
+          "#0F0F14",
+          "#201F29",
+          "#33303E",
+          "#3F3C4C",
+          "#494455",
+          "#635F73",
+          "#A0A3BC"
+        ],
+        "frame": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st01-i-refined.png",
+        "facing": "left"
+      },
+      {
+        "id": "si01-ii",
+        "family": "SI01",
+        "name": "그림자 보병",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/readability-pass/si01-ii.png",
+        "silhouette": "좌향 두건, 짧은 곡도, 등 뒤 각진 파견 등불",
+        "palette": [
+          "#030305",
+          "#06070A",
+          "#09090C",
+          "#0F0F14",
+          "#201F29",
+          "#33303E",
+          "#3F3C4C",
+          "#494455",
+          "#635F73",
+          "#A0A3BC"
+        ],
+        "frame": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st01-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "si01-iii",
+        "family": "SI01",
+        "name": "그림자 보병",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/readability-pass/si01-iii.png",
+        "silhouette": "좌향 두건, 짧은 곡도, 등 뒤 각진 파견 등불",
+        "palette": [
+          "#030305",
+          "#06070A",
+          "#09090C",
+          "#0F0F14",
+          "#201F29",
+          "#33303E",
+          "#3F3C4C",
+          "#494455",
+          "#635F73",
+          "#A0A3BC"
+        ],
+        "frame": [
+          128,
+          0,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st05-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "si02-i",
+        "family": "SI02",
+        "name": "그림자 개미",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/si02-i.png",
+        "silhouette": "날개 달린 검은 개미",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          192,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si02-ii",
+        "family": "SI02",
+        "name": "그림자 개미",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/si02-ii.png",
+        "silhouette": "날개 달린 검은 개미",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          256,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si02-iii",
+        "family": "SI02",
+        "name": "그림자 개미",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/si02-iii.png",
+        "silhouette": "날개 달린 검은 개미",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          320,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si03-i",
+        "family": "SI03",
+        "name": "그림자 마법병",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/si03-i.png",
+        "silhouette": "작은 두건과 마력 지팡이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          384,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si03-ii",
+        "family": "SI03",
+        "name": "그림자 마법병",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/si03-ii.png",
+        "silhouette": "작은 두건과 마력 지팡이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          448,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si03-iii",
+        "family": "SI03",
+        "name": "그림자 마법병",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/si03-iii.png",
+        "silhouette": "작은 두건과 마력 지팡이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          512,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si04-i",
+        "family": "SI04",
+        "name": "카이셀",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/readability-pass/si04-i.png",
+        "silhouette": "왼쪽의 갈고리 주둥이, 층진 날개, 등 뒤 사각 결정 전송기",
+        "palette": [
+          "#06060A",
+          "#0B0B10",
+          "#0F0E14",
+          "#17171F",
+          "#262430",
+          "#363443",
+          "#464459",
+          "#57556E",
+          "#676785",
+          "#9395AF"
+        ],
+        "frame": [
+          0,
+          64,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st07-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "si04-ii",
+        "family": "SI04",
+        "name": "카이셀",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/readability-pass/si04-ii.png",
+        "silhouette": "왼쪽의 갈고리 주둥이, 층진 날개, 등 뒤 사각 결정 전송기",
+        "palette": [
+          "#06060A",
+          "#0B0B10",
+          "#0F0E14",
+          "#17171F",
+          "#262430",
+          "#363443",
+          "#464459",
+          "#57556E",
+          "#676785",
+          "#9395AF"
+        ],
+        "frame": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st07-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "si04-iii",
+        "family": "SI04",
+        "name": "카이셀",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/readability-pass/si04-iii.png",
+        "silhouette": "왼쪽의 갈고리 주둥이, 층진 날개, 등 뒤 사각 결정 전송기",
+        "palette": [
+          "#06060A",
+          "#0B0B10",
+          "#0F0E14",
+          "#17171F",
+          "#262430",
+          "#363443",
+          "#464459",
+          "#57556E",
+          "#676785",
+          "#9395AF"
+        ],
+        "frame": [
+          128,
+          64,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/st07-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "si05-i",
+        "family": "SI05",
+        "name": "하이오크 그림자",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/si05-i.png",
+        "silhouette": "엄니와 큰 도끼",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          192,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si05-ii",
+        "family": "SI05",
+        "name": "하이오크 그림자",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/si05-ii.png",
+        "silhouette": "엄니와 큰 도끼",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          256,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si05-iii",
+        "family": "SI05",
+        "name": "하이오크 그림자",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/si05-iii.png",
+        "silhouette": "엄니와 큰 도끼",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          320,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si06-i",
+        "family": "SI06",
+        "name": "탱크",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st03-i-refined.png",
+        "silhouette": "낮은 몸과 둥근 곰 귀, 앞쪽에 내민 두꺼운 앞발",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          384,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si06-ii",
+        "family": "SI06",
+        "name": "탱크",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/st03-ii-v4.png",
+        "silhouette": "한쪽 어깨에서 높이 말리는 그림자",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          448,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si06-iii",
+        "family": "SI06",
+        "name": "탱크",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/st03-iii-v4.png",
+        "silhouette": "넓게 휘는 등 불꽃과 두 앞발, 가슴의 X자 흉터",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          512,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si07-i",
+        "family": "SI07",
+        "name": "아이언",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/readability-pass/si07-i.png",
+        "silhouette": "무검 중갑, 육각 삽입판이 있는 비대칭 좌향 대방패",
+        "palette": [
+          "#030205",
+          "#050508",
+          "#08070A",
+          "#131218",
+          "#2B2834",
+          "#3C3947",
+          "#484455",
+          "#4F4A5C",
+          "#5D596D",
+          "#9493AA"
+        ],
+        "frame": [
+          0,
+          128,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ally-review/st05-i-shield-only.png",
+        "facing": "left"
+      },
+      {
+        "id": "si07-ii",
+        "family": "SI07",
+        "name": "아이언",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/readability-pass/si07-ii.png",
+        "silhouette": "무검 중갑, 육각 삽입판이 있는 비대칭 좌향 대방패",
+        "palette": [
+          "#030205",
+          "#050508",
+          "#08070A",
+          "#131218",
+          "#2B2834",
+          "#3C3947",
+          "#484455",
+          "#4F4A5C",
+          "#5D596D",
+          "#9493AA"
+        ],
+        "frame": [
+          64,
+          128,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ally-review/st05-ii-shield-only.png",
+        "facing": "left"
+      },
+      {
+        "id": "si07-iii",
+        "family": "SI07",
+        "name": "아이언",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/readability-pass/si07-iii.png",
+        "silhouette": "무검 중갑, 육각 삽입판이 있는 비대칭 좌향 대방패",
+        "palette": [
+          "#030205",
+          "#050508",
+          "#08070A",
+          "#131218",
+          "#2B2834",
+          "#3C3947",
+          "#484455",
+          "#4F4A5C",
+          "#5D596D",
+          "#9493AA"
+        ],
+        "frame": [
+          128,
+          128,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ally-review/st05-iii-shield-only.png",
+        "facing": "left"
+      },
+      {
+        "id": "si08-i",
+        "family": "SI08",
+        "name": "이그리트",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/si08-i.png",
+        "silhouette": "붉은 장식깃과 대검",
+        "palette": [
+          "#0C0A14",
+          "#12111D",
+          "#211726",
+          "#2C2538",
+          "#331528",
+          "#491931",
+          "#5E3147",
+          "#70253D",
+          "#733A51",
+          "#AF6988"
+        ],
+        "frame": [
+          192,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si08-ii",
+        "family": "SI08",
+        "name": "이그리트",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/si08-ii.png",
+        "silhouette": "붉은 장식깃과 대검",
+        "palette": [
+          "#0C0A14",
+          "#12111D",
+          "#211726",
+          "#2C2538",
+          "#331528",
+          "#491931",
+          "#5E3147",
+          "#70253D",
+          "#733A51",
+          "#AF6988"
+        ],
+        "frame": [
+          256,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si08-iii",
+        "family": "SI08",
+        "name": "이그리트",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/si08-iii.png",
+        "silhouette": "붉은 장식깃과 대검",
+        "palette": [
+          "#0C0A14",
+          "#12111D",
+          "#211726",
+          "#2C2538",
+          "#331528",
+          "#491931",
+          "#5E3147",
+          "#70253D",
+          "#733A51",
+          "#AF6988"
+        ],
+        "frame": [
+          320,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si09-i",
+        "family": "SI09",
+        "name": "아이스베어 그림자 무리",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/si09-i.png",
+        "silhouette": "둥근 귀와 두 앞발",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          384,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si09-ii",
+        "family": "SI09",
+        "name": "아이스베어 그림자 무리",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/si09-ii.png",
+        "silhouette": "둥근 귀와 두 앞발",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          448,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si09-iii",
+        "family": "SI09",
+        "name": "아이스베어 그림자 무리",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/si09-iii.png",
+        "silhouette": "둥근 귀와 두 앞발",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          512,
+          128,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si10-i",
+        "family": "SI10",
+        "name": "어금니",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/st10-i.png",
+        "silhouette": "후드와 엄니, 구슬 지팡이",
+        "palette": [
+          "#09080E",
+          "#0E0C14",
+          "#14121C",
+          "#1E1C27",
+          "#25212F",
+          "#312D3E",
+          "#473E56",
+          "#574E66",
+          "#73627E",
+          "#B6A2B6"
+        ],
+        "frame": [
+          0,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si10-ii",
+        "family": "SI10",
+        "name": "어금니",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/st10-ii.png",
+        "silhouette": "후드와 엄니, 구슬 지팡이",
+        "palette": [
+          "#09080E",
+          "#0E0C14",
+          "#14121C",
+          "#1E1C27",
+          "#25212F",
+          "#312D3E",
+          "#473E56",
+          "#574E66",
+          "#73627E",
+          "#B6A2B6"
+        ],
+        "frame": [
+          64,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "si10-iii",
+        "family": "SI10",
+        "name": "어금니",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/st10-iii.png",
+        "silhouette": "후드와 엄니, 구슬 지팡이",
+        "palette": [
+          "#09080E",
+          "#0E0C14",
+          "#14121C",
+          "#1E1C27",
+          "#25212F",
+          "#312D3E",
+          "#473E56",
+          "#574E66",
+          "#73627E",
+          "#B6A2B6"
+        ],
+        "frame": [
+          128,
+          192,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi01-i",
+        "family": "HI01",
+        "name": "유진호",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi01-i.png",
+        "silhouette": "정찰 판금, 사선 결정 홈이 파인 방패와 뒤로 보이는 현장 등짐",
+        "palette": [
+          "#0E0D16",
+          "#12121B",
+          "#16151F",
+          "#22202D",
+          "#342F40",
+          "#413C53",
+          "#4C4558",
+          "#5A5266",
+          "#6F6474",
+          "#BEA9A7"
+        ],
+        "frame": [
+          192,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ht01-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi01-ii",
+        "family": "HI01",
+        "name": "유진호",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi01-ii.png",
+        "silhouette": "정찰 판금, 사선 결정 홈이 파인 방패와 뒤로 보이는 현장 등짐",
+        "palette": [
+          "#0E0D16",
+          "#12121B",
+          "#16151F",
+          "#22202D",
+          "#342F40",
+          "#413C53",
+          "#4C4558",
+          "#5A5266",
+          "#6F6474",
+          "#BEA9A7"
+        ],
+        "frame": [
+          256,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ht01-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi01-iii",
+        "family": "HI01",
+        "name": "유진호",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi01-iii.png",
+        "silhouette": "정찰 판금, 사선 결정 홈이 파인 방패와 뒤로 보이는 현장 등짐",
+        "palette": [
+          "#0E0D16",
+          "#12121B",
+          "#16151F",
+          "#22202D",
+          "#342F40",
+          "#413C53",
+          "#4C4558",
+          "#5A5266",
+          "#6F6474",
+          "#BEA9A7"
+        ],
+        "frame": [
+          320,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/ht01-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi02-i",
+        "family": "HI02",
+        "name": "송치열",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi02-i.png",
+        "silhouette": "왼쪽으로 내민 도검, 봉인 끈, 뒤로 흐르는 갈색 외투와 목도리",
+        "palette": [
+          "#0F0D16",
+          "#18151F",
+          "#2B242E",
+          "#3E2F3A",
+          "#4B3943",
+          "#5E454B",
+          "#6F555B",
+          "#7E5F5F",
+          "#A58986",
+          "#E0C7BD"
+        ],
+        "frame": [
+          384,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht04-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi02-ii",
+        "family": "HI02",
+        "name": "송치열",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi02-ii.png",
+        "silhouette": "왼쪽으로 내민 도검, 봉인 끈, 뒤로 흐르는 갈색 외투와 목도리",
+        "palette": [
+          "#0F0D16",
+          "#18151F",
+          "#2B242E",
+          "#3E2F3A",
+          "#4B3943",
+          "#5E454B",
+          "#6F555B",
+          "#7E5F5F",
+          "#A58986",
+          "#E0C7BD"
+        ],
+        "frame": [
+          448,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht04-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi02-iii",
+        "family": "HI02",
+        "name": "송치열",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi02-iii.png",
+        "silhouette": "왼쪽으로 내민 도검, 봉인 끈, 뒤로 흐르는 갈색 외투와 목도리",
+        "palette": [
+          "#0F0D16",
+          "#18151F",
+          "#2B242E",
+          "#3E2F3A",
+          "#4B3943",
+          "#5E454B",
+          "#6F555B",
+          "#7E5F5F",
+          "#A58986",
+          "#E0C7BD"
+        ],
+        "frame": [
+          512,
+          192,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht04-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi03-i",
+        "family": "HI03",
+        "name": "손기훈",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi03-i.png",
+        "silhouette": "계단형 대검과 결정 손잡이, 분리된 견갑과 전술 망토",
+        "palette": [
+          "#0E0C15",
+          "#12121A",
+          "#16141E",
+          "#23202C",
+          "#3A3343",
+          "#4D4455",
+          "#685E73",
+          "#938492",
+          "#C1ACAC",
+          "#E3CEC7"
+        ],
+        "frame": [
+          0,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht06-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi03-ii",
+        "family": "HI03",
+        "name": "손기훈",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi03-ii.png",
+        "silhouette": "계단형 대검과 결정 손잡이, 분리된 견갑과 전술 망토",
+        "palette": [
+          "#0E0C15",
+          "#12121A",
+          "#16141E",
+          "#23202C",
+          "#3A3343",
+          "#4D4455",
+          "#685E73",
+          "#938492",
+          "#C1ACAC",
+          "#E3CEC7"
+        ],
+        "frame": [
+          64,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht06-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi03-iii",
+        "family": "HI03",
+        "name": "손기훈",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi03-iii.png",
+        "silhouette": "계단형 대검과 결정 손잡이, 분리된 견갑과 전술 망토",
+        "palette": [
+          "#0E0C15",
+          "#12121A",
+          "#16141E",
+          "#23202C",
+          "#3A3343",
+          "#4D4455",
+          "#685E73",
+          "#938492",
+          "#C1ACAC",
+          "#E3CEC7"
+        ],
+        "frame": [
+          128,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht06-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi04-i",
+        "family": "HI04",
+        "name": "백윤호",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/hi04-i.png",
+        "silhouette": "주황 머리에서 흰 호랑이 발톱으로 변화",
+        "palette": [
+          "#0A0914",
+          "#10101B",
+          "#16131E",
+          "#1F1D2A",
+          "#302B39",
+          "#403A4C",
+          "#AA6D54",
+          "#CBAFB3",
+          "#DECEDB",
+          "#E7DCE6"
+        ],
+        "frame": [
+          192,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi04-ii",
+        "family": "HI04",
+        "name": "백윤호",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/hi04-ii.png",
+        "silhouette": "주황 머리에서 흰 호랑이 발톱으로 변화",
+        "palette": [
+          "#0A0914",
+          "#10101B",
+          "#16131E",
+          "#1F1D2A",
+          "#302B39",
+          "#403A4C",
+          "#AA6D54",
+          "#CBAFB3",
+          "#DECEDB",
+          "#E7DCE6"
+        ],
+        "frame": [
+          256,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi04-iii",
+        "family": "HI04",
+        "name": "백윤호",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/hi04-iii.png",
+        "silhouette": "주황 머리에서 흰 호랑이 발톱으로 변화",
+        "palette": [
+          "#0A0914",
+          "#10101B",
+          "#16131E",
+          "#1F1D2A",
+          "#302B39",
+          "#403A4C",
+          "#AA6D54",
+          "#CBAFB3",
+          "#DECEDB",
+          "#E7DCE6"
+        ],
+        "frame": [
+          320,
+          256,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi05-i",
+        "family": "HI05",
+        "name": "임태규",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi05-i.png",
+        "silhouette": "좌향 각진 활과 시위, 등 뒤의 감지기 화살통",
+        "palette": [
+          "#050408",
+          "#09090E",
+          "#0E0C12",
+          "#201C22",
+          "#332D35",
+          "#443B44",
+          "#4D4047",
+          "#57494E",
+          "#7B615B",
+          "#CEA687"
+        ],
+        "frame": [
+          384,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht03-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi05-ii",
+        "family": "HI05",
+        "name": "임태규",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi05-ii.png",
+        "silhouette": "좌향 각진 활과 시위, 등 뒤의 감지기 화살통",
+        "palette": [
+          "#050408",
+          "#09090E",
+          "#0E0C12",
+          "#201C22",
+          "#332D35",
+          "#443B44",
+          "#4D4047",
+          "#57494E",
+          "#7B615B",
+          "#CEA687"
+        ],
+        "frame": [
+          448,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht03-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi05-iii",
+        "family": "HI05",
+        "name": "임태규",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi05-iii.png",
+        "silhouette": "좌향 각진 활과 시위, 등 뒤의 감지기 화살통",
+        "palette": [
+          "#050408",
+          "#09090E",
+          "#0E0C12",
+          "#201C22",
+          "#332D35",
+          "#443B44",
+          "#4D4047",
+          "#57494E",
+          "#7B615B",
+          "#CEA687"
+        ],
+        "frame": [
+          512,
+          256,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht03-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi06-i",
+        "family": "HI06",
+        "name": "이주희",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi06-i.png",
+        "silhouette": "치유 도구가 달린 좌향 지팡이와 비대칭 의무 가방",
+        "palette": [
+          "#050407",
+          "#09090E",
+          "#130F14",
+          "#30272B",
+          "#593A3E",
+          "#72524E",
+          "#9E5E58",
+          "#A5665D",
+          "#B8957F",
+          "#E6D1BC"
+        ],
+        "frame": [
+          0,
+          320,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht05-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi06-ii",
+        "family": "HI06",
+        "name": "이주희",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi06-ii.png",
+        "silhouette": "치유 도구가 달린 좌향 지팡이와 비대칭 의무 가방",
+        "palette": [
+          "#050407",
+          "#09090E",
+          "#130F14",
+          "#30272B",
+          "#593A3E",
+          "#72524E",
+          "#9E5E58",
+          "#A5665D",
+          "#B8957F",
+          "#E6D1BC"
+        ],
+        "frame": [
+          64,
+          320,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht05-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi06-iii",
+        "family": "HI06",
+        "name": "이주희",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi06-iii.png",
+        "silhouette": "치유 도구가 달린 좌향 지팡이와 비대칭 의무 가방",
+        "palette": [
+          "#050407",
+          "#09090E",
+          "#130F14",
+          "#30272B",
+          "#593A3E",
+          "#72524E",
+          "#9E5E58",
+          "#A5665D",
+          "#B8957F",
+          "#E6D1BC"
+        ],
+        "frame": [
+          128,
+          320,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht05-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi07-i",
+        "family": "HI07",
+        "name": "차해인",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/hi07-i.png",
+        "silhouette": "금빛 머리와 가는 칼날",
+        "palette": [
+          "#0A0914",
+          "#100F19",
+          "#15141E",
+          "#26212C",
+          "#57303E",
+          "#745151",
+          "#C09D82",
+          "#E8C69D",
+          "#F4D29F",
+          "#F6E0BE"
+        ],
+        "frame": [
+          192,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi07-ii",
+        "family": "HI07",
+        "name": "차해인",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/hi07-ii.png",
+        "silhouette": "금빛 머리와 가는 칼날",
+        "palette": [
+          "#0A0914",
+          "#100F19",
+          "#15141E",
+          "#26212C",
+          "#57303E",
+          "#745151",
+          "#C09D82",
+          "#E8C69D",
+          "#F4D29F",
+          "#F6E0BE"
+        ],
+        "frame": [
+          256,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi07-iii",
+        "family": "HI07",
+        "name": "차해인",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/hi07-iii.png",
+        "silhouette": "금빛 머리와 가는 칼날",
+        "palette": [
+          "#0A0914",
+          "#100F19",
+          "#15141E",
+          "#26212C",
+          "#57303E",
+          "#745151",
+          "#C09D82",
+          "#E8C69D",
+          "#F4D29F",
+          "#F6E0BE"
+        ],
+        "frame": [
+          320,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi08-i",
+        "family": "HI08",
+        "name": "최종인",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/hi08-i.png",
+        "silhouette": "안경과 불꽃",
+        "palette": [
+          "#0C0A15",
+          "#12101A",
+          "#171520",
+          "#26202D",
+          "#503C45",
+          "#562839",
+          "#AC3E45",
+          "#C17C44",
+          "#F0B357",
+          "#F8D28C"
+        ],
+        "frame": [
+          384,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi08-ii",
+        "family": "HI08",
+        "name": "최종인",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/hi08-ii.png",
+        "silhouette": "안경과 불꽃",
+        "palette": [
+          "#0C0A15",
+          "#12101A",
+          "#171520",
+          "#26202D",
+          "#503C45",
+          "#562839",
+          "#AC3E45",
+          "#C17C44",
+          "#F0B357",
+          "#F8D28C"
+        ],
+        "frame": [
+          448,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi08-iii",
+        "family": "HI08",
+        "name": "최종인",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/hi08-iii.png",
+        "silhouette": "안경과 불꽃",
+        "palette": [
+          "#0C0A15",
+          "#12101A",
+          "#171520",
+          "#26202D",
+          "#503C45",
+          "#562839",
+          "#AC3E45",
+          "#C17C44",
+          "#F0B357",
+          "#F8D28C"
+        ],
+        "frame": [
+          512,
+          320,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi09-i",
+        "family": "HI09",
+        "name": "마동욱",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/readability-pass/hi09-i.png",
+        "silhouette": "중량 견갑과 청회색 동력 장치가 매립된 왼팔 장갑",
+        "palette": [
+          "#050509",
+          "#0B0B10",
+          "#16141A",
+          "#28242C",
+          "#352E37",
+          "#3E3640",
+          "#483F49",
+          "#5B4F58",
+          "#9A7E73",
+          "#DDBDA6"
+        ],
+        "frame": [
+          0,
+          384,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht10-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi09-ii",
+        "family": "HI09",
+        "name": "마동욱",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/readability-pass/hi09-ii.png",
+        "silhouette": "중량 견갑과 청회색 동력 장치가 매립된 왼팔 장갑",
+        "palette": [
+          "#050509",
+          "#0B0B10",
+          "#16141A",
+          "#28242C",
+          "#352E37",
+          "#3E3640",
+          "#483F49",
+          "#5B4F58",
+          "#9A7E73",
+          "#DDBDA6"
+        ],
+        "frame": [
+          64,
+          384,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht10-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi09-iii",
+        "family": "HI09",
+        "name": "마동욱",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/readability-pass/hi09-iii.png",
+        "silhouette": "중량 견갑과 청회색 동력 장치가 매립된 왼팔 장갑",
+        "palette": [
+          "#050509",
+          "#0B0B10",
+          "#16141A",
+          "#28242C",
+          "#352E37",
+          "#3E3640",
+          "#483F49",
+          "#5B4F58",
+          "#9A7E73",
+          "#DDBDA6"
+        ],
+        "frame": [
+          128,
+          384,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/ht10-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "hi10-i",
+        "family": "HI10",
+        "name": "민병구",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/hi10-i.png",
+        "silhouette": "치유 손짓과 위장 두건",
+        "palette": [
+          "#0A0A14",
+          "#10101A",
+          "#15141F",
+          "#22212C",
+          "#35333D",
+          "#443E4B",
+          "#534E57",
+          "#838272",
+          "#C7B5A0",
+          "#ECD7C1"
+        ],
+        "frame": [
+          192,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi10-ii",
+        "family": "HI10",
+        "name": "민병구",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/hi10-ii.png",
+        "silhouette": "치유 손짓과 위장 두건",
+        "palette": [
+          "#0A0A14",
+          "#10101A",
+          "#15141F",
+          "#22212C",
+          "#35333D",
+          "#443E4B",
+          "#534E57",
+          "#838272",
+          "#C7B5A0",
+          "#ECD7C1"
+        ],
+        "frame": [
+          256,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hi10-iii",
+        "family": "HI10",
+        "name": "민병구",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/hi10-iii.png",
+        "silhouette": "치유 손짓과 위장 두건",
+        "palette": [
+          "#0A0A14",
+          "#10101A",
+          "#15141F",
+          "#22212C",
+          "#35333D",
+          "#443E4B",
+          "#534E57",
+          "#838272",
+          "#C7B5A0",
+          "#ECD7C1"
+        ],
+        "frame": [
+          320,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi01-i",
+        "family": "BI01",
+        "name": "강철 이빨 라이칸",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi01-i.png",
+        "silhouette": "강철색 이빨과 앞으로 뻗은 주둥이",
+        "palette": [
+          "#0C0C18",
+          "#151321",
+          "#272434",
+          "#3A3648",
+          "#4E4553",
+          "#716269",
+          "#8D7470",
+          "#A29395",
+          "#CEC4C8",
+          "#D6D3D9"
+        ],
+        "frame": [
+          384,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi01-ii",
+        "family": "BI01",
+        "name": "강철 이빨 라이칸",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi01-ii.png",
+        "silhouette": "강철색 이빨과 앞으로 뻗은 주둥이",
+        "palette": [
+          "#0C0C18",
+          "#151321",
+          "#272434",
+          "#3A3648",
+          "#4E4553",
+          "#716269",
+          "#8D7470",
+          "#A29395",
+          "#CEC4C8",
+          "#D6D3D9"
+        ],
+        "frame": [
+          448,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi01-iii",
+        "family": "BI01",
+        "name": "강철 이빨 라이칸",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi01-iii.png",
+        "silhouette": "강철색 이빨과 앞으로 뻗은 주둥이",
+        "palette": [
+          "#0C0C18",
+          "#151321",
+          "#272434",
+          "#3A3648",
+          "#4E4553",
+          "#716269",
+          "#8D7470",
+          "#A29395",
+          "#CEC4C8",
+          "#D6D3D9"
+        ],
+        "frame": [
+          512,
+          384,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi02-i",
+        "family": "BI02",
+        "name": "날개 달린 제주도 개미",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi02-i.png",
+        "silhouette": "넓게 열린 막날개",
+        "palette": [
+          "#0E0D15",
+          "#14131B",
+          "#18141C",
+          "#211D23",
+          "#35292E",
+          "#3F3237",
+          "#524143",
+          "#75554D",
+          "#957768",
+          "#CEA77B"
+        ],
+        "frame": [
+          0,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi02-ii",
+        "family": "BI02",
+        "name": "날개 달린 제주도 개미",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi02-ii.png",
+        "silhouette": "넓게 열린 막날개",
+        "palette": [
+          "#0E0D15",
+          "#14131B",
+          "#18141C",
+          "#211D23",
+          "#35292E",
+          "#3F3237",
+          "#524143",
+          "#75554D",
+          "#957768",
+          "#CEA77B"
+        ],
+        "frame": [
+          64,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi02-iii",
+        "family": "BI02",
+        "name": "날개 달린 제주도 개미",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi02-iii.png",
+        "silhouette": "넓게 열린 막날개",
+        "palette": [
+          "#0E0D15",
+          "#14131B",
+          "#18141C",
+          "#211D23",
+          "#35292E",
+          "#3F3237",
+          "#524143",
+          "#75554D",
+          "#957768",
+          "#CEA77B"
+        ],
+        "frame": [
+          128,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi03-i",
+        "family": "BI03",
+        "name": "아이스베어",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi03-i.png",
+        "silhouette": "얼음색 털과 큰 앞발",
+        "palette": [
+          "#0F1121",
+          "#15192A",
+          "#1B1D30",
+          "#343B59",
+          "#6878AC",
+          "#8F9CCA",
+          "#D2D7E9",
+          "#E4E6F1",
+          "#E8E8F2",
+          "#EFF0F7"
+        ],
+        "frame": [
+          192,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi03-ii",
+        "family": "BI03",
+        "name": "아이스베어",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi03-ii.png",
+        "silhouette": "얼음색 털과 큰 앞발",
+        "palette": [
+          "#0F1121",
+          "#15192A",
+          "#1B1D30",
+          "#343B59",
+          "#6878AC",
+          "#8F9CCA",
+          "#D2D7E9",
+          "#E4E6F1",
+          "#E8E8F2",
+          "#EFF0F7"
+        ],
+        "frame": [
+          256,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi03-iii",
+        "family": "BI03",
+        "name": "아이스베어",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi03-iii.png",
+        "silhouette": "얼음색 털과 큰 앞발",
+        "palette": [
+          "#0F1121",
+          "#15192A",
+          "#1B1D30",
+          "#343B59",
+          "#6878AC",
+          "#8F9CCA",
+          "#D2D7E9",
+          "#E4E6F1",
+          "#E8E8F2",
+          "#EFF0F7"
+        ],
+        "frame": [
+          320,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi04-i",
+        "family": "BI04",
+        "name": "아이스 엘프 궁수",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi04-i.png",
+        "silhouette": "긴 귀와 푸른 활",
+        "palette": [
+          "#0C0E1B",
+          "#111625",
+          "#161927",
+          "#212941",
+          "#3F5482",
+          "#7A93C2",
+          "#ABC4E7",
+          "#E1E8F3",
+          "#F6F6F9",
+          "#FCFCFD"
+        ],
+        "frame": [
+          384,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi04-ii",
+        "family": "BI04",
+        "name": "아이스 엘프 궁수",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi04-ii.png",
+        "silhouette": "긴 귀와 푸른 활",
+        "palette": [
+          "#0C0E1B",
+          "#111625",
+          "#161927",
+          "#212941",
+          "#3F5482",
+          "#7A93C2",
+          "#ABC4E7",
+          "#E1E8F3",
+          "#F6F6F9",
+          "#FCFCFD"
+        ],
+        "frame": [
+          448,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi04-iii",
+        "family": "BI04",
+        "name": "아이스 엘프 궁수",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi04-iii.png",
+        "silhouette": "긴 귀와 푸른 활",
+        "palette": [
+          "#0C0E1B",
+          "#111625",
+          "#161927",
+          "#212941",
+          "#3F5482",
+          "#7A93C2",
+          "#ABC4E7",
+          "#E1E8F3",
+          "#F6F6F9",
+          "#FCFCFD"
+        ],
+        "frame": [
+          512,
+          448,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi05-i",
+        "family": "BI05",
+        "name": "푸른 독니 카사카",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/readability-pass/bi05-i.png",
+        "silhouette": "좌향 송곳니, 각진 결정 볏과 겹친 뱀 몸통",
+        "palette": [
+          "#0B0914",
+          "#1B1925",
+          "#2C2937",
+          "#353241",
+          "#3D3949",
+          "#4B4757",
+          "#5B5866",
+          "#666270",
+          "#76717D",
+          "#A39FA2"
+        ],
+        "frame": [
+          0,
+          512,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt04-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi05-ii",
+        "family": "BI05",
+        "name": "푸른 독니 카사카",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/readability-pass/bi05-ii.png",
+        "silhouette": "좌향 송곳니, 각진 결정 볏과 겹친 뱀 몸통",
+        "palette": [
+          "#0B0914",
+          "#1B1925",
+          "#2C2937",
+          "#353241",
+          "#3D3949",
+          "#4B4757",
+          "#5B5866",
+          "#666270",
+          "#76717D",
+          "#A39FA2"
+        ],
+        "frame": [
+          64,
+          512,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt04-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi05-iii",
+        "family": "BI05",
+        "name": "푸른 독니 카사카",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/readability-pass/bi05-iii.png",
+        "silhouette": "좌향 송곳니, 각진 결정 볏과 겹친 뱀 몸통",
+        "palette": [
+          "#0B0914",
+          "#1B1925",
+          "#2C2937",
+          "#353241",
+          "#3D3949",
+          "#4B4757",
+          "#5B5866",
+          "#666270",
+          "#76717D",
+          "#A39FA2"
+        ],
+        "frame": [
+          128,
+          512,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt04-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi06-i",
+        "family": "BI06",
+        "name": "제주도 호위개미 무리",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi06-i.png",
+        "silhouette": "밝은 갑각과 긴 턱",
+        "palette": [
+          "#0E0D17",
+          "#13121D",
+          "#151621",
+          "#1C1B26",
+          "#312D39",
+          "#4D4753",
+          "#968685",
+          "#D5C2BA",
+          "#E8D7CB",
+          "#F1E3D7"
+        ],
+        "frame": [
+          192,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi06-ii",
+        "family": "BI06",
+        "name": "제주도 호위개미 무리",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi06-ii.png",
+        "silhouette": "밝은 갑각과 긴 턱",
+        "palette": [
+          "#0E0D17",
+          "#13121D",
+          "#151621",
+          "#1C1B26",
+          "#312D39",
+          "#4D4753",
+          "#968685",
+          "#D5C2BA",
+          "#E8D7CB",
+          "#F1E3D7"
+        ],
+        "frame": [
+          256,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi06-iii",
+        "family": "BI06",
+        "name": "제주도 호위개미 무리",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi06-iii.png",
+        "silhouette": "밝은 갑각과 긴 턱",
+        "palette": [
+          "#0E0D17",
+          "#13121D",
+          "#151621",
+          "#1C1B26",
+          "#312D39",
+          "#4D4753",
+          "#968685",
+          "#D5C2BA",
+          "#E8D7CB",
+          "#F1E3D7"
+        ],
+        "frame": [
+          320,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi07-i",
+        "family": "BI07",
+        "name": "카르테논 신전 무장 석상",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bi07-i.png",
+        "silhouette": "각진 석재 팔과 무장",
+        "palette": [
+          "#0F0F18",
+          "#14141D",
+          "#181720",
+          "#2A2630",
+          "#52474E",
+          "#726265",
+          "#867474",
+          "#978484",
+          "#B09C9A",
+          "#C6B5B2"
+        ],
+        "frame": [
+          384,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi07-ii",
+        "family": "BI07",
+        "name": "카르테논 신전 무장 석상",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bi07-ii.png",
+        "silhouette": "각진 석재 팔과 무장",
+        "palette": [
+          "#0F0F18",
+          "#14141D",
+          "#181720",
+          "#2A2630",
+          "#52474E",
+          "#726265",
+          "#867474",
+          "#978484",
+          "#B09C9A",
+          "#C6B5B2"
+        ],
+        "frame": [
+          448,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi07-iii",
+        "family": "BI07",
+        "name": "카르테논 신전 무장 석상",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bi07-iii.png",
+        "silhouette": "각진 석재 팔과 무장",
+        "palette": [
+          "#0F0F18",
+          "#14141D",
+          "#181720",
+          "#2A2630",
+          "#52474E",
+          "#726265",
+          "#867474",
+          "#978484",
+          "#B09C9A",
+          "#C6B5B2"
+        ],
+        "frame": [
+          512,
+          512,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi08-i",
+        "family": "BI08",
+        "name": "지옥의 문지기 케르베로스",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/readability-pass/bi08-i.png",
+        "silhouette": "갈라지는 주둥이와 목 높이, 흉부의 파견 장식과 가죽 마구",
+        "palette": [
+          "#09060F",
+          "#100B15",
+          "#19121D",
+          "#271C27",
+          "#2F2430",
+          "#3C2834",
+          "#46323C",
+          "#5F3A43",
+          "#774A4F",
+          "#966B69"
+        ],
+        "frame": [
+          0,
+          576,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt06-i.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi08-ii",
+        "family": "BI08",
+        "name": "지옥의 문지기 케르베로스",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/readability-pass/bi08-ii.png",
+        "silhouette": "갈라지는 주둥이와 목 높이, 흉부의 파견 장식과 가죽 마구",
+        "palette": [
+          "#09060F",
+          "#100B15",
+          "#19121D",
+          "#271C27",
+          "#2F2430",
+          "#3C2834",
+          "#46323C",
+          "#5F3A43",
+          "#774A4F",
+          "#966B69"
+        ],
+        "frame": [
+          64,
+          576,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt06-ii.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi08-iii",
+        "family": "BI08",
+        "name": "지옥의 문지기 케르베로스",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/readability-pass/bi08-iii.png",
+        "silhouette": "갈라지는 주둥이와 목 높이, 흉부의 파견 장식과 가죽 마구",
+        "palette": [
+          "#09060F",
+          "#100B15",
+          "#19121D",
+          "#271C27",
+          "#2F2430",
+          "#3C2834",
+          "#46323C",
+          "#5F3A43",
+          "#774A4F",
+          "#966B69"
+        ],
+        "frame": [
+          128,
+          576,
+          64,
+          64
+        ],
+        "beforeReadability": "sprites/full-roster/bt06-iii.png",
+        "facing": "left"
+      },
+      {
+        "id": "bi09-i",
+        "family": "BI09",
+        "name": "바루카",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt07-i.png",
+        "silhouette": "긴 귀와 쌍단검",
+        "palette": [
+          "#0E0B1B",
+          "#1C182A",
+          "#2C293D",
+          "#3E3A50",
+          "#565169",
+          "#83839C",
+          "#9CABD0",
+          "#C0BAC4",
+          "#D9D4D9",
+          "#E6E4EA"
+        ],
+        "frame": [
+          192,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi09-ii",
+        "family": "BI09",
+        "name": "바루카",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt07-ii.png",
+        "silhouette": "긴 귀와 쌍단검",
+        "palette": [
+          "#0E0B1B",
+          "#1C182A",
+          "#2C293D",
+          "#3E3A50",
+          "#565169",
+          "#83839C",
+          "#9CABD0",
+          "#C0BAC4",
+          "#D9D4D9",
+          "#E6E4EA"
+        ],
+        "frame": [
+          256,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi09-iii",
+        "family": "BI09",
+        "name": "바루카",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt07-iii.png",
+        "silhouette": "긴 귀와 쌍단검",
+        "palette": [
+          "#0E0B1B",
+          "#1C182A",
+          "#2C293D",
+          "#3E3A50",
+          "#565169",
+          "#83839C",
+          "#9CABD0",
+          "#C0BAC4",
+          "#D9D4D9",
+          "#E6E4EA"
+        ],
+        "frame": [
+          320,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi10-i",
+        "family": "BI10",
+        "name": "카르갈간",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bt10-i.png",
+        "silhouette": "엄니와 둥근 주술 구체",
+        "palette": [
+          "#110C19",
+          "#191421",
+          "#201B28",
+          "#2B2330",
+          "#362A36",
+          "#483A44",
+          "#562534",
+          "#6E4349",
+          "#86615A",
+          "#C4AF9C"
+        ],
+        "frame": [
+          384,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi10-ii",
+        "family": "BI10",
+        "name": "카르갈간",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bt10-ii.png",
+        "silhouette": "엄니와 둥근 주술 구체",
+        "palette": [
+          "#110C19",
+          "#191421",
+          "#201B28",
+          "#2B2330",
+          "#362A36",
+          "#483A44",
+          "#562534",
+          "#6E4349",
+          "#86615A",
+          "#C4AF9C"
+        ],
+        "frame": [
+          448,
+          576,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bi10-iii",
+        "family": "BI10",
+        "name": "카르갈간",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bt10-iii.png",
+        "silhouette": "엄니와 둥근 주술 구체",
+        "palette": [
+          "#110C19",
+          "#191421",
+          "#201B28",
+          "#2B2330",
+          "#362A36",
+          "#483A44",
+          "#562534",
+          "#6E4349",
+          "#86615A",
+          "#C4AF9C"
+        ],
+        "frame": [
+          512,
+          576,
+          64,
+          64
+        ]
+      }
+    ],
+    "atlas": "income-full-atlas.png"
+  },
+  "workers": {
+    "sprites": [
+      {
+        "id": "sw01-i",
+        "family": "SW01",
+        "name": "그림자 보병 광부",
+        "group": "그림자",
+        "stage": "I",
+        "file": "sprites/full-roster/sw01-i.png",
+        "silhouette": "검은 두건과 곡괭이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          0,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "sw01-ii",
+        "family": "SW01",
+        "name": "그림자 보병 광부",
+        "group": "그림자",
+        "stage": "II",
+        "file": "sprites/full-roster/sw01-ii.png",
+        "silhouette": "검은 두건과 곡괭이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          64,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "sw01-iii",
+        "family": "SW01",
+        "name": "그림자 보병 광부",
+        "group": "그림자",
+        "stage": "III",
+        "file": "sprites/full-roster/sw01-iii.png",
+        "silhouette": "검은 두건과 곡괭이",
+        "palette": [
+          "#08080C",
+          "#121218",
+          "#20212A",
+          "#353742",
+          "#50515B",
+          "#6C477F",
+          "#A67BCC",
+          "#F0DDF7"
+        ],
+        "frame": [
+          128,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hw01-i",
+        "family": "HW01",
+        "name": "헌터스 채굴팀원",
+        "group": "헌터",
+        "stage": "I",
+        "file": "sprites/full-roster/hw01-i.png",
+        "silhouette": "채굴 안전모와 광석 주머니",
+        "palette": [
+          "#0E0D16",
+          "#13131C",
+          "#16151D",
+          "#1C1B23",
+          "#312A30",
+          "#483C3F",
+          "#5F4F50",
+          "#8B6B5B",
+          "#B18C6A",
+          "#E4C295"
+        ],
+        "frame": [
+          192,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hw01-ii",
+        "family": "HW01",
+        "name": "헌터스 채굴팀원",
+        "group": "헌터",
+        "stage": "II",
+        "file": "sprites/full-roster/hw01-ii.png",
+        "silhouette": "채굴 안전모와 광석 주머니",
+        "palette": [
+          "#0E0D16",
+          "#13131C",
+          "#16151D",
+          "#1C1B23",
+          "#312A30",
+          "#483C3F",
+          "#5F4F50",
+          "#8B6B5B",
+          "#B18C6A",
+          "#E4C295"
+        ],
+        "frame": [
+          256,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "hw01-iii",
+        "family": "HW01",
+        "name": "헌터스 채굴팀원",
+        "group": "헌터",
+        "stage": "III",
+        "file": "sprites/full-roster/hw01-iii.png",
+        "silhouette": "채굴 안전모와 광석 주머니",
+        "palette": [
+          "#0E0D16",
+          "#13131C",
+          "#16151D",
+          "#1C1B23",
+          "#312A30",
+          "#483C3F",
+          "#5F4F50",
+          "#8B6B5B",
+          "#B18C6A",
+          "#E4C295"
+        ],
+        "frame": [
+          320,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bw01-i",
+        "family": "BW01",
+        "name": "제주도 개미 일꾼",
+        "group": "마수",
+        "stage": "I",
+        "file": "sprites/full-roster/bw01-i.png",
+        "silhouette": "더듬이와 운반하는 마력석",
+        "palette": [
+          "#110F15",
+          "#131117",
+          "#151219",
+          "#16131A",
+          "#1B1720",
+          "#28222F",
+          "#322B39",
+          "#3E3445",
+          "#483D50",
+          "#7E6B82"
+        ],
+        "frame": [
+          384,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bw01-ii",
+        "family": "BW01",
+        "name": "제주도 개미 일꾼",
+        "group": "마수",
+        "stage": "II",
+        "file": "sprites/full-roster/bw01-ii.png",
+        "silhouette": "더듬이와 운반하는 마력석",
+        "palette": [
+          "#110F15",
+          "#131117",
+          "#151219",
+          "#16131A",
+          "#1B1720",
+          "#28222F",
+          "#322B39",
+          "#3E3445",
+          "#483D50",
+          "#7E6B82"
+        ],
+        "frame": [
+          448,
+          0,
+          64,
+          64
+        ]
+      },
+      {
+        "id": "bw01-iii",
+        "family": "BW01",
+        "name": "제주도 개미 일꾼",
+        "group": "마수",
+        "stage": "III",
+        "file": "sprites/full-roster/bw01-iii.png",
+        "silhouette": "더듬이와 운반하는 마력석",
+        "palette": [
+          "#110F15",
+          "#131117",
+          "#151219",
+          "#16131A",
+          "#1B1720",
+          "#28222F",
+          "#322B39",
+          "#3E3445",
+          "#483D50",
+          "#7E6B82"
+        ],
+        "frame": [
+          512,
+          0,
+          64,
+          64
+        ]
+      }
+    ],
+    "atlas": "workers-full-atlas.png"
+  }
+}

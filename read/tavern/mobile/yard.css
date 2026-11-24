@@ -1,0 +1,166 @@
+/* 원정의 상점과 배치판은 같은 앞마당에 놓인다. */
+.prep-landscape .prep-stage[data-mobile-run] {
+  --hud-art: url('../media/ui-reference/shop-popup-v3/art/wood-label.png');
+  --edge-x: max(8px, var(--safe-left));
+  --edge-right: max(8px, var(--safe-right));
+  --edge-y: max(5px, var(--safe-bottom));
+  --action-size: clamp(48px, 13vh, 78px);
+  --shop-height: clamp(124px, 36vh, 214px);
+  --depart-height: clamp(46px,8vh,70px);
+  --shop-side: max(7%, var(--edge-x), var(--edge-right));
+  --prep-world-width: max(100%,calc(var(--screen-height) * 1.5));
+  --prep-world-height: max(calc(var(--screen-width) * 2 / 3),var(--screen-height));
+  --prep-world-top: calc((var(--screen-height) - var(--prep-world-height)) * .32);
+  background-position: center calc(var(--prep-world-top) - var(--prep-world-height) * .1875);
+}
+.prep-stage[data-mobile-run] :is(.shop-greeting,.shop-sign,.shop-dismiss,.prep-views,.prep-gold,.prep-level-badge,.prep-upgrade-control),
+.prep-stage[data-mobile-run][data-view=tavern] .prep-controls { display: none; }
+.prep-stage[data-mobile-run] .prep-hud { display: grid; justify-items: center; gap: 2px; }
+.prep-stage[data-mobile-run] .prep-hud-clock {
+  display: grid; justify-items: center; margin: 0; padding: 0; border: 0; background: none;
+}
+.prep-stage[data-mobile-run] .prep-hud-clock dt {
+  display: block; width: clamp(190px,34cqw,410px); text-align: center; padding: 2px;
+  background: linear-gradient(to right,#88637f var(--erosion),#392d35 var(--erosion));
+  border: 2px solid #9f7846; color: #fff1ce; font: clamp(11px,1.4cqw,16px)/1.15 var(--game-ui-font);
+}
+.prep-stage[data-mobile-run] :is(.prep-hud-clock dd,.prep-enemy-button,.yard-tag,[data-captain-kind],.prep-reroll .prep-gold-amount,.shop-company .piece-insignia) {
+  background: transparent; border: 2px solid transparent; border-radius: 0;
+  border-image: var(--hud-art) 4 9 fill / 3px 6px stretch;
+  padding: 2px 7px; color: #fff0cc; text-shadow: 1px 1px #39271c;
+}
+.prep-stage[data-mobile-run] .prep-enemy-button { min-height: 44px; padding-block: 0; }
+.prep-stage[data-mobile-run] .prep-enemy-button :is(small,strong) { display: inline; }
+.prep-stage[data-mobile-run] .prep-enemy-button small { margin-right: 5px; }
+.prep-stage[data-mobile-run] .prep-enemy-button img { width: 28px; height: 28px; background: none; border: 0; }
+.prep-stage[data-mobile-run] .prep-tools { position: absolute; inset: 0 0 auto auto; }
+
+.prep-stage[data-mobile-run][data-view] .shop-company {
+  display: grid; inset: max(calc(var(--shop-height) + 7px),41%) max(13%,calc(var(--edge-right) + var(--action-size))) calc(var(--edge-y) + var(--depart-height) + 12px) max(13%,calc(var(--edge-x) + var(--action-size)));
+  grid-template: repeat(2,minmax(0,1fr)) / repeat(3,minmax(0,1fr));
+  gap: 2px 10px; align-items: end; justify-items: center;
+  --yard-unit-height: clamp(22px,7.4vh,48px);
+}
+.prep-stage[data-mobile-run][data-formation=column] .shop-company {
+  grid-template: repeat(3,minmax(0,1fr)) / repeat(2,minmax(0,1fr));
+  --yard-unit-height: clamp(17px,5.5vh,39px);
+}
+.prep-stage[data-mobile-run] .shop-company .prep-piece {
+  width: min(100%,180px); min-height: 44px; height: 100%; align-content: end;
+  gap: 0; touch-action: none; user-select: none; cursor: grab;
+}
+.prep-stage[data-mobile-run] .shop-company .prep-piece::before {
+  inset: auto 3% 1px; height: 12px; background: #c6a26d;
+  box-shadow: inset 0 -3px #98754c; clip-path: polygon(7% 0,93% 0,100% 65%,95% 100%,5% 100%,0 65%);
+}
+.prep-stage[data-mobile-run] .shop-company .prep-piece.empty .prep-piece-name { color: #725034; background: none; }
+.prep-stage[data-mobile-run] .shop-company .piece-insignia { padding: 1px 6px 1px 2px; }
+.prep-stage[data-mobile-run] .shop-company .piece-insignia b { text-shadow: none; }
+.prep-stage[data-mobile-run] [data-drag-source] { opacity: .4; }
+.prep-stage[data-mobile-run] .shop-company .prep-piece:focus-visible { outline: 2px solid #fff0bb; }
+
+.prep-landscape .prep-stage[data-mobile-run][data-view=tavern] .prep-slots {
+  inset: max(2px,var(--safe-top)) var(--shop-side) auto; height: var(--shop-height);
+  border: none; border-radius: 0; box-shadow: none;
+  background: url('../media/ui-reference/shop-popup-v3/art/shop-wide.png') center / 100% 100% no-repeat;
+  padding: max(8px,1.8vh) 3.4% max(19px,5.5vh);
+}
+.prep-stage[data-mobile-run] .shop-offers { gap: 4px; }
+.prep-stage[data-mobile-run] .shop-offers .tavern-table {
+  min-width: 82px; max-width: none; overflow: hidden; padding: 3px 4px;
+  grid-template-rows: minmax(16px,1fr) auto auto; align-content: center;
+  background: transparent; border: 1px solid transparent; border-radius: 0;
+  border-image: url('../media/ui-reference/shop-popup-v3/art/hire-inlay.png') 9 12 fill / 7px 8px stretch;
+  --yard-unit-height: clamp(19px,6.8vh,45px);
+}
+.prep-stage[data-mobile-run] .shop-offers .prep-sprites { align-self: end; gap: 0; }
+.prep-stage[data-mobile-run] .prep-sprites > .company-portrait {
+  background-size: contain; background-position: bottom center; image-rendering: pixelated;
+}
+.prep-stage[data-mobile-run] .shop-offers .tavern-table:is(:hover,:focus-visible,[aria-expanded=true]) {
+  outline: 2px solid #ffe1a0; outline-offset: -4px;
+}
+.prep-stage[data-mobile-run] .shop-terms { padding: 0; }
+.prep-stage[data-mobile-run] .shop-offers .tavern-table:disabled { align-content: center; display: grid; grid-template-rows: auto; }
+
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch,.prep-upgrade-button,.prep-reroll,.prep-captain-ability) {
+  z-index: 4; display: flex; flex-direction: column; align-items: center; justify-content: end;
+  width: var(--action-size); height: calc(var(--action-size) + 13px); min-height: 44px; min-width: 44px;
+  gap: 0; padding: 0; border: none; border-radius: 0; background: transparent;
+  font: clamp(11px,1.35cqw,16px)/1.1 var(--game-ui-font); color: #ffe9c2;
+}
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch,.prep-upgrade-button,.prep-reroll) { position: absolute; }
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch,.prep-reroll) { right: var(--edge-right); }
+.prep-stage[data-mobile-run] :is(.prep-upgrade-button,.prep-tavern-controls) { left: var(--edge-x); }
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch,.prep-upgrade-button) { bottom: var(--edge-y); }
+.prep-stage[data-mobile-run] :is(.prep-reroll,.prep-tavern-controls) { bottom: calc(var(--edge-y) + var(--action-size) + 18px); }
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch,.prep-upgrade-button,.prep-reroll)::before {
+  content: ''; display: block; width: 100%; height: var(--action-size); background: center bottom / contain no-repeat;
+}
+.prep-stage[data-mobile-run] .prep-mobile-switch::before { background-image: url('../media/ui-reference/shop-popup-v3/art/gold.png'); }
+.prep-stage[data-mobile-run] .prep-upgrade-button::before { background-image: url('../media/ui-reference/shop-popup-v3/art/level.png'); }
+.prep-stage[data-mobile-run] .prep-reroll::before { background-image: url('../media/ui-reference/shop-popup-v3/art/reroll.png'); }
+.prep-stage[data-mobile-run] :is(.prep-mobile-switch canvas,.prep-reroll-icon) { display: none; }
+.prep-stage[data-mobile-run] :is(.yard-tag,.prep-reroll .prep-gold-amount,[data-captain-kind]) {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px; margin-top: -3px; white-space: nowrap;
+}
+.prep-stage[data-mobile-run] button.prep-upgrade-button {
+  display: grid; grid-template-rows: minmax(0,1fr) auto; grid-template-columns: auto 1fr;
+  width: max-content; min-width: 78px; height: calc(var(--action-size) + 13px);
+  column-gap: 2px; align-items: center; justify-items: center;
+}
+.prep-stage[data-mobile-run] button.prep-upgrade-button::before {
+  grid-column: 1 / -1; grid-row: 1; width: var(--action-size); height: 100%;
+}
+.prep-stage[data-mobile-run] .prep-upgrade-button > span:first-child,
+.prep-stage[data-mobile-run] .prep-upgrade-button .upgrade-price {
+  position: static; grid-row: 2; margin: 0; padding: 2px 5px;
+  line-height: 1.25; white-space: nowrap; border: 1px solid #b38949;
+  background: #39291e; color: #fff2cd;
+}
+.prep-stage[data-mobile-run] .prep-upgrade-button > span:first-child { grid-column: 1; }
+.prep-stage[data-mobile-run] .prep-upgrade-button .upgrade-price { grid-column: 2; gap: 5px; }
+.prep-stage[data-mobile-run] .prep-detail-roster { flex-wrap: wrap; justify-content: flex-start; gap: 5px; }
+.prep-stage[data-mobile-run] .prep-detail-cluster { overflow-y: auto; overscroll-behavior: contain; }
+.prep-stage[data-mobile-run] .prep-detail [data-detail-members] { flex: 1 0 100%; }
+.prep-stage[data-mobile-run] .prep-detail :is([data-run-ability],[data-run-sell]) {
+  flex: 0 0 auto; min-width: 68px; min-height: 44px; padding: 4px 10px; white-space: nowrap;
+  background: var(--action-fill); color: #fff6db; border: 2px solid var(--action-edge);
+  border-radius: 3px; box-shadow: inset 0 1px #ffffff35, 0 2px #604a35;
+  font: clamp(12px,1.6cqw,17px)/1.2 var(--game-ui-font);
+}
+.prep-stage[data-mobile-run] [data-run-ability] { --action-fill: #26594f; --action-edge: #183e38; }
+.prep-stage[data-mobile-run] [data-run-sell] { --action-fill: #803e2a; --action-edge: #59291f; }
+.piece-abilities { display:flex; flex-wrap:wrap; gap:5px; align-items:center; }
+.prep-stage .piece-abilities [data-undo-ability] {
+  flex:none; min-height:44px; padding:4px 8px; color:#493820; font:inherit; text-decoration:underline;
+}
+.ability-aim {
+  position:absolute; z-index:5; top:8%; left:50%; transform:translateX(-50%);
+  width:max-content; max-width:90%; max-height:32%; overflow:auto; padding:5px 9px;
+  border:2px solid #ba9055; background:#302820; color:#ffedcd; text-align:center;
+  font:clamp(12px,1.65cqw,18px)/1.3 var(--game-ui-font);
+}
+.ability-aim p { margin:0; }
+.aim-portraits { display:flex; flex-wrap:wrap; justify-content:center; gap:4px; }
+.aim-portraits button {
+  display:inline-flex; align-items:center; gap:4px; margin-top:4px; padding:2px 6px; min-height:44px;
+  font:inherit; color:#fff2d2; background:#294c40; border:1px solid #a9dd9b;
+}
+.aim-portrait {width:32px;height:30px;background:center/contain no-repeat;image-rendering:pixelated;}
+.prep-stage[data-aiming] .shop-company .prep-piece[data-aim-target] {
+  cursor:crosshair; outline:2px solid #c8f5a5; outline-offset:-2px; background:#26432d45;
+}
+.prep-stage[data-aiming] .shop-company .prep-piece[data-aim-first],
+.ability-aim [data-aim-first] { outline:2px solid #ffd976; outline-offset:-2px; }
+.prep-stage[data-mobile-run] .prep-detail :is([data-run-ability],[data-run-sell]):active { filter: brightness(1.2); }
+.prep-stage[data-mobile-run] :is(.prep-upgrade-button,.prep-captain-ability,.prep-reroll,.prep-mobile-switch) { justify-content: flex-end; }
+.prep-stage[data-mobile-run] .prep-upgrade-button:disabled::before { filter: saturate(.5) brightness(.78); }
+.prep-stage[data-mobile-run] .prep-captain-ability img { width: 85%; height: var(--action-size); object-fit: contain; }
+.prep-stage[data-mobile-run] .prep-departure [data-run-deploy] {
+  height: var(--depart-height); min-height: 44px; padding: 0 12px 0 0; color: #ffe7c3;
+  background: transparent url('../media/ui-reference/shop-popup-v3/art/deploy.png') center / contain no-repeat;
+  border: none; border-radius: 0; box-shadow: none; font-size: clamp(17px,2.1cqw,25px); text-shadow: 1px 2px #502527;
+}
+.prep-stage[data-mobile-run] .prep-departure [data-run-deploy]:disabled { filter: saturate(.45) brightness(.8); }
+.prep-stage[data-mobile-run] .prep-departure [data-run-deploy]:enabled:not(:focus-visible) { outline: none; }

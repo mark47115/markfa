@@ -1,5 +1,7 @@
 # Tavern Heros · 기믹별 기물과 유닛
 
+이 표는 배포 빌드의 기물 목록이다. 다음 버전의 일반·황금 효과는 [1~3단계 기물](early-piece-effects.md), [4·5단계 기물](high-tier-decks.md), [혼합팩 기물](faction-core-design.md)에서 확인할 수 있다.
+
 일반 계열 7개, 기믹 14개, 기물 98장의 일반·황금 효과다. 각 기믹의 **생산형 2장, 소모형 3장, 성장형 2장**은 덱에서 맡는 역할을 설명하는 설계 용어다. 상점·진형·시너지 판정은 카드에 적힌 조건을 따른다. [역할과 공통 판정](faction-mechanics.md) · [계열과 황금 합성 규칙](mercenary-design.md) · [설계 검산](faction-balance.md)
 
 ## 공통 규칙

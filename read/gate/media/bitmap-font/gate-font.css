@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Gate Text Pixel";
+  src: url("gate-text.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --gate-ui-font: "Gate Text Pixel", sans-serif;
+}

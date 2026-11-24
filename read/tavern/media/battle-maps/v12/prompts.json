@@ -1,0 +1,341 @@
+{
+  "generator": "Sprite Gen · OpenAI Images API",
+  "canvas": [
+    336,
+    189
+  ],
+  "scale": 5,
+  "method": "원화의 48색에서 칸마다 대표색을 뽑고, 인접한 가장자리에서 색이 가까운 곳을 따라 지형을 이어 그렸다. 각 연결부는 8색을 공유한다.",
+  "rounds": [
+    {
+      "id": "r01",
+      "reference": "../v11/r01.png",
+      "source": "sources/r01.png",
+      "grid": "grid/r01.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 01, warm olive border outpost meadow. Hold the exact timber outpost centered along the far edge, stone arch left, covered wagon right, foreground fence and warm lantern placement in the attached map, and hold the straight horizontal dirt track and the wheel turn at the far right. Preserve the composition faithfully. Dark olive grass near #8e824e, dirt in muted warm ocher, wood warm brown and stone warm-gray. Use no corruption or teal, and keep the large grass fighting floor visually quiet.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1855,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 347
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2135
+      }
+    },
+    {
+      "id": "r02",
+      "reference": "../v11/r02.png",
+      "source": "sources/r02.png",
+      "grid": "grid/r02.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 02, wagon ruts. Preserve the wagon and barrels on the upper left, arch opening and shallow puddle along the far strip, and two curved dirt ruts from the left meeting the Round 03 path at right. Keep olives and warm ocher, ordinary gray water, no teal or corruption.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1814,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 306
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2094
+      }
+    },
+    {
+      "id": "r03",
+      "reference": "../v11/r03.png",
+      "source": "sources/r03.png",
+      "grid": "grid/r03.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 03, original Pine Fork. Preserve the exact same recognizable open fork with its horizontal road, two branching ocher arms, stepping stones, forest frame, northern arch, broken logs and foreground stump. This map is the style baseline, so make only the adaptation to a broader exact pixel grid and a tiny non-luminous distant deep dull teal rim mark inside the northern stone arch, near 35% of the width and 14% down. No glowing core or corruption. Olive grass and warm ocher path.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1855,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 347
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2135
+      }
+    },
+    {
+      "id": "r04",
+      "reference": "../v11/r04.png",
+      "source": "sources/r04.png",
+      "grid": "grid/r04.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 04, Twisted Root Clearing. Keep the low roots on both sides and the warm dirt path, with early muted dark-plum restricted to the roots on the right, mostly their shadows and tips. Soil hues warm muted brown 30–50 degrees, ocher olives remain. No luminescence.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1814,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 306
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2094
+      }
+    },
+    {
+      "id": "r05",
+      "reference": "../v11/r05.png",
+      "source": "sources/r05.png",
+      "grid": "grid/r05.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 05, Old Stump Split. Keep the central cut stump, ring-shaped dual route and dead roots at edges. Rebuild the round airbrushed center as two joined flat shapes of dry grass and warm muted ocher dirt, carrying the grass right toward a dry creek. Dark plum confined to root shadows along outer edges, no luminescence.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1823,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 315
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2103
+      }
+    },
+    {
+      "id": "r06",
+      "reference": "../v11/r06.png",
+      "source": "sources/r06.png",
+      "grid": "grid/r06.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 06, Dry Streambed. Keep the shallow dry stream and its two rough bank wrecks, with upper right stone gate. Switch reddish brown basin to muted soil hues 30–50 degrees, preserve patches of green olive grass on shoulders, dark plum only in shade and waterside debris. No luminescence.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1816,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 308
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2096
+      }
+    },
+    {
+      "id": "r07",
+      "reference": "../v11/r07.png",
+      "source": "sources/r07.png",
+      "grid": "grid/r07.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 07, Fallen Outer Gate. Preserve left ruined doorway and two offset wall pieces, the open central approach, and the warm amber lamp above the left gate. Floor broad low-saturation gray-brown clusters, dead brown trees, dark plum root tips, no teal light. Discontinuous worn stones in the approach without individual dark outlines.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1819,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 311
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2099
+      }
+    },
+    {
+      "id": "r08",
+      "reference": "../v11/r08.png",
+      "source": "sources/r08.png",
+      "grid": "grid/r08.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 08, Twin Pillar Gate. Keep symmetrical two gate pillars at same depth, tangled roots curling around them, old doorway and moss-free raised paving. All vegetation dead. First tiny restrained teal veins in cobble gaps and two-step teal crystal accents at edge: #4aae9e core enclosed by #3e7d7c dark rim. Low-saturation gray brown flat fighting floor. Keep stone colors subdued.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1837,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 329
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2117
+      }
+    },
+    {
+      "id": "r09",
+      "reference": "../v11/r09.png",
+      "source": "sources/r09.png",
+      "grid": "grid/r09.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 09, Cracked Haul Road. Preserve the bent portion of cart ruts with ordinary dull slate water, old mining gear at back, mine mouth to right, and low rock ruins. Use midgray brown and slate stone ramps with clustered facets, no orange stone and no dark outline for every individual stone. Broken worn cart impressions, not a bright horizontal stripe, and very sparse teal at periphery with dark teal enclosing the core.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1840,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 332
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2120
+      }
+    },
+    {
+      "id": "r10",
+      "reference": "../v11/r10.png",
+      "source": "sources/r10.png",
+      "grid": "grid/r10.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 10, Stalactite Basin. Preserve staggered mineral bases and the limestone pool in the upper-right rim. Choose gray brown and cool slate stone, mostly even muted dusty plum fighting surface. Use just two shades of teal in the spring (#4aae9e core held inside #3e7d7c rim). Replace orange line with intermittent worn cave floor marks in local tones. Keep lit edge formations scarce.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1837,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 329
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2117
+      }
+    },
+    {
+      "id": "r11",
+      "reference": "../v11/r11.png",
+      "source": "sources/r11.png",
+      "grid": "grid/r11.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 11, Black Altar Entrance. Keep the upper central altar precisely and the low mineral formation outside the lanes. Replace all magenta crystals with bone-color limestone, subdued plum shell strata and a sparse teal core surrounded by dark teal. Quiet subdued plum floor, cave scuffs in similar colors, no orange band or bright roots crossing the middle.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1821,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 313
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2101
+      }
+    },
+    {
+      "id": "r12",
+      "reference": "../v11/r12.png",
+      "source": "sources/r12.png",
+      "grid": "grid/r12.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 12, Hushed Crystal Cave. Preserve low peripheral crystals, column silhouettes and open distant ranged-combat space. Replace broad gradient with large flat subdued plum floor clusters, red strata with plum shell facets, magenta crystals with bone and cool slate mineral plates with tiny terraced dark teal and enclosed teal cores. Use worn scuffs in the cave floor with no orange line.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1827,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 319
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2107
+      }
+    },
+    {
+      "id": "r13",
+      "reference": "../v11/r13.png",
+      "source": "sources/r13.png",
+      "grid": "grid/r13.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 13, Torn Strata. Preserve floating land masses, broken rock ledges and entry to bridge on right. Redraw shadow planes in dark plum and cool slate; quiet, dark broad stone fighting floor split by short irregular fissures. No bright path. Leave teal seams sparse and in fissures with brighter cores fully surrounded by darker teal.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1821,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 313
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2101
+      }
+    },
+    {
+      "id": "r14",
+      "reference": "../v11/r14.png",
+      "source": "sources/r14.png",
+      "grid": "grid/r14.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 14, Suspended Stone Bridge. Preserve broad bridge, two offset low obstacles and bleached parapets, abutments and chasm. Remove salmon tint. Use bone-color stone on railings, weathered cool plum slabs on the deck with subtle broken interlocking joints, and rimmed teal veins concentrated in the side chasm. No orange road stripe; do not add any scenery outside the fixed scene.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1835,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 327
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2115
+      }
+    },
+    {
+      "id": "r15",
+      "reference": "../v11/r15.png",
+      "source": "sources/r15.png",
+      "grid": "grid/r15.png",
+      "prompt": "Faithfully repaint the attached EXISTING full-bleed round battlefield background for Tavern Heros in carefully hand-clustered pixel art. This is an edit of the original artwork. Match the source framing, elevated 55-degree camera, height and width of every play lane, relative sizes and positions of each landmark, emptiness of the central play space and entrance/exit heights at both cropping edges. Do not zoom, letterbox, add a sky, frame, people, UI, lettering or sprites. Redraw organic details and silhouettes with deliberate sharp clusters, precise masonry, bark, or mineral planes as appropriate. Restrained light from upper left, a few quiet flat value planes on the floor and detail confined to scenery. Native design scale 336x189, square stepped edges, no blur, smooth shading, gradients, dithering, speckle or thin antialiased pen lines. Preserve the reference's exact time of day and palette progression. Teal only for existing void veins and cores, luminous core #4aae9e enclosed in darker #3e7d7c. Match all major silhouettes in the reference. Round 15, The Devourer's Rift. The lower-contrast wide paved fighting floor is darkest of all maps. Keep the old circular sigil centered and half encroached by plum shell strata. Remove the horizontal road entirely so no path crosses the sigil. Redraw only the outer rift behind the enemy on the far right as a vertical black split maw with two massive visibly asymmetrical shell masses patterned after Reference 3, but made of terrain stone with no limbs, eyes, face or creature. Convert all red veins to two-tone teal, core #4aae9e wholly enclosed by #3e7d7c rim. Corrupt the existing flags and pillars to plum, cool slate and bone. Move any remaining contrast to the outer edges.",
+      "provider": "openai",
+      "model": "gpt-image-2.5-flare",
+      "usage": {
+        "input_tokens": 1905,
+        "input_tokens_details": {
+          "image_tokens": 1508,
+          "text_tokens": 397
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "image_tokens": 280,
+          "text_tokens": 0
+        },
+        "total_tokens": 2185
+      }
+    }
+  ]
+}

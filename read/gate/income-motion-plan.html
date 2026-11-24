@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko" data-mak-report="document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게이트 공성전 · 인컴 모션과 이펙트 제작표</title>
+  <link rel="stylesheet" href="../_shared/report.css">
+  <script defer src="../_shared/report.js"></script>
+  <style>
+    .motion-report .intro, .motion-report .muted { color: var(--mak-muted); }
+    .motion-report .links, .motion-report .controls { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+    .motion-report .controls label { display: grid; gap: 4px; }
+    .motion-report select { min-height: 44px; font: inherit; color: var(--mak-text); background: var(--mak-surface);
+      padding: 4px 9px; border: 1px solid var(--mak-border); border-radius: 6px; }
+    .motion-report .scroll-table { overflow-x: auto; }
+    .motion-report .scroll-table table { min-width: 510px; }
+    .motion-report .units { display: grid; gap: 10px 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .motion-report .unit, .motion-report .effects li { min-width: 0; border: 1px solid var(--mak-border); border-radius: 8px; padding: 12px; }
+    .motion-report .unit summary { cursor: pointer; }
+    .motion-report .reference { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+    .motion-report .reference img { width: 64px; height: 64px; margin: 0; background: #25283a; image-rendering: pixelated; }
+    .motion-report .clips { display: grid; grid-template-columns: minmax(88px, auto) minmax(0, 1fr); gap: 5px 10px; margin: 10px 0; }
+    .motion-report .clips dd { margin: 0; overflow-wrap: anywhere; }
+    .motion-report .unit p { margin: 6px 0; }
+    .motion-report .effects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; }
+    .motion-report .effects li { list-style: none; }
+    .motion-report .effects li p { margin: 4px 0 0; }
+    @media (max-width: 700px) { .motion-report :is(.units, .effects) { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+<main class="motion-report">
+  <h1>인컴 모션과 이펙트 제작표</h1>
+  <p class="intro">그림자·헌터·마수의 외신 혼성 인컴 60종에 필요한 대기·이동·기본 공격·스킬·사망 스프라이트를 정리했습니다. 아래 장수와 타이밍은 첫 제작 기준입니다.</p>
+  <nav class="links" aria-label="제작표와 관련 파일">
+    <a href="#unit-motion">60종 모션 목록</a><a href="#effect-library">공용 이펙트 원화</a>
+    <a href="scout-ant-animation.html">먹결 정찰개미 재생</a>
+    <a href="income-motion.json" download>제작 데이터 JSON</a><a href="income-design.html#roster">현재 도트와 능력</a>
+  </nav>
+  <section aria-labelledby="frame-title">
+    <h2 id="frame-title">프레임과 레이어 규격</h2>
+    <p>현재 도트를 기준으로 <strong>64×64 투명 PNG, 화면 왼쪽 ¾, 발 기준점 (32, 57)</strong>을 사용합니다. 유닛마다 최대 열 색을 유지합니다. 이동 프레임에는 바닥 접지와 팔·무기·짐의 움직임을 그리고, 실제 위치는 전장이 갱신합니다. 뜨는 유닛은 지면 기준점을 고정하고 몸 높이만 바꿉니다.</p>
+    <p>대기 8fps와 이동 12fps는 반복합니다. 기본 공격·스킬·사망은 12fps를 원화 기준으로 만들고 한 번 재생합니다. 예고 시간이 긴 스킬은 준비 자세를 유지해 기존 초 단위 타이밍을 맞춥니다.</p>
+    <div class="scroll-table" tabindex="0" role="region" aria-label="비용별 스프라이트 제작 장수">
+      <table>
+        <thead><tr><th scope="col">비용</th><th scope="col">대기</th><th scope="col">이동</th><th scope="col">공격</th><th scope="col">사망</th><th scope="col">본체 소계</th></tr></thead>
+        <tbody id="frame-rows"></tbody>
+      </table>
+    </div>
+    <p id="frame-totals" class="muted"></p>
+    <p>각 유닛은 본체 시트와 프레임별 소켓을 준비합니다. 소켓은 발 중심, 몸통, 공격 수단의 끝, 장비의 방출 지점을 필요한 클립에 찍습니다. 팔·갑옷·짐이 실루엣과 함께 움직이면 본체에 그립니다. 원거리 탄, 안개, 바닥 경고, 보호막과 큰 타격 궤적은 투명 이펙트 시트로 제작합니다.</p>
+  </section>
+  <section id="unit-motion" aria-labelledby="unit-motion-title">
+    <h2 id="unit-motion-title">유닛별 작업 목록</h2>
+    <div class="controls">
+      <label for="motion-faction">진영<select id="motion-faction" disabled></select></label>
+      <label for="motion-type">유형<select id="motion-type" disabled></select></label>
+    </div>
+    <p role="status" id="motion-status">제작 목록을 불러오고 있습니다.</p>
+    <div class="units" id="motion-units"></div>
+  </section>
+  <section id="effect-library" aria-labelledby="effect-title">
+    <h2 id="effect-title">공용 이펙트 원화</h2>
+    <p>이자형은 작은 장비 반응과 재질 파편 위주로 표현합니다. 전투형은 예고·방출·접촉을 명확히 구분합니다. 반복 상태는 같은 레이어를 갱신하고, HP·팀 표식과 실제 위험 범위를 우선해서 보여 줍니다.</p>
+    <ul class="effects" id="motion-effects"></ul>
+  </section>
+  <section aria-labelledby="event-title">
+    <h2 id="event-title">제작과 재생 확인</h2>
+    <ol>
+      <li><strong>공격.</strong> 준비 자세 → 발사 또는 접촉 포즈 → 수습을 먼저 그립니다. 원거리 투사체는 방출 소켓에서 시작합니다. 데미지 숫자와 타격 파편은 실제 명중 이벤트에서 피격 위치에 붙입니다. 추가타의 시간이나 피해량은 능력 데이터의 값을 따릅니다.</li>
+      <li><strong>스킬.</strong> 예고를 시작할 때 실제 방향과 범위를 표시합니다. 취소되면 예고와 몸에 붙은 준비 효과를 닫습니다. 보호막·회복·가속은 수혜자와 시작·종료가 확정된 다음 보여 줍니다. 돌진의 잔상은 이동을 시작한 위치부터 기록하고, 위치 복원이나 재사용 때 기록을 비웁니다.</li>
+      <li><strong>사망.</strong> 사망 확정 시 기본 공격과 준비 효과를 닫고 사망 클립을 한 번 재생합니다. 사망 시 효과가 있는 인컴은 같은 사망 이벤트에 전달 효과가 한 번 발동합니다. 시체에는 새 공격 판정을 붙이지 않고, 본체 클립이 끝나면 화면에서 제거합니다.</li>
+      <li><strong>첫 제작 묶음.</strong> 편암 방패병, 별가루 속사수, 균열 운송비룡, 별가루 균류체, 포자갑 군락여왕부터 제작합니다. 방어, 연속 사격, 활공, 사망 시 회복, 범위를 각각 다른 사례로 검토할 수 있습니다. 세로 전장에서 32px·64px 스프라이트의 제자리 미끄러짐, 발사 위치, 다수 교전 시 가독성을 확인합니다.</li>
+    </ol>
+  </section>
+</main>
+<script type="module">
+  const byId = id => document.getElementById(id);
+  const node = (tag, text = '', css = '') => {
+    const element = document.createElement(tag);
+    element.textContent = text;
+    if (css) element.className = css;
+    return element;
+  };
+  const fetchJson = async path => {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(path);
+    return response.json();
+  };
+  const status = byId('motion-status');
+  const faction = byId('motion-faction');
+  const type = byId('motion-type');
+  const order = ['idle', 'move', 'attack', 'skill', 'death'];
+
+  try {
+    const [roster, plan] = await Promise.all([fetchJson('income-roster.json'), fetchJson('income-motion.json')]);
+    const totals = { idle: 0, move: 0, attack: 0, death: 0, skill: 0 };
+    for (const unit of roster.units) {
+      for (const state of order) {
+        totals[state] += state === 'skill' ? plan.units[unit.id].skill.frames : plan.profiles[unit.cost][state];
+      }
+    }
+    const standard = Object.entries(plan.profiles).map(([cost, profile]) => {
+      const frameCounts = [profile.idle, profile.move, profile.attack, profile.death];
+      const row = node('tr');
+      row.append(...[cost, ...frameCounts, frameCounts.reduce((sum, count) => sum + count, 0)]
+        .map(count => node('td', String(count))));
+      return row;
+    });
+    byId('frame-rows').append(...standard);
+    const total = Object.values(totals).reduce((sum, count) => sum + count, 0);
+    byId('frame-totals').textContent = '본체 슬롯 ' + total.toLocaleString('ko-KR') + '장 · 대기 ' + totals.idle +
+      ' · 이동 ' + totals.move + ' · 공격 ' + totals.attack + ' · 스킬 추가 ' + totals.skill +
+      ' · 사망 ' + totals.death + '. 대기 첫 자세에 기존 도트를 사용할 수 있습니다.';
+
+    const effects = byId('motion-effects');
+    for (const [id, fx] of Object.entries(plan.fx)) {
+      const definition = node('li');
+      definition.id = 'fx-' + id;
+      definition.append(node('strong', fx.name), node('p', fx.frames + ' · ' + fx.anchor, 'muted'), node('p', fx.lifecycle));
+      effects.append(definition);
+    }
+
+    function unitCard(unit) {
+      const spec = plan.units[unit.id];
+      const card = node('details', '', 'unit');
+      card.dataset.incomeId = unit.id;
+      card.append(node('summary', unit.name + ' · 마력석 ' + unit.cost));
+      const reference = node('div', '', 'reference');
+      const image = node('img');
+      image.src = 'media/income-concepts/' + unit.id.toLowerCase() + '.png';
+      image.width = image.height = 64;
+      image.loading = 'lazy';
+      image.alt = unit.name + '의 기준 도트';
+      reference.append(image, node('span', unit.hybrid, 'muted'));
+      card.append(reference);
+      const clips = node('dl', '', 'clips');
+      const profile = plan.profiles[unit.cost];
+      for (const state of order) {
+        const count = state === 'skill' ? spec.skill.frames : profile[state];
+        const definition = state === 'skill' ? plan.skillModes[spec.skill.mode] + ' · ' : '';
+        clips.append(node('dt', plan.states[state].name + ' ' + (state === 'skill' ? '+' : '') + count + '장'),
+          node('dd', definition + spec.poses[state]));
+      }
+      const attackCue = spec.attackCue === 'release' ? '발사구에 방출 프레임' : '타격 지점에 접촉 프레임';
+      card.append(clips, node('p', '기본 공격 표시점 · ' + attackCue, 'muted'), node('p', '발동 기준 · ' + unit.ability, 'muted'));
+      const list = node('p', '', 'links');
+      for (const id of spec.fx) {
+        const link = node('a', plan.fx[id].name);
+        link.href = '#fx-' + id;
+        list.append(link);
+      }
+      card.append(list);
+      return card;
+    }
+
+    faction.replaceChildren(...roster.factions.map(row => new Option(row.name, row.id)));
+    type.replaceChildren(new Option('두 유형', ''), ...roster.types.map(row => new Option(row.name, row.id)));
+    function renderUnits() {
+      const side = roster.factions.find(row => row.id === faction.value);
+      const selected = roster.units.filter(unit => unit.faction === side.id && (!type.value || unit.type === type.value));
+      status.textContent = side.name + ' · ' + selected.length + '종';
+      byId('motion-units').replaceChildren(...selected.map(unitCard));
+    }
+    for (const field of [faction, type]) {
+      field.disabled = false;
+      field.addEventListener('change', renderUnits);
+    }
+    renderUnits();
+  } catch {
+    status.textContent = '제작 목록을 불러오지 못했습니다. 제작 데이터 JSON을 열 수 있습니다.';
+  }
+</script>
+</body>
+</html>

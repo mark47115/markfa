@@ -1,0 +1,30 @@
+/* 화면 밖 여백과 HUD 명패를 같은 흑갈색 목재로 맞춘다. */
+body {
+  background-color:#2d211c;
+  background-image:repeating-linear-gradient(0deg,transparent 0 47px,#372820 47px 48px);
+}
+.round,.enemy,.tag,.action > span {
+  background-color:transparent;
+  border:2px solid transparent;
+  border-image:url(art/wood-label.png) 4 9 fill / 3px 6px stretch;
+  box-shadow:none;
+}
+.erosion {border-color:#513527;outline:1px solid #b28a50;box-shadow:inset 0 1px #70503a}
+#offers .offer {
+  border:1px solid transparent;
+  border-image:url(art/hire-inlay.png) 9 12 fill / 7px 8px stretch;
+  background:transparent;
+  box-shadow:none;
+  color:#ffedcc;
+}
+#offers .offer .price {
+  color:#ffe1a0;
+  padding-inline:5px;
+  background:#39261e;
+  border-radius:2px;
+}
+#offers .offer:hover:enabled {filter:brightness(1.12)}
+#offers .offer:focus-visible {outline:2px solid #ffe3a7;outline-offset:-4px}
+#offers .offer.sold {filter:saturate(.55) brightness(.85)}
+#deploy {bottom:0}
+.portrait #deploy {bottom:7px}

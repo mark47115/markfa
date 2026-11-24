@@ -15,10 +15,11 @@ const details = {
   lume: '전투 3초에 아직 기본 공격을 시도하지 못한 원본 아군 한 명이 경로를 다시 잡습니다. 이동 속도 +35%가 최대 3초간 유지됩니다.',
 };
 
-export function mountCaptainAbility(stage, id, getReason, activate) {
-  const captain = captains.find(item => item.id === id) ?? captains[0];
+export function mountCaptainAbility(stage, id, getReason, activate, info) {
+  const original = captains.find(item => item.id === id) ?? captains[0];
+  const captain = info ? {...original,ability:info[0],type:'원정 · '+info[1]} : original;
   const active = captain.type.endsWith('액티브');
-  const opensDialog = active || captain.id === 'mire';
+  const opensDialog = active || captain.id === 'mire' || (info && ['lark','orr'].includes(captain.id));
   const button = stage.querySelector('.prep-captain-ability');
   const tooltip = stage.querySelector('#prep-captain-tooltip');
   const status = tooltip.querySelector('[data-captain-status]');
@@ -30,7 +31,7 @@ export function mountCaptainAbility(stage, id, getReason, activate) {
   if (opensDialog) button.setAttribute('aria-haspopup', 'dialog');
   tooltip.querySelector('[data-captain-ability-name]').textContent = captain.ability;
   tooltip.querySelector('[data-captain-type]').textContent = `${captain.name} · ${captain.type}`;
-  tooltip.querySelector('[data-captain-description]').textContent = details[captain.id];
+  tooltip.querySelector('[data-captain-description]').textContent = info?.[2]??details[captain.id];
 
   let press;
   function refresh() {

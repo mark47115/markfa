@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Cavern Text";
+  src: url("media/fonts/v1/text/cavern-text.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+}
+
+:root { --game-ui-font: "Cavern Text"; }
+
+.lobby,
+.home,
+body:has(> .home) > dialog:not(.mak-lightbox),
+.prep-demo {
+  --mak-font: var(--game-ui-font);
+  font-family: var(--game-ui-font);
+  font-synthesis: none;
+}
+
+.prep-demo :is(button, select, option) { font-family: inherit; }

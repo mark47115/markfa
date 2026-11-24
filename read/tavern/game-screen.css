@@ -1,0 +1,119 @@
+.game-screen {
+  --screen-width: 100vw;
+  --screen-height: 100svh;
+  --screen-height: 100dvh;
+  --screen-inline-unit: calc(var(--screen-width) / 100);
+  --screen-block-unit: calc(var(--screen-height) / 100);
+  --safe-left: env(safe-area-inset-left);
+  --safe-right: env(safe-area-inset-right);
+  --safe-bottom: env(safe-area-inset-bottom);
+  --safe-top: env(safe-area-inset-top);
+  --screen-gutter: clamp(14px, calc(3 * var(--screen-inline-unit)), 54px);
+  --screen-left: max(var(--screen-gutter), calc(var(--safe-left) + 10px));
+  --screen-right: max(var(--screen-gutter), calc(var(--safe-right) + 10px));
+  --screen-top: max(11px, calc(var(--safe-top) + 5px));
+}
+html[data-mak-report=document] body:has(> main.game-screen) {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+.screen-rotate { display: none; }
+
+@media (orientation: portrait) {
+  .game-screen { --screen-height: min(100dvh, max(300px, 62.5vw)); }
+  html[data-mak-report=document] body:has(> :is(.home, .lobby).game-screen) {
+    display: grid;
+    align-content: center;
+  }
+}
+
+@media (orientation: portrait) and (pointer: coarse) {
+  html[data-mak-report=document]:not([data-phone-preview]) body > main.game-screen { display: none; }
+  html:not([data-phone-preview]) .screen-rotate {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 16px;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 20px;
+    color: #fff0d2;
+    text-align: center;
+    font: 16px/1.5 var(--game-ui-font);
+  }
+  .screen-rotate p { margin: 0; }
+  .rotate-device {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 38px;
+    border: 3px solid #dbb475;
+    border-inline-width: 6px;
+    border-radius: 6px;
+    background: #273632;
+    color: #ffda94;
+    font-size: 24px;
+  }
+}
+
+html[data-phone-preview][data-mak-report=document],
+html[data-phone-preview][data-mak-report=document] body {
+  overflow: hidden;
+  background: #121615;
+}
+html[data-phone-preview][data-mak-report=document] body > main.game-screen {
+  --screen-width: var(--phone-width);
+  --screen-height: var(--phone-height);
+  --safe-left: var(--phone-left);
+  --safe-right: var(--phone-right);
+  --safe-bottom: var(--phone-bottom);
+  --safe-top: 0px;
+  position: absolute;
+  inset: var(--phone-y) auto auto var(--phone-x);
+  width: var(--phone-width);
+  height: var(--phone-height);
+  margin: 0;
+  overflow: clip;
+  border-radius: 15px;
+  outline: 1px solid #967953;
+  box-shadow: 0 0 0 4px #292924;
+  transform: scale(var(--phone-scale));
+  transform-origin: top left;
+}
+html[data-phone-preview] .game-screen::after {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  inset: auto 0 max(4px, calc(var(--safe-bottom) / 3)) 0;
+  width: 112px;
+  height: 4px;
+  margin-inline: auto;
+  border-radius: 4px;
+  background: #fff9e9c9;
+  box-shadow: 0 1px 2px #1712119c;
+  pointer-events: none;
+}
+.phone-controls {
+  position: absolute;
+  z-index: 5;
+  inset: 10px 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.phone-controls button {
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid #78664d;
+  border-radius: 5px;
+  background: #211e18;
+  color: #e2d3b7;
+  cursor: pointer;
+  font: 12px/1.35 var(--game-ui-font);
+}
+.phone-controls button[aria-pressed=true] {
+  border-color: #d9ad6b;
+  background: #2a4238;
+  color: #fff2cc;
+}

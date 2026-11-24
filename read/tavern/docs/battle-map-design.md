@@ -48,7 +48,7 @@
 
 ## 지역별 지면과 장식
 
-기본 보기는 v11 일러스트 15장이다. 도트 한 칸의 크기는 시작화면 키 아트와 같은 약 5px로 맞췄다. v10 생성 원본을 336×189 논리 격자로 옮기고 최근접 5배로 확대해 1680×945 PNG를 만든다. 맞닿는 두 맵은 경계 한 열을 공유한다. [시작화면 키 아트](../media/start-screen/v11/art-sprite-grid-matched-pixels-pc.png) · [v11 제작 방법](../media/battle-maps/v11/build.json) · [제작 프롬프트](../media/battle-maps/v10/prompts.json) · [1라운드부터 이어 보기](../battle-maps.html?view=art-connection#r01)
+전장 15장은 각 라운드의 v11 배치를 참조해 OpenAI 이미지 API로 다시 그렸다. 초소에서 출발해 쌍기둥 관문과 석교를 지나 삼키는 자의 균열에 닿는다. 336×189 도트를 5배 확대해 1680×945 PNG로 표시한다. [라운드별 전장](../battle-maps.html) · [15장 비교 시트](../media/battle-maps/v12/qa/comparison.png) · [참조 이미지와 프롬프트](../media/battle-maps/v12/prompts.json) · [격자·색 수·경계 검사](../media/battle-maps/v12/qa/check.json)
 
 ## v11 해상도 조정
 

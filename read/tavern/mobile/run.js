@@ -1,12 +1,15 @@
 import { applyCardTransaction, enterCardVisit, expeditionPreparation, initializePiece, mergeCardProgress } from './prepare.js';
 import { captainCollection } from '../home/captain-packs.js';
 import { readSettings } from '../home/settings.js';
+import { eligibleCompany, companyPlan, companyRule, companyTrade } from './company-rules.js';
+import { factions } from '../prep-intel.js';
+import { commandNames, commands } from './company-captains.js';
 
 const editorPreview = location.origin === 'http://localhost:17869';
 export const nativeEdition = (editorPreview || location.hostname === 'appassets.androidplatform.net')
   && location.pathname.startsWith('/mobile-game/');
 
-const key = 'tavern-heros.mobile.run.v1';
+const runKey = version => `tavern-heros.mobile.run.v${version}`;
 const departureGuideKey = 'tavern-heros.mobile.departure-guide-seen.v1';
 const sizes = [3, 4, 4, 5, 6];
 const upgrades = [5, 7, 8, 9];
@@ -20,8 +23,9 @@ const shuffle = items => {
 };
 
 export function savedRun() {
-  try {
-    const value = JSON.parse(localStorage.getItem(key));
+  for (const version of [2,1]) try {
+    const value = JSON.parse(localStorage.getItem(runKey(version)));
+    if ((value?.version ?? 1) !== version) continue;
     if (value?.id && value.deck?.length === 6 && value.waves?.length === 15 &&
         value.round >= 1 && value.round <= 15 && sizes[value.level - 1] &&
         ['prep', 'battle', 'result'].includes(value.phase)) return value;
@@ -46,16 +50,22 @@ export function guardHomeDuringExpedition() {
 }
 
 export async function openRun(captain) {
-  const response = await fetch(new URL('catalog.json', import.meta.url));
+  let state = savedRun();
+  const company = !state || state.version === 2;
+  const key = runKey(company ? 2 : 1);
+  const response = await fetch(new URL(company ? 'companies.json' : 'catalog.json', import.meta.url));
   if (!response.ok) throw new Error('원정 목록을 불러오지 못했습니다.');
   const catalog = await response.json();
+  const soldiers = new Map(catalog.units?.map(u=>[u.id,u]));
+  if(company) for(const card of catalog.cards)card.companyLabel=card.companyName??factions[card.faction].name;
   const cards = new Map(catalog.cards.map(card => [card.id, card]));
+  if(company)cards.unitNames=new Map(catalog.units.map(u=>[u.id,u.name]));
   const waves = new Map(catalog.waves.map(wave => [wave.id, wave]));
-  let state = savedRun();
   function save() {
     localStorage.setItem(key, JSON.stringify(state));
   }
-  const eligibleCards = () => catalog.cards.filter(card => card.tier <= state.level && state.factions.includes(card.faction));
+  const eligibleCards = () => catalog.cards.filter(card => company ? eligibleCompany(card,state) :
+    card.tier <= state.level && state.factions.includes(card.faction));
   function offers(count, avoid = [], excluded = null) {
     const pool = shuffle(eligibleCards().filter(card => card.id !== excluded));
     const ordered = [...pool.filter(card => !avoid.includes(card.id)), ...pool.filter(card => avoid.includes(card.id))];
@@ -67,7 +77,7 @@ export async function openRun(captain) {
     const expedition = Array.from({length: 15}, (_, i) =>
       shuffle(catalog.waves.filter(wave => wave.round === i + 1))[0].id);
     state = {
-      id: globalThis.crypto.randomUUID(), captain, factions: shuffle([0, 1, 2, 3, 4, 5, 6]).slice(0, 5),
+      id: globalThis.crypto.randomUUID(), captain, version:2, factions:[4,3,0,5,shuffle([1,2,6])[0]], mix:shuffle([0,1,2])[0],
       phase: 'prep', round: 1, level: 1, upgradeOpenedRound: 1, gold: 3, erosion: 0, scrap: 0,
       formation: 'column', deck: Array(6).fill(null), orders: [], waves: expedition, wins: 0,
     };
@@ -80,6 +90,7 @@ export async function openRun(captain) {
     save();
   }
   function plan(orders) {
+    if(company)return companyPlan(state,cards,waves.get(state.waves[state.round-1]),orders);
     return expeditionPreparation(state, cards, waves.get(state.waves[state.round - 1]).enemies ?? [], orders);
   }
   function savePlan() {
@@ -104,7 +115,11 @@ export async function openRun(captain) {
       const a = state.deck[lead], b = state.deck[consumed];
       if (state.captainAction?.target === b.key) state.captainAction.target = a.key;
       a.golden = true;
-      mergeCardProgress(a, b);
+      if(company){
+        const left=a.army??cards.get(id).members, right=b.army??cards.get(id).members;
+        a.army=[...(right.length>left.length?right:left)];
+        for(const field of ['rank','attackPct','healthPct','fire','essence'])a[field]=Math.max(a[field]??0,b[field]??0) || undefined;
+      } else mergeCardProgress(a, b);
       const earlier = Math.min(...[a, b].filter(piece => piece.hiredRound === state.round)
         .map(piece => piece.hireOrder || hireOrder), hireOrder);
       a.hiredRound = state.round;
@@ -118,12 +133,17 @@ export async function openRun(captain) {
       if (!state.cardHistory?.[a.key] && state.cardHistory?.[b.key]) state.cardHistory[a.key] = state.cardHistory[b.key];
       state.deck[consumed] = null;
     } else {
-      if (state.deck[slot]) applyCardTransaction(state, cards, state.deck[slot].key, 'sell');
-      hired = initializePiece({ id, key: crypto.randomUUID(), form: 'Human', hiredRound: state.round, hireOrder });
+      if (state.deck[slot]) {
+        if(company)companyTrade(state,cards,'sell',cards.get(state.deck[slot].id));
+        else applyCardTransaction(state, cards, state.deck[slot].key, 'sell');
+      }
+      hired = { id, key: crypto.randomUUID(), form: 'Human', hiredRound: state.round, hireOrder };
+      if(company)hired.army=[...cards.get(id).members]; else initializePiece(hired);
       state.deck[slot] = hired;
     }
     state.gold -= cost;
-    applyCardTransaction(state, cards, hired.key, 'hire');
+    if(company)companyTrade(state,cards,'hire',cards.get(id),3);
+    else applyCardTransaction(state, cards, hired.key, 'hire');
   }
 
   const currentWave = () => waves.get(state.waves[state.round - 1]);
@@ -152,6 +172,14 @@ export async function openRun(captain) {
 
   const activeCaptains = ['rowan', 'thorin', 'sera'];
   function captainReason() {
+    if(company){
+      const id=state.captain;
+      if(id==='edda')return '';
+      if(state.phase!=='prep')return '선술집에서 사용할 수 있습니다.';
+      if(commandNames[id][1]==='액티브'&&state.command)return '이번 방문에 이미 사용했습니다.';
+      if(id==='rowan'&&state.round>1&&state.gold<1)return '모병에 1골드가 필요합니다.';
+      return commands(state,cards,currentWave(),sealed).length?'':'조건을 만족하는 대상이 없습니다.';
+    }
     if (!activeCaptains.includes(state.captain)) return '';
     if (state.phase !== 'prep') return '선술집에서 사용할 수 있습니다.';
     const action = state.captainAction;
@@ -171,6 +199,7 @@ export async function openRun(captain) {
   }
 
   function captainChoices() {
+    if(company)return captainReason()?[]:commands(state,cards,currentWave(),sealed);
     if (!activeCaptains.includes(state.captain) || captainReason()) return [];
     if (state.captain === 'rowan') {
       const action = state.captainAction ??= {};
@@ -192,6 +221,21 @@ export async function openRun(captain) {
   }
 
   function useCaptainAbility(value) {
+    if(company){
+      const choice=captainChoices().find(c=>c.value===value);if(!choice)return '';
+      const [key,mode]=value.split('/'),cmd={key,mode,value},id=state.captain;
+      if(id==='rowan'&&state.round>1)state.gold--;
+      if(id==='thorin'){
+        const piece=state.deck.find(p=>p?.key===key);
+        cmd.changed=!!piece.gearMode;piece.gearMode=mode;
+      }
+      if(id==='sera'){
+        const open=state.offers.flatMap((_,i)=>!sealed(i)&&String(i)!==value?[i]:[]);
+        const drawn=offers(open.length,state.offers);
+        open.forEach((slot,i)=>{state.offers[slot]=drawn[i];});cmd.marked=open;
+      }
+      state.command=cmd;save();return choice.label;
+    }
     if (!activeCaptains.includes(state.captain) || captainReason()) return '';
     const action = state.captainAction ??= {};
     let message;
@@ -232,6 +276,7 @@ export async function openRun(captain) {
   const resultUrl = new URL('./result.html', import.meta.url);
   const result = {
     get state() { return state; },
+    get captainInfo() {return company?commandNames[state.captain]:null;},
     get wave() { return currentWave(); },
     get showDepartureGuide() {
       return state.round === 1 && localStorage.getItem(departureGuideKey) !== '1';
@@ -248,18 +293,31 @@ export async function openRun(captain) {
       const baseCost = upgrades[state.level - 1];
       if (baseCost == null) return null;
       const roundsWaited = state.round - state.upgradeOpenedRound;
-      return Math.max(0, baseCost - roundsWaited - Number(state.captain === 'bryn'));
+      if(company&&state.command?.value==='discount'&&!state.command.paid&&baseCost>roundsWaited)return Math.max(1,baseCost-roundsWaited-2);
+      return Math.max(0, baseCost - roundsWaited - Number(!company&&state.captain === 'bryn'));
     },
     group(piece) {
       if (!piece) return null;
       const card = cards.get(piece.id);
       if (!card) return null;
+      if(company){
+        const army=piece.army??card.members;
+        const units=[...new Set(army)].map(id=>({...soldiers.get(id),count:army.filter(s=>s===id).length}));
+        const makeCopy=gold=> {
+          const [normal,extra]=card.rule.split(/(?:황금은 |황금 )/);
+          return [normal.replace(/(\+?\d+)%\s*\/\s*(\+?\d+)%/g,(_,a,b)=>(gold?b:a)+'%').trim(),
+            gold&&extra,companyRule(card)].filter(Boolean).join(' ');
+        };
+        return {...card,units,total:army.length,yardMembers:army,owner:piece.key,
+          golden:!!piece.golden,effect:makeCopy(false),goldenEffect:makeCopy(true)};
+      }
       const kind = piece.golden && card.tier === 5 && card.mechanic === 'Shapeshift' ? 'Hybrid' : piece.form;
       const form = card.forms.find(item => item.kind === kind) ?? card.forms[0];
       const permanent = (piece.reinforcements ?? []).slice(0, 4 - form.units.length);
       const reinforcements = permanent.map(unit => ({ ...unit, width: 64, height: 64, isNew: true }));
-      return { ...card, golden: Boolean(piece.golden),
-        units: [...form.units.map(unit => ({ ...unit, isNew: true })), ...reinforcements] };
+      const units=[...form.units, ...reinforcements].map(unit=>({...unit,...catalog.skins?.[unit.id],isNew:true}));
+      return { ...card, golden: Boolean(piece.golden),units,owner:piece.key,
+        yardMembers:units.map(unit=>unit.skinId) };
     },
     update() { savePlan(); },
     abilities(slot) { return plan().abilities(slot); },
@@ -279,6 +337,11 @@ export async function openRun(captain) {
     applyAbility(slot, kind, target, second) {
       if (state.phase !== 'prep' || !state.deck[slot]) return false;
       const prepared = plan();
+      if(company){
+        const action=prepared.abilities(slot).find(a=>a.kind===kind);
+        if(!action || action.choices && !action.choices.some(c=>c.value===target))return false;
+        state.orders=[...state.orders.filter(o=>o.kind!==kind),{kind,source:state.deck[slot].key,target}];save();return true;
+      }
       if (kind === 'form') {
         if (!prepared.describe(slot, kind)) return false;
         state.deck[slot].form = state.deck[slot].form === 'Animal' ? 'Human' : 'Animal';
@@ -305,9 +368,11 @@ export async function openRun(captain) {
       const cost = rerollPrice();
       if (state.phase !== 'prep' || this.gold < cost) return false;
       state.gold -= cost;
+      if(company)companyTrade(state,cards,'roll',null,cost);
       if (cost > 1) state.shopPowerRound = state.round;
       const next = offers(sizes[state.level - 1], state.offers);
       state.offers = next.map((id, i) => sealed(i) ? state.offers[i] : id);
+      if(company&&state.command?.marked)state.command.marked=state.command.marked.filter(i=>sealed(i));
       state.devouredTables = [];
       save();
       return true;
@@ -316,6 +381,8 @@ export async function openRun(captain) {
       const cost = this.upgradeCost;
       if (state.phase !== 'prep' || cost == null || this.gold < cost) return false;
       state.gold -= cost;
+      if(company)companyTrade(state,cards,'upgrade',null,cost);
+      if(company&&state.command?.value==='discount'&&cost>0)state.command.paid=true;
       state.level += 1;
       state.upgradeOpenedRound = state.round;
       const added = sizes[state.level - 1] - state.offers.length;
@@ -328,6 +395,8 @@ export async function openRun(captain) {
       const offer = hirePlan(state.offers[index], replace);
       if (!offer) return false;
       hire(offer);
+      if(company&&state.command?.marked?.includes(index) && !state.command.markedHire)
+        state.command.markedHire=state.deck.find(p=>p?.hireOrder===state.hireOrder)?.key ?? state.deck[offer.matches[0]]?.key;
       state.offers[index] = null;
       applyHirePower(true);
       savePlan();
@@ -335,7 +404,8 @@ export async function openRun(captain) {
     },
     sell(slot) {
       if (state.phase !== 'prep' || !state.deck[slot]) return false;
-      applyCardTransaction(state, cards, state.deck[slot].key, 'sell');
+      if(company)companyTrade(state,cards,'sell',cards.get(state.deck[slot].id));
+      else applyCardTransaction(state, cards, state.deck[slot].key, 'sell');
       state.deck[slot] = null;
       state.gold += 1;
       savePlan();
@@ -353,7 +423,7 @@ export async function openRun(captain) {
         hasAudioSettings: true, musicVolume: volumes.music, effectsVolume: volumes.effects,
         inspectedSlot: state.captain === 'thorin' && state.captainAction?.usedRound === state.round ?
           state.deck.findIndex(piece => piece?.key === state.captainAction.target) + 1 : 0,
-        preparation: prepared.deployment(), deck: state.deck.map(piece =>
+        ...(company?{version:2,teams:prepared.teams}:{preparation:prepared.deployment()}), deck: state.deck.map(piece =>
           piece ? { id: piece.id, form: piece.form, golden: !!piece.golden } : { id: '' }),
       });
       try {
@@ -377,7 +447,15 @@ export async function openRun(captain) {
       const previous = state.erosion;
       if (waveResult.outcome === 'Loss') state.erosion = Math.min(100, previous + 8 + 2 * (state.round - 1));
       if (waveResult.outcome === 'Win') state.wins += 1;
-      if (waveResult.history?.length === state.deck.length) {
+      if(company){
+        const committed=plan();
+        state.deck=committed.deck;
+        state.spirit=committed.spirit;
+        for(const [i,p] of state.deck.entries())if(p&&cards.get(p.id).company==='fang'){
+          p.lastEssence=Math.min(3,waveResult.essence?.[i]??0);
+          p.essence=Math.min(9,(p.essence??0)+p.lastEssence);
+        }
+      } else if (waveResult.history?.length === state.deck.length) {
         const committed = plan().settlement();
         state.deck = committed.deck;
         state.scrap = committed.scrap;
@@ -413,7 +491,7 @@ export async function openRun(captain) {
       state.orders = [];
       state.devouredTables = [];
       state.hireOrder = 0;
-      enterCardVisit(state, cards);
+      if(company){state.ledger=null;state.command=null;}else enterCardVisit(state, cards);
       state.phase = 'prep';
       state.offers = offers(sizes[state.level - 1]);
       save();

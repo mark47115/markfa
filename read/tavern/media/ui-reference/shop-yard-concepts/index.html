@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>선술집과 대기장 버튼 시안 · Tavern Heros</title><base href="../shop-popup-v3/"><link rel="stylesheet" href="view.css"><link rel="stylesheet" href="../shop-yard-concepts/concepts.css"></head>
+<body><main><header class="intro"><h1>선술집과 대기장 버튼 시안</h1><div class="downloads"><a href="../shop-yard-concepts/buttons.png">버튼 비교 ↗</a><a href="../shop-yard-concepts/comparison.png">화면 비교 ↗</a></div></header>
+<nav id="styles" aria-label="버튼 디자인 선택"></nav>
+<div class="selection"><p id="material"></p><div class="tools"><button id="switch" aria-controls="shop">상점 열기</button><button id="reset">초기화</button></div></div>
+<div class="viewport"><div class="yard" id="yard">
+  <div id="intel"><div class="erosion"><span>침식도 24%</span></div><div class="round">라운드 4 / 15</div><div class="enemy"><img src="../../unit-sprites/void-redesign/motions/void-298/idle.png" alt="">다음 적 · 빈껍질 집전관</div></div>
+  <div id="deck" aria-label="내 덱"></div>
+  <section id="shop" aria-label="고용 후보" hidden><p id="stock-status" role="status"></p><div id="offers"></div></section>
+  <button class="action" id="captain" aria-label="대장 능력 공개 징집"><img src="art/captain.png" alt=""><span>공개 징집</span></button>
+  <button class="action" id="level" aria-label="선술집 레벨업"><img src="art/level.png" alt=""><span class="level-tag"><small>레벨업</small><b id="lv"></b> <i class="coin"></i><b id="levelCost"></b></span></button>
+  <button class="action" id="reroll" aria-label="1골드로 상점 리롤" hidden><img src="art/reroll.png" alt=""><span><i class="coin"></i>1</span></button>
+  <button class="action" id="gold" aria-label="보유 골드와 상점" aria-controls="shop" aria-expanded="false"><img src="art/gold.png" alt=""><span><i class="coin"></i><b id="balance"></b></span></button>
+  <button id="deploy">출전</button>
+  <div id="detail" hidden><h2 id="heading"></h2><p id="description"></p><div id="choices"></div><button id="dismiss">닫기</button></div>
+  <output id="feedback" aria-live="polite"></output>
+</div></div>
+
+<footer><span>오른쪽 아래 금화 주머니로 상점을 열고 닫을 수 있습니다.</span><div class="downloads"><a id="closed-file" download>대기장 PNG</a><a id="open-file" download>상점 PNG</a><a href="../shop-yard-concepts/hud-assets.zip" download>버튼 소재 ZIP</a></div></footer></main>
+<script src="../../unit-sprites/graded-roster/hire-roster.js"></script><script src="view.js"></script><script src="../shop-yard-concepts/themes.js"></script><script src="../shop-yard-concepts/concepts.js"></script></body></html>

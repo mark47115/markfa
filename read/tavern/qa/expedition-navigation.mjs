@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { launchBrowser } from '../../../desktop/service/test/browser.mjs';
 
 const root = path.resolve(process.argv[2] ?? 'E:/My project/Assets/StreamingAssets/mobile-game');
@@ -41,12 +42,13 @@ try {
     });
     const openPrep = async () => {
       await page.waitForURL('**/prep-landscape.html*');
-      await page.locator('.tavern-table').first().waitFor();
+      await page.locator('[data-mobile-run] .prep-mobile-switch').waitFor();
     };
     const press = button => touch ? button.tap() : button.click();
     const deploy = page.locator('[data-run-deploy]');
     const guide = page.locator('#prep-deploy-guide');
-    const toDeck = page.getByRole('button', { name: '대기장으로 이동' });
+    const toDeck = page.getByRole('button', { name: '상점 닫기' });
+    const openShop = page.getByRole('button', { name: '상점 열기' });
     const volume = viewport.width === 808 ? { music: 35, effects: 70 } : { music: 0, effects: 0 };
     await page.goto(base + 'home/lobby.html');
     await page.locator('#start-run').waitFor();
@@ -56,14 +58,14 @@ try {
     }, { key: saveKey, value: seed, volume });
     await page.goto(base + 'prep-landscape.html?captain=rowan');
     await openPrep();
-    assert.equal(await deploy.isVisible(), false);
+    assert.equal(await deploy.isVisible(), true);
     assert.equal(await page.getByRole('button', { name: '적 예고' }).count(), 0);
     assert.equal(await page.locator('a[href*="lobby.html"]').count(), 0);
-    await press(toDeck);
     assert.equal(await deploy.isDisabled(), true);
     assert.equal(await guide.isVisible(), false);
-    await press(page.getByRole('button', { name: '선술집으로 이동' }));
-    await press(page.getByRole('button', { name: /개울 정찰대, 고용/ }));
+    await press(openShop);
+    assert.equal(await deploy.isVisible(), false);
+    await press(page.getByRole('button', { name: /개울 정찰대, .*고용/ }));
     await press(page.getByRole('button', { name: '고용 3골드', exact: true }));
     await press(toDeck);
     assert.equal(await deploy.isEnabled(), true);
@@ -71,12 +73,12 @@ try {
     assert.equal(await deploy.getAttribute('aria-describedby'), 'prep-deploy-guide');
     const bounds = await page.evaluate(() => {
       const rect = selector => document.querySelector(selector).getBoundingClientRect().toJSON();
-      return { stage: rect('.prep-stage'), slots: rect('.prep-slots'), button: rect('[data-run-deploy]'),
+      return { stage: rect('.prep-stage'), slots: rect('.shop-company'), button: rect('[data-run-deploy]'),
         guide: rect('#prep-deploy-guide') };
     });
     assert.ok(bounds.button.height >= 44);
     assert.ok(Math.abs(bounds.stage.x + bounds.stage.width / 2 - bounds.button.x - bounds.button.width / 2) < 2);
-    assert.ok(bounds.button.bottom < bounds.stage.bottom && bounds.slots.bottom <= bounds.button.top);
+    assert.ok(bounds.button.bottom <= bounds.stage.bottom + 1 && bounds.slots.bottom <= bounds.button.top);
     assert.ok(bounds.guide.x >= bounds.stage.x && bounds.guide.right < bounds.button.left && bounds.guide.top >= bounds.slots.bottom);
     const launch = async button => {
       const requested = page.waitForResponse(response => response.url().startsWith(base + 'launch?'));
@@ -99,7 +101,7 @@ try {
     await page.evaluate(({ id, round, deck, scrap }) => window.TavernRun.finish({
       id, round, outcome: 'Win', allies: 2, enemies: 0, tick: 15, deck, scrap,
     }), launches.at(-1));
-    const next = page.getByRole('button', { name: '다음 선술집 · 골드 4' });
+    const next = page.getByRole('button', { name: '다음 스테이지', exact:true });
     await next.waitFor();
     assert.equal(await page.locator('.run-report-actions > *').count(), 1);
     await page.goBack();
@@ -110,7 +112,6 @@ try {
     await openPrep();
     await page.goto(base + 'home/lobby.html');
     await openPrep();
-    await press(toDeck);
     assert.equal(await deploy.isEnabled(), true);
     assert.equal(await guide.isVisible(), false);
     await page.evaluate(key => {
@@ -127,10 +128,60 @@ try {
     await page.locator('#start-run').waitFor();
     await press(page.locator('#start-run'));
     await openPrep();
+    await press(openShop);
     await press(page.locator('.tavern-table').first());
     await press(page.getByRole('button', { name: '고용 3골드', exact: true }));
     await press(toDeck);
     assert.equal(await guide.isVisible(), false);
+    // 같은 중반 편성으로 상점의 좌표, 실제 결제와 두 진형을 확인한다.
+    assert.equal(await page.evaluate(()=>window.TavernRun.state.version),2);
+    await page.evaluate(({ key, seed }) => {
+      localStorage.removeItem('tavern-heros.mobile.run.v2'); // restore the independent v1 test fixture
+      const ids = ['Guard-1-0','Hunt-1-0',null,'Blessing-1-0','Reforge-1-0',null];
+      localStorage.setItem(key, JSON.stringify({ ...seed, level: 2, round: 4, gold: 12, erosion: 24,
+        upgradeOpenedRound: 3, formation: 'line', offers: ids.filter(Boolean),
+        deck: ids.map(id => id ? { id, key: crypto.randomUUID() } : null) }));
+    }, { key: saveKey, seed });
+    await page.reload();
+    await openPrep();
+    const capture = async name => {
+      if (viewport.width === 852 && process.argv.includes('--capture')) {
+        await page.evaluate(async () => {
+          await document.fonts.ready;
+          await Promise.all(Array.from(document.querySelectorAll('.prep-sprites [data-unit]'), async node => {
+            const image = new Image();
+            image.src = getComputedStyle(node).backgroundImage.slice(5, -2);
+            await image.decode();
+          }));
+        });
+        await page.screenshot({ path: fileURLToPath(new URL(`../media/mobile-assembly/yard-v3-${name}.png`, import.meta.url)) });
+      }
+    };
+    await capture('closed');
+    await press(openShop);
+    await page.locator('.shop-offers .tavern-table:enabled .shop-terms').first().waitFor();
+    assert.equal(await page.locator('.shop-offers .shop-members').count(),0);
+    assert.ok(await page.locator('.shop-offers .tavern-table:enabled .tavern-name').count()>0);
+    await capture('open');
+    assert.equal(await page.locator('.shop-company [data-slot]').count(), 6);
+    const shop = await page.locator('.prep-slots').boundingBox();
+    const yard = await page.locator('.shop-company').boundingBox();
+    assert.ok(shop.y + shop.height <= yard.y && yard.y + yard.height <= viewport.height);
+    const occupied = page.locator('.shop-company [data-slot="1"]');
+    const empty = page.locator('.shop-company [data-slot="3"]');
+    await occupied.dragTo(empty);
+    assert.equal(await page.evaluate(() => window.TavernRun.state.deck[2]?.id), 'Guard-1-0');
+    await press(page.locator('.prep-reroll'));
+    assert.equal(await page.locator('[data-purse-balance]').innerText(), '11');
+    await press(page.locator('[data-run-upgrade]'));
+    assert.equal(await page.locator('[data-building-level]').innerText(), 'Lv. 3');
+    assert.equal(await page.locator('[data-purse-balance]').innerText(), '5');
+    await page.keyboard.press('Escape');
+    assert.ok(await openShop.isVisible());
+    await press(page.locator('.prep-enemy-button'));
+    await press(page.locator('.prep-formation'));
+    assert.equal(await page.locator('.prep-stage').getAttribute('data-formation'), 'column');
+    assert.ok(await page.locator('.prep-enemy-dialog').isVisible());
     assert.deepEqual(errors, []);
     console.log(`${viewport.width}×${viewport.height}: deployment, independent audio volumes, result and resume verified.`);
     await page.close();

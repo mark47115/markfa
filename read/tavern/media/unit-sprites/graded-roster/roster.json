@@ -1,0 +1,3103 @@
+{
+  "version": 1,
+  "status": "다음 버전 기획",
+  "canvas": [
+    96,
+    96
+  ],
+  "footY": 87,
+  "score": "2 × 공격·지원력 + 체력 + 2 × 방어",
+  "thresholds": [
+    9,
+    17,
+    28,
+    43
+  ],
+  "factions": [
+    {
+      "name": "강철 군단",
+      "id": "steel",
+      "look": "병영·방벽 수레에서 출고되는 황동 관절의 강철 자동인형. 창과 사출기는 병영, 셔터형 방패는 방벽 설비를 닮았다.",
+      "refs": [
+        "assembly-robot",
+        "rivet-bot",
+        "allies-131"
+      ],
+      "units": [
+        {
+          "id": "steel-1a",
+          "name": "창팔 보행기",
+          "role": "돌격",
+          "look": "외눈 렌즈와 접이식 창팔을 단 작은 황동 보행기",
+          "tier": 1,
+          "sprite": "sprites/steel-1a.png",
+          "bounds": {
+            "width": 34,
+            "height": 26,
+            "area": 390
+          },
+          "attack": 2,
+          "health": 4,
+          "score": 8,
+          "source": {
+            "sheet": "sources/steel-1.png",
+            "rect": [
+              178,
+              326,
+              541,
+              412
+            ]
+          },
+          "skills": [
+            {
+              "name": "날밀치기",
+              "trigger": "7초마다",
+              "effect": "정면 1칸 안의 적 최대 2명에게 공격력의 90% 피해를 주고 0.5칸 밀어낸다."
+            }
+          ]
+        },
+        {
+          "id": "steel-1b",
+          "name": "덧판 경비기",
+          "role": "수비",
+          "look": "각진 철판 방패와 짧은 다리, 한쪽 어깨의 수레 고정쇠",
+          "tier": 1,
+          "sprite": "sprites/steel-1b.png",
+          "bounds": {
+            "width": 24,
+            "height": 22,
+            "area": 389
+          },
+          "attack": 1,
+          "health": 5,
+          "score": 7,
+          "source": {
+            "sheet": "sources/steel-1.png",
+            "rect": [
+              933,
+              321,
+              457,
+              417
+            ]
+          },
+          "skills": [
+            {
+              "name": "덧판 받침",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "steel-2a",
+          "name": "코일 못사수",
+          "role": "사격",
+          "look": "한 팔이 굵은 리벳 발사기이고 등에 노출된 구리 코일",
+          "tier": 2,
+          "sprite": "sprites/steel-2a.png",
+          "bounds": {
+            "width": 34,
+            "height": 31,
+            "area": 649
+          },
+          "attack": 3,
+          "health": 7,
+          "score": 13,
+          "source": {
+            "sheet": "sources/steel-2.png",
+            "rect": [
+              209,
+              313,
+              442,
+              398
+            ]
+          },
+          "skills": [
+            {
+              "name": "못 튕기기",
+              "trigger": "기본 사격 3회마다",
+              "effect": "탄환이 원래 목표 주위 2칸의 다른 적 한 명에게 튕겨 공격력의 70% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "steel-2b",
+          "name": "접지 돌격기",
+          "role": "돌격",
+          "look": "절연 천을 감은 스프링 다리와 갈라진 접지창",
+          "tier": 2,
+          "sprite": "sprites/steel-2b.png",
+          "bounds": {
+            "width": 34,
+            "height": 33,
+            "area": 636
+          },
+          "attack": 4,
+          "health": 7,
+          "score": 15,
+          "source": {
+            "sheet": "sources/steel-2.png",
+            "rect": [
+              942,
+              310,
+              434,
+              417
+            ]
+          },
+          "skills": [
+            {
+              "name": "접지 도약",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "steel-3a",
+          "name": "셔터 방벽기",
+          "role": "수비",
+          "look": "양팔 철판을 맞물려 세우는 장갑 인형, 몸 앞에 선명한 세로 경첩",
+          "tier": 3,
+          "sprite": "sprites/steel-3a.png",
+          "bounds": {
+            "width": 33,
+            "height": 40,
+            "area": 985
+          },
+          "attack": 5,
+          "health": 12,
+          "score": 22,
+          "source": {
+            "sheet": "sources/steel-3.png",
+            "rect": [
+              232,
+              318,
+              407,
+              497
+            ]
+          },
+          "skills": [
+            {
+              "name": "셔터 내리기",
+              "trigger": "6초마다",
+              "effect": "자기 최대 체력의 18%만큼 자신에게 보호막을 3초간 부여한다."
+            }
+          ]
+        },
+        {
+          "id": "steel-3b",
+          "name": "탄띠 장전기",
+          "role": "사격",
+          "look": "등의 탄띠가 어깨 발사기로 이어지는 세모머리 기계병",
+          "tier": 3,
+          "sprite": "sprites/steel-3b.png",
+          "bounds": {
+            "width": 34,
+            "height": 44,
+            "area": 982
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/steel-3.png",
+            "rect": [
+              924,
+              292,
+              406,
+              523
+            ]
+          },
+          "skills": [
+            {
+              "name": "탄띠 조준",
+              "trigger": "같은 목표에 기본 사격을 2회 연속 맞히면",
+              "effect": "그 목표에 대한 이후 기본 사격 피해가 20% 증가한다. 목표를 바꾸면 누적과 보너스가 사라진다."
+            }
+          ]
+        },
+        {
+          "id": "steel-4a",
+          "name": "교정 압착기",
+          "role": "돌격",
+          "look": "한쪽 팔의 네모난 압착기와 반대쪽의 굵은 조정 나사",
+          "tier": 4,
+          "sprite": "sprites/steel-4a.png",
+          "bounds": {
+            "width": 56,
+            "height": 47,
+            "area": 1429
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/steel-4.png",
+            "rect": [
+              119,
+              320,
+              494,
+              416
+            ]
+          },
+          "skills": [
+            {
+              "name": "압착 고정",
+              "trigger": "6초마다",
+              "effect": "현재 목표에게 공격력의 85% 피해를 주고 2초간 이동 속도를 25% 낮춘다."
+            }
+          ]
+        },
+        {
+          "id": "steel-4b",
+          "name": "이동 차폐기",
+          "role": "수비",
+          "look": "회청색 접이식 방벽을 한 팔에 고정한 묵직한 보행기",
+          "tier": 4,
+          "sprite": "sprites/steel-4b.png",
+          "bounds": {
+            "width": 47,
+            "height": 43,
+            "area": 1466
+          },
+          "attack": 8,
+          "health": 18,
+          "score": 34,
+          "source": {
+            "sheet": "sources/steel-4.png",
+            "rect": [
+              984,
+              326,
+              448,
+              410
+            ]
+          },
+          "skills": [
+            {
+              "name": "슬라이드 차폐",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "steel-5a",
+          "name": "성문 견인기",
+          "role": "수비",
+          "look": "수레 견인고리와 성문형 흉갑, 말뚝 같은 두 발을 갖춘 공성 자동인형",
+          "tier": 5,
+          "sprite": "sprites/steel-5a.png",
+          "bounds": {
+            "width": 62,
+            "height": 60,
+            "area": 2084
+          },
+          "attack": 13,
+          "health": 29,
+          "score": 55,
+          "source": {
+            "sheet": "sources/steel-5.png",
+            "rect": [
+              76,
+              287,
+              531,
+              517
+            ]
+          },
+          "skills": [
+            {
+              "name": "견인기 비상판",
+              "trigger": "체력이 50% 아래로 내려갈 때, 재사용 10초",
+              "effect": "자신에게 최대 체력의 15%만큼 보호막을 4초간 부여하고 같은 시간 밀려나는 거리를 50% 줄인다."
+            },
+            {
+              "name": "성문 걸쇠",
+              "trigger": "6초마다",
+              "effect": "2칸 안에서 후열 아군을 노리는 적 최대 2명을 2초간 도발한다. 자기 보호막이 남아 있으면 자신이 받는 피해도 2초간 20% 줄인다."
+            }
+          ]
+        },
+        {
+          "id": "steel-5b",
+          "name": "공성 압연기",
+          "role": "돌격",
+          "look": "등에 병영 신호기를 달고 양 전완 롤러를 앞으로 내민 무거운 돌격기",
+          "tier": 5,
+          "sprite": "sprites/steel-5b.png",
+          "bounds": {
+            "width": 56,
+            "height": 68,
+            "area": 2078
+          },
+          "attack": 15,
+          "health": 24,
+          "score": 54,
+          "source": {
+            "sheet": "sources/steel-5.png",
+            "rect": [
+              959,
+              189,
+              500,
+              610
+            ]
+          },
+          "skills": [
+            {
+              "name": "압연 밀어내기",
+              "trigger": "7초마다",
+              "effect": "정면 1칸 안의 적 최대 2명에게 공격력의 90% 피해를 주고 0.5칸 밀어낸다."
+            },
+            {
+              "name": "가속 피스톤",
+              "trigger": "적을 밀어낸 뒤, 재사용 6초",
+              "effect": "밀려난 적 쪽으로 빈자리까지 최대 1칸 전진한다. 재접촉하면 공격력의 115%로 내려친다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "황혼 기사단",
+      "id": "dusk",
+      "look": "남보라 망토를 두른 인간 기사단. 봉화 주인과 이웃을 등잔·화로·횃불 무기로 구분한다.",
+      "refs": [
+        "shield-deputy",
+        "gate-apprentice",
+        "allies-101"
+      ],
+      "units": [
+        {
+          "id": "dusk-1a",
+          "name": "불씨 종자",
+          "role": "돌격",
+          "look": "단검을 든 어린 기사와 허리의 작은 심지통",
+          "tier": 1,
+          "sprite": "sprites/dusk-1a.png",
+          "bounds": {
+            "width": 24,
+            "height": 28,
+            "area": 394
+          },
+          "attack": 2,
+          "health": 4,
+          "score": 8,
+          "source": {
+            "sheet": "sources/dusk-1.png",
+            "rect": [
+              203,
+              309,
+              362,
+              415
+            ]
+          },
+          "skills": [
+            {
+              "name": "불씨 가르기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-1b",
+          "name": "등불 방패수",
+          "role": "수비",
+          "look": "원방패 위에 호박색 등불을 매단 투구 차림 보초",
+          "tier": 1,
+          "sprite": "sprites/dusk-1b.png",
+          "bounds": {
+            "width": 23,
+            "height": 27,
+            "area": 400
+          },
+          "attack": 1,
+          "health": 5,
+          "score": 7,
+          "source": {
+            "sheet": "sources/dusk-1.png",
+            "rect": [
+              961,
+              289,
+              370,
+              435
+            ]
+          },
+          "skills": [
+            {
+              "name": "등불 가림",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-2a",
+          "name": "등화 쇠뇌수",
+          "role": "사격",
+          "look": "쇠뇌 몸통에 짧은 등잔을 건 망루 사수",
+          "tier": 2,
+          "sprite": "sprites/dusk-2a.png",
+          "bounds": {
+            "width": 31,
+            "height": 35,
+            "area": 633
+          },
+          "attack": 3,
+          "health": 7,
+          "score": 13,
+          "source": {
+            "sheet": "sources/dusk-2.png",
+            "rect": [
+              216,
+              312,
+              385,
+              432
+            ]
+          },
+          "skills": [
+            {
+              "name": "등화 관통",
+              "trigger": "기본 사격 3회마다",
+              "effect": "목표에게 공격력의 100%, 같은 직선상 뒤쪽에서 가장 가까운 적 1명에게 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-2b",
+          "name": "등잔 호위기사",
+          "role": "수비",
+          "look": "철등불을 보호하는 초승 방패와 도톰한 자주색 천",
+          "tier": 2,
+          "sprite": "sprites/dusk-2b.png",
+          "bounds": {
+            "width": 28,
+            "height": 33,
+            "area": 625
+          },
+          "attack": 3,
+          "health": 9,
+          "score": 15,
+          "source": {
+            "sheet": "sources/dusk-2.png",
+            "rect": [
+              952,
+              296,
+              376,
+              448
+            ]
+          },
+          "skills": [
+            {
+              "name": "호위 등받이",
+              "trigger": "3초마다",
+              "effect": "직전 2초간 이동하지 않았으면 자기 최대 체력의 8%를 회복한다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-3a",
+          "name": "화로 창기사",
+          "role": "돌격",
+          "look": "창날 밑에 붉은 천과 작은 봉화 화로를 단 기사",
+          "tier": 3,
+          "sprite": "sprites/dusk-3a.png",
+          "bounds": {
+            "width": 34,
+            "height": 45,
+            "area": 964
+          },
+          "attack": 6,
+          "health": 10,
+          "score": 22,
+          "source": {
+            "sheet": "sources/dusk-3.png",
+            "rect": [
+              214,
+              285,
+              370,
+              497
+            ]
+          },
+          "skills": [
+            {
+              "name": "화로 찌르기",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-3b",
+          "name": "점화 나팔수",
+          "role": "지원",
+          "look": "금빛 나팔을 들고 가슴에 교대용 불씨갑을 맨 전령",
+          "tier": 3,
+          "sprite": "sprites/dusk-3b.png",
+          "bounds": {
+            "width": 40,
+            "height": 41,
+            "area": 943
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/dusk-3.png",
+            "rect": [
+              952,
+              355,
+              417,
+              427
+            ]
+          },
+          "skills": [
+            {
+              "name": "점화 나팔",
+              "trigger": "7초마다",
+              "effect": "반경 2칸의 부상 아군 중 체력 비율이 낮은 순서로 최대 3명을 각각 지원력의 55%만큼 치료한다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-4a",
+          "name": "성루 불시위꾼",
+          "role": "사격",
+          "look": "어깨의 불씨통과 긴 장궁을 든 성문 기수단의 사수",
+          "tier": 4,
+          "sprite": "sprites/dusk-4a.png",
+          "bounds": {
+            "width": 40,
+            "height": 55,
+            "area": 1410
+          },
+          "attack": 8,
+          "health": 15,
+          "score": 31,
+          "source": {
+            "sheet": "sources/dusk-4.png",
+            "rect": [
+              222,
+              273,
+              374,
+              510
+            ]
+          },
+          "skills": [
+            {
+              "name": "성루 일제사격",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 서로 다른 적 최대 3명에게 화살이나 탄환을 하나씩 발사해 각각 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-4b",
+          "name": "횃불 망루병",
+          "role": "수비",
+          "look": "망루 모양 넓은 방패의 윗부분에 작은 불빛을 켠 중장 기사",
+          "tier": 4,
+          "sprite": "sprites/dusk-4b.png",
+          "bounds": {
+            "width": 42,
+            "height": 49,
+            "area": 1448
+          },
+          "attack": 8,
+          "health": 18,
+          "score": 34,
+          "source": {
+            "sheet": "sources/dusk-4.png",
+            "rect": [
+              934,
+              288,
+              429,
+              495
+            ]
+          },
+          "skills": [
+            {
+              "name": "횃불 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-5a",
+          "name": "끝불 성문기사",
+          "role": "수비",
+          "look": "보랏빛 긴 망토, 봉화창이 뚫린 거대한 문짝 방패를 든 수비대",
+          "tier": 5,
+          "sprite": "sprites/dusk-5a.png",
+          "bounds": {
+            "width": 54,
+            "height": 55,
+            "area": 2072
+          },
+          "attack": 13,
+          "health": 29,
+          "score": 55,
+          "source": {
+            "sheet": "sources/dusk-5.png",
+            "rect": [
+              118,
+              321,
+              471,
+              480
+            ]
+          },
+          "skills": [
+            {
+              "name": "끝불 방진",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            },
+            {
+              "name": "끝불 엄호",
+              "trigger": "자신의 피해 감소가 발동할 때, 재사용 6초",
+              "effect": "2칸 안에서 체력 비율이 가장 낮은 다른 아군 한 명에게 대상 최대 체력의 18% 보호막을 4초간 준다."
+            }
+          ]
+        },
+        {
+          "id": "dusk-5b",
+          "name": "황혼 집결기사",
+          "role": "돌격",
+          "look": "횃불깃을 단 넓은 견갑과 별머리 양손 철퇴를 쥔 돌격 기사",
+          "tier": 5,
+          "sprite": "sprites/dusk-5b.png",
+          "bounds": {
+            "width": 64,
+            "height": 63,
+            "area": 2111
+          },
+          "attack": 15,
+          "health": 24,
+          "score": 54,
+          "source": {
+            "sheet": "sources/dusk-5.png",
+            "rect": [
+              868,
+              219,
+              582,
+              577
+            ]
+          },
+          "skills": [
+            {
+              "name": "집결 돌진",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            },
+            {
+              "name": "황혼 횡베기",
+              "trigger": "기본 공격 4회마다",
+              "effect": "앞쪽 1칸의 적 최대 3명에게 공격력의 85% 피해를 준다. 이동 속도 증가 상태에서는 범위가 2칸이다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "숲의 수호자",
+      "id": "grove",
+      "look": "올리브색 잎과 황금빛 수액을 공유하는 엘프·드루이드. 성장할수록 씨앗에서 가지와 수관으로 변한다.",
+      "refs": [
+        "seedling-keeper",
+        "sprout-archer",
+        "allies-004"
+      ],
+      "units": [
+        {
+          "id": "grove-1a",
+          "name": "새눈 활잡이",
+          "role": "사격",
+          "look": "뾰족한 귀의 어린 엘프, 새눈이 돋은 가지활과 작은 정기씨 주머니",
+          "tier": 1,
+          "sprite": "sprites/grove-1a.png",
+          "bounds": {
+            "width": 23,
+            "height": 28,
+            "area": 392
+          },
+          "attack": 1,
+          "health": 4,
+          "score": 6,
+          "source": {
+            "sheet": "sources/grove-1.png",
+            "rect": [
+              216,
+              298,
+              411,
+              503
+            ]
+          },
+          "skills": [
+            {
+              "name": "겹잎 관통",
+              "trigger": "기본 사격 3회마다",
+              "effect": "목표에게 공격력의 100%, 같은 직선상 뒤쪽에서 가장 가까운 적 1명에게 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "grove-1b",
+          "name": "묘목 방패지기",
+          "role": "수비",
+          "look": "묘목 드루이드가 어린 뿌리로 엮은 작은 방패를 든 모습",
+          "tier": 1,
+          "sprite": "sprites/grove-1b.png",
+          "bounds": {
+            "width": 21,
+            "height": 29,
+            "area": 398
+          },
+          "attack": 1,
+          "health": 5,
+          "score": 7,
+          "source": {
+            "sheet": "sources/grove-1.png",
+            "rect": [
+              988,
+              303,
+              365,
+              507
+            ]
+          },
+          "skills": [
+            {
+              "name": "뿌리 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "grove-2a",
+          "name": "씨앗 물매꾼",
+          "role": "사격",
+          "look": "도토리 정기씨를 담은 잎주머니와 굵은 물매를 든 엘프",
+          "tier": 2,
+          "sprite": "sprites/grove-2a.png",
+          "bounds": {
+            "width": 30,
+            "height": 36,
+            "area": 617
+          },
+          "attack": 3,
+          "health": 7,
+          "score": 13,
+          "source": {
+            "sheet": "sources/grove-2.png",
+            "rect": [
+              264,
+              328,
+              352,
+              425
+            ]
+          },
+          "skills": [
+            {
+              "name": "튀는 도토리",
+              "trigger": "기본 사격 3회마다",
+              "effect": "탄환이 원래 목표 주위 2칸의 다른 적 한 명에게 튕겨 공격력의 70% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "grove-2b",
+          "name": "접가지 찌름병",
+          "role": "돌격",
+          "look": "팔의 수피 장갑에 곧은 가시가 접붙은 숲 전사",
+          "tier": 2,
+          "sprite": "sprites/grove-2b.png",
+          "bounds": {
+            "width": 31,
+            "height": 37,
+            "area": 632
+          },
+          "attack": 4,
+          "health": 7,
+          "score": 15,
+          "source": {
+            "sheet": "sources/grove-2.png",
+            "rect": [
+              984,
+              328,
+              358,
+              425
+            ]
+          },
+          "skills": [
+            {
+              "name": "가시 휘감기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "grove-3a",
+          "name": "이슬 수액지기",
+          "role": "지원",
+          "look": "황금 수액병을 잎 등짐틀에 넣어 메고 약초를 쥔 치유사",
+          "tier": 3,
+          "sprite": "sprites/grove-3a.png",
+          "bounds": {
+            "width": 35,
+            "height": 46,
+            "area": 939
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/grove-3.png",
+            "rect": [
+              216,
+              271,
+              400,
+              529
+            ]
+          },
+          "skills": [
+            {
+              "name": "이슬 퍼뜨리기",
+              "trigger": "7초마다",
+              "effect": "반경 2칸의 부상 아군 중 체력 비율이 낮은 순서로 최대 3명을 각각 지원력의 55%만큼 치료한다."
+            }
+          ]
+        },
+        {
+          "id": "grove-3b",
+          "name": "달숲 활지기",
+          "role": "사격",
+          "look": "활 손잡이에서 두 가지가 갈라지고 달빛 잎이 자란 엘프 사수",
+          "tier": 3,
+          "sprite": "sprites/grove-3b.png",
+          "bounds": {
+            "width": 39,
+            "height": 46,
+            "area": 954
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/grove-3.png",
+            "rect": [
+              931,
+              263,
+              463,
+              551
+            ]
+          },
+          "skills": [
+            {
+              "name": "달빛 막깨기",
+              "trigger": "5초마다",
+              "effect": "현재 목표의 보호막에 공격력의 160%만큼 피해를 준다. 보호막이 없는 목표에는 공격력의 85% 피해를 준다. 초과 보호막 피해는 체력으로 넘기지 않는다."
+            }
+          ]
+        },
+        {
+          "id": "grove-4a",
+          "name": "나이테 방패지기",
+          "role": "수비",
+          "look": "큰 줄기 단면을 방패로 세운 수피 드루이드, 노출된 나이테",
+          "tier": 4,
+          "sprite": "sprites/grove-4a.png",
+          "bounds": {
+            "width": 41,
+            "height": 53,
+            "area": 1413
+          },
+          "attack": 8,
+          "health": 18,
+          "score": 34,
+          "source": {
+            "sheet": "sources/grove-4.png",
+            "rect": [
+              184,
+              287,
+              410,
+              527
+            ]
+          },
+          "skills": [
+            {
+              "name": "나이테 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "grove-4b",
+          "name": "수관 가시창병",
+          "role": "돌격",
+          "look": "정기씨가 열린 가지 어깨와 잎날 창으로 선두를 맡는 엘프",
+          "tier": 4,
+          "sprite": "sprites/grove-4b.png",
+          "bounds": {
+            "width": 57,
+            "height": 53,
+            "area": 1453
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/grove-4.png",
+            "rect": [
+              860,
+              298,
+              556,
+              516
+            ]
+          },
+          "skills": [
+            {
+              "name": "수관 휩쓸기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "grove-5a",
+          "name": "들숲 뿌리수호자",
+          "role": "수비",
+          "look": "뿌리발과 둥근 나이테 가슴, 숲빛 수액이 흐르는 거목 형상의 드루이드",
+          "tier": 5,
+          "sprite": "sprites/grove-5a.png",
+          "bounds": {
+            "width": 52,
+            "height": 67,
+            "area": 2123
+          },
+          "attack": 13,
+          "health": 29,
+          "score": 55,
+          "source": {
+            "sheet": "sources/grove-5.png",
+            "rect": [
+              202,
+              283,
+              399,
+              516
+            ]
+          },
+          "skills": [
+            {
+              "name": "참뿌리 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            },
+            {
+              "name": "참뿌리 나무진",
+              "trigger": "6초마다",
+              "effect": "자기 반경 2칸의 부상 아군 최대 3명에게 자기 최대 체력의 4%만큼 각각 회복시킨다. 자신이 피해 감소 중이면 6%씩 회복한다."
+            }
+          ]
+        },
+        {
+          "id": "grove-5b",
+          "name": "황금눈 대궁수",
+          "role": "사격",
+          "look": "흰 가지의 대궁 위에 황금색 겨울눈이 맺힌 장신의 수관 사수",
+          "tier": 5,
+          "sprite": "sprites/grove-5b.png",
+          "bounds": {
+            "width": 54,
+            "height": 73,
+            "area": 2120
+          },
+          "attack": 13,
+          "health": 24,
+          "score": 50,
+          "source": {
+            "sheet": "sources/grove-5.png",
+            "rect": [
+              973,
+              255,
+              402,
+              544
+            ]
+          },
+          "skills": [
+            {
+              "name": "겨울눈 추격",
+              "trigger": "기본 공격 적중 시",
+              "effect": "대상의 남은 체력이 40% 이하이면 그 기본 공격 피해가 20% 증가한다."
+            },
+            {
+              "name": "금빛 틈새",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 체력 비율이 가장 낮은 적을 공격력의 115%로 맞힌다. 대상 체력이 40% 이하이면 뒤쪽 1칸의 적 한 명도 공격력의 65% 피해를 받는다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "골드웍스 상단",
+      "id": "guild",
+      "look": "길고 뾰족한 귀와 연녹색 피부의 고블린 상단. 거래 영수증·금고·황동 저울을 병장구에 단다.",
+      "refs": [
+        "ledger-carrier",
+        "note-slinger",
+        "allies-159"
+      ],
+      "units": [
+        {
+          "id": "guild-1a",
+          "name": "영수증 심부름꾼",
+          "role": "돌격",
+          "look": "곤봉과 동전표 가방을 든 작은 연녹색 고블린",
+          "tier": 1,
+          "sprite": "sprites/guild-1a.png",
+          "bounds": {
+            "width": 25,
+            "height": 26,
+            "area": 396
+          },
+          "attack": 2,
+          "health": 4,
+          "score": 8,
+          "source": {
+            "sheet": "sources/guild-1.png",
+            "rect": [
+              142,
+              340,
+              418,
+              442
+            ]
+          },
+          "skills": [
+            {
+              "name": "급송 돌파",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "guild-1b",
+          "name": "잔돈 물매꾼",
+          "role": "사격",
+          "look": "가죽 물매와 구리 잔돈통을 맨 큰 귀 고블린",
+          "tier": 1,
+          "sprite": "sprites/guild-1b.png",
+          "bounds": {
+            "width": 22,
+            "height": 27,
+            "area": 386
+          },
+          "attack": 1,
+          "health": 4,
+          "score": 6,
+          "source": {
+            "sheet": "sources/guild-1.png",
+            "rect": [
+              928,
+              318,
+              385,
+              464
+            ]
+          },
+          "skills": [
+            {
+              "name": "튕기는 잔돈",
+              "trigger": "기본 사격 3회마다",
+              "effect": "탄환이 원래 목표 주위 2칸의 다른 적 한 명에게 튕겨 공격력의 70% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "guild-2a",
+          "name": "계약패 호위꾼",
+          "role": "수비",
+          "look": "눌러 찍은 계약 인장이 붙은 나무상자 방패를 든 고블린",
+          "tier": 2,
+          "sprite": "sprites/guild-2a.png",
+          "bounds": {
+            "width": 29,
+            "height": 31,
+            "area": 637
+          },
+          "attack": 3,
+          "health": 9,
+          "score": 15,
+          "source": {
+            "sheet": "sources/guild-2.png",
+            "rect": [
+              197,
+              339,
+              374,
+              400
+            ]
+          },
+          "skills": [
+            {
+              "name": "계약 방패벽",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "guild-2b",
+          "name": "황동전 쇠뇌꾼",
+          "role": "사격",
+          "look": "동전 모양 탄창이 달린 쇠뇌와 짐표 조끼의 고블린",
+          "tier": 2,
+          "sprite": "sprites/guild-2b.png",
+          "bounds": {
+            "width": 35,
+            "height": 32,
+            "area": 646
+          },
+          "attack": 3,
+          "health": 7,
+          "score": 13,
+          "source": {
+            "sheet": "sources/guild-2.png",
+            "rect": [
+              953,
+              339,
+              432,
+              400
+            ]
+          },
+          "skills": [
+            {
+              "name": "동전 일제사격",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 서로 다른 적 최대 3명에게 화살이나 탄환을 하나씩 발사해 각각 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "guild-3a",
+          "name": "외상 약제사",
+          "role": "지원",
+          "look": "약병을 매단 거래 장부와 붕대, 뾰족한 귀의 고블린 의원",
+          "tier": 3,
+          "sprite": "sprites/guild-3a.png",
+          "bounds": {
+            "width": 34,
+            "height": 42,
+            "area": 980
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/guild-3.png",
+            "rect": [
+              180,
+              321,
+              345,
+              425
+            ]
+          },
+          "skills": [
+            {
+              "name": "외상 처방",
+              "trigger": "유효 기본 치유 3회마다",
+              "effect": "방금 치료한 대상 주위 2칸에서 체력 비율이 가장 낮은 다른 아군 1명을 지원력의 80%만큼 회복한다."
+            }
+          ]
+        },
+        {
+          "id": "guild-3b",
+          "name": "금고 호송꾼",
+          "role": "수비",
+          "look": "잠금쇠 달린 궤짝 방패와 금고 열쇠를 허리에 찬 고블린",
+          "tier": 3,
+          "sprite": "sprites/guild-3b.png",
+          "bounds": {
+            "width": 35,
+            "height": 38,
+            "area": 945
+          },
+          "attack": 5,
+          "health": 12,
+          "score": 22,
+          "source": {
+            "sheet": "sources/guild-3.png",
+            "rect": [
+              1014,
+              328,
+              387,
+              424
+            ]
+          },
+          "skills": [
+            {
+              "name": "금고 두드리기",
+              "trigger": "7초마다",
+              "effect": "반경 2칸에서 가장 가까운 적 최대 2명을 2초간 도발하고 그동안 자신이 받는 피해가 15% 감소한다."
+            }
+          ]
+        },
+        {
+          "id": "guild-4a",
+          "name": "교역 짐기수",
+          "role": "돌격",
+          "look": "짧은 창을 들고 황색 짐보를 실은 낙타에 탄 고블린",
+          "tier": 4,
+          "sprite": "sprites/guild-4a.png",
+          "bounds": {
+            "width": 49,
+            "height": 51,
+            "area": 1415
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/guild-4.png",
+            "rect": [
+              109,
+              256,
+              529,
+              549
+            ]
+          },
+          "skills": [
+            {
+              "name": "짐창 돌진",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "guild-4b",
+          "name": "금고 감정사수",
+          "role": "사격",
+          "look": "단안경 고블린이 금고형 탄창의 육중한 쇠뇌를 받친 모습",
+          "tier": 4,
+          "sprite": "sprites/guild-4b.png",
+          "bounds": {
+            "width": 51,
+            "height": 51,
+            "area": 1449
+          },
+          "attack": 8,
+          "health": 15,
+          "score": 31,
+          "source": {
+            "sheet": "sources/guild-4.png",
+            "rect": [
+              937,
+              325,
+              482,
+              479
+            ]
+          },
+          "skills": [
+            {
+              "name": "금고 관통탄",
+              "trigger": "기본 사격 3회마다",
+              "effect": "목표에게 공격력의 100%, 같은 직선상 뒤쪽에서 가장 가까운 적 1명에게 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "guild-5a",
+          "name": "상회 금고수호자",
+          "role": "수비",
+          "look": "등의 튼튼한 전속상회 금고와 커다란 황동 자물쇠 방패, 녹색 얼굴",
+          "tier": 5,
+          "sprite": "sprites/guild-5a.png",
+          "bounds": {
+            "width": 55,
+            "height": 58,
+            "area": 2067
+          },
+          "attack": 13,
+          "health": 29,
+          "score": 55,
+          "source": {
+            "sheet": "sources/guild-5.png",
+            "rect": [
+              96,
+              239,
+              526,
+              559
+            ]
+          },
+          "skills": [
+            {
+              "name": "금고 걸쇠",
+              "trigger": "7초마다",
+              "effect": "반경 2칸에서 가장 가까운 적 2명을 2초간 도발한다. 도발 중 직접 피격될 때마다 자기 최대 체력의 5% 보호막을 얻는다(시전당 2번, 지속 3초)."
+            },
+            {
+              "name": "철문 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "guild-5b",
+          "name": "경매 호위포차",
+          "role": "사격",
+          "look": "낮고 넓은 황동 화포 수레 위에 경매 깃발과 한 명의 고블린 포수",
+          "tier": 5,
+          "sprite": "sprites/guild-5b.png",
+          "bounds": {
+            "width": 63,
+            "height": 61,
+            "area": 2112
+          },
+          "attack": 13,
+          "health": 24,
+          "score": 50,
+          "source": {
+            "sheet": "sources/guild-5.png",
+            "rect": [
+              841,
+              218,
+              628,
+              606
+            ]
+          },
+          "skills": [
+            {
+              "name": "낙찰 추격포",
+              "trigger": "기본 공격 적중 시",
+              "effect": "대상의 남은 체력이 40% 이하이면 그 기본 공격 피해가 20% 증가한다."
+            },
+            {
+              "name": "봉인 파쇄탄",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 보호막이 가장 큰 적의 보호막에 공격력의 180% 피해를 준다. 보호막을 깨면 그 대상에게 공격력의 65% 추가 피해. 보호막을 가진 적이 없으면 현재 목표에 공격력의 95% 피해를 준다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "무쇠 망치단",
+      "id": "forge",
+      "look": "검댕 묻은 수염의 드워프 주조반. 넓은 장비에 하나씩 늘어나는 단조 보강판과 망치 자국이 등급을 드러낸다.",
+      "refs": [
+        "tongs-hammer",
+        "furnace-helper",
+        "allies-044"
+      ],
+      "units": [
+        {
+          "id": "forge-1a",
+          "name": "첫불 망치꾼",
+          "role": "돌격",
+          "look": "작은 사각 손망치와 검댕 묻은 짧은 앞치마의 견습 드워프",
+          "tier": 1,
+          "sprite": "sprites/forge-1a.png",
+          "bounds": {
+            "width": 22,
+            "height": 25,
+            "area": 377
+          },
+          "attack": 2,
+          "health": 4,
+          "score": 8,
+          "source": {
+            "sheet": "sources/forge-1.png",
+            "rect": [
+              237,
+              339,
+              347,
+              391
+            ]
+          },
+          "skills": [
+            {
+              "name": "화덕 휘두르기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "forge-1b",
+          "name": "쇳못 사수",
+          "role": "사격",
+          "look": "쇳못이 꽂힌 작은 탄통과 짧은 주철 쇠뇌를 든 드워프",
+          "tier": 1,
+          "sprite": "sprites/forge-1b.png",
+          "bounds": {
+            "width": 26,
+            "height": 25,
+            "area": 381
+          },
+          "attack": 1,
+          "health": 4,
+          "score": 6,
+          "source": {
+            "sheet": "sources/forge-1.png",
+            "rect": [
+              960,
+              339,
+              414,
+              391
+            ]
+          },
+          "skills": [
+            {
+              "name": "뒷걸음 사격",
+              "trigger": "근접 적이 1칸 안에 들어오면, 재사용 6초",
+              "effect": "안전하게 이동할 수 있으면 한 칸 후퇴하고 추격자에게 공격력의 65% 피해를 준다. 퇴로가 막혀도 사격한다."
+            }
+          ]
+        },
+        {
+          "id": "forge-2a",
+          "name": "철편 방패수",
+          "role": "수비",
+          "look": "회수 철편을 세 겹 겹쳐 리벳으로 묶은 방패를 든 수비 드워프",
+          "tier": 2,
+          "sprite": "sprites/forge-2a.png",
+          "bounds": {
+            "width": 29,
+            "height": 30,
+            "area": 645
+          },
+          "attack": 3,
+          "health": 9,
+          "score": 15,
+          "source": {
+            "sheet": "sources/forge-2.png",
+            "rect": [
+              172,
+              338,
+              415,
+              428
+            ]
+          },
+          "skills": [
+            {
+              "name": "철편 맞대기",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "forge-2b",
+          "name": "숫돌 쐐기꾼",
+          "role": "사격",
+          "look": "허리에 숫돌, 손에는 넓은 투척용 무쇠 쐐기를 든 드워프",
+          "tier": 2,
+          "sprite": "sprites/forge-2b.png",
+          "bounds": {
+            "width": 36,
+            "height": 31,
+            "area": 640
+          },
+          "attack": 3,
+          "health": 7,
+          "score": 13,
+          "source": {
+            "sheet": "sources/forge-2.png",
+            "rect": [
+              954,
+              353,
+              476,
+              413
+            ]
+          },
+          "skills": [
+            {
+              "name": "쐐기 고정",
+              "trigger": "5초마다",
+              "effect": "목표에게 공격력의 90% 피해를 주고 3초간 이동 속도를 25% 낮춘다."
+            }
+          ]
+        },
+        {
+          "id": "forge-3a",
+          "name": "모루받이 파수병",
+          "role": "수비",
+          "look": "모루 밑받침을 닮은 각진 방패와 내열 어깨덮개",
+          "tier": 3,
+          "sprite": "sprites/forge-3a.png",
+          "bounds": {
+            "width": 37,
+            "height": 37,
+            "area": 944
+          },
+          "attack": 5,
+          "health": 12,
+          "score": 22,
+          "source": {
+            "sheet": "sources/forge-3.png",
+            "rect": [
+              174,
+              342,
+              413,
+              416
+            ]
+          },
+          "skills": [
+            {
+              "name": "모루 맞받기",
+              "trigger": "직접 피해를 받은 뒤, 재사용 5초",
+              "effect": "가해자가 기본 사거리 안에 있으면 공격력의 80%로 반격한다. 사거리 밖이면 2초 동안 자신이 받는 피해가 15% 감소한다."
+            }
+          ]
+        },
+        {
+          "id": "forge-3b",
+          "name": "잉걸 집게병",
+          "role": "돌격",
+          "look": "양손 단조 집게와 붉은 잉걸색 장갑을 낀 땅딸막한 드워프",
+          "tier": 3,
+          "sprite": "sprites/forge-3b.png",
+          "bounds": {
+            "width": 42,
+            "height": 38,
+            "area": 943
+          },
+          "attack": 6,
+          "health": 10,
+          "score": 22,
+          "source": {
+            "sheet": "sources/forge-3.png",
+            "rect": [
+              974,
+              342,
+              458,
+              417
+            ]
+          },
+          "skills": [
+            {
+              "name": "잉걸 찌르기",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "forge-4a",
+          "name": "강철 큰메잡이",
+          "role": "돌격",
+          "look": "두꺼운 보강띠가 감긴 큰 사각 단조메와 짧은 은빛 수염",
+          "tier": 4,
+          "sprite": "sprites/forge-4a.png",
+          "bounds": {
+            "width": 48,
+            "height": 46,
+            "area": 1451
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/forge-4.png",
+            "rect": [
+              176,
+              319,
+              458,
+              443
+            ]
+          },
+          "skills": [
+            {
+              "name": "큰메 내려치기",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "forge-4b",
+          "name": "금형 방벽장",
+          "role": "수비",
+          "look": "두 금형판을 맞물린 대형 방패와 그을린 구리 앞치마",
+          "tier": 4,
+          "sprite": "sprites/forge-4b.png",
+          "bounds": {
+            "width": 46,
+            "height": 43,
+            "area": 1481
+          },
+          "attack": 8,
+          "health": 18,
+          "score": 34,
+          "source": {
+            "sheet": "sources/forge-4.png",
+            "rect": [
+              918,
+              319,
+              469,
+              443
+            ]
+          },
+          "skills": [
+            {
+              "name": "노벽 받침",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "forge-5a",
+          "name": "결투 절단장",
+          "role": "돌격",
+          "look": "양손 강괴 절단날을 낮게 받친 백발 드워프, 날등의 세 단조띠",
+          "tier": 5,
+          "sprite": "sprites/forge-5a.png",
+          "bounds": {
+            "width": 68,
+            "height": 52,
+            "area": 2092
+          },
+          "attack": 15,
+          "health": 24,
+          "score": 54,
+          "source": {
+            "sheet": "sources/forge-5.png",
+            "rect": [
+              136,
+              316,
+              528,
+              404
+            ]
+          },
+          "skills": [
+            {
+              "name": "결투 횡절",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            },
+            {
+              "name": "절단장의 함성",
+              "trigger": "결투 횡절 적중 시, 재사용 6초",
+              "effect": "두 명 이상에게 적중하면 자기 팀의 공격·치유가 3초간 12% 오른다. 한 명에게 적중하면 자신에게 최대 체력의 10% 보호막을 3초간 준다."
+            }
+          ]
+        },
+        {
+          "id": "forge-5b",
+          "name": "병기창 쇠뇌장",
+          "role": "사격",
+          "look": "주형 탄창이 달린 수평 대형 쇠뇌 뒤에 몸을 낮춘 구리수염 드워프",
+          "tier": 5,
+          "sprite": "sprites/forge-5b.png",
+          "bounds": {
+            "width": 78,
+            "height": 46,
+            "area": 2119
+          },
+          "attack": 13,
+          "health": 24,
+          "score": 50,
+          "source": {
+            "sheet": "sources/forge-5.png",
+            "rect": [
+              883,
+              359,
+              599,
+              354
+            ]
+          },
+          "skills": [
+            {
+              "name": "쇠뇌 산개사격",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 서로 다른 적 최대 3명에게 화살이나 탄환을 하나씩 발사해 각각 공격력의 65% 피해를 준다."
+            },
+            {
+              "name": "집중 노궁",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 같은 적을 조준한 아군이 있으면 공격력의 150%로 한 발 쏜다. 단독 조준이면 현재 목표와 1칸 이내의 다른 적 한 명에게 각각 80% 피해를 준다."
+            }
+          ]
+        }
+      ],
+      "tier5Plan": "4등급 금형 방벽장이 전열을 맡는다. 결투 절단장은 넓은 날로 근접 공격하고, 병기창 쇠뇌장은 후열에서 지원 사격한다."
+    },
+    {
+      "name": "호드 군단",
+      "id": "horde",
+      "look": "붉은모래의 오크 전사들. 녹빛 피부와 아래턱 송곳니가 공통 표식이다. 붉은 매듭은 신병의 창자루에서 고참의 망토와 대형 무기로 이어진다.",
+      "refs": [
+        "stone-shoulder-orc",
+        "pebble-hurler",
+        "allies-187"
+      ],
+      "units": [
+        {
+          "id": "horde-1a",
+          "name": "돌갑 신병",
+          "role": "수비",
+          "look": "돌 어깨갑과 조그만 앞방패를 든 올리브 피부 오크",
+          "tier": 1,
+          "sprite": "sprites/horde-1a.png",
+          "bounds": {
+            "width": 22,
+            "height": 26,
+            "area": 375
+          },
+          "attack": 1,
+          "health": 5,
+          "score": 7,
+          "source": {
+            "sheet": "sources/horde-1.png",
+            "rect": [
+              220,
+              338,
+              385,
+              458
+            ]
+          },
+          "skills": [
+            {
+              "name": "돌갑 버팀",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "horde-1b",
+          "name": "북채 돌투수",
+          "role": "사격",
+          "look": "북끈을 손목에 감고 조약돌을 겨누는 작은 오크 투수",
+          "tier": 1,
+          "sprite": "sprites/horde-1b.png",
+          "bounds": {
+            "width": 26,
+            "height": 26,
+            "area": 384
+          },
+          "attack": 1,
+          "health": 4,
+          "score": 6,
+          "source": {
+            "sheet": "sources/horde-1.png",
+            "rect": [
+              935,
+              333,
+              462,
+              463
+            ]
+          },
+          "skills": [
+            {
+              "name": "튕기는 북채돌",
+              "trigger": "기본 사격 3회마다",
+              "effect": "탄환이 원래 목표 주위 2칸의 다른 적 한 명에게 튕겨 공격력의 70% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "horde-2a",
+          "name": "붉은끈 도끼병",
+          "role": "돌격",
+          "look": "붉은 승급 매듭 하나와 한날 돌도끼를 든 오크",
+          "tier": 2,
+          "sprite": "sprites/horde-2a.png",
+          "bounds": {
+            "width": 31,
+            "height": 35,
+            "area": 641
+          },
+          "attack": 4,
+          "health": 7,
+          "score": 15,
+          "source": {
+            "sheet": "sources/horde-2.png",
+            "rect": [
+              207,
+              317,
+              389,
+              441
+            ]
+          },
+          "skills": [
+            {
+              "name": "붉은끈 가르기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "horde-2b",
+          "name": "붉은매듭 창병",
+          "role": "돌격",
+          "look": "붉은 가죽끈을 감은 두손창을 든 젊은 오크",
+          "tier": 2,
+          "sprite": "sprites/horde-2b.png",
+          "bounds": {
+            "width": 40,
+            "height": 33,
+            "area": 610
+          },
+          "attack": 4,
+          "health": 7,
+          "score": 15,
+          "source": {
+            "sheet": "sources/horde-spear-shield.png",
+            "rect": [
+              182,
+              331,
+              522,
+              434
+            ]
+          },
+          "skills": [
+            {
+              "name": "매듭창 찌르기",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "horde-3a",
+          "name": "집결 큰북수",
+          "role": "지원",
+          "look": "허리 큰북과 붉은 매듭 북채 두 개를 든 오크",
+          "tier": 3,
+          "sprite": "sprites/horde-3a.png",
+          "bounds": {
+            "width": 38,
+            "height": 41,
+            "area": 969
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/horde-3.png",
+            "rect": [
+              158,
+              270,
+              455,
+              485
+            ]
+          },
+          "skills": [
+            {
+              "name": "집결 북소리",
+              "trigger": "7초마다",
+              "effect": "반경 2칸의 가장 가까운 다른 아군 최대 3명의 공격·치유를 3초간 12% 올린다."
+            }
+          ]
+        },
+        {
+          "id": "horde-3b",
+          "name": "돌문 방패병",
+          "role": "수비",
+          "look": "돌문처럼 넓은 판석 방패 뒤에서 송곳니를 드러낸 오크",
+          "tier": 3,
+          "sprite": "sprites/horde-3b.png",
+          "bounds": {
+            "width": 35,
+            "height": 39,
+            "area": 945
+          },
+          "attack": 5,
+          "health": 12,
+          "score": 22,
+          "source": {
+            "sheet": "sources/horde-spear-shield.png",
+            "rect": [
+              902,
+              303,
+              426,
+              479
+            ]
+          },
+          "skills": [
+            {
+              "name": "돌문 닫기",
+              "trigger": "6초마다",
+              "effect": "자기 최대 체력의 18%만큼 자신에게 보호막을 3초간 부여한다."
+            }
+          ]
+        },
+        {
+          "id": "horde-4a",
+          "name": "시련 투창수",
+          "role": "사격",
+          "look": "등에 예비 투창을 메고 한 손에 짧은 투창을 겨눈 오크",
+          "tier": 4,
+          "sprite": "sprites/horde-4a.png",
+          "bounds": {
+            "width": 58,
+            "height": 53,
+            "area": 1446
+          },
+          "attack": 8,
+          "health": 15,
+          "score": 31,
+          "source": {
+            "sheet": "sources/horde-4.png",
+            "rect": [
+              39,
+              306,
+              561,
+              511
+            ]
+          },
+          "skills": [
+            {
+              "name": "시련의 추격창",
+              "trigger": "기본 공격 적중 시",
+              "effect": "대상의 남은 체력이 40% 이하이면 그 기본 공격 피해가 20% 증가한다."
+            }
+          ]
+        },
+        {
+          "id": "horde-4b",
+          "name": "붉은모래 결투사",
+          "role": "돌격",
+          "look": "붉은 허리띠를 두르고 넓은 돌칼을 앞으로 세운 오크",
+          "tier": 4,
+          "sprite": "sprites/horde-4b.png",
+          "bounds": {
+            "width": 48,
+            "height": 53,
+            "area": 1471
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/horde-4.png",
+            "rect": [
+              901,
+              280,
+              493,
+              542
+            ]
+          },
+          "skills": [
+            {
+              "name": "모래 원무",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "horde-5a",
+          "name": "맹세비 방패장",
+          "role": "수비",
+          "look": "붉은 망토와 매듭 지은 비석 방패를 갖춘 고참 오크",
+          "tier": 5,
+          "sprite": "sprites/horde-5a.png",
+          "bounds": {
+            "width": 51,
+            "height": 57,
+            "area": 2138
+          },
+          "attack": 13,
+          "health": 29,
+          "score": 55,
+          "source": {
+            "sheet": "sources/horde-5.png",
+            "rect": [
+              88,
+              259,
+              507,
+              568
+            ]
+          },
+          "skills": [
+            {
+              "name": "맹세비 피갑",
+              "trigger": "체력이 50% 아래로 내려갈 때, 재사용 10초",
+              "effect": "자신에게 최대 체력의 15%만큼 보호막을 4초간 부여하고 같은 시간 밀려나는 거리를 50% 줄인다."
+            },
+            {
+              "name": "석벽 버팀",
+              "trigger": "직접 피격 시, 재사용 5초",
+              "effect": "보호막이 있으면 공격자를 2초간 도발한다. 보호막이 없으면 자기 최대 체력의 12%만큼 보호막을 3초간 얻는다."
+            }
+          ]
+        },
+        {
+          "id": "horde-5b",
+          "name": "핏매듭 도끼장",
+          "role": "돌격",
+          "look": "승급 매듭을 두른 큰도끼를 양손에 쥔 오크 전쟁대장",
+          "tier": 5,
+          "sprite": "sprites/horde-5b.png",
+          "bounds": {
+            "width": 66,
+            "height": 55,
+            "area": 2083
+          },
+          "attack": 15,
+          "health": 24,
+          "score": 54,
+          "source": {
+            "sheet": "sources/horde-5.png",
+            "rect": [
+              830,
+              289,
+              642,
+              538
+            ]
+          },
+          "skills": [
+            {
+              "name": "핏매듭 횡베기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            },
+            {
+              "name": "도끼 추격",
+              "trigger": "직접 처치하거나 목표가 쓰러질 때, 재사용 4초",
+              "effect": "가장 가까운 다음 적에게 최대 1칸 접근한다. 접근 뒤 기본 사거리 안이면 공격력의 90% 피해를 준다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "송곳니의 자손들",
+      "id": "fang",
+      "look": "짐승 얼굴의 수인 사냥대. 자기 사냥에서 모은 정수는 허리의 작은 호박색 주머니와 늘어나는 짐승이빨로 표현한다.",
+      "refs": [
+        "brook-hunter",
+        "fox-apprentice",
+        "allies-072"
+      ],
+      "units": [
+        {
+          "id": "fang-1a",
+          "name": "여울 자국꾼",
+          "role": "돌격",
+          "look": "발자국을 더듬는 여우 수인, 짧은 돌칼과 빈 정수 주머니",
+          "tier": 1,
+          "sprite": "sprites/fang-1a.png",
+          "bounds": {
+            "width": 25,
+            "height": 28,
+            "area": 375
+          },
+          "attack": 2,
+          "health": 4,
+          "score": 8,
+          "source": {
+            "sheet": "sources/fang-1.png",
+            "rect": [
+              202,
+              305,
+              396,
+              447
+            ]
+          },
+          "skills": [
+            {
+              "name": "여울 밀치기",
+              "trigger": "7초마다",
+              "effect": "정면 1칸 안의 적 최대 2명에게 공격력의 90% 피해를 주고 0.5칸 밀어낸다."
+            }
+          ]
+        },
+        {
+          "id": "fang-1b",
+          "name": "물길 투창수",
+          "role": "사격",
+          "look": "수달 수인이 물고기뼈 투창을 들고 호박색 정수알을 찬 모습",
+          "tier": 1,
+          "sprite": "sprites/fang-1b.png",
+          "bounds": {
+            "width": 28,
+            "height": 27,
+            "area": 390
+          },
+          "attack": 1,
+          "health": 4,
+          "score": 6,
+          "source": {
+            "sheet": "sources/fang-1.png",
+            "rect": [
+              935,
+              337,
+              437,
+              415
+            ]
+          },
+          "skills": [
+            {
+              "name": "물길 꿰기",
+              "trigger": "기본 사격 3회마다",
+              "effect": "목표에게 공격력의 100%, 같은 직선상 뒤쪽에서 가장 가까운 적 1명에게 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "fang-2a",
+          "name": "갈대 가죽지기",
+          "role": "수비",
+          "look": "멧돼지 수인이 갈대로 엮은 가죽 방패를 몸에 붙인 모습",
+          "tier": 2,
+          "sprite": "sprites/fang-2a.png",
+          "bounds": {
+            "width": 25,
+            "height": 36,
+            "area": 652
+          },
+          "attack": 3,
+          "health": 9,
+          "score": 15,
+          "source": {
+            "sheet": "sources/fang-2.png",
+            "rect": [
+              241,
+              280,
+              331,
+              483
+            ]
+          },
+          "skills": [
+            {
+              "name": "갈대 엮기",
+              "trigger": "직접 피해 3회마다",
+              "effect": "자신이 받는 피해를 3초간 25% 줄인다. 지속 중 재발동은 남은 시간만 갱신한다."
+            }
+          ]
+        },
+        {
+          "id": "fang-2b",
+          "name": "덫발톱 습격꾼",
+          "role": "돌격",
+          "look": "늑대 수인, 덫줄을 감은 팔과 갈고리 뼈발톱",
+          "tier": 2,
+          "sprite": "sprites/fang-2b.png",
+          "bounds": {
+            "width": 29,
+            "height": 37,
+            "area": 626
+          },
+          "attack": 4,
+          "health": 7,
+          "score": 15,
+          "source": {
+            "sheet": "sources/fang-2.png",
+            "rect": [
+              936,
+              267,
+              386,
+              496
+            ]
+          },
+          "skills": [
+            {
+              "name": "덫발톱 뛰기",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            }
+          ]
+        },
+        {
+          "id": "fang-3a",
+          "name": "고갯길 가시궁수",
+          "role": "사격",
+          "look": "호저 수인의 방사형 등가시와 작은 사냥 정수병, 뼈활",
+          "tier": 3,
+          "sprite": "sprites/fang-3a.png",
+          "bounds": {
+            "width": 36,
+            "height": 44,
+            "area": 960
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/fang-3.png",
+            "rect": [
+              239,
+              274,
+              408,
+              493
+            ]
+          },
+          "skills": [
+            {
+              "name": "가시 부채살",
+              "trigger": "6초마다",
+              "effect": "사거리 안에서 서로 다른 적 최대 3명에게 화살이나 탄환을 하나씩 발사해 각각 공격력의 65% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "fang-3b",
+          "name": "핏자국 약손",
+          "role": "지원",
+          "look": "오소리 수인 의원이 이빨 부적과 약초 꾸러미를 들고 웅크린 모습",
+          "tier": 3,
+          "sprite": "sprites/fang-3b.png",
+          "bounds": {
+            "width": 35,
+            "height": 36,
+            "area": 964
+          },
+          "attack": 5,
+          "health": 10,
+          "score": 20,
+          "source": {
+            "sheet": "sources/fang-3.png",
+            "rect": [
+              922,
+              391,
+              366,
+              376
+            ]
+          },
+          "skills": [
+            {
+              "name": "약손 이어주기",
+              "trigger": "유효 기본 치유 3회마다",
+              "effect": "방금 치료한 대상 주위 2칸에서 체력 비율이 가장 낮은 다른 아군 1명을 지원력의 80%만큼 회복한다."
+            }
+          ]
+        },
+        {
+          "id": "fang-4a",
+          "name": "여울 큰뿔지기",
+          "role": "수비",
+          "look": "넓은 뿔과 젖은 가죽 어깨덮개의 들소 수인, 큼직한 억새 방패",
+          "tier": 4,
+          "sprite": "sprites/fang-4a.png",
+          "bounds": {
+            "width": 43,
+            "height": 51,
+            "area": 1462
+          },
+          "attack": 8,
+          "health": 18,
+          "score": 34,
+          "source": {
+            "sheet": "sources/fang-4.png",
+            "rect": [
+              146,
+              253,
+              473,
+              564
+            ]
+          },
+          "skills": [
+            {
+              "name": "큰뿔 가리기",
+              "trigger": "6초마다",
+              "effect": "자기 최대 체력의 18%만큼 자신에게 보호막을 3초간 부여한다."
+            }
+          ]
+        },
+        {
+          "id": "fang-4b",
+          "name": "무리 추격발톱",
+          "role": "돌격",
+          "look": "짧은 귀 스라소니 수인, 정수 매듭과 굽은 갈퀴 완갑 두 개",
+          "tier": 4,
+          "sprite": "sprites/fang-4b.png",
+          "bounds": {
+            "width": 47,
+            "height": 55,
+            "area": 1415
+          },
+          "attack": 9,
+          "health": 15,
+          "score": 33,
+          "source": {
+            "sheet": "sources/fang-4.png",
+            "rect": [
+              952,
+              315,
+              424,
+              502
+            ]
+          },
+          "skills": [
+            {
+              "name": "무리발톱 휘두르기",
+              "trigger": "6초마다",
+              "effect": "현재 목표와 그 주위 반경 1칸의 적 최대 2명에게 각각 공격력의 85% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "fang-5a",
+          "name": "고갯길 뿔투척수",
+          "role": "사격",
+          "look": "커다란 멧돼지 수인이 초승달 모양 투척뿔을 세우고 앞손으로 목표를 가리킨다",
+          "tier": 5,
+          "sprite": "sprites/fang-5a.png",
+          "bounds": {
+            "width": 55,
+            "height": 72,
+            "area": 2109
+          },
+          "attack": 13,
+          "health": 24,
+          "score": 50,
+          "source": {
+            "sheet": "sources/fang-5.png",
+            "rect": [
+              175,
+              259,
+              478,
+              622
+            ]
+          },
+          "skills": [
+            {
+              "name": "갈라지는 뿔창",
+              "trigger": "기본 사격 3회마다",
+              "effect": "목표에게 공격력의 100%, 같은 직선상 뒤쪽에서 가장 가까운 적 1명에게 공격력의 65% 피해를 준다."
+            },
+            {
+              "name": "튕기는 창날",
+              "trigger": "관통 사격으로 두 번째 적을 맞히면",
+              "effect": "창날이 두 번째 적의 반경 2칸에서 아직 맞지 않은 가장 가까운 적 한 명에게 튕겨 공격력의 75% 피해를 준다."
+            }
+          ]
+        },
+        {
+          "id": "fang-5b",
+          "name": "흰갈기 몰이창수",
+          "role": "돌격",
+          "look": "흰갈기 사자 수인이 사냥 이빨 묶음을 찬 채 넓은 뼈창을 들고 선다",
+          "tier": 5,
+          "sprite": "sprites/fang-5b.png",
+          "bounds": {
+            "width": 49,
+            "height": 76,
+            "area": 2103
+          },
+          "attack": 15,
+          "health": 24,
+          "score": 54,
+          "source": {
+            "sheet": "sources/fang-5.png",
+            "rect": [
+              946,
+              178,
+              452,
+              704
+            ]
+          },
+          "skills": [
+            {
+              "name": "흰갈기 돌진",
+              "trigger": "기본 공격 3회마다",
+              "effect": "현재 목표에게 공격력의 135%로 찌른다. 시전 뒤 2초간 이동 속도가 20% 오른다."
+            },
+            {
+              "name": "몰이창 균열",
+              "trigger": "6초마다",
+              "effect": "다른 아군이 공격 중인 적을 사거리 안에서 우선 찔러 공격력의 105% 피해를 주고 3초간 받는 기본 공격 피해를 10% 늘린다. 공동 목표가 없으면 현재 목표를 찌른다."
+            }
+          ]
+        }
+      ],
+      "tier5Plan": "고갯길 뿔투척수는 거리를 벌리고, 흰갈기 몰이창수는 접근해 공격한다. 같은 적 처치에 기여하면 각각 자기 기물에 사냥 정수가 쌓인다."
+    }
+  ],
+  "enemies": [
+    {
+      "id": "rift-tick",
+      "name": "균열 진드기",
+      "attack": 1,
+      "health": 2,
+      "guard": 0,
+      "score": 4,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/rift-tick/idle.png",
+      "skills": [
+        {
+          "name": "틈 물기",
+          "trigger": "기본 공격 3회마다",
+          "effect": "현재 목표에게 공격력의 120% 피해를 주고 자신은 다음 2초간 이동 속도 +20%."
+        }
+      ]
+    },
+    {
+      "id": "ruin-shell",
+      "name": "폐허 등껍질",
+      "attack": 2,
+      "health": 4,
+      "guard": 0,
+      "score": 8,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/ruin-shell/idle.png",
+      "skills": [
+        {
+          "name": "등판 세우기",
+          "trigger": "6초마다",
+          "effect": "반경 1칸에서 가장 가까운 적 1명을 2초간 도발한다. 그동안 자신이 받는 피해가 20% 감소한다."
+        }
+      ]
+    },
+    {
+      "id": "imperfect-hybrid",
+      "name": "불완전한 혼종",
+      "attack": 3,
+      "health": 5,
+      "guard": 0,
+      "score": 11,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/imperfect-hybrid/idle.png",
+      "skills": [
+        {
+          "name": "엇물린 집게",
+          "trigger": "5초마다",
+          "effect": "현재 목표를 두 집게로 잡아 공격력의 65% 피해를 두 번 준다. 두 타격은 같은 대상에게만 적용한다."
+        }
+      ]
+    },
+    {
+      "id": "veil-wraith",
+      "name": "장막 유령",
+      "attack": 3,
+      "health": 5,
+      "guard": 0,
+      "score": 11,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/veil-wraith/idle.png",
+      "skills": [
+        {
+          "name": "장막 재봉",
+          "trigger": "전투당 한 번, 자신이 쓰러질 때",
+          "effect": "쓰러진 순간부터 1초간 공격하거나 피격되지 않는다. 쓰러진 칸이 비어 있으면 그곳에서, 점유됐으면 가장 가까운 빈칸에서 최대 체력의 25%로 부활한다."
+        }
+      ]
+    },
+    {
+      "id": "broken-crown",
+      "name": "깨진 왕관",
+      "attack": 7,
+      "health": 8,
+      "guard": 0,
+      "score": 22,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/broken-crown/idle.png",
+      "skills": [
+        {
+          "name": "왕관 포위",
+          "trigger": "7초마다",
+          "effect": "반경 2칸에서 가까운 적 최대 3명을 2초간 도발한다. 도발한 적 하나당 자기 최대 체력 5%의 보호막을 3초간 얻는다."
+        }
+      ]
+    },
+    {
+      "id": "abyssal-choir",
+      "name": "심연 합창단",
+      "attack": 8,
+      "health": 10,
+      "guard": 0,
+      "score": 26,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/abyssal-choir/idle.png",
+      "skills": [
+        {
+          "name": "끝나지 않은 화음",
+          "trigger": "전투당 한 번, 자신이 쓰러질 때",
+          "effect": "2초 뒤 최대 체력 25%로 부활한다. 부활 위치 반경 1칸의 상대 최대 3명에게 공격력의 45% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "the-devourer",
+      "name": "삼키는 자",
+      "attack": 20,
+      "health": 46,
+      "guard": 0,
+      "score": 86,
+      "tier": 5,
+      "sprite": "../void-redesign/motions/the-devourer/idle.png",
+      "skills": [
+        {
+          "name": "닫히는 식탁",
+          "trigger": "7초마다",
+          "effect": "앞발을 박은 지점을 중심으로 반경 1칸의 원을 1.2초 동안 표시한다. 원 안에서 가까운 상대 최대 5명에게 공격력의 130% 피해를 준다.",
+          "awakened": "2페이즈에는 반경이 1.5칸이 되며 예고는 1.5초로 길어진다."
+        },
+        {
+          "name": "빈 턱의 숨",
+          "trigger": "8초마다",
+          "effect": "청록 핵이 1초간 밝아진 뒤 반경 2칸의 가까운 상대 최대 3명을 0.5칸 끌어당긴다. 이후 2초간 본체가 받는 피해가 25% 증가한다.",
+          "awakened": "2페이즈에는 당기는 거리가 1칸, 본체 노출은 3초다."
+        }
+      ]
+    },
+    {
+      "id": "devourer-split",
+      "name": "분열체",
+      "attack": 9,
+      "health": 10,
+      "guard": 0,
+      "score": 28,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/devourer-split/idle.png",
+      "skills": [
+        {
+          "name": "갈라진 턱걸음",
+          "trigger": "5초마다",
+          "effect": "다른 분열체가 노리는 적이 사거리 안이면 그 적, 아니면 현재 목표를 물어 공격력의 110% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "dim-spore",
+      "name": "미광 포자",
+      "attack": 1,
+      "health": 2,
+      "guard": 0,
+      "score": 4,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/dim-spore/idle.png",
+      "skills": [
+        {
+          "name": "번지는 포자",
+          "trigger": "6초마다",
+          "effect": "현재 목표에 포자를 붙인다. 3초 동안 매초 공격력의 30% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "hook-young",
+      "name": "갈고리 새끼",
+      "attack": 2,
+      "health": 1,
+      "guard": 0,
+      "score": 5,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/hook-young/idle.png",
+      "skills": [
+        {
+          "name": "꼬리 닻",
+          "trigger": "5초마다",
+          "effect": "같은 쪽에서 가장 가까운 적 방향으로 빈자리까지 최대 1칸 접근한다. 이어 기본 사거리 안이면 공격력의 70% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "shell-carrier",
+      "name": "조개 등짐꾼",
+      "attack": 2,
+      "health": 5,
+      "guard": 0,
+      "score": 9,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/shell-carrier/idle.png",
+      "skills": [
+        {
+          "name": "빈 조개 덮개",
+          "trigger": "6초마다",
+          "effect": "반경 2칸의 다른 공허 유닛 중 체력 비율이 가장 낮은 한 기에 대상 최대 체력의 15%만큼 보호막을 4초간 준다."
+        }
+      ]
+    },
+    {
+      "id": "echo-worm",
+      "name": "메아리 갯지렁이",
+      "attack": 5,
+      "health": 5,
+      "guard": 0,
+      "score": 15,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/echo-worm/idle.png",
+      "skills": [
+        {
+          "name": "되받는 진동",
+          "trigger": "기본 공격 3회마다",
+          "effect": "목표 주위 1칸에 울림을 남긴다. 0.5초 뒤 그 안에서 가까운 상대 최대 2명에게 공격력의 65% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "mirror-watcher",
+      "name": "거울 감시자",
+      "attack": 8,
+      "health": 9,
+      "guard": 0,
+      "score": 25,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/mirror-watcher/idle.png",
+      "skills": [
+        {
+          "name": "흐린 반사상",
+          "trigger": "6초마다",
+          "effect": "사거리 안에서 공격력이 가장 높은 상대 1명에게 거울빛을 비춰 3초간 그 대상의 공격·치유를 15% 줄인다."
+        }
+      ]
+    },
+    {
+      "id": "blue-gatekeeper",
+      "name": "청람 문지기",
+      "attack": 10,
+      "health": 13,
+      "guard": 2,
+      "score": 37,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/blue-gatekeeper/idle.png",
+      "skills": [
+        {
+          "name": "청람 빗장",
+          "trigger": "7초마다",
+          "effect": "자신에게 최대 체력 20%의 보호막을 4초간 두르고 반경 2칸에서 가장 가까운 상대 두 명을 2초간 도발한다."
+        }
+      ]
+    },
+    {
+      "id": "warped-turret",
+      "name": "기형 망루",
+      "attack": 13,
+      "health": 9,
+      "guard": 0,
+      "score": 35,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/warped-turret/idle.png",
+      "skills": [
+        {
+          "name": "비틀린 포선",
+          "trigger": "7초마다",
+          "effect": "현재 목표의 자리에 직선을 1초간 예고한다. 발사 시 선 위에서 가까운 상대 최대 3명에게 공격력의 115% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "split-prophet",
+      "name": "갈라진 예언자",
+      "attack": 11,
+      "health": 17,
+      "guard": 0,
+      "score": 39,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/split-prophet/idle.png",
+      "skills": [
+        {
+          "name": "두 갈래 예언",
+          "trigger": "6초마다",
+          "effect": "현재 목표가 있는 열을 고정한다. 그 열의 앞 구역을 0.8초 예고하고 가장 가까운 상대 한 명에게 공격력의 90% 피해를 준다. 바로 뒤 구역을 0.8초 예고한 뒤 같은 방식으로 타격한다."
+        }
+      ]
+    },
+    {
+      "id": "void-274",
+      "name": "틈새 추적자",
+      "attack": 2,
+      "health": 2,
+      "guard": 0,
+      "score": 6,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/void-274/idle.png",
+      "skills": [
+        {
+          "name": "틈새 추격",
+          "trigger": "4초마다",
+          "effect": "현재 목표가 사거리 밖이면 최대 1칸 접근하고 2초간 이동 속도가 25% 오른다. 사거리 안이면 공격력의 70% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "void-277",
+      "name": "공허 송곳니",
+      "attack": 5,
+      "health": 3,
+      "guard": 0,
+      "score": 13,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/void-277/idle.png",
+      "skills": [
+        {
+          "name": "낫턱 절단",
+          "trigger": "기본 공격 시",
+          "effect": "현재 목표의 체력이 40% 이하이면 그 기본 공격 피해가 25% 증가한다."
+        }
+      ]
+    },
+    {
+      "id": "void-280",
+      "name": "뒤틀린 창",
+      "attack": 8,
+      "health": 6,
+      "guard": 0,
+      "score": 22,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/void-280/idle.png",
+      "skills": [
+        {
+          "name": "자라는 창마디",
+          "trigger": "기본 공격 2회 적중마다",
+          "effect": "이번 전투 동안 자신의 공격력이 8%씩 증가한다. 최대 3중첩이다."
+        }
+      ]
+    },
+    {
+      "id": "void-281",
+      "name": "먹빛 장막",
+      "attack": 6,
+      "health": 7,
+      "guard": 3,
+      "score": 25,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/void-281/idle.png",
+      "skills": [
+        {
+          "name": "먹빛 겹막",
+          "trigger": "6초마다",
+          "effect": "자기 최대 체력의 20%만큼 보호막을 4초간 얻는다."
+        }
+      ]
+    },
+    {
+      "id": "void-282",
+      "name": "균열 거신",
+      "attack": 11,
+      "health": 15,
+      "guard": 0,
+      "score": 37,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/void-282/idle.png",
+      "skills": [
+        {
+          "name": "거신의 문턱",
+          "trigger": "7초마다",
+          "effect": "반경 2칸에서 가장 가까운 상대 최대 3명을 2초간 도발하고 같은 시간 이동을 멈춰 받는 피해를 25% 줄인다."
+        }
+      ]
+    },
+    {
+      "id": "void-284",
+      "name": "고난의 성벽",
+      "attack": 12,
+      "health": 19,
+      "guard": 4,
+      "score": 51,
+      "tier": 5,
+      "sprite": "../void-redesign/motions/void-284/idle.png",
+      "skills": [
+        {
+          "name": "성벽의 눈",
+          "trigger": "7초마다",
+          "effect": "반경 2칸의 상대 최대 3명을 2초간 도발하고 자기 최대 체력의 20%만큼 보호막을 4초간 얻는다."
+        },
+        {
+          "name": "무너지는 외벽",
+          "trigger": "보호막이 피해로 깨질 때, 재사용 6초",
+          "effect": "정면 1칸의 상대 최대 2명에게 공격력의 90% 피해를 주고 0.5칸 밀어낸다."
+        }
+      ]
+    },
+    {
+      "id": "void-285",
+      "name": "황폐 집행자",
+      "attack": 15,
+      "health": 11,
+      "guard": 0,
+      "score": 41,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/void-285/idle.png",
+      "skills": [
+        {
+          "name": "길어지는 형틀",
+          "trigger": "기본 공격 2회 적중마다",
+          "effect": "자기 공격력을 이번 전투 동안 10% 올린다. 최대 2중첩이며 각 증가 직후 현재 목표에 공격력의 50% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "void-286",
+      "name": "공허 대장군",
+      "attack": 17,
+      "health": 18,
+      "guard": 0,
+      "score": 52,
+      "tier": 5,
+      "sprite": "../void-redesign/motions/void-286/idle.png",
+      "skills": [
+        {
+          "name": "뒤틀린 군령",
+          "trigger": "7초마다",
+          "effect": "반경 2칸에서 가장 가까운 상대 최대 3명을 2초간 도발한다."
+        },
+        {
+          "name": "교차 장창",
+          "trigger": "6초마다",
+          "effect": "현재 목표 방향 두 갈래의 짧은 사선을 0.8초 예고한 뒤 범위 안 상대 최대 3명에게 공격력의 125% 피해를 준다. 겹친 선은 한 번만 타격한다."
+        }
+      ]
+    },
+    {
+      "id": "void-287",
+      "name": "심연 대장군",
+      "attack": 18,
+      "health": 21,
+      "guard": 5,
+      "score": 67,
+      "tier": 5,
+      "sprite": "../void-redesign/motions/void-287/idle.png",
+      "skills": [
+        {
+          "name": "반원 장막",
+          "trigger": "7초마다",
+          "effect": "자신과 2칸 안의 가장 가까운 다른 공허 유닛 최대 2기에 각 대상 최대 체력 18%만큼 보호막을 4초간 준다."
+        },
+        {
+          "name": "심연의 압력",
+          "trigger": "5초마다",
+          "effect": "현재 목표에게 공격력의 100% 피해를 준다. 시전자에게 보호막이 남아 있으면 목표 주변 1칸의 다른 상대 최대 2명도 65% 피해를 받는다."
+        }
+      ]
+    },
+    {
+      "id": "void-291",
+      "name": "실금 알껍질",
+      "attack": 1,
+      "health": 3,
+      "guard": 0,
+      "score": 5,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/void-291/idle.png",
+      "skills": [
+        {
+          "name": "금 간 껍질",
+          "trigger": "직접 피해를 받을 때, 재사용 4초",
+          "effect": "껍질을 닫아 해당 피해를 25% 줄인다."
+        }
+      ]
+    },
+    {
+      "id": "void-293",
+      "name": "속빈 미아",
+      "attack": 1,
+      "health": 3,
+      "guard": 0,
+      "score": 5,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/void-293/idle.png",
+      "skills": [
+        {
+          "name": "텅 빈 숨",
+          "trigger": "5초마다",
+          "effect": "현재 목표에게 공격력의 70% 피해를 주고 2초간 이동 속도를 20% 줄인다."
+        }
+      ]
+    },
+    {
+      "id": "void-294",
+      "name": "유리 촉수",
+      "attack": 3,
+      "health": 2,
+      "guard": 0,
+      "score": 8,
+      "tier": 1,
+      "sprite": "../void-redesign/motions/void-294/idle.png",
+      "skills": [
+        {
+          "name": "유리 가시",
+          "trigger": "기본 사격 3회마다",
+          "effect": "현재 목표에 공격력의 110% 피해를 주고 뒤쪽 1칸의 다른 상대 한 명을 공격력의 50%로 관통한다."
+        }
+      ]
+    },
+    {
+      "id": "void-295",
+      "name": "모래 잠복자",
+      "attack": 3,
+      "health": 4,
+      "guard": 0,
+      "score": 10,
+      "tier": 2,
+      "sprite": "../void-redesign/motions/void-295/idle.png",
+      "skills": [
+        {
+          "name": "모래 등지느러미",
+          "trigger": "6초마다",
+          "effect": "가장 가까운 상대 후열의 발밑에 모래 자국을 1초 예고하고 비어 있는 인접 칸까지 최대 2칸 접근한다. 반경 1칸의 상대 최대 2명에게 공격력의 70% 피해를 준다."
+        }
+      ]
+    },
+    {
+      "id": "void-298",
+      "name": "빈껍질 집전관",
+      "attack": 6,
+      "health": 8,
+      "guard": 0,
+      "score": 20,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/void-298/idle.png",
+      "skills": [
+        {
+          "name": "껍질 속 전류",
+          "trigger": "5초마다",
+          "effect": "반경 3칸 안에서 체력 비율이 가장 낮은 다른 부상 공허 유닛 한 기를 자기 공격력의 90%만큼 회복한다."
+        }
+      ]
+    },
+    {
+      "id": "void-302",
+      "name": "검푸른 금식자",
+      "attack": 13,
+      "health": 15,
+      "guard": 0,
+      "score": 41,
+      "tier": 4,
+      "sprite": "../void-redesign/motions/void-302/idle.png",
+      "skills": [
+        {
+          "name": "발광낭 포식",
+          "trigger": "직접 처치 시, 재사용 4초",
+          "effect": "자기 최대 체력의 15%를 회복한다. 잃은 체력까지만 회복한다."
+        }
+      ]
+    },
+    {
+      "id": "void-304",
+      "name": "먹구름 순례자",
+      "attack": 7,
+      "health": 12,
+      "guard": 0,
+      "score": 26,
+      "tier": 3,
+      "sprite": "../void-redesign/motions/void-304/idle.png",
+      "skills": [
+        {
+          "name": "순례자의 비구름",
+          "trigger": "7초마다",
+          "effect": "반경 2칸에서 가장 가까운 다른 공허 유닛 최대 3기가 3초간 받는 원거리 피해를 20% 줄인다."
+        }
+      ]
+    }
+  ],
+  "boss": [
+    {
+      "id": "the-devourer",
+      "width": 86,
+      "height": 82,
+      "area": 5138
+    },
+    {
+      "id": "the-devourer-awakened",
+      "width": 143,
+      "height": 132,
+      "area": 12897
+    }
+  ],
+  "bossEncounters": [
+    {
+      "wave": "R15A",
+      "id": "the-devourer",
+      "name": "삼키는 자",
+      "role": "전열을 붙잡는 포식형",
+      "counter": "중앙 턱이 열리는 동안 양 측면 사격병이 노출된 본체를 노릴 수 있다. 전열은 한 덩어리로 모으지 않는다.",
+      "phase1": "봉인된 갑각",
+      "phase2": "갈라진 안턱"
+    },
+    {
+      "wave": "R15B",
+      "id": "undertow-bell",
+      "name": "역류의 종지기",
+      "tier": 5,
+      "role": "후열의 사격 간격을 노리는 파동형",
+      "counter": "오른쪽에 수비병을 두고 사격병을 서로 다른 열에 분산한다. 보호막을 깨면 종지기의 기본 공격이 멈추므로 지속 사격이 유리하다.",
+      "phase1": "잠긴 종",
+      "phase2": "뒤집힌 종",
+      "skills": [
+        {
+          "name": "역류 종파",
+          "trigger": "7초마다",
+          "effect": "적 후열이 가장 많은 출발 열에 물결무늬를 1.4초 예고한다. 그 열 안 상대 최대 5명에게 공격력의 95% 피해를 주고 2초간 이동 속도를 25% 줄인다.",
+          "awakened": "2페이즈에는 1초 뒤 바로 이웃한 열에도 60%의 파동이 한 번 번진다."
+        },
+        {
+          "name": "수면의 추",
+          "trigger": "9초마다",
+          "effect": "종의 추를 1초간 끌어올린 뒤 본체 최대 체력의 18% 보호막을 3초간 얻는다. 보호막이 피해로 깨지면 2초간 기본 공격을 쉰다.",
+          "awakened": "2페이즈에는 보호막이 24%, 깨졌을 때 쉬는 시간이 3초다."
+        }
+      ]
+    },
+    {
+      "wave": "R15C",
+      "id": "shattered-regent",
+      "name": "파관의 섭정",
+      "tier": 5,
+      "role": "최고 화력 팀을 겨누는 결투형",
+      "counter": "공격·치유가 높은 팀 앞에 수비병을 세워 창을 가로막고, 호위를 먼저 정리해 방패 공급을 끊는다.",
+      "phase1": "무너진 옥좌",
+      "phase2": "뜯겨 나온 왕관",
+      "skills": [
+        {
+          "name": "옥좌의 지목",
+          "trigger": "8초마다",
+          "effect": "공격력 또는 지원력이 가장 높은 상대 1명에게 왕관을 1.5초 표시한 뒤 창을 던진다. 직선에서 먼저 만난 상대 한 명이 공격력의 155% 피해를 받는다.",
+          "awakened": "2페이즈에는 같은 길로 0.8초 뒤 65% 피해의 두 번째 창이 지나간다."
+        },
+        {
+          "name": "조공 징수",
+          "trigger": "7초마다",
+          "effect": "1초간 금빛 사슬로 가장 가까운 공허 호위 한 기를 연결한다. 연결이 유지되면 본체가 자기 최대 체력 15%의 보호막을 4초간 얻는다. 호위가 없거나 연결 중 쓰러지면 실패한다.",
+          "awakened": "2페이즈에는 보호막 22%. 사슬이 끊기면 본체가 2초간 받는 피해 +20%."
+        }
+      ]
+    },
+    {
+      "wave": "R15D",
+      "id": "mute-precentor",
+      "name": "무언의 선창자",
+      "tier": 5,
+      "role": "부활하는 호위를 치유하는 합창형",
+      "counter": "음표가 뜬 호위에 화력을 모아 합창을 끊거나 본체를 먼저 압박한다. 한 팀에 의존하는 치유 편성은 메아리를 분산시키기 어렵다.",
+      "phase1": "닫힌 성가대",
+      "phase2": "겹쳐진 입",
+      "skills": [
+        {
+          "name": "합창 지휘",
+          "trigger": "8초마다",
+          "effect": "체력 비율이 가장 낮은 다른 공허 유닛 최대 2기에 음표를 표시한다. 1.5초 뒤 살아 있는 표시 대상이 각자 최대 체력의 15%를 회복한다.",
+          "awakened": "2페이즈에는 회복한 대상마다 본체도 자기 최대 체력의 5%를 회복한다."
+        },
+        {
+          "name": "거꾸로 부른 노래",
+          "trigger": "7초마다",
+          "effect": "최근 4초간 실제 치유량이 가장 큰 상대 병사의 위치를 1.2초 예고한다. 치유자가 없으면 가장 가까운 상대를 고른다. 반경 1칸의 상대 최대 4명이 공격력의 90% 피해를 받는다.",
+          "awakened": "2페이즈에는 맞은 병사들이 3초간 받는 치유량이 25% 감소한다."
+        }
+      ]
+    },
+    {
+      "wave": "R15E",
+      "id": "eclipse-loom",
+      "name": "밤을 짜는 눈",
+      "tier": 5,
+      "role": "보호막과 밀집 진형을 깨는 포격형",
+      "counter": "보호막을 전열 여러 곳에 나누고 부상자를 실제 체력으로 회복한다. 십자선을 피하도록 앞뒤 팀의 열을 엇갈려 놓는다.",
+      "phase1": "감긴 눈꺼풀",
+      "phase2": "풀린 밤실",
+      "skills": [
+        {
+          "name": "막을 가르는 실",
+          "trigger": "7초마다",
+          "effect": "보호막이 가장 큰 상대의 위치에 실선을 1.2초 표시한다. 보호막이 없으면 가장 가까운 상대를 겨눈다. 반경 1칸 최대 4명의 보호막을 남은 양의 50%만큼 깎은 뒤 각각 공격력의 65% 피해를 준다.",
+          "awakened": "2페이즈에는 보호막 제거 비율이 70%가 된다."
+        },
+        {
+          "name": "밤베틀 십자선",
+          "trigger": "9초마다",
+          "effect": "상대가 가장 밀집한 칸을 중심으로 가로·세로 한 줄을 1.8초 예고하고 선 위의 상대 최대 6명에게 공격력의 115% 피해를 준다. 교차점에서도 한 번만 맞는다.",
+          "awakened": "2페이즈에는 십자선이 1칸 옆으로 옮겨가며 1초 뒤 공격력의 55%로 한 번 더 타격한다."
+        }
+      ]
+    }
+  ]
+}
