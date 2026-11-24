@@ -896,3 +896,11 @@ html:has(#portfolio-reader[open]) {overflow:hidden}
 .reader-frame {position:relative;flex:1;min-height:0}
 .reader-frame iframe {display:block;width:100%;height:100%;border:0}
 .reader-frame [role=status] {position:absolute;top:0;left:0;right:0;margin:0;padding:12px 20px;background:var(--paper)}
+/* Hero headline: keep "설계한 재미를 직접 만들어 확인합니다" on one line wherever the poster is wide enough. */
+@media(min-width:631px) {
+  .poster-copy {width:78%;max-width:840px}
+  .poster-copy h1 {font-size:clamp(24px,6.6cqi,58px)}
+}
+@media(max-width:630px) {
+  .poster-copy h1 span {text-wrap:balance}
+}
