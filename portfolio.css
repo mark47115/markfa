@@ -904,3 +904,25 @@ html:has(#portfolio-reader[open]) {overflow:hidden}
 @media(max-width:630px) {
   .poster-copy h1 span {text-wrap:balance}
 }
+
+/* 게임별 AI 활용: two game blocks that reuse the timeline styles. */
+.game-ai-switch {margin-top:clamp(32px,4vw,56px)}
+.game-ai {padding-top:clamp(32px,4vw,56px);scroll-margin-top:24px}
+.game-ai + .game-ai {margin-top:clamp(32px,4vw,56px);border-top:2px solid var(--ink)}
+.game-ai .page-title h2 {font-size:clamp(28px,3vw,40px)}
+.game-ai-kicker {margin:0 0 8px!important;font-size:14px!important;font-weight:700;color:var(--green)!important}
+.game-ai .page-title h3 {margin:28px 0 0;font-size:17px}
+.game-ai-uses {margin:8px 0 0;border-top:1px solid var(--rule)}
+.game-ai-uses div {display:grid;grid-template-columns:minmax(0,7.5em) minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.game-ai-uses dt {font-weight:700;color:var(--ink)}
+.game-ai-uses dd {margin:0;color:var(--soft);line-height:1.65;font-size:15px}
+.game-ai-step {grid-template-columns:minmax(0,1fr)}
+.game-ai .wf-step:first-child {border-top:0}
+#ai .ai-related {margin-top:clamp(32px,4vw,48px)}
+@media(max-width:600px) {
+  .game-ai-uses div {grid-template-columns:minmax(0,1fr);gap:2px}
+}
+/* 게임 제작 문서: a taller document window. */
+@media(min-width:821px) {
+  #portfolio .book-covers .book-cover {height:clamp(520px,42vw,680px)}
+}

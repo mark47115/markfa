@@ -239,11 +239,12 @@
   if (location.hash === '#tavern-heros-project') openFeaturedBook();
 
   const record = document.querySelector('.shield-record');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (record) {
   const viewport = record.querySelector('.record-viewport');
   const slides = [...record.querySelectorAll('.record-slide')];
   const counter = record.querySelector('.record-counter');
   const status = record.querySelector('[data-slide-status]');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   function showSlide(step) {
     current = (current + step + slides.length) % slides.length;
@@ -288,6 +289,7 @@
   });
   viewport.addEventListener('pointercancel', () => { contact = null; });
 
+  }
   const tree = document.querySelector('.workspace-tree');
   const picker = tree.querySelector('.path-picker');
   const pathButtons = [...picker.querySelectorAll('button')];
